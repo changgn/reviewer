@@ -3,7 +3,7 @@
 git config --global user.name "이름"
 git config --global user.email "이메일"
 
-git clone git@github.com:changgn/test.git   레퍼지토리 복사
+git clone git@github.com:changgn/reviewer.git   레퍼지토리 복사
 
 
 git pull                                    원격저장소 내용을 내 로컬 폴더에 다운로드( 동기화)
