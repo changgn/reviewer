@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="member">
+	<insert id="add" parameterType="test.vo.MembersVo">
+		insert into members
+		values(#{id},#{pwd},#{email},#{phone},sysdate)
+	</insert>
+	<update id="modify" parameterType="test.vo.MembersVo">
+		update members set pwd=#{pwd},email=#{email},phone=#{phone} where id=#{id}
+	</update>
+	<delete id="remove" parameterType="java.lang.String">
+		delete from members where id=#{id}
+	</delete>
+	<select id="getlist" resultType="test.vo.MembersVo">
+		select * from members
+	</select>
+	<select id="find" parameterType="String" resultType="test.vo.MembersVo">
+		select * from members where id=#{id}
+	</select>
+	<select id="getInfo" parameterType="String" resultType="hashmap">
+		select * from members where id=#{id}
+	</select>
+</mapper>
