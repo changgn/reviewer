@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="euc-kr" ?>
+<decorators defaultdir="/decorator">
+	<decorator name="main" page="/decorator/main_decorator.jsp">
+		<pattern>/write/writeForm.jsp</pattern>
+	</decorator>
+	<excludes>
+		<pattern>/administrator/*</pattern>
+	</excludes>
+</decorators>
