@@ -16,6 +16,7 @@
 	
 
 	김재우
+	16:55	commandHandlerURI.properties, CommandAction, ControllerUsingURI 내용 수정, web.xml 수정
 	
 	이지환 
 	
