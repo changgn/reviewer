@@ -24,6 +24,8 @@
 	안종욱
 	
 	채효정
+	20:38	idSearch.jsp, idSearchNew.jsp, pwSearch.jsp, pwSearchNew.jsp 만듬
+			IdSearchAction.java, IdSearchNewAction.java, PwSearchAction.java, PwSearchNewAction.java
 
 
 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
