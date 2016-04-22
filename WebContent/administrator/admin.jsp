@@ -4,7 +4,7 @@
 	<head>
 	</head>
 	<body>
-		<table border="1" align="center">
+		<table width="1000" border="1" align="center">
 			<tr align="center">
 				<td>
 					신고 게시글 관리
