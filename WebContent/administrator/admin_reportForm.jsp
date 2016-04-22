@@ -4,27 +4,27 @@
 	<head>
 	</head>
 	<body>
-		<table border="1" align="center">
+		<table border="2" align="center">
 			<tr align="center">
 				<td colspan="4">
-					전체 회원 관리
+					신고 게시글 관리
 				</td>
 			</tr>
 			<tr align="center">
 				<td width="150">
-					<!-- 아이디 표시 -->
+					<!-- 작성자 -->
 				</td>
 				<td width="80">
-					<!-- 해당 회원이 받은 추천수 표시 -->
-					추천수
+					<!-- 페이지 이동 -->
+					상세보기
+				</td>
+				<td width="70">
+					<!-- 신고수 -->
+					신고 100
 				</td>
 				<td width="50">
-					<!-- 해당 회원 회원가입 일자 표시 -->
-					
-				</td>
-				<td width="60">
-					<!-- 해당 회원 페이지 이동 버튼 -->
-					페이지
+					<!-- 삭제 버튼 -->
+					삭제
 				</td>
 			</tr>
 		</table>

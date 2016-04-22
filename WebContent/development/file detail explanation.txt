@@ -1,0 +1,24 @@
+// administrator
+
+adminForm.jsp = 관리자 페이지 Form
+adminPro.jsp = 관리제 페이지 Pro
+
+admin_popularityForm.jsp = 인기 게시글 Form
+admin_popularityPro.jsp = 인기 게시글 Pro
+
+admin_reportForm.jsp = 신고 게시글 Form
+admin_reportPro.jsp = 신고 게시글 Pro
+
+admin_memberForm.jsp = 멤버관리 Form
+admin_memberPro.jsp = 멤버관리 Pro
+
+// follow
+
+followerForm.jsp = 팔로워 Form
+
+	#
+	
+followerPro.jsp = 팔로워 Pro
+
+followingForm.jsp = 팔로잉 Form
+followingPro.jsp = 팔로잉 Pro
