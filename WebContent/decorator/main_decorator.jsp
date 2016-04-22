@@ -17,11 +17,13 @@
 		
 	}
 	#newsfeed{
+		float: left;
 		width: 50%;
 		border: 1px;
 		
 	}
 	#nmy{
+		float: left;
 		width: 50%;
 		border: 1px;
 		
