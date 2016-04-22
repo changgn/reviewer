@@ -40,7 +40,7 @@ CREATE SEQUENCE SEQ_coment_coment_num INCREMENT BY 1 START WITH 1;
 
 CREATE TABLE board
 (
-	board_num number NOT NULL UNIQUE,
+	board_num number NOT NULL,
 	writer varchar2(20) NOT NULL,
 	category_id number NOT NULL UNIQUE,
 	content varchar2(4000) NOT NULL,
@@ -54,7 +54,7 @@ CREATE TABLE board
 
 CREATE TABLE category
 (
-	category_id number NOT NULL UNIQUE,
+	category_id number NOT NULL,
 	group1 number,
 	group2 number,
 	group3 number,
@@ -65,7 +65,7 @@ CREATE TABLE category
 CREATE TABLE coment
 (
 	coment_num number NOT NULL,
-	content_num number NOT NULL UNIQUE,
+	content_num number NOT NULL,
 	id varchar2(20) NOT NULL,
 	content varchar2(4000) NOT NULL,
 	write_date date NOT NULL,
@@ -82,7 +82,7 @@ CREATE TABLE follow
 
 CREATE TABLE members
 (
-	id varchar2(20) NOT NULL UNIQUE,
+	id varchar2(20) NOT NULL,
 	passwd varchar2(20) NOT NULL,
 	name varchar2(20) NOT NULL,
 	birth varchar2(9) NOT NULL,
@@ -223,8 +223,7 @@ COMMENT ON COLUMN members.id IS '아이디';
 COMMENT ON COLUMN members.passwd IS '패스워드';
 COMMENT ON COLUMN members.name IS '이름';
 COMMENT ON COLUMN members.birth IS '생년월일';
-COMMENT ON COLUMN members.gender IS '0 남 
-1 여';
+COMMENT ON COLUMN members.gender IS '0 남 1 여';
 COMMENT ON COLUMN members.email IS '이메일';
 COMMENT ON COLUMN members.phone_num IS '휴대폰번호';
 COMMENT ON COLUMN members.reg_date IS '가입시간';
