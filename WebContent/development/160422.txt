@@ -13,14 +13,16 @@
 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
 	김창근
 	14:06	DB erd , sql 추가 
-	
+	18:11   trigger 추가
 
 	김재우
 	16:55	commandHandlerURI.properties, CommandAction, ControllerUsingURI 내용 수정, web.xml 수정
 	18:15	기본 레이아웃(sitemesh) 추가
 	
 	이지환 
-	
+	20:35   DeleteFormAction,DeleteProAction, InputFormAction, InputProAction, LoginFormAction,
+			LoginProAction, ModifyFormAction,ModifyProAction, deleteform.jsp,inputForm.jsp
+			modifyForm.jsp 추가
 	안종욱
 	
 	채효정
