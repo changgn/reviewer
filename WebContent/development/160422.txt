@@ -20,7 +20,9 @@
 	18:15	기본 레이아웃(sitemesh) 추가
 	
 	이지환 
-	
+	20:35   DeleteFormAction,DeleteProAction, InputFormAction, InputProAction, LoginFormAction,
+			LoginProAction, ModifyFormAction,ModifyProAction, deleteform.jsp,inputForm.jsp
+			modifyForm.jsp 추가
 	안종욱
 	
 	채효정
