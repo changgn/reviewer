@@ -2,7 +2,6 @@
 /* Drop Triggers */
 
 DROP TRIGGER TRI_board_board_num;
-DROP TRIGGER TRI_category_category_id;
 DROP TRIGGER TRI_coment_coment_num;
 
 
@@ -22,7 +21,6 @@ DROP TABLE members CASCADE CONSTRAINTS;
 /* Drop Sequences */
 
 DROP SEQUENCE SEQ_board_board_num;
-DROP SEQUENCE SEQ_category_category_id;
 DROP SEQUENCE SEQ_coment_coment_num;
 
 
@@ -31,7 +29,6 @@ DROP SEQUENCE SEQ_coment_coment_num;
 /* Create Sequences */
 
 CREATE SEQUENCE SEQ_board_board_num INCREMENT BY 1 START WITH 1;
-CREATE SEQUENCE SEQ_category_category_id INCREMENT BY 1 START WITH 1;
 CREATE SEQUENCE SEQ_coment_coment_num INCREMENT BY 1 START WITH 1;
 
 
@@ -41,7 +38,7 @@ CREATE SEQUENCE SEQ_coment_coment_num INCREMENT BY 1 START WITH 1;
 CREATE TABLE board
 (
 	board_num number NOT NULL,
-	writer varchar2(20) NOT NULL,
+	id varchar2(20) NOT NULL,
 	category_id number NOT NULL UNIQUE,
 	content varchar2(4000) NOT NULL,
 	write_date date NOT NULL,
@@ -55,9 +52,9 @@ CREATE TABLE board
 CREATE TABLE category
 (
 	category_id number NOT NULL,
-	group1 number,
-	group2 number,
-	group3 number,
+	group1 varchar2(50),
+	group2 varchar2(50),
+	group3 varchar2(50),
 	PRIMARY KEY (category_id)
 );
 
@@ -139,7 +136,7 @@ ALTER TABLE board
 
 
 ALTER TABLE board
-	ADD FOREIGN KEY (writer)
+	ADD FOREIGN KEY (id)
 	REFERENCES members (id)
 ;
 
@@ -175,16 +172,6 @@ END;
 
 /
 
-CREATE OR REPLACE TRIGGER TRI_category_category_id BEFORE INSERT ON category
-FOR EACH ROW
-BEGIN
-	SELECT SEQ_category_category_id.nextval
-	INTO :new.category_id
-	FROM dual;
-END;
-
-/
-
 CREATE OR REPLACE TRIGGER TRI_coment_coment_num BEFORE INSERT ON coment
 FOR EACH ROW
 BEGIN
@@ -201,7 +188,7 @@ END;
 /* Comments */
 
 COMMENT ON COLUMN board.board_num IS '글번호';
-COMMENT ON COLUMN board.writer IS '작성자';
+COMMENT ON COLUMN board.id IS '작성자';
 COMMENT ON COLUMN board.category_id IS '카테고리 분류 번호';
 COMMENT ON COLUMN board.content IS '본문내용';
 COMMENT ON COLUMN board.write_date IS '작성시간';
