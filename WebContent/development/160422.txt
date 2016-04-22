@@ -17,6 +17,7 @@
 
 	김재우
 	16:55	commandHandlerURI.properties, CommandAction, ControllerUsingURI 내용 수정, web.xml 수정
+	18:15	기본 레이아웃(sitemesh) 추가
 	
 	이지환 
 	

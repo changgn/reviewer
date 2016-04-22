@@ -6,10 +6,14 @@
 	<title><decorator:title /></title>
 	<decorator:head />
 	<style>
-	#header{
-		background-color: #066E9F;
+	body{
 		margin: 0px;
 		padding: 0px;
+	}
+	#header{
+		background-color: #066E9F;
+		width: 100%;
+		height: 50px;
 	}
 	#nav{
 		width: 100%;
@@ -17,35 +21,51 @@
 		
 	}
 	#newsfeed{
+		float: left;
+		text-align: center;
 		width: 50%;
 		border: 1px;
 		
 	}
-	#nmy{
+	#my{
+		float: left;
+		text-align: center;
 		width: 50%;
 		border: 1px;
 		
+	}
+	#footer{
+		margin: 0px;
+		padding: 0px;
+		color: white;
+		background-color: #4C4C4C;
 	}
 	</style>
 </head>
 <body>
 
 	<div id="header">
+	<!-- 헤더 -->
+	
 		<div id="logo">
 			로고 이미지 삽입
 		</div>
 	</div>
-	<hr/>
+	
 	<div id="nav">
-	<span id="newsfeed">뉴스피드</span>
-	<span id="my">MY</span>
+	<!-- 네비게이션 -->
+	
+		<div id="newsfeed">뉴스피드</div>
+		<div id="my">MY</div>
 	</div>
-	<hr/>
+
 	<decorator:body />
-	<hr/>
-	<div id="footer">하단 내용
-	<a href="#">이용약관</a>
-	<a href="#">개인정보취급방침</a>
+	
+	<div id="footer">
+	<!-- 풋터 -->
+	
+		<a href="#">이용약관</a>
+		<a href="#">개인정보취급방침</a>
 	</div>
 </body>
 </html>
