@@ -96,34 +96,14 @@
 	    vertical-align: top;
 		text-align: center;
 	}
-<<<<<<< HEAD
-	#newsfeed{
-		float: left;
-=======
 	#list_nav li{
->>>>>>> e46e6a0f2d40ef3fcd8411d1d1bd23fec3aa2322
-		width: 50%;
 		float: left;
+		width: 50%;
 		text-align: center;
 	}
-	#list_nav .nav_btn{
-		font-size: 20px;
-		color: black;
-		padding: 10px 9px 0 9px;
-		
-	}
-<<<<<<< HEAD
-	#nmy{
-		float: left;
-		width: 50%;
-		border: 1px;
-=======
-
 	#content{
 		text-align: center;
-		width: 100%;
->>>>>>> e46e6a0f2d40ef3fcd8411d1d1bd23fec3aa2322
-		
+		width: 100%;		
 	}
 	#footer{
 		height: 50px;
