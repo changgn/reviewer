@@ -1,9 +1,0 @@
-// administrator
-
-admin_popularity.jsp = 인기 게시글 jsp
-admin_report.jsp = 신고 게시글 jsp
-
-// follow
-
-follower.jsp = 팔로워.jsp
-following.jsp = 팔로잉.jsp
