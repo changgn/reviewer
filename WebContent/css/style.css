@@ -11,10 +11,12 @@
 a {
 	outline:0;
 	text-decoration: none;
+	color: #4C4C4C;
 }
 
 a:visited {
 	text-decoration: none;
+	color: #4C4C4C;
 }
 
 
@@ -80,6 +82,17 @@ img {
     color: transparent;
     background-image: url(../image/login.png);
 }
+#btn_user{
+	display: inline-block;
+    overflow: hidden;
+    width: 27px;
+    height: 28px;
+    background-position: -200px 0;
+    line-height: 999px;
+    vertical-align: top;
+    color: transparent;
+    background-image: url(../image/login.png);
+}
 #btn_search {
 	display: inline-block;
     overflow: hidden;
@@ -101,6 +114,23 @@ img {
     vertical-align: top;
     color: transparent;
     background-image: url(../image/login.png);
+}
+#user {
+	position: absolute;
+	top: 60px;
+    right: 65px;
+    width: 100px;
+    height: 150px;
+}
+#list_user {
+	border-right: 1px solid #4C4C4C;
+	border-left: 1px solid #4C4C4C;
+	border-bottom: 1px solid #4C4C4C;
+	background-color: white;
+}
+#list_user li {
+	padding: 7px;
+	border-top: 1px solid #4C4C4C;
 }
 #alarm {
 	position: absolute;
