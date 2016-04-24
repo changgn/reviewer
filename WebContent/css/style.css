@@ -55,7 +55,7 @@ img {
     height: 36px;
     background-position: 10px 10px;
     line-height: 999px;
-    background-image: url(../image);
+    background-image: url(../image/);
 }
 #main_btn {
 	position: absolute;
@@ -74,53 +74,51 @@ img {
 #btn_login {
 	display: inline-block;
     overflow: hidden;
-    width: 27px;
-    height: 28px;
+    width: 30px;
+    height: 31px;
     background-position: -200px 0;
     line-height: 999px;
     vertical-align: top;
     color: transparent;
-    background-image: url(../image/login.png);
+    background-image: url(../image/user.png);
 }
 #btn_user{
 	display: inline-block;
     overflow: hidden;
-    width: 27px;
-    height: 28px;
-    background-position: -200px 0;
+    width: 30px;
+    height: 31px;
     line-height: 999px;
     vertical-align: top;
     color: transparent;
-    background-image: url(../image/login.png);
+    background-image: url(../image/user.png);
 }
 #btn_search {
 	display: inline-block;
     overflow: hidden;
-    width: 27px;
-    height: 28px;
-    background-position: -200px 0;
+    width: 30px;
+    height: 31px;
     line-height: 999px;
     vertical-align: top;
     color: transparent;
-    background-image: url(../image/login.png);
+    background-image: url(../image/search.png);
 }
 #btn_alarm {
 	display: inline-block;
     overflow: hidden;
-    width: 27px;
-    height: 28px;
-    background-position: -200px 0;
+    width: 30px;
+    height: 31px;
+    background-position: 0px 0;
     line-height: 999px;
     vertical-align: top;
     color: transparent;
-    background-image: url(../image/login.png);
+    background-image: url(../image/alarm.png);
 }
 #user {
 	position: absolute;
 	top: 60px;
-    right: 65px;
+    right: 106px;
     width: 100px;
-    height: 150px;
+    height: auto;
 }
 #list_user {
 	border-right: 1px solid #4C4C4C;
@@ -135,9 +133,9 @@ img {
 #alarm {
 	position: absolute;
 	top: 60px;
-    right: 39px;
+    right: 30px;
     width: 300px;
-    height: 300px;
+    height: auto;
 }
 #list_alarm {
 	border-right: 1px solid #4C4C4C;
