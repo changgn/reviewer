@@ -51,11 +51,10 @@ img {
     position: absolute;
     top: 20px;
     left: 20px;
-    width: 115px;
+    width: 202px;
     height: 36px;
-    background-position: 10px 10px;
     line-height: 999px;
-    background-image: url(../image/);
+    background-image: url(../image/reviwer.png);
 }
 #main_btn {
 	position: absolute;
@@ -76,7 +75,6 @@ img {
     overflow: hidden;
     width: 30px;
     height: 31px;
-    background-position: -200px 0;
     line-height: 999px;
     vertical-align: top;
     color: transparent;
@@ -170,6 +168,7 @@ img {
 	font-weight: bold;
 }
 #content {
+	
 	text-align: center;
 	width: 100%;		
 }
