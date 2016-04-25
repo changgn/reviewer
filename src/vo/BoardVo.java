@@ -6,7 +6,7 @@ public class BoardVo {
 	
 	private int board_num;
 	private String id;
-	private int category_id;
+	private String category_id;
 	private String content;
 	private Date write_date;
 	private int recommend_num;
@@ -17,7 +17,7 @@ public class BoardVo {
 		
 	}
 	
-	public BoardVo(int board_num, String id, int category_id, String content, Date write_date, int recommend_num,int report_num, int screp){
+	public BoardVo(int board_num, String id, String category_id, String content, Date write_date, int recommend_num,int report_num, int screp){
 		super();
 		this.board_num = board_num;
 		this.id = id;
@@ -46,11 +46,11 @@ public class BoardVo {
 		this.id = id;
 	}
 
-	public int getCategory_id() {
+	public String getCategory_id() {
 		return category_id;
 	}
 
-	public void setCategory_id(int category_id) {
+	public void setCategory_id(String category_id) {
 		this.category_id = category_id;
 	}
 

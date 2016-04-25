@@ -15,10 +15,13 @@
 	<select id="getlist" resultType="vo.CategoryVo">
 		<!-- 조건문 -->
 	</select>
-	<select id="find" parameterType="String" resultType="vo.CategoryVo">
+	<select id="find" parameterType="java.lang.String" resultType="vo.CategoryVo">
 		<!-- 조건문 -->
 	</select>
-	<select id="getInfo" parameterType="String" resultType="hashmap">
-		<!-- 조건문 -->
+	<select id="getCategoryInfo" parameterType="java.lang.String" resultType="vo.CategoryVo">
+		select * from category where category_id=#{category_id}
+	</select>
+	<select id="getoneCategoryInfo" parameterType="java.lang.String" resultType="vo.CategoryVo">
+		select distinct category_id, group1, group2, group3 from category where category_id=#{category_id}
 	</select>
 </mapper>

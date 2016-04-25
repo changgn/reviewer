@@ -3,7 +3,7 @@ package vo;
 
 public class CategoryVo {
 	
-	private int category_id;
+	private String category_id;
 	private String group1;
 	private String group2;
 	private String group3;
@@ -12,7 +12,7 @@ public class CategoryVo {
 		
 	}
 	
-	public CategoryVo(int category_id, String group1, String group2, String group3){
+	public CategoryVo(String category_id, String group1, String group2, String group3){
 		super();
 		this.category_id = category_id;
 		this.group1 = group1;
@@ -22,11 +22,11 @@ public class CategoryVo {
 		
 	}
 
-	public int getCategory_id() {
+	public String getCategory_id() {
 		return category_id;
 	}
 
-	public void setCategory_id(int category_id) {
+	public void setCategory_id(String category_id) {
 		this.category_id = category_id;
 	}
 

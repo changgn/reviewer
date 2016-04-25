@@ -11,40 +11,30 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import vo.CategoryVo;
 
 public class CategoryDao {
+	private static CategoryDao instance = new CategoryDao();
 	
-	public static void main(String[] args) {
-		
-			String res = "/mybatis/config.xml";
-			try {
-			  	InputStream is = Resources.getResourceAsStream(res);
-				
-				SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(is);
-				System.out.println("factory ok");
-				SqlSession session = factory.openSession();
-				
-				CategoryVo vo = new CategoryVo();
+	public static CategoryDao getInstance() {
+		return instance;
+	}
 	
-				int n = session.insert("category.add", vo);
+	private CategoryDao() { }
 	
-				if (n > 0) {
+	public CategoryVo getCategoryInfo(String category_id) {
+		CategoryVo list = null;
+		String res = "mybatis/config.xml";
+		try {
+		  	InputStream is = Resources.getResourceAsStream(res);
+			
+			SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(is);
+			SqlSession session = factory.openSession();
+			
+			list = session.selectOne("category.getoneCategoryInfo", category_id);
 	
-					session.commit();
-					System.out.println("insert ok");
-				} else {
-					session.rollback();
-					System.out.println("insert f");
-				}
-	
-				n = session.delete("category.remove", "batis");
-				System.out.println("delete 처리건수:" + n);
-	
-				session.commit();
-	
-				session.close();
-	
-			} catch (IOException ie) {
-				System.out.println(ie.getMessage());
-			}
+			session.close();
+		} catch (IOException ie) {
+			System.out.println(ie.getMessage());
+		}
+		return list;
 	}
 
 }
