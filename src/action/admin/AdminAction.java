@@ -5,12 +5,13 @@ import javax.servlet.http.HttpServletResponse;
 
 import action.CommandAction;
 
-public class AdminProAction implements CommandAction{
+public class AdminAction implements CommandAction{
 
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) throws Throwable {
 		// TODO Auto-generated method stub
-		return "adminPro.jsp";
+		
+		return "/adminForm.jsp";
 	}
 
 }

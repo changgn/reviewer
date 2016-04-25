@@ -10,7 +10,12 @@ public class FollowingFormAction implements CommandAction{
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) throws Throwable {
 		// TODO Auto-generated method stub
-		return null;
+		
+		String id = (String)request.getSession().getAttribute("id");
+		
+		request.setAttribute("id", id);
+		
+		return "followingForm.jsp";
 	}
 
 }

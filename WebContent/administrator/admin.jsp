@@ -4,20 +4,20 @@
 	<head>
 	</head>
 	<body>
-		<table width="1000" border="1" align="center">
+		<table width="250" border="1" align="center">
 			<tr align="center">
 				<td>
-					신고 게시글 관리
+					<a href="/admin_reportForm.do">신고 게시글 관리</a>
 				</td>
 			</tr>
 			<tr align="center">
 				<td>
-					인기 게시글 관리
+					<a href="/admin_popularityForm.do">인기 게시글 관리</a>
 				</td>
 			</tr>
 			<tr align="center">
 				<td>
-					회원관리
+					<a href="/admin_memberForm.do">전체 회원 관리</a>
 				</td>
 			</tr>
 		</table>
