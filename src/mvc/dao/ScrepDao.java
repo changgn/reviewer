@@ -8,13 +8,12 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
-import vo.MembersVo;
+import vo.ScrepVo;
 
-
-public class MemberDao {
+public class ScrepDao {
 	
-	public static void main(String[] args) {
-		
+		public static void main(String[] args) {
+			
 			String res = "config.xml";
 			try {
 			  	InputStream is = Resources.getResourceAsStream(res);
@@ -23,9 +22,9 @@ public class MemberDao {
 				System.out.println("factory ok");
 				SqlSession session = factory.openSession();
 				
-				MembersVo vo = new MembersVo("batis1", "1111","발코니","901011","남","batis@co.kr", "010", null, 0);
+				ScrepVo vo = new ScrepVo();
 	
-				int n = session.insert("member.add", vo);
+				int n = session.insert("screp.add", vo);
 	
 				if (n > 0) {
 	
@@ -36,7 +35,7 @@ public class MemberDao {
 					System.out.println("insert f");
 				}
 	
-				n = session.delete("member.remove", "batis");
+				n = session.delete("screp.remove", "batis");
 				System.out.println("delete 처리건수:" + n);
 	
 				session.commit();
@@ -47,5 +46,6 @@ public class MemberDao {
 				System.out.println(ie.getMessage());
 			}
 	}
+
 
 }
