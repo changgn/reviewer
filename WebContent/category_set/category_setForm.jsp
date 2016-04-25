@@ -17,11 +17,11 @@ $("select[id=group_large]").change(function(){  // 셀렉트 박스가 체인지
       success    : function (data) {  
          $.each(data, function(i, d) { 
                    $("select[name=group_middle]").append('<option value="' + d.seq+ '">' + d.title+ '</option>'); 
-         });  
-      }  
-   });  
+         });
+      }
+   });
 });  
-</script> 
+</script>
 </head>
 <body>
 	<div class="category_add">
