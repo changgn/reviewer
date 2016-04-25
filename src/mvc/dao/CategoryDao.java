@@ -19,7 +19,7 @@ public class CategoryDao {
 	
 	private CategoryDao() { }
 	
-	public CategoryVo getCategoryInfo(String category_id) {
+	public CategoryVo getOne(String category_id) {
 		CategoryVo list = null;
 		String res = "mybatis/config.xml";
 		try {
@@ -28,7 +28,7 @@ public class CategoryDao {
 			SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(is);
 			SqlSession session = factory.openSession();
 			
-			list = session.selectOne("category.getoneCategoryInfo", category_id);
+			list = session.selectOne("category.getOne", category_id);
 	
 			session.close();
 		} catch (IOException ie) {

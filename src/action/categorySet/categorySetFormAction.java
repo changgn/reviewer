@@ -21,7 +21,7 @@ public class categorySetFormAction implements CommandAction {
 		// 로그인한 id값 가져오기
 		String id = (String) request.getSession().getAttribute("id");
 		id = "bal";
-		int CategoryInfoListSize;
+		int CategoryListSize = 0;
 
 		// dao 인스턴스 생성
 		MembersCategoryDao membersCategoryDao = MembersCategoryDao.getInstance();
@@ -29,21 +29,21 @@ public class categorySetFormAction implements CommandAction {
 		
 		//Vo들을 담기위한 list 변수생성
 		List<MembersCategoryVo> membersCategoryList = null;
-		CategoryVo CategoryList = null;
+		List<CategoryVo> CategoryList = new ArrayList<CategoryVo>();
 		
 		// 해당 id의 카테고리id 가져오기
 		membersCategoryList = membersCategoryDao.getCategoryID(id);
 		
 		// 카테고리id로 카테고리 정보 가져오기
 		for(MembersCategoryVo vo : membersCategoryList) {
-			CategoryList = categoryDao.getCategoryInfo(vo.getCategory_id());
-			
+			CategoryVo Category = categoryDao.getOne(vo.getCategory_id());
+			CategoryList.add(Category);
 		}
 		
-		CategoryInfoListSize = CategoryList.size();
+		CategoryListSize = CategoryList.size();
 		
 		// 뷰에서 사용할 Attribute 추가
-		request.setAttribute("CategoryInfoListSize", CategoryInfoListSize);
+		request.setAttribute("CategoryListSize", CategoryListSize);
 		request.setAttribute("CategoryList", CategoryList);
 		
         return "/categorySet/categorySetForm.jsp";//해당 뷰
