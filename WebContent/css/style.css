@@ -233,6 +233,15 @@ img {
 	color: white;
 }
 
+/* mainForm */
+
+.maincontent{
+	width: auto;
+	height: auto;
+	
+	
+}
+
 /* category_setForm */
 .category_all { heigh: auto; }
 .category_save { min-height: 600px; }

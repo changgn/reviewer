@@ -1,0 +1,133 @@
+insert into category values(111, '가전', '컴퓨터', '모니터');
+insert into category values(112, '가전', '컴퓨터', '노트북');
+insert into category values(113, '가전', '컴퓨터', '본체');
+insert into category values(114, '가전', '컴퓨터', '주변기기');
+insert into category values(115, '가전', '컴퓨터', '기타부품');
+
+insert into category values(121, '가전', '주방가전', '냉장고');
+insert into category values(122, '가전', '주방가전', '김치냉장고');
+insert into category values(123, '가전', '주방가전', '정수기');
+insert into category values(124, '가전', '주방가전', '전기밥솥');
+insert into category values(125, '가전', '주방가전', '전자레인지');
+
+insert into category values(131, '가전', '생활가전', 'TV');
+insert into category values(132, '가전', '생활가전', '세탁기');
+insert into category values(133, '가전', '생활가전', '청소기');
+insert into category values(134, '가전', '생활가전', '카메라');
+insert into category values(135, '가전', '생활가전', '기타가전');
+
+insert into category values(141, '가전', '계절가전', '에어컨');
+insert into category values(142, '가전', '계절가전', '선풍기');
+insert into category values(143, '가전', '계절가전', '공기청정기');
+insert into category values(144, '가전', '계절가전', '가습기');
+insert into category values(145, '가전', '계절가전', '난방기');
+
+insert into category values(151, '가전', '모바일', '휴대폰’);A
+insert into category values(152, '가전', '모바일', '태블릿');
+insert into category values(153, '가전', '모바일', '악세사리');
+insert into category values(154, '가전', '모바일', '스마트워치');
+insert into category values(155, '가전', '모바일', '기타가전');
+
+insert into category values(211, '가구', '침대', '침대');
+insert into category values(212, '가구', '침대', '매트리스');
+insert into category values(213, '가구', '침대', '화장대');
+insert into category values(214, '가구', '침대', '침대프레임');
+insert into category values(215, '가구', '침대', '침구');
+
+insert into category values(221, '가구', '수납가구', '장롱');
+insert into category values(222, '가구', '수납가구', '행거');
+insert into category values(223, '가구', '수납가구', '수납장');
+insert into category values(224, '가구', '수납가구', '선반');
+insert into category values(225, '가구', '수납가구', '식탁');
+
+insert into category values(231, '가구', '사무가구', '책상');
+insert into category values(232, '가구', '사무가구', '의자');
+insert into category values(233, '가구', '사무가구', '책장');
+insert into category values(234, '가구', '사무가구', '책상소품');
+insert into category values(235, '가구', '사무가구', '기타가구');
+
+insert into category values(241, '가구', '거실가구', '소파');
+insert into category values(242, '가구', '거실가구', 'TV거실장');
+insert into category values(243, '가구', '거실가구', '거실테이블');
+insert into category values(244, '가구', '거실가구', '장식장');
+insert into category values(245, '가구', '거실가구', '커튼');
+insert into category values(246, '가구', '거실가구', '기타가구');
+
+insert into category values(311, '유아', '기저귀/분유/물티슈', '기저귀');
+insert into category values(312, '유아', '기저귀/분유/물티슈', '국내분유');
+insert into category values(313, '유아', '기저귀/분유/물티슈', '해외분유');
+insert into category values(314, '유아', '기저귀/분유/물티슈', '물티슈');
+insert into category values(315, '유아', '기저귀/분유/물티슈', '이유식');
+
+insert into category values(321, '유아', '목욕/위생/화장품', '샴푸/바디');
+insert into category values(322, '유아', '목욕/위생/화장품', '목욕용품');
+insert into category values(323, '유아', '목욕/위생/화장품', '유아화장품');
+insert into category values(324, '유아', '목욕/위생/화장품', '위생용품');
+insert into category values(325, '유아', '목욕/위생/화장품', '기타용품');
+
+insert into category values(331, '유아', '유모차/카시트', '유모차');
+insert into category values(332, '유아', '유모차/카시트', '카시트');
+insert into category values(333, '유아', '유모차/카시트', '아기띠');
+insert into category values(334, '유아', '유모차/카시트', '보행기');
+insert into category values(335, '유아', '유모차/카시트', '기타용품');
+
+insert into category values(341, '유아', '완구/도서', '레고');
+insert into category values(342, '유아', '완구/도서', '작동완구');
+insert into category values(343, '유아', '완구/도서', '교육/블럭완구');
+insert into category values(344, '유아', '완구/도서', '인형');
+insert into category values(345, '유아', '완구/도서', '기타완구');
+
+insert into category values(411, '생활', '주방용품', '냄비');
+insert into category values(412, '생활', '주방용품', '프라이팬');
+insert into category values(413, '생활', '주방용품', '식기');
+insert into category values(414, '생활', '주방용품', '용기');
+insert into category values(415, '생활', '주방용품', '기타');
+
+insert into category values(421, '생활', '세탁/청소용품', '세제');
+insert into category values(422, '생활', '세탁/청소용품', '섬유유연제');
+insert into category values(423, '생활', '세탁/청소용품', '주방세제');
+insert into category values(424, '생활', '세탁/청소용품', '청소용품');
+insert into category values(425, '생활', '세탁/청소용품', '기타');
+
+insert into category values(431, '생활', '욕실/위생용품', '욕실인테리어');
+insert into category values(432, '생활', '욕실/위생용품', '수건');
+insert into category values(433, '생활', '욕실/위생용품', '샤워기/욕조');
+insert into category values(434, '생활', '욕실/위생용품', '화장지');
+insert into category values(435, '생활', '욕실/위생용품', '기타');
+
+insert into category values(441, '생활', '애완용품', '애견사료');
+insert into category values(442, '생활', '애완용품', '간식/영양제');
+insert into category values(443, '생활', '애완용품', '집/이동장/생활');
+insert into category values(444, '생활', '애완용품', '위생/장난감');
+insert into category values(445, '생활', '애완용품', '기타');
+
+insert into category values(511, '뷰티', '가방/지갑', '여성가방');
+insert into category values(512, '뷰티', '가방/지갑', '남성가방');
+insert into category values(513, '뷰티', '가방/지갑', '캐쥬얼가방');
+insert into category values(514, '뷰티', '가방/지갑', '여행가방');
+insert into category values(515, '뷰티', '가방/지갑', '지갑');
+
+insert into category values(521, '뷰티', '시계/쥬얼리', '시계');
+insert into category values(522, '뷰티', '시계/쥬얼리', '스마트워치');
+insert into category values(523, '뷰티', '시계/쥬얼리', '헤어액서서리');
+insert into category values(524, '뷰티', '시계/쥬얼리', '목걸이');
+insert into category values(525, '뷰티', '시계/쥬얼리', '반지/귀걸이');
+
+insert into category values(531, '뷰티', '신발', '여성구두');
+insert into category values(532, '뷰티', '신발', '남성구두');
+insert into category values(533, '뷰티', '신발', '운동화');
+insert into category values(534, '뷰티', '신발', '샌들/슬리퍼');
+insert into category values(535, '뷰티', '신발', '워커/부츠');
+
+insert into category values(541, '뷰티', '잡화/소품', '선글라스/안경');
+insert into category values(542, '뷰티', '잡화/소품', '우산/양산');
+insert into category values(543, '뷰티', '잡화/소품', '스카프/머플러');
+insert into category values(544, '뷰티', '잡화/소품', '모자');
+insert into category values(545, '뷰티', '잡화/소품', '장갑/벨트/넥타이');
+insert into category values(546, '뷰티', '잡화/소품', '기타');
+
+insert into category values(551, '뷰티', '의류/언더웨어', '남성의류');
+insert into category values(552, '뷰티', '의류/언더웨어', '여성의류');
+insert into category values(553, '뷰티', '의류/언더웨어', '캐주얼의류');
+insert into category values(554, '뷰티', '의류/언더웨어', '아동의류');
+insert into category values(555, '뷰티', '의류/언더웨어', '기타');
