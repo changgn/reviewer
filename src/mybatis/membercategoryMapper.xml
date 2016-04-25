@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="membercategory">
+	<insert id="add" parameterType="vo.MembersCategoryVo">
+		<!-- 조건문 -->
+	</insert>
+	<update id="modify" parameterType="vo.MembersCategoryVo">
+		<!-- 조건문 -->
+	</update>
+	<delete id="remove" parameterType="java.lang.String">
+		<!-- 조건문 -->
+	</delete>
+	<select id="getlist" resultType="vo.MembersCategoryVo">
+		<!-- 조건문 -->
+	</select>
+	<select id="find" parameterType="String" resultType="vo.MembersCategoryVo">
+		<!-- 조건문 -->
+	</select>
+	<select id="getCategoryId" parameterType="String" resultType="hashmap">
+		select category_id from members_category where id=#{id}
+	</select>
+</mapper>
