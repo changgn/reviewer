@@ -24,6 +24,8 @@
 	안종욱
 	
 	채효정
+	21:15 idpwSearch - (idpwSearch.jsp)수정, script 추가
+	21:15 profile - (myProfile.jsp, tithyneprofile.jsp)
 
 
 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ

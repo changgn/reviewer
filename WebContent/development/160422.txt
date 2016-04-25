@@ -27,7 +27,7 @@
 			패키지 action.admin, action.follow 생성
 			자바 amin_memberFormAction, admin_memberProAction
 	채효정
-	20:38	idSearch.jsp, idSearchNew.jsp, pwSearch.jsp, pwSearchNew.jsp 만듬
+	20:38	idSearch.jsp, idSearchNew.jsp, pwSearch.jsp, pwSearchNew.jsp 생성
 			IdSearchAction.java, IdSearchNewAction.java, PwSearchAction.java, PwSearchNewAction.java
 
 
