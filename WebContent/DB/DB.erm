@@ -91,7 +91,7 @@
 			<export_image_setting>
 				<output_file_path>WebContent/DB/DB.png</output_file_path>
 				<category_dir_path></category_dir_path>
-				<with_category_image>true</with_category_image>
+				<with_category_image>false</with_category_image>
 				<is_open_after_saved>true</is_open_after_saved>
 			</export_image_setting>
 			<export_java_setting>
@@ -135,7 +135,7 @@
 			</connections>
 			<display>false</display>
 			<creation_date>2016-04-21 20:34:59</creation_date>
-			<updated_date>2016-04-25 16:59:16</updated_date>
+			<updated_date>2016-04-25 19:00:59</updated_date>
 			<model_property>
 				<name>프로젝트명</name>
 				<value></value>
@@ -800,7 +800,7 @@
 				<normal_column>
 					<id>2</id>
 					<referenced_column>13</referenced_column>
-					<relation>3</relation>
+					<relation>2</relation>
 					<description>팔로우</description>
 					<unique_key_name></unique_key_name>
 					<logical_name>from_id</logical_name>
@@ -834,7 +834,7 @@
 				<normal_column>
 					<id>3</id>
 					<referenced_column>13</referenced_column>
-					<relation>2</relation>
+					<relation>3</relation>
 					<description>팔로잉</description>
 					<unique_key_name></unique_key_name>
 					<logical_name>to_id</logical_name>
@@ -1052,7 +1052,7 @@
 					</sequence>
 				</normal_column>
 				<normal_column>
-					<word_id>24</word_id>
+					<word_id>25</word_id>
 					<id>8</id>
 					<description></description>
 					<unique_key_name></unique_key_name>
@@ -1566,7 +1566,7 @@
 					</sequence>
 				</normal_column>
 				<normal_column>
-					<word_id>19</word_id>
+					<word_id>20</word_id>
 					<id>21</id>
 					<description></description>
 					<unique_key_name></unique_key_name>
@@ -2114,7 +2114,7 @@
 					</sequence>
 				</normal_column>
 				<normal_column>
-					<word_id>25</word_id>
+					<word_id>24</word_id>
 					<id>32</id>
 					<description></description>
 					<unique_key_name></unique_key_name>
@@ -2147,7 +2147,7 @@
 					</sequence>
 				</normal_column>
 				<normal_column>
-					<word_id>20</word_id>
+					<word_id>19</word_id>
 					<id>33</id>
 					<description></description>
 					<unique_key_name></unique_key_name>
