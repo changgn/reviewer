@@ -14,15 +14,24 @@
 	김창근
 	14:14	DAO, Mapper 추가
 	17:06	categoryDB insert 추가
+	17:30	memberscategoryMapper ,vo, dao추가
+	20:36	erd수정
+	
 	
 	김재우
 	13:00	공통 layout 작업 및 카테고리 폼 추가
 	17:06 	categoryDB insert 추가
+	17:50	membercategoryMapper, MembersCategoryDao 수정
+	20:33	category 값 select 추가
 	
 	이지환 
 	
-	안종욱
-	
+	안종욱	
+			인기게시글, 신고게시글, 회원관리 수정
+			adminForm에서 admin으로 파일명 수정, adminPro 삭제
+			팔로워, 팔로잉 수정
+			인게게시글, 신고게시글, 회원관리 액션 수정
+			
 	채효정
 	21:15 idpwSearch - (idpwSearch.jsp)수정, script 추가
 	21:15 profile - (myProfile.jsp, tithyneprofile.jsp)

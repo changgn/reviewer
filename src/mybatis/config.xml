@@ -20,5 +20,10 @@
 		<mapper resource="mybatis/memberMapper.xml" />
 		<mapper resource="mybatis/boardMapper.xml" />
 		<mapper resource="mybatis/categoryMapper.xml" />
+		<mapper resource="mybatis/membercategoryMapper.xml"/>
+		<mapper resource="mybatis/screpMapper.xml" />
+		<mapper resource="mybatis/photoMapper.xml" />
+		<mapper resource="mybatis/followMapper.xml" />
+		<mapper resource="mybatis/comentMapper.xml" />
 	</mappers>
 </configuration>

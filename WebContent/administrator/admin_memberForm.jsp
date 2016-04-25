@@ -10,28 +10,27 @@
 					전체 회원 관리
 				</td>
 			</tr>
-		<%-- 	<c:forEach var="회원 목록 " items="${회원목록리스트}"> --%>
+			
+			<c:forEach var="회원 목록 " items="${MembersVo}">  
 				<tr align="center">
 					<td width="150">
 						<!-- 아이디 표시 -->
-						아이디
-						<c:out value="${number }"/> <!-- 아이디 출력-->
-						<c:set var="number" value="${number-1 }"/> <!-- 목록에서 하나 빼기 -->
+						아이디 : <c:out value="${id }"/> <!-- 아이디 출력-->
 					</td>
 					<td width="80">
 						<!-- 해당 회원이 받은 추천수 표시 -->
-						추천  20
+						추천  <c:out value="${recommend_num }"/> <!-- 추천수 -->
 					</td>
 					<td width="100">
 						<!-- 해당 회원 회원가입 일자 표시 -->
-						2016.04.22.
+						가입일자 <c:out value="${reg_date }"/> <!-- 가입일 -->
 					</td>
 					<td width="60">
 						<!-- 해당 회원 페이지 이동 버튼 -->
-						페이지
+						<input type="button" onclick="프로필페이지?id=${id}">
 					</td>
 				</tr>
-		<%-- 	</c:forEach> --%>
+			 </c:forEach>
 		</table>
 	</body>
 </html>

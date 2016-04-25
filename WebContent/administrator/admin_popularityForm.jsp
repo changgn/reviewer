@@ -4,29 +4,35 @@
 	<head>
 	</head>
 	<body>
-		<table border="2" align="center">
+		<table border="1" align="center">
 			<tr align="center">
 				<td colspan="4">
 					인기 게시글 관리
 				</td>
 			</tr>
-			<tr align="center">
-				<td width="150">
-					<!-- 작성자 -->
-				</td>
-				<td width="80">
-					<!-- 해당 게시글 -->
-					상세보기
-				</td>
-				<td width="70">
-					<!-- 신고수 -->
-					신고 100
-				</td>
-				<td width="50">
-					<!-- 삭제 버튼 -->
-					삭제
-				</td>
-			</tr>
+			
+			 <c:forEach var="인기 게시글 " items="${BoardVo}" var="boa"> 
+			
+				<tr align="center">
+					<td width="150">
+						<!-- 작성자 -->
+						<c:out value="${boa.id }"/>
+					</td>
+					<td width="80">
+						<!-- 해당 게시글 -->
+						<input type="button" value="상세보기" onclick="해당게시글?board_num=${board_num},id=${id}">
+					</td>
+					<td width="70">
+						<!-- 신고수 -->
+						신고 <c:out value="${boa.report_num }"/>
+					</td>
+					<td width="50">
+						<!-- 삭제 Text -->
+						<a href="글삭제.do">삭제</a>
+					</td>
+				</tr>
+			
+			 </c:forEach>
 		</table>
 	</body>
 </html>
