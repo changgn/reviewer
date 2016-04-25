@@ -5,9 +5,9 @@
 <html lang="ko">
 <head>
 	<link rel="stylesheet" type="text/css" href="../css/style.css">
+	<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 	<title><decorator:title /></title>
 	<decorator:head />
-	<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 	<script>
 		$(document).ready(function(){
 			$("#alarm").css("display","none");
@@ -15,8 +15,8 @@
 		});
 		$(function(){		
 			$("#nav, #content").click(function(){
-				$("[class='selected']").css("display","none");
-				$("[class='selected']").removeAttr("class");
+				$("#alarm, #user").css("display","none");
+				$("#alarm, #user").removeAttr("class");
 			});			
 			$(".btn_alarm_toggle").click(function(){
 				if($("#alarm").attr("class")=="selected"){

@@ -20,7 +20,7 @@ public class MembersCategoryDao {
 	
 	private MembersCategoryDao() { }
 	
-	public List<MembersCategoryVo> getCategoryID(String id) {
+	public List<MembersCategoryVo> getlistById(String id) {
 		List<MembersCategoryVo> list = null;
 		String res = "mybatis/config.xml";
 		try {
@@ -29,7 +29,7 @@ public class MembersCategoryDao {
 			SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(is);
 			SqlSession session = factory.openSession();
 			
-			list = session.selectList("membercategory.getCategoryId", id);
+			list = session.selectList("membercategory.getlistById", id);
 	
 			session.close();
 		} catch (IOException ie) {

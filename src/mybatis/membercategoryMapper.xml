@@ -19,7 +19,7 @@
 	<select id="find" parameterType="java.lang.String" resultType="vo.MembersCategoryVo">
 		<!-- 조건문 -->
 	</select>
-	<select id="getCategoryId" parameterType="java.lang.String" resultType="vo.MembersCategoryVo">
+	<select id="getlistById" parameterType="java.lang.String" resultType="vo.MembersCategoryVo">
 		select * from members_category where id=#{id}
 	</select>
 </mapper>

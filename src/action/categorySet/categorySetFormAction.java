@@ -32,9 +32,9 @@ public class categorySetFormAction implements CommandAction {
 		List<CategoryVo> CategoryList = new ArrayList<CategoryVo>();
 		
 		// 해당 id의 카테고리id 가져오기
-		membersCategoryList = membersCategoryDao.getCategoryID(id);
+		membersCategoryList = membersCategoryDao.getlistById(id);
 		
-		// 카테고리id로 카테고리 정보 가져오기
+		// 카테고리id로 카테고리 가져오기
 		for(MembersCategoryVo vo : membersCategoryList) {
 			CategoryVo Category = categoryDao.getOne(vo.getCategory_id());
 			CategoryList.add(Category);

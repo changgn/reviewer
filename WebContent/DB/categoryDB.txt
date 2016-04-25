@@ -22,7 +22,7 @@ insert into category values(143, '가전', '계절가전', '공기청정기');
 insert into category values(144, '가전', '계절가전', '가습기');
 insert into category values(145, '가전', '계절가전', '난방기');
 
-insert into category values(151, '가전', '모바일', '휴대폰’);A
+insert into category values(151, '가전', '모바일', '휴대폰’);
 insert into category values(152, '가전', '모바일', '태블릿');
 insert into category values(153, '가전', '모바일', '악세사리');
 insert into category values(154, '가전', '모바일', '스마트워치');
