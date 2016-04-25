@@ -41,7 +41,7 @@ CREATE TABLE board
 (
 	board_num number NOT NULL,
 	id varchar2(20) NOT NULL,
-	category_id number NOT NULL UNIQUE,
+	category_id varchar2(20) NOT NULL UNIQUE,
 	content varchar2(4000) NOT NULL,
 	write_date date NOT NULL,
 	recommend_num number DEFAULT 0,
@@ -53,7 +53,7 @@ CREATE TABLE board
 
 CREATE TABLE category
 (
-	category_id number NOT NULL,
+	category_id varchar2(20) NOT NULL,
 	group1 varchar2(50),
 	group2 varchar2(50),
 	group3 varchar2(50),
@@ -97,7 +97,7 @@ CREATE TABLE members
 CREATE TABLE members_category
 (
 	id varchar2(20) NOT NULL,
-	category_id number NOT NULL
+	category_id varchar2(20) NOT NULL
 );
 
 
@@ -202,6 +202,26 @@ BEGIN
 END;
 
 /
+
+CREATE OR REPLACE TRIGGER TRI_board_recommend_num AFTER UPDATE ON board
+REFERENCING OLD AS old NEW AS new
+FOR EACH ROW
+declare
+	oldRNum NUMBER;
+	newRNum NUMBER;
+BEGIN
+	oldRNum := :old.recommend_num;
+	newRNum := :new.recommend_num;
+	
+	IF oldRNum = (newRNum +1) THEN
+	UPDATE members
+	SET recommend_num = recommend_num + 1
+	WHERE id = :new.id;
+	END IF;
+END;
+
+/
+
 
 
 

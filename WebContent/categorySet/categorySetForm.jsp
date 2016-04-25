@@ -35,10 +35,17 @@ $("select[id=group_large]").change(function(){  // 셀렉트 박스가 체인지
 	</div>
 	<div class="category_save">
 		<div class="category_all">
-			<div class="category_set size_long">
-				<div class="size_short">기존 카테고리</div>
-				<div class="btn_short"><a href="">삭&nbsp;&nbsp;&nbsp;제</a></div>
-			</div>
+			<c:if test="${membersCategoryListSize!=0}">
+				<c:forEach var="membersCategory" items="${membersCategoryList}">
+					<div class="category_set size_long">
+						<div class="size_short">${membersCategory.category_id}</div>
+						<div class="btn_short"><a href="">삭&nbsp;&nbsp;&nbsp;제</a></div>
+					</div>
+				</c:forEach>
+			</c:if>
+			<c:if test="${membersCategoryListSize==0}">
+			<div class="size_long category_text"><h1 class="text_sub">카테고리를 추가해 주세요</h1></div>
+			</c:if>
 			<div class="category_added"></div>
 		</div>
 		<div class="btn_long"><a href="#">변 경 내 용&nbsp;&nbsp;&nbsp;저 장</a></div>
