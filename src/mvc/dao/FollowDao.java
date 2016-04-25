@@ -14,7 +14,7 @@ public class FollowDao {
 	
 		public static void main(String[] args) {
 			
-			String res = "config.xml";
+			String res = "/mybatis/config.xml";
 			try {
 			  	InputStream is = Resources.getResourceAsStream(res);
 				
