@@ -43,6 +43,64 @@ img {
 	width: 100%;
 	height: 80px;
 }
+#nav {
+	width: 100%;
+	height: 40px;
+	border-bottom: 1px solid #4C4C4C;
+	padding: 0;
+}
+#content {
+	
+	text-align: center;
+	width: 100%;		
+}
+#footer {
+	height: 50px;
+	margin: 0px;
+	padding: 0px;
+	text-align: center;
+	background-color: #4C4C4C;
+}
+.text_main {
+	margin: 10px;
+	font-size: 50px;
+	color: #4C4C4C;
+}
+.size_long {
+	width: 500px;
+	height: 60px;
+	margin: 15px auto;
+	border: 1px solid #4C4C4C;
+}
+.size_short {
+	float: left;
+	width: 399px;
+	height: 58px;
+	padding-top: 13px;
+	font-size: 28px;
+}
+.btn_long {
+	width: 500px;
+	height: 60px;
+	margin: 10 auto;
+	padding: 10px;
+	background-color: #066E9F;
+}
+.btn_long a {
+	font-size: 30px;
+	color: white;
+}
+.btn_short {
+	float: left;
+	width: 99px;
+	height: 58px;
+	padding: 10px;
+	background-color: #4C4C4C;
+}
+.btn_short a {
+	font-size: 30px;
+	color: white;
+}
 #logo {
 	height: 80px;
 }
@@ -51,11 +109,10 @@ img {
     position: absolute;
     top: 20px;
     left: 20px;
-    width: 115px;
+    width: 202px;
     height: 36px;
-    background-position: 10px 10px;
     line-height: 999px;
-    background-image: url(../image/);
+    background-image: url(../image/reviwer.png);
 }
 #main_btn {
 	position: absolute;
@@ -76,7 +133,6 @@ img {
     overflow: hidden;
     width: 30px;
     height: 31px;
-    background-position: -200px 0;
     line-height: 999px;
     vertical-align: top;
     color: transparent;
@@ -147,12 +203,6 @@ img {
 	padding: 7px;
 	border-top: 1px solid #4C4C4C;
 }
-#nav {
-	width: 100%;
-	height: 40px;
-	border-bottom: 1px solid #4C4C4C;
-	padding: 0;
-}
 #list_nav {
 	width: 100%;
 	display: inline-block;
@@ -169,17 +219,6 @@ img {
 	color: #4C4C4C;
 	font-weight: bold;
 }
-#content {
-	text-align: center;
-	width: 100%;		
-}
-#footer {
-	height: 50px;
-	margin: 0px;
-	padding: 0px;
-	text-align: center;
-	background-color: #4C4C4C;
-}
 #list_policy {
 	display: inline-block;
     padding-top: 15px;
@@ -193,3 +232,10 @@ img {
 	font-size: 14pt;
 	color: white;
 }
+
+/* category_setForm */
+.category_all { heigh: auto; }
+.category_save { min-height: 600px; }
+.category_text{ margin-top: 60px ; border: 0px; }
+.category_setting { height: 40px; padding-top: 15px; border: 0px; }
+.category_group { font-size: 28px; width: 163px; }

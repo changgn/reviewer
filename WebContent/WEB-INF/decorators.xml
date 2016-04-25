@@ -3,6 +3,7 @@
 	<decorator name="main" page="/decorator/main_decorator.jsp">
 		<pattern>/write/writeForm.jsp</pattern>
 		<pattern>/main/mainForm.jsp</pattern>
+		<pattern>/category_set/*</pattern>
 	</decorator>
 	<excludes>
 		<pattern>/administrator/*</pattern>
