@@ -10,19 +10,19 @@
 <br>
 <center>
 	<div class="maincontent">
-		<table border="1" width="700" align="center">
+		<table border="1" width="700" cellpadding="0" cellspacing="0" align="center">
 			<tr height="30">
 				<div>
-					<td align="center" width="50">
+					<td align="center" width="20">
 						<a href="#">작성자</a>				
 					</td>
-					<td align="center" width="50">
-						<a href="#"> 팔로우이미지</a>
+					<td align="center" width="3">
+						<a href="#">팔로우</a>
 					</td>
-					<td align="center" width="50">
+					<td align="center" width="5">
 						시간
 					</td>
-					<td align="center" width="50">
+					<td align="center" width="3">
 						<a href="#">글메뉴이미지</a>
 					</td>
 				</div>
