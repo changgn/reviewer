@@ -2,7 +2,6 @@ package mvc.dao;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.ibatis.io.Resources;
@@ -22,17 +21,16 @@ public class MembersCategoryDao {
 	private MembersCategoryDao() { }
 	
 	public List<MembersCategoryVo> getCategoryID(String id) {
-		List<MembersCategoryVo> list = new ArrayList<MembersCategoryVo>();
-		String res = "/mybatis/config.xml";
-		
+		List<MembersCategoryVo> list = null;
+		String res = "mybatis/config.xml";
 		try {
 		  	InputStream is = Resources.getResourceAsStream(res);
 			
 			SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(is);
 			SqlSession session = factory.openSession();
 			
-			list = session.selectList("memberscategory.getCategoryId", id);
-
+			list = session.selectList("membercategory.getCategoryId", id);
+	
 			session.close();
 		} catch (IOException ie) {
 			System.out.println(ie.getMessage());
