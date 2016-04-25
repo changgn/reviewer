@@ -31,7 +31,7 @@ public class categorySetFormAction implements CommandAction {
 		// 뷰에서 사용할 Attribute 추가
 		request.setAttribute("list", membersCategoryList);
 		
-        return "/category_set/category_setForm.jsp";//해당 뷰
+        return "/categorySet/categorySetForm.jsp";//해당 뷰
 	}
 
 }

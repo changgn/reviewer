@@ -23,7 +23,7 @@ public class MembersCategoryDao {
 	
 	public List<MembersCategoryVo> getCategoryID(String id) {
 		List<MembersCategoryVo> list = new ArrayList<MembersCategoryVo>();
-		String res = "config.xml";
+		String res = "/mybatis/config.xml";
 		
 		try {
 		  	InputStream is = Resources.getResourceAsStream(res);

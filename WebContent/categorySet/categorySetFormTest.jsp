@@ -6,6 +6,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<% response.sendRedirect("/reviwer/category_set/category_setForm.do"); %>
+<% response.sendRedirect("/Reviwer/categorySet/categorySetForm.do"); %>
 </body>
 </html>
