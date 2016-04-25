@@ -2,6 +2,7 @@
 <decorators defaultdir="/decorator">
 	<decorator name="main" page="/decorator/main_decorator.jsp">
 		<pattern>/write/writeForm.jsp</pattern>
+		<pattern>/main/mainForm.jsp</pattern>
 	</decorator>
 	<excludes>
 		<pattern>/administrator/*</pattern>

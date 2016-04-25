@@ -16,6 +16,7 @@
      <filter-mapping>
   	<filter-name>sitemesh</filter-name>
   	<url-pattern>/write/*</url-pattern>
+  	<url-pattern>/main/*</url-pattern>
   </filter-mapping>
   <servlet>
     <servlet-name>ControllerUsingURI</servlet-name>
