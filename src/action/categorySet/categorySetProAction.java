@@ -1,11 +1,11 @@
-package action.category_set;
+package action.categorySet;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import action.CommandAction;
 
-public class category_setProAction implements CommandAction {
+public class categorySetProAction implements CommandAction {
 
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) throws Throwable {
