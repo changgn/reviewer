@@ -5,10 +5,10 @@
 <mapper namespace="member">
 	<insert id="add" parameterType="vo.MembersVo">
 		insert into members
-		values(#{id},#{passwd},#{name},#{birth},#{gender},#{email},#{phone_num},sysdate,#{recommend_num})
+		values(#{id},#{passwd},#{name},#{birth},#{gender},#{email},#{phone_num},#{reg_date})
 	</insert>
 	<update id="modify" parameterType="vo.MembersVo">
-		update members set passwd=#{passwd},name=#{name},birth=#{birth},gender=#{gender},email=#{email},phone_num=#{phone_num},recommend_num=#{recommend_num} where id=#{id}
+		update members set passwd=#{passwd},name=#{name},birth=#{birth},gender=#{gender},email=#{email},phone_num=#{phone_num} where id=#{id}
 	</update>
 	<delete id="remove" parameterType="java.lang.String">
 		delete from members where id=#{id}
@@ -21,5 +21,8 @@
 	</select>
 	<select id="getInfo" parameterType="String" resultType="hashmap">
 		select * from members where id=#{id}
+	</select>
+	<select id="userCheck" parameterType="String" resultType="int">
+		select count(id) from members where id=#{id} and passwd=#{passwd} 
 	</select>
 </mapper>

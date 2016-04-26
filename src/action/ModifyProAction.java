@@ -2,7 +2,7 @@ package action;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+import vo.*;
 
 
 public class ModifyProAction implements CommandAction{
@@ -19,6 +19,8 @@ public class ModifyProAction implements CommandAction{
 		String phone_num=request.getParameter("phone_num");
 		String email=request.getParameter("email");
 		
+		
+		MembersVo m = new MembersVo();
 		// 받아온 정보들을 DB에 저장
 		
 		return "/logon/modifyPro.jsp";

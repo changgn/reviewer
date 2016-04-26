@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>가입성공 여부</title>
+<title>Insert title here</title>
 </head>
 <body>
 
