@@ -20,6 +20,30 @@ public class MembersCategoryDao {
 	
 	private MembersCategoryDao() { }
 	
+	public int insert(MembersCategoryVo vo) {
+		String res = "mybatis/config.xml";
+		int n = 0;
+		try {
+		  	InputStream is = Resources.getResourceAsStream(res);
+			
+			SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(is);
+			SqlSession session = factory.openSession();
+			
+			n = session.insert("membercategory.add", vo);
+			
+			if(n>0) {
+				session.commit();
+			} else {
+				session.rollback();
+			}
+			
+			session.close();
+		} catch (IOException ie) {
+			System.out.println(ie.getMessage());
+		}
+		return n;
+	}
+	
 	public List<MembersCategoryVo> getlistById(String id) {
 		List<MembersCategoryVo> list = null;
 		String res = "mybatis/config.xml";
@@ -38,4 +62,27 @@ public class MembersCategoryDao {
 		return list;
 	}
 	
+	public int delete(MembersCategoryVo vo) {
+		String res = "mybatis/config.xml";
+		int n = 0;
+		try {
+		  	InputStream is = Resources.getResourceAsStream(res);
+			
+			SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(is);
+			SqlSession session = factory.openSession();
+			
+			n = session.insert("membercategory.remove", vo);
+			
+			if(n>0) {
+				session.commit();
+			} else {
+				session.rollback();
+			}
+			
+			session.close();
+		} catch (IOException ie) {
+			System.out.println(ie.getMessage());
+		}
+		return n;
+	}
 }

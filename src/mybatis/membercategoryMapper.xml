@@ -4,14 +4,13 @@
 
 <mapper namespace="membercategory">
 	<insert id="add" parameterType="vo.MembersCategoryVo">
-		insert into members_category 
-		values(#{id},#{category_id})
+		insert into members_category values(#{id},#{category_id})
 	</insert>
 	<update id="modify" parameterType="vo.MembersCategoryVo">
 		<!-- 조건문 -->
 	</update>
-	<delete id="remove" parameterType="java.lang.String">
-		<!-- 조건문 -->
+	<delete id="remove" parameterType="vo.MembersCategoryVo">
+		delete from members_category where id=#{id} and category_id=#{category_id}
 	</delete>
 	<select id="getlist" resultType="vo.MembersCategoryVo">
 		<!-- 조건문 -->
