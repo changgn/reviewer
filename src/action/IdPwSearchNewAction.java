@@ -10,16 +10,7 @@ public class IdPwSearchNewAction implements CommandAction {
 		// TODO Auto-generated method stub
 		
 		
-		String phone_num = (String)request.getParameter("phone_num");
-		
-		String id = (String) request.getParameter("id");
-	    String phone_num2 = (String) request.getParameter("phone_num2");
-		String email = (String) request.getParameter("email");
-		
-//		String id= ""; //데이터 베이스 쿼리를 통해 아이디값 가져와서 저장
-//		String passwd = "" ; //데이터 베이스 쿼리를 통해 아이디값 가져와서 저장
-//		
-		
+	
 		return "/idpwSearch/idpwSearchNew.jsp";
 	}
 

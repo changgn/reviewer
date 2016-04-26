@@ -16,12 +16,12 @@
 <script>
 $(document).ready(function(){
 
-/* 	$("#divphone_num").click(function(){
+ 	$("#divphone_num").click(function(){
 		$("#divphone_num").hide();
 		$("#phone_num").show();
 		$("#phone_num").focus();
 	});
-	 */
+	 
 	$("#divid").click(function(){
 		$("#divid").hide();
 		$("#id").show();
@@ -39,11 +39,6 @@ $(document).ready(function(){
 		$("#email").show();
 		$("#email").focus();
 	});
-	$("#phone_num").focus(function(){
-		
-		$("#phone_num").val()=0;
-	});
-
 });
 </script>
 </head>

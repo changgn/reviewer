@@ -11,6 +11,36 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import vo.MembersVo;
 
 public class MemberDao {
+	
+	public void idSearch(MembersVo membersvo) {
+		
+		String res = "/mybatis/config.xml";
+		try {
+			InputStream is = Resources.getResourceAsStream(res);
+			
+			SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(is);
+			System.out.println("factory ok");
+			SqlSession session = factory.openSession();
+			
+		}catch(IOException ie){
+			System.out.println(ie.getMessage());
+		}
+	}
+	
+	public void pwSearch(MembersVo membersvo){
+		
+		String res = "/mybatis/config.xml";
+		try {
+			InputStream is = Resources.getResourceAsStream(res);
+			
+			SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(is);
+			System.out.println("factory ok");
+			SqlSession session = factory.openSession();
+			
+		}catch(IOException ie) {
+			System.out.println(ie.getMessage());
+		}
+	}
 
 	public void loginPro(MembersVo membersvo) {
 		String res = "/mybatis/config.xml";
