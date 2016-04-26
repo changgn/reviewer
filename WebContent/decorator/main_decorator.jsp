@@ -74,7 +74,7 @@
 		</span>
 		<div id="user">
 			<ul id="list_user">
-				<li><a href="#">카테고리 수정</a></li>
+				<li><a href="/Reviwer/categorySet/categorySetForm.do">카테고리 수정</a></li>
 				<li><a href="#">관리자 페이지</a></li>
 				<li><a href="#">회원정 수정</a></li>
 				<li><a href="#">로그아웃</a></li>

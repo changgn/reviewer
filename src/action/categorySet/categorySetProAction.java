@@ -48,9 +48,9 @@ public class categorySetProAction implements CommandAction {
 			int deleteOk = membersCategoryDao.delete(vo);
 			
 			if(deleteOk==0){
-				System.out.println("삭제 실패");
+				System.out.println("카테고리 삭제 실패");
 			} else {
-				System.out.println(id + "의" + delCategory + " 카테고리 삭제 성공" );
+				System.out.println(id + "의 " + delCategory + " 카테고리 삭제 성공" );
 			}
 		}
 		
