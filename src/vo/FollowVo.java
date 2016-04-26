@@ -13,9 +13,6 @@ public class FollowVo {
 		super();
 		this.from_id = from_id;
 		this.to_id = to_id;
-		
-		
-		
 	}
 
 	public String getFrom_id() {

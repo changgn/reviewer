@@ -27,7 +27,7 @@
 				</tr>
 				
 				<tr>
-					<c:forEach var="회원 목록 " items="${follow}" >
+					<c:forEach var="회원 목록 " items="${followgetlist}" >
 						<td width="150" align="left">
 							<!-- id를 팔로우 한 상대 아이디 목록 -->
 							아이디

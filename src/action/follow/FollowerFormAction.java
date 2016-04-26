@@ -1,9 +1,14 @@
 package action.follow;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import action.CommandAction;
+import mvc.dao.FollowDao;
+import vo.FollowVo;
+import vo.MembersVo;
 
 public class FollowerFormAction implements CommandAction{
 
@@ -11,17 +16,17 @@ public class FollowerFormAction implements CommandAction{
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) throws Throwable {
 		// TODO Auto-generated method stub
 		
-		// 
-		String id1 = (String)request. getParameter("id");
+		// 로그인한 id 가져오기
+		String id = (String) request.getSession().getAttribute("id");
 		
-		// 
-		String id2 = (String)request.getSession().getAttribute("id");
+		FollowVo vo = new FollowVo();
+		FollowDao dao = new FollowDao();
 		
-		String from_id = (String)request.getSession().getAttribute("from_id");
+		List from_id = dao.getListFrom(vo);
 		
-		request.setAttribute("id", id1);
-		request.setAttribute("id2", id2);
+		request.setAttribute("id",id);
 		request.setAttribute("from_id", from_id);
+		
 		
 		return "followerForm.jsp";
 	}

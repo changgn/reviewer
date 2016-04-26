@@ -3,22 +3,25 @@
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="follow">
-	<insert id="add" parameterType="vo.FollowVo">
-		<!-- 조건문 -->
+	<insert id="addfrom" parameterType="vo.FollowVo">
+		insert into follow(from_id)
+		values(#{from_id})
 	</insert>
-	<update id="modify" parameterType="vo.FollowVo">
-		<!-- 조건문 -->
-	</update>
-	<delete id="remove" parameterType="java.lang.String">
-		<!-- 조건문 -->
+	<delete id="removefrom" parameterType="java.lang.String">
+		delete from follow where from_id=#{from_id}
 	</delete>
-	<select id="getlist" resultType="vo.FollowVo">
-		<!-- 조건문 -->
+	<select id="getlistfrom" resultType="vo.FollowVo">
+		select from_id from follow
 	</select>
-	<select id="find" parameterType="String" resultType="vo.FollowVo">
-		<!-- 조건문 -->
-	</select>
-	<select id="getInfo" parameterType="String" resultType="hashmap">
-		<!-- 조건문 -->
+	
+	<insert id="addto" parameterType="vo.FollowVo">
+		insert into follow(to_id)
+		values(#{to_id})
+	</insert>
+	<delete id="removeto" parameterType="java.lang.String">
+		delete from follow where to_id=#{to_id}
+	</delete>
+	<select id="getlistto" resultType="vo.FollowVo">
+		select to_id from follow
 	</select>
 </mapper>
