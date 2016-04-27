@@ -25,4 +25,10 @@
 	<select id="userCheck" parameterType="String" resultType="int">
 		select count(id) from members where id=#{id} and passwd=#{passwd} 
 	</select>
+	<select id="idSearch" parameterType="String" resultType="String">
+		select id from members where phone_num=#{phone_num}
+	</select>
+	<select id="pwSearch" parameterType="String" resultType="String">
+		select passwd from members where id=#{id} and phone_num=#{phone_num} and email=#{email}
+	</select>
 </mapper>
