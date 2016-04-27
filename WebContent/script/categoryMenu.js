@@ -1665,4 +1665,22 @@ $(function(){
 		$("#delCategory").append(addtag);
 		$("#delCategory").submit();
 	});
+	
+	// 검색버튼을 눌렀을 때 지워줄 카테고리 정보를 가진 input 태그 추가 후 해당 폼 전송
+	$("#btn_content_search").click(function(){
+		if(addcount == 0 || $("#search_content").val()=="검색할 내용을 입력해 주세요.")
+		{
+			if($("#search_content").val()=="검색할 내용을 입력해 주세요."){
+				alert("검색할 내용을 입력해 주세요.");
+			} else {
+				alert("카테고리를 선택해 주세요.");
+			}
+		} else {
+			addtag = "<input type='hidden' name='addcount' value='" + addcount +"'>"
+			$("#addCategory").append(addtag);
+			addtag = "<input type='hidden' name='searchContent' value='" + $("#search_content").val() +"'>"
+			$("#addCategory").append(addtag);
+			$("#addCategory").submit();
+		}
+	});
 });
