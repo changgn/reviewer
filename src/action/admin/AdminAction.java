@@ -10,8 +10,7 @@ public class AdminAction implements CommandAction{
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) throws Throwable {
 		// TODO Auto-generated method stub
-		
-		return "/adminForm.jsp";
+		return "/administrator/adminForm.jsp";
 	}
 
 }

@@ -21,4 +21,14 @@
 	<select id="getInfo" parameterType="String" resultType="hashmap">
 		<!-- 조건문 -->
 	</select>
+	<select id="getlistrecommend_num" resultType="vo.BoardVo">
+		select id, recommend_num
+		from board
+		where id=#{id}
+	</select>
+	<select id="getlistreprot_num" resultType="vo.BoardVo">
+		select id, report_num
+		from board
+		where id=#{id}
+	</select>
 </mapper>

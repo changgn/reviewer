@@ -11,19 +11,19 @@
 				</td>
 			</tr>
 			
-			<c:forEach var="회원 목록 " items="${MembersVo}">  
+			<c:forEach var="회원 목록 " items="${MembersVo}" varStatus="mem">  
 				<tr align="center">
 					<td width="150">
 						<!-- 아이디 표시 -->
-						아이디 : <c:out value="${id }"/> <!-- 아이디 출력-->
+						아이디 : <c:out value="${mem.id }"/> <!-- 아이디 출력-->
 					</td>
 					<td width="80">
 						<!-- 해당 회원이 받은 추천수 표시 -->
-						추천  <c:out value="${recommend_num }"/> <!-- 추천수 -->
+						추천  <c:out value="${mem.recommend_num }"/> <!-- 추천수 -->
 					</td>
 					<td width="100">
 						<!-- 해당 회원 회원가입 일자 표시 -->
-						가입일자 <c:out value="${reg_date }"/> <!-- 가입일 -->
+						가입일자 <c:out value="${mem.reg_date }"/> <!-- 가입일 -->
 					</td>
 					<td width="60">
 						<!-- 해당 회원 페이지 이동 버튼 -->

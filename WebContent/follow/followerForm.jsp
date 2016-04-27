@@ -27,22 +27,28 @@
 				</tr>
 				
 				<tr>
-					<c:forEach var="회원 목록 " items="${followgetlist}" >
+					<c:forEach var="회원 목록 " items="${FollowList}" varStatus="from" >
 						<td width="150" align="left">
 							<!-- id를 팔로우 한 상대 아이디 목록 -->
 							아이디
-							<a href="profile.do"><c:out value="${from_id }"/></a>
+							<a href="profile.do"><c:out value="${from.from_id }"/></a>
 						</td>
 					
 							<td width="50" align="center">
 								<!-- 팔로우 이미지 -->
 								<!-- 본인 프로필 계정이면 내가 팔로우한 상대이면 팔로우 이미지 -->
-								<c:if test="${fc == 0 }">
-									<img src="follow_iamge" width="10" height="10">
+								<c:if test="${cn == 1 }">
+									<c:if test="${id==from.from_id}">
+										<img src="follow_image" width="10" height="10">
+									</c:if>
+									<c:if test="${id!=from.from_id }">
+										<img src="no_follow_image" width="10" height="10">
+									</c:if>
 								</c:if>
 								<!-- 내가 팔로우한 상대가 아니면 비팔로우 이미지 -->
-								<c:if test="${fc != 0 }">
-									<img src="no_follow_iamge" width="10" height="10">
+								<c:if test="${cn != 1 }">
+									<
+									<img src="no_follow_image" width="10" height="10">
 								</c:if>
 							</td>
 					</c:forEach>

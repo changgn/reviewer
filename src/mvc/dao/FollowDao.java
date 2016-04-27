@@ -2,6 +2,11 @@ package mvc.dao;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.ibatis.io.Resources;
@@ -14,11 +19,16 @@ import vo.FollowVo;
 public class FollowDao {
 	private SqlSessionFactory sqlSessionFactory;
 	
+	private static FollowDao instance = new FollowDao();
+	
+	public static FollowDao getInstance() {
+		return instance;
+	}
+	
 	public FollowDao(){
 		String res = "/mybatis/config.xml";
 		try {
 		  	InputStream is = Resources.getResourceAsStream(res);
-			
 			SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(is);
 			System.out.println("factory ok");
 			SqlSession session = factory.openSession();
@@ -32,10 +42,11 @@ public class FollowDao {
 	}
 	
 	// 팔로워 추가
-	public void followeradd(FollowVo vo){
+	public void addfrom(FollowVo vo){
 		SqlSession sqlSession = null;
 		try{
 			sqlSession = sqlSessionFactory.openSession();
+			sqlSession.insert("addfrom", vo);
 			int n = sqlSession.insert("addfrom", vo);
 			if(n>0){
 				sqlSession.commit();
@@ -45,10 +56,11 @@ public class FollowDao {
 		}
 	}
 	// 팔로잉 추가
-	public void followingadd(FollowVo vo){
+	public void addto(FollowVo vo){
 		SqlSession sqlSession = null;
 		try{
 			sqlSession = sqlSessionFactory.openSession();
+			sqlSession.insert("addto", vo);
 			int n = sqlSession.insert("addto", vo);
 			if(n>0){
 				sqlSession.commit();
@@ -59,10 +71,11 @@ public class FollowDao {
 	}
 	
 	// 팔로워 삭제
-	public void followerremove(FollowVo vo){
+	public void removefrom(FollowVo vo){
 		SqlSession sqlSession = null;
 		try{
 			sqlSession = sqlSessionFactory.openSession();
+			sqlSession.delete("removefrom", vo);
 			int n = sqlSession.delete("removefrom", vo);
 			if(n>0){
 				sqlSession.commit();
@@ -73,10 +86,11 @@ public class FollowDao {
 	}
 	
 	// 팔로잉 삭제
-	public void followingremove(FollowVo vo){
+	public void removeto(FollowVo vo){
 		SqlSession sqlSession = null;
 		try{
 			sqlSession = sqlSessionFactory.openSession();
+			sqlSession.delete("removeto", vo);
 			int n = sqlSession.delete("removeto", vo);
 			if(n>0){
 				sqlSession.commit();
@@ -85,37 +99,33 @@ public class FollowDao {
 			if(sqlSession!=null)sqlSession.close();
 		}
 	}
-	
 	
 	// 팔로워 리스트
-	public List getListFrom(FollowVo vo){
+	public FollowVo getlistfrom(FollowVo from_id){
+		FollowVo list = null;
 		SqlSession sqlSession = null;
 		try{
-			sqlSession=sqlSessionFactory.openSession();
-			return sqlSession.selectList("getlistfrom");
-		}finally{
-			if(sqlSession!=null)sqlSession.close();
-		}
-	}
-	// 팔로잉 리스트
-	public List getListTo(FollowVo vo){
-		SqlSession sqlSession = null;
-		try{
-			sqlSession=sqlSessionFactory.openSession();
-			return sqlSession.selectList("getlistto");
+			sqlSession = sqlSessionFactory.openSession();
+
+			list = (FollowVo) sqlSession.selectList("follow.getlistfrom", from_id);
+
+
+			return list;
 		}finally{
 			if(sqlSession!=null)sqlSession.close();
 		}
 	}
 	
-	public void followcheck(FollowVo vo){
-		SqlSession sqlSession = null;
+	// 팔로잉 리스트
+	public FollowVo getlistto(String to_id){
+		FollowVo list = null;
+		SqlSession sqlSession=null;
 		try{
 			sqlSession = sqlSessionFactory.openSession();
-			int n = sqlSession.delete("removeto", vo);
-			if(n>0){
-				sqlSession.commit();
-			}
+
+			list = (FollowVo) sqlSession.selectList("follow.getlistto", to_id);
+
+			return list;
 		}finally{
 			if(sqlSession!=null)sqlSession.close();
 		}

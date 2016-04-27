@@ -4,6 +4,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import action.CommandAction;
+import mvc.dao.FollowDao;
+import vo.FollowVo;
 
 public class FollowingProAction implements CommandAction{
 
@@ -11,6 +13,12 @@ public class FollowingProAction implements CommandAction{
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) throws Throwable {
 		// TODO Auto-generated method stub
 		
+		
+		
+		FollowVo vo = new FollowVo();
+		FollowDao dao = new FollowDao();
+		dao.addto(vo);
+		dao.removeto(vo);
 		
 		
 		return "followingPro.jsp";
