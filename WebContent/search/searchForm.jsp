@@ -8,11 +8,13 @@
 <script>
 $(function(){
 	$("#search_content").click(function(){
-		$(this).val("");
+		if($(this).val() == "검색할 내용을 입력해 주세요") {
+			$(this).val("");
+		} 
 	});	
 	$('#search_content').blur(function() {
 		if($(this).val() == ""){
-			$(this).val("검색할 내용을 입력해 주세요.");
+			$(this).val("검색할 내용을 입력해 주세요");
 		}
 	});
 });
@@ -21,7 +23,7 @@ $(function(){
 <body>
 <div id="search">
 	<div id="search_area">
-		<input id="search_content" type="text" value="검색할 내용을 입력해 주세요." />
+		<input id="search_content" type="text" value="검색할 내용을 입력해 주세요" />
 		<div id="btn_content_search" class="btn_short"><a href="#">검&nbsp;&nbsp;&nbsp;색</a></div>
 	</div>
 	<div class="category_add">
@@ -357,9 +359,16 @@ $(function(){
 			</div>
 		</div>
 		<div class="category_added"></div>
-		<form action="/Reviwer/search/searchPro.do" id="addCategory" method="post"></form>
+		<form action="/Reviwer/search/searchForm.do" id="addCategory" method="post"></form>
 	</div>
-	<div id="search_content_area"></div>
+	<div id="search_content_area">
+		<c:if test="${firstCheck==0}">
+			<div id="first_search_page" class="searched_board">카테고리를 이용해 검색하세요</div>
+		</c:if>
+		<c:if test="${firstCheck==1}">
+			<div class="searched_board">검색 결과 있음</div>
+		</c:if>
+	</div>
 </div>
 </body>
 </html>

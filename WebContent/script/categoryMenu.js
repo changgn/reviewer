@@ -7,7 +7,6 @@ $(function(){
 	var allcategory = $("#group3_11, #group3_12, #group3_13, #group3_14, #group3_15, #group3_21, #group3_22, #group3_23, #group3_24, #group3_31, #group3_32, #group3_33, #group3_34, #group3_41, #group3_42, #group3_43, #group3_44, #group3_51, #group3_52, #group3_53, #group3_54, #group3_55");
 	var addcount = 0;
 	var addtag = null;
-	var selectors = null;
 	
 	// 대분류 버튼이 눌렸을 때 중분류 div 보이게/안보이게 토글
 	$(".btn_group1").click(function(){
@@ -1668,13 +1667,9 @@ $(function(){
 	
 	// 검색버튼을 눌렀을 때 지워줄 카테고리 정보를 가진 input 태그 추가 후 해당 폼 전송
 	$("#btn_content_search").click(function(){
-		if(addcount == 0 || $("#search_content").val()=="검색할 내용을 입력해 주세요.")
+		if($("#search_content").val()=="검색할 내용을 입력해 주세요")
 		{
-			if($("#search_content").val()=="검색할 내용을 입력해 주세요."){
-				alert("검색할 내용을 입력해 주세요.");
-			} else {
-				alert("카테고리를 선택해 주세요.");
-			}
+			alert("검색할 내용을 입력해 주세요");
 		} else {
 			addtag = "<input type='hidden' name='addcount' value='" + addcount +"'>"
 			$("#addCategory").append(addtag);
@@ -1683,4 +1678,18 @@ $(function(){
 			$("#addCategory").submit();
 		}
 	});
+    $("#search_content").keyup(function(e){
+        if(e.keyCode == 13){
+    		if($("#search_content").val()=="검색할 내용을 입력해 주세요")
+    		{
+    			alert("검색할 내용을 입력해 주세요.");
+    		} else {
+    			addtag = "<input type='hidden' name='addcount' value='" + addcount +"'>"
+    			$("#addCategory").append(addtag);
+    			addtag = "<input type='hidden' name='searchContent' value='" + $("#search_content").val() +"'>"
+    			$("#addCategory").append(addtag);
+    			$("#addCategory").submit();
+    		}
+        }
+    });
 });

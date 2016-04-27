@@ -3,40 +3,25 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
-<script src="../script/categoryMenu.js"></script>
+<script src='http://jquery-multifile-plugin.googlecode.com/svn/trunk/jquery.form.js' type="text/javascript"></script>
+<script src='http://jquery-multifile-plugin.googlecode.com/svn/trunk/jquery.MetaData.js' type="text/javascript"></script>
+<script src='http://jquery-multifile-plugin.googlecode.com/svn/trunk/jquery.MultiFile.js' type="text/javascript"></script>
+<script src='http://jquery-multifile-plugin.googlecode.com/svn/trunk/jquery.blockUI.js' type="text/javascript"></script> 
+<script src="../script/categoryMenu_write.js" type="text/javascript"></script>
 <title>글쓰기</title>
+<style>
+
+</style>
 <script>
-$(function(){		
-	$(".MultiFile-list").change(function(){
-		alert("aa");
+$(function(){	
+	$("#btn_write").click(function(){
+		if($("#text_content").val()=="") {
+			alert("내용을 입력해 주세요");
+			$("#text_content").focus();
+		}
 	});
 });
 </script>
-<style>
-#writeForm {
-	min-height: 600px;
-}
-#upload_area {
-	width: 500px;
-	margin: 10 auto;
-}
-.MultiFile-list {
-	
-}
-.multi {
-	font-size: 20px;
-}
-#text_content {
-	width: 500px;
-	margin: 15px auto;
-	border-color: #4C4C4C;
-	text-align:left;
-	resize: none; 
-	wrap:hard;
-
-	
-}
-</style>
 </head>
 <body>
 <div id="writeForm">
@@ -373,20 +358,21 @@ $(function(){
 			</div>
 		</div>
 		<div class="category_added"></div>
-		<form action="/Reviwer/search/searchPro.do" id="addCategory" method="post"></form>
 	</div>
 	<div id="image_area">
-	
 	</div>
 	<div id="content_area">
 		<textarea id="text_content" rows="20" cols="auto"></textarea>
 	</div>
-	<form name="uploadForm" method="post">
-		<div id="upload_area">
-			<input type="file" id="afile" name="afile" class="multi" maxlength="5" style="width:100%;">
-			<div id="img_add" class="btn_long"><a href="#">사 진&nbsp;&nbsp;&nbsp;추 가</a></div>
-		</div>
-	</form>
+	<div id="upload_area">
+		<form name="uploadForm" method="post">
+			<input type="file" id="afile" name="afile" class="multi" maxlength="5">
+		</form>
+	</div>
+	<div id="write_area">
+		<div id="btn_write" class="btn_long"><a href="#">작&nbsp; 성&nbsp; 완&nbsp; 료</a></div>
+		<form action="/Reviwer/write/writePro.do" id="writeBoard" method="post"></form>
+	</div>
 </div>
 </body>
 </html>

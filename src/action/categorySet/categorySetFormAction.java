@@ -17,6 +17,7 @@ public class categorySetFormAction implements CommandAction {
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) throws Throwable {
 		// TODO Auto-generated method stub
+		request.setCharacterEncoding("UTF-8");
 		
 		// 로그인한 id값 가져오기
 		String id = (String) request.getSession().getAttribute("id");
