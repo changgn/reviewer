@@ -271,3 +271,8 @@ img {
 #group3_11, #group3_12, #group3_13, #group3_14, #group3_15, #group3_21, #group3_22, #group3_23, #group3_24, #group3_31, #group3_32, #group3_33, #group3_34, #group3_41, #group3_42, #group3_43, #group3_44, #group3_51, #group3_52, #group3_53, #group3_54, #group3_55 { position:relative; width: 500px; height: 170px; margin: 0 auto; overflow: hidden; background-color: white; border: 0; border-right: 1px solid #4C4C4C; border-left: 1px solid #4C4C4C; border-bottom: 1px solid #4C4C4C; }
 .group3_btn { float:left; width: 99.6px; height: 170px; padding: 3px; }
 .btn_group3 { padding: 5px; }
+
+/* searchForm */
+#search { min-height: 600px; }
+#search_area { width: 500px; height: 58px; margin: 20 auto; background-color: #EAEAEA; }
+#search_content { float: left; width: 383px; height: 40px; margin: 9px; border: 0; color: #4C4C4C; background-color: #EAEAEA; }

@@ -5,7 +5,7 @@
 <html lang="ko">
 <head>
 	<link rel="stylesheet" type="text/css" href="../css/style.css">
-	<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script src="http://code.jquery.com/jquery-1.2.3.min.js"></script>
 	<title><decorator:title /></title>
 	<decorator:head />
 	<script>

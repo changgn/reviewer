@@ -5,26 +5,6 @@
 <head>
 <title>검색</title>
 <script src="../script/categoryMenu.js"></script>
-<style>
-#search {
-	min-height: 600px;
-}
-#search_area {
-	width: 500px;
-	height: 58px;
-	margin: 20 auto;
-	background-color: #EAEAEA;
-}
-#search_content {
-	float: left;
-	width: 383px;
-	height: 40px;
-	margin: 9px;
-	border: 0;
-	color: #4C4C4C;
-	background-color: #EAEAEA;
-}
-</style>
 <script>
 $(function(){
 	$("#search_content").click(function(){

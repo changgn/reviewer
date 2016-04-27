@@ -23,7 +23,6 @@ public class categorySetProAction implements CommandAction {
 		// 추가할 카테고리 갯수 가져오기
 		String addcount = request.getParameter("addcount");
 
-		
 		// dao 인스턴스 생성
 		MembersCategoryDao membersCategoryDao = MembersCategoryDao.getInstance();
 		
