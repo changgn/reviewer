@@ -9,23 +9,16 @@
 
 
 
-2016.04.26
+2016.04.27
 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
 	김창근
-	14:18	main form 추가
 	
 	김재우
-			카테고리 페이지 완성
+	17:36	검색 페이지, 엑션 추가
 	이지환 
 	
 	안종욱	
-			관리자 하위 페이지 기능 수정, 팔로워 폼 액션 수정, 팔로우 맵퍼 수정, 팔로우 DAO 작성, 팔로워 폼 수정
 			
-	채효정		memberMapper.xml- idSearch, pwSearch 추가
-			MemberDao.java - idSearch, pwSearch 추가
-			idSearch.jsp, pwSearch.jsp 수정
-			MyProfileAction.java , TithyneProfileAction.java
-			myProfile.jsp, tithyneProfile.jsp 수정
-
+	채효정	
 
 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ

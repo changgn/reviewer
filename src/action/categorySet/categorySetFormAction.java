@@ -27,7 +27,7 @@ public class categorySetFormAction implements CommandAction {
 		MembersCategoryDao membersCategoryDao = MembersCategoryDao.getInstance();
 		CategoryDao categoryDao = CategoryDao.getInstance();
 		
-		//Vo들을 담기위한 list 변수생성
+		// Vo들을 담기위한 list 변수생성
 		List<MembersCategoryVo> membersCategoryList = null;
 		List<CategoryVo> CategoryList = new ArrayList<CategoryVo>();
 		
