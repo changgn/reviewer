@@ -1,23 +1,20 @@
-<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="UTF-8"%>
+<%@ page contentType="text/html; charset=euc-kr" %>
+<%@ page trimDirectiveWhitespaces="true" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
     
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<title>ì•„ì´ë”” ì°¾ê¸°</title>
+<title>¾ÆÀÌµð Ã£±â</title>
 </head>
 <body>
-	<table>
-		<tr>
-			<td>
-			ì•„ì´ë”” ì°¾ê¸°
-			</td>
-		</tr>
-		<tr>
-		 <td>
-		${id}
-		 </td>
-		</tr>
-	</table>
+<c:if test="${message==null}">
+	<div id="find_id_result">
+		<div class="size_long"><h1 class="title_find">¾ÆÀÌµð Ã£±â</h1></div>
+		<div class="size_long"><h1 class="title_find">¾ÆÀÌµð´Â ${id} ÀÔ´Ï´Ù.</h1></div>
+	</div>
+</c:if>
+<c:if test="${message!=null}">
+	<% response.sendRedirect("/Reviwer/idpwSearch/idpwSearchNew.do?message=errorPhoneNum"); %>
+</c:if>
 </body>
 </html>

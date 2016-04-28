@@ -1,23 +1,20 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="UTF-8"%>
+<%@ page trimDirectiveWhitespaces="true" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <title>비밀번호 찾기</title>
 </head>
 <body>
-<table>
-<tr>
-	<td>
-	비밀번호 찾기
-	</td>
-</tr>
-	<tr>
-		<td>
-	${ passwd } 
-		</td>
-	</tr>
-</table>
+<c:if test="${message==null}">
+	<div id="find_id_result">
+		<div class="size_long"><h1 class="title_find">비밀번호 찾기</h1></div>
+		<div class="size_long"><h1 class="title_find">임시비밀번호는 ${ passwd } 입니다.</h1></div>
+	</div>
+</c:if>
+<c:if test="${message!=null}">
+	<% response.sendRedirect("/Reviwer/idpwSearch/idpwSearchNew.do?message=incorrect"); %>
+</c:if>
 </body>
 </html>

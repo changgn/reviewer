@@ -4,16 +4,25 @@
 
 <html>
 <head>
-<title>Insert title here</title>
+<title>로그인중</title>
 </head>
 <body>
-
-<c:if test="${ message!=null}">
-${message }
-<%response.sendRedirect("/Reviwer/main/mainForm.do"); %>
+<c:if test="${ message == null}">
+	<%response.sendRedirect("/Reviwer/main/mainForm.do"); %>
 </c:if>
-<c:if test="${ mesaage ==null}">
-<%response.sendRedirect("/Reviwer/logon/loginForm.do"); %>
+<c:if test="${ message != null}">
+	<c:if test="${ message == 'errID'}">
+		<script>
+			alert("아이디가 일치하지 않습니다");
+			history.go(-1);
+		</script>
+	</c:if>
+	<c:if test="${ message == 'errPwd'}">
+		<script>
+			alert("비밀번호가 일치하지 않습니다");
+			history.go(-1);
+		</script>
+	</c:if>
 </c:if>
 </body>
 </html>

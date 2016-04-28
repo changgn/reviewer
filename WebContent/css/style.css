@@ -61,14 +61,15 @@ img { border: 0; }
 
 /* log_on */
 #logon { min-height: 600px; }
-#login_logo { width : 500px; height: 50px; margin: 0 auto; margin-top: 150; margin-bottom: 40; }
+#login_logo { width : 500px; height: 50px; margin: 0 auto; margin-top: 150px; margin-bottom: 40px; }
 #login_logo img{ width: 300px; height: 100%; }
 .text_login { width: 100%; height: 100%; font-size: 20px; }
 
-/* idpwSearchNew */
+/* idpwSearch */
 #find { min-height: 600px; }
-.text_find { width: 100%; height: 100%; font-size: 20px; }
-
+.title_find { margin: 0 auto; margin: 11px; font-size: 28px; }
+.text_find { width: 100%; height: 100%; font-size: 28px; }
+#find_id_result { min-height: 600px; margin: 0 auto; margin-top: 250px;}
 
 /* mainForm */
 .maincontent{ width: 100%; height: 100%; }

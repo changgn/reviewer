@@ -46,7 +46,6 @@ public MembersVo idSearch(String phone_num) {
 			InputStream is = Resources.getResourceAsStream(res);
 			
 			SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(is);
-			System.out.println("factory ok");
 			SqlSession session = factory.openSession();
 			
 			vo = session.selectOne("member.idSearch",phone_num);
@@ -65,7 +64,6 @@ public MembersVo idSearch(String phone_num) {
 			InputStream is = Resources.getResourceAsStream(res);
 			
 			SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(is);
-			System.out.println("factory ok");
 			SqlSession session = factory.openSession();
 		
 			vo = session.selectOne("member.pwSearch", membersvo);
@@ -76,26 +74,21 @@ public MembersVo idSearch(String phone_num) {
 		return vo;
 	}
 	
-	public MembersVo loginPro(HashMap<String,String> map) {
-		MembersVo vo = null;
-		sqlSession = null;
-		String res = "/mybatis/config.xml";
+	public String loginPro(String id) {
+		String passwd = null;
+		String res = "mybatis/config.xml";
 		try {
 			InputStream is = Resources.getResourceAsStream(res);
 
 			SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(is);
-			System.out.println("factory ok");
 			SqlSession session = factory.openSession();
 			
-			vo= sqlSession.selectOne("member.loginPro",map);
-			
-	
-
-
+			passwd = session.selectOne("member.loginPro",id);
+			session.close();
 		} catch (IOException ie) {
 			System.out.println(ie.getMessage());
 		}
-		return vo;
+		return passwd;
 
 	}
 

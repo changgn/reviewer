@@ -1,42 +1,54 @@
 <%@ page contentType="text/html; charset=euc-kr" %>
 <%@ page trimDirectiveWhitespaces="true" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
 <title>아이디 찾기</title>
 <script>
-$(document).ready(function(){
-
- 	$("#divphone_num").click(function(){
-		$("#divphone_num").hide();
-		$("#phone_num").show();
-		$("#phone_num").focus();
+$(function(){
+	$("#submit_find_id").click(function(){
+		if($("#phone_num").val()=="") {
+			alert("핸드폰 번호를 입력해 주세요");
+			$("#phone_num").focus();
+		} else {
+			$(location).attr("href","/Reviwer/idpwSearch/idSearch.do");
+		}
 	});
-	 
-	$("#divid").click(function(){
-		$("#divid").hide();
-		$("#id").show();
-		$("#id").focus();
-	});
-	
-	$("#divphone_num2").click(function(){
-		$("#divphone_num2").hide();
-		$("#phone_num2").show();
-		$("#phone_num2").focus();
-	});
-		
-	$("#divemail").click(function(){
-		$("#divemail").hide();
-		$("#email").show();
-		$("#email").focus();
+	$("#submit_find_pwd").click(function(){
+		if($("#id").val()=="" || $("#phone_num2").val()=="" || $("#email").val()=="") {
+			if($("#id").val()=="") {
+				alert("아이디를 입력해 주세요");
+				$("#id").focus();
+			} else{
+				if($("#phone_num2").val()=="") {
+					alert("핸드폰 번호를 입력해 주세요");
+					$("#phone_num2").focus();
+				} else {
+					alert("이메일을 입력해 주세요");
+					$("#email").focus();
+				}
+			}
+		} else {
+			$(location).attr("href","/Reviwer/idpwSearch/pwSearch.do");
+		}
 	});
 });
 </script>
 </head>
 <body>
+
+<c:if test="${message!=null}">
+	<c:if test="${message=='errorPhoneNum'}">
+		<script>alert("일치하는 핸드폰 번호가 없습니다"); $("#phone_num").focus();</script>
+	</c:if>
+	<c:if test="${message=='incorrect'}">
+		<script>alert("일치하는 정보가 없습니다"); $("#id").focus();</script>
+	</c:if>
+</c:if>
 <div id="find">
 	<form action="idSearch.do" method="post" name="idSearch" id="idSearch" >
 	<div id="find_id">
-		<div class="find_title"><h1>아이디 찾기</h1></div>
+		<div class="size_long"><h1 class="title_find">아이디 찾기</h1></div>
 		<div class="size_long" id="text_phone_num"><input type="text" class="text_find" id="phone_num" name="phone_num" placeholder="핸드폰 번호(01012345678)"></div>
 		<div id="submit_find_id" class="btn_long"><a href="#">아 이 디 확 인</a></div>
 	</div>
@@ -44,7 +56,7 @@ $(document).ready(function(){
 	<br><br>
 	<form action="pwSearch.do" method="post" name="pwSearch" id="pwSearch">
 	<div id="find_pwd">
-		<div class="find_title"><h1>비밀번호 찾기</h1></div>
+		<div class="size_long"><h1 class="title_find">비밀번호 찾기</h1></div>
 		<div class="size_long" id="divid"><input type="text" class="text_find" id="id" name="id" placeholder="아이디"></div>
 		<div class="size_long" id="divphone_num2"><input type="text" class="text_find" id="phone_num2" name="phone_num2" placeholder="핸드폰 번호(01012345678)"></div>
 		<div class="size_long" id="divemail"><input type="text" class="text_find" id="email" name="email" placeholder="이메일"></div>

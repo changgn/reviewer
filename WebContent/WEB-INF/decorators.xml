@@ -6,9 +6,10 @@
 		<pattern>/categorySet/*</pattern>
 		<pattern>/search/*</pattern>
 	</decorator>
-	<decorator name="main" page="/decorator/logon_decorator.jsp">
+	<decorator name="logon" page="/decorator/logon_decorator.jsp">
+		<pattern>/logon/loginForm.do</pattern>
 		<pattern>/logon/loginForm.jsp</pattern>
-		<pattern>/idpwSearch/idpwSearchNew.jsp</pattern>
+		<pattern>/idpwSearch/*</pattern>
 	</decorator>
 	<excludes>
 		<pattern>/administrator/*</pattern>

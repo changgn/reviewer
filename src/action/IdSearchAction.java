@@ -12,14 +12,16 @@ public class IdSearchAction implements CommandAction {
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) throws Throwable {
 		// TODO Auto-generated method stub
 	
-		
 		MemberDao memberDao= new MemberDao();
-		
+		String message = null;
 		String phone_num = (String)request.getParameter("phone_num");
 		
-		 MembersVo id = memberDao.idSearch(phone_num);
-	
-		 request.setAttribute("id", id.getId());
+		MembersVo id = memberDao.idSearch(phone_num);
+		if(id==null) {
+			message = "errorPhoneNum";
+		}
+		request.setAttribute("message", message);
+		request.setAttribute("id", id.getId());
 		
 		return "/idpwSearch/idSearch.jsp";
 	}

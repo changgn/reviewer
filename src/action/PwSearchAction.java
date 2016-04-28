@@ -26,13 +26,16 @@ public class PwSearchAction implements CommandAction {
 		
 		MembersVo passwdVo = memberDao.pwSearch(vo);
 		
-		String passwd= passwdVo.getPasswd();
+		String passwd = null;
+		String message = null;
+		if(passwdVo!=null){
+			passwd = passwdVo.getPasswd();
+		} else {
+			message = "incorrect";
+		}
 		
 		request.setAttribute("passwd", passwd);
-		
-		request.setAttribute("id", id);
-		request.setAttribute("phone_num", phone_num);
-		request.setAttribute("email", email);
+		request.setAttribute("message", message);
 		
 		return "/idpwSearch/pwSerach.jsp";
 	}

@@ -23,8 +23,8 @@
 	<select id="getMF" parameterType="java.lang.String" resultType="vo.MembersVo">
 		select name birth gender email phone_num from members where id=#{id}
 	</select>
-	<select id="loginPro" parameterType="java.util.HashMap" resultType="vo.MembersVo">
-		select * from members where id=#{id} and passwd=#{passwd}
+	<select id="loginPro" parameterType="java.lang.String" resultType="java.lang.String">
+		select passwd from members where id=#{id}
 	</select>
   <select id="idSearch" parameterType="String" resultType="vo.MembersVo">
   select id from members where phone_num=#{phone_num}

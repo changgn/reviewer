@@ -7,7 +7,7 @@
 <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
 <script>
 $(function(){
-	$("#login_submit").click(function(){
+	$("#btn_login_submit").click(function(){
 		if($("#id").val()=="" || $("#passwd").val()=="") {
 			if($("#id").val()=="") {
 				alert("아이디를 입력해 주세요");
@@ -17,13 +17,13 @@ $(function(){
 				$("#passwd").focus();
 			}
 		} else {
-			$(location).attr("href","/Reviwer/logon/loginPro.do");
+			$("#loginForm").submit();
 		}
 	});
-	$("#join").click(function(){
+	$("#btn_join").click(function(){
 		$(location).attr("href","/Reviwer/logon/inputForm.do");
 	});
-	$("#find").click(function(){
+	$("#btn_find").click(function(){
 		$(location).attr("href","/Reviwer/idpwSearch/idpwSearchNew.do");
 	});
 });
@@ -35,8 +35,11 @@ $(function(){
 <title>로그인</title>
 </head>
 <body>
+<c:if test="${message!=null}">
+	<script>alert("아이디 또는 패스워드가 일치하지 않습니다");</script>
+</c:if>
 <div id="logon">
-	<form method="post" action="loginPro.do" name="loginFrom" id="loginForm">
+	<form method="post" action="/Reviwer/logon/loginPro.do" name="loginFrom" id="loginForm">
 		<div id="loginForm">
 			<div id="login_logo"><img src="../image/reviwer_gray.png" ></div>
 			<div id="div_id" class="size_long"><input type="text" class="text_login" id="id" name="id" placeholder="아이디" ></div>
@@ -45,8 +48,8 @@ $(function(){
 		</div>
 	</form>
 	<div id="join_find">
-		<div id="join" class="btn_long"><a href="#" >회 원 가 입</a></div>
-		<div id="find" class="btn_long"><a href="#" >아이디/비밀번호 찾기</a></div>
+		<div id="btn_join" class="btn_long"><a href="#" >회 원 가 입</a></div>
+		<div id="btn_find" class="btn_long"><a href="#" >아이디/비밀번호 찾기</a></div>
 	</div>
 </div>
 </body>
