@@ -7,24 +7,12 @@
 <title>검색</title>
 <script src="../script/categoryMenu.js"></script>
 <script>
-$(function(){
-	$("#search_content").click(function(){
-		if($(this).val() == "검색할 내용을 입력해 주세요") {
-			$(this).val("");
-		} 
-	});	
-	$('#search_content').blur(function() {
-		if($(this).val() == ""){
-			$(this).val("검색할 내용을 입력해 주세요");
-		}
-	});
-});
 </script>
 </head>
 <body>
 <div id="search">
 	<div id="search_area">
-		<input id="search_content" type="text" value="검색할 내용을 입력해 주세요" />
+		<input id="search_content" type="text" placeholder="검색할 내용을 입력해 주세요" />
 		<div id="btn_content_search" class="btn_short"><a href="#">검&nbsp;&nbsp;&nbsp;색</a></div>
 	</div>
 	<div class="category_add">

@@ -1,6 +1,5 @@
 package action.main;
 
-import java.sql.Timestamp;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -22,6 +21,7 @@ public class MainFormAction implements CommandAction {
 			String login_status =  (String)request.getSession().getAttribute("login_status");	//로그인 세션
 			if(login_status==null){
 				login_status = "2";	// 로그인 안된 상태
+				request.getSession().setAttribute("login_status", login_status);
 			}
 			if(login_status=="2"){
 				

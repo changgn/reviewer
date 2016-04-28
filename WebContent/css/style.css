@@ -34,7 +34,7 @@ img { border: 0; }
 
 /* main_decorator */
 #logo { height: 80px; }
-#logo_btn {overflow: hidden;position: absolute;top: 20px;left: 20px; width: 202px; height: 36px; line-height: 999px;
+#logo_btn {overflow: hidden; position: absolute; top: 23px; left: 20px; width: 235px; height: 30px; line-height: 999px;
     background-image: url(../image/reviwer.png); }
 #main_btn { position: absolute; top: 0; right: 21px; height: 50px; padding: 11px 9px 0 9px; line-height: 47px; }
 .btn_gnb { display: inline-block; height: 39px; padding: 11px 9px 0 9px; vertical-align: top; }
@@ -59,10 +59,20 @@ img { border: 0; }
 #list_policy li { padding: 0 25px 0 25px; float: left; }
 #list_policy .list_link { font-size: 14pt; color: white; }
 
+/* log_on */
+#logon { min-height: 600px; }
+#login_logo { width : 500px; height: 50px; margin: 0 auto; margin-top: 150; margin-bottom: 40; }
+#login_logo img{ width: 300px; height: 100%; }
+.text_login { width: 100%; height: 100%; font-size: 20px; }
+
+/* idpwSearchNew */
+#find { min-height: 600px; }
+.text_find { width: 100%; height: 100%; font-size: 20px; }
+
+
 /* mainForm */
 .maincontent{ width: 100%; height: 100%; }
 #maintable{ border-spacing: 15px; }
-
 
 /* category_setForm */
 .category_all { heigh: auto; }

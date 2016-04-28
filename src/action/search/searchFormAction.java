@@ -17,9 +17,17 @@ public class searchFormAction implements CommandAction {
 		// TODO Auto-generated method stub
 		request.setCharacterEncoding("UTF-8");
 		
+		String login_status =  (String)request.getSession().getAttribute("login_status");	// 로그인 상태값 가져오기
+		if(login_status==null){	
+			// 로그인 상태값이 없으면 비로그인 상태값 저장
+			login_status = "2";
+			request.getSession().setAttribute("login_status", login_status);
+		}
+		
 		BoardDao boardDao = BoardDao.getInstance();
 		List<BoardVo> boardList = null;
 		int firstCheck = 0;
+		
 		// 검색할 카테고리 갯수 가져오기
 		String addcount = request.getParameter("addcount");
 		if(addcount == null) {addcount = "0";}

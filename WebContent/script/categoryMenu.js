@@ -1667,7 +1667,7 @@ $(function(){
 	
 	// 검색버튼을 눌렀을 때 지워줄 카테고리 정보를 가진 input 태그 추가 후 해당 폼 전송
 	$("#btn_content_search").click(function(){
-		if($("#search_content").val()=="검색할 내용을 입력해 주세요")
+		if($("#search_content").val()=="")
 		{
 			alert("검색할 내용을 입력해 주세요");
 		} else {
@@ -1680,7 +1680,7 @@ $(function(){
 	});
     $("#search_content").keyup(function(e){
         if(e.keyCode == 13){
-    		if($("#search_content").val()=="검색할 내용을 입력해 주세요")
+    		if($("#search_content").val()=="")
     		{
     			alert("검색할 내용을 입력해 주세요.");
     		} else {

@@ -26,10 +26,15 @@ public class LoginProAction implements CommandAction{
 		vo =memberDao.loginPro(hashMap);
 		
 		if(vo == null){
-			String message="아이디와 비밀 번호가 일치 하지 않습니다.";
+			String message="아이디와 비밀 번호가 일치 하지 않습니다";
 			request.setAttribute("message", message);
 		}else{
-			request.getSession().setAttribute("login",id );
+			request.getSession().setAttribute("id",id);
+			if(id.equals("admin")){	// 관리자 계정인지 확인
+				request.getSession().setAttribute("login_status", "0");
+			} else {
+				request.getSession().setAttribute("login_status", "1");
+			}
 		}
 		
 		return "/logon/loginPro.jsp";

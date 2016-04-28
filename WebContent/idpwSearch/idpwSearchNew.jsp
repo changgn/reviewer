@@ -1,18 +1,8 @@
-<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ page contentType="text/html; charset=euc-kr" %>
+<%@ page trimDirectiveWhitespaces="true" %>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>ì•„ì´ë”” ì°¾ê¸°(ìƒˆì°½)</title>
-<style>
- #phone_num {display:none;} 
-#id {display:none;}
-#phone_num2 {display:none;}
-#email {display:none;}
-</style>
-
-<script src=" https://code.jquery.com/jquery-2.2.3.min.js"></script>
-
+<title>¾ÆÀÌµğ Ã£±â</title>
 <script>
 $(document).ready(function(){
 
@@ -43,57 +33,24 @@ $(document).ready(function(){
 </script>
 </head>
 <body>
-<form action="idSearch.do" method="post" name="idSearch" id="idSearch" >
-<table border="1">
-	<tr>
-		<td>
-		ì•„ì´ë”” ì°¾ê¸°
-		</td>
-	</tr>
-	<tr>
-		<td>
-			 <div id="divphone_num" >í•¸ë“œí° ë²ˆí˜¸</div>
-			<input type="text" id="phone_num" name="phone_num" placeholder="í•¸ë“œí° ë²ˆí˜¸">
-		</td>
-	</tr>
-	<tr>
-		<td>
-			<input type="submit" value="ì•„ì´ë””í™•ì¸" >
-		</td>
-	</tr>
-</table>
-</form>
-<br><br>
-<form action="pwSearch.do" method="post" name="pwSearch" id="pwSearch">
-<table>
-	<tr>
-		<td>ë¹„ë°€ë²ˆí˜¸ ì°¾ê¸°
-		</td>
-	</tr>
-	<tr>
-		<td>
-			<div id="divid">ì•„ì´ë””</div>
-			<input type="text" id="id" name="id" placeholder="ì•„ì´ë””">
-		</td>
-	</tr>
-	<tr>
-		<td>
-			<div id="divphone_num2">í•¸ë“œí° ë²ˆí˜¸</div>
-			<input type="text" id="phone_num2" name="phone_num2" placeholder="í•¸ë“œí° ë²ˆí˜¸">
-		</td>
-	</tr>
-	<tr>
-		<td>
-			<div id="divemail">ì´ë©”ì¼</div>
-			<input type="text" id="email" name="email" placeholder="ì´ë©”ì¼">
-		</td>
-	</tr>
-	<tr>
-		<td>
-			<input type="submit" value="ë¹„ë°€ë²ˆí˜¸ í™•ì¸" >
-		</td>
-	</tr>			
-</table>
-</form>
+<div id="find">
+	<form action="idSearch.do" method="post" name="idSearch" id="idSearch" >
+	<div id="find_id">
+		<div class="find_title"><h1>¾ÆÀÌµğ Ã£±â</h1></div>
+		<div class="size_long" id="text_phone_num"><input type="text" class="text_find" id="phone_num" name="phone_num" placeholder="ÇÚµåÆù ¹øÈ£(01012345678)"></div>
+		<div id="submit_find_id" class="btn_long"><a href="#">¾Æ ÀÌ µğ È® ÀÎ</a></div>
+	</div>
+	</form>
+	<br><br>
+	<form action="pwSearch.do" method="post" name="pwSearch" id="pwSearch">
+	<div id="find_pwd">
+		<div class="find_title"><h1>ºñ¹Ğ¹øÈ£ Ã£±â</h1></div>
+		<div class="size_long" id="divid"><input type="text" class="text_find" id="id" name="id" placeholder="¾ÆÀÌµğ"></div>
+		<div class="size_long" id="divphone_num2"><input type="text" class="text_find" id="phone_num2" name="phone_num2" placeholder="ÇÚµåÆù ¹øÈ£(01012345678)"></div>
+		<div class="size_long" id="divemail"><input type="text" class="text_find" id="email" name="email" placeholder="ÀÌ¸ŞÀÏ"></div>
+		<div id="submit_find_pwd" class="btn_long"><a href="#">ºñ ¹Ğ ¹ø È£ È® ÀÎ</a></div>
+	</div>
+	</form>
+</div>
 </body>
 </html>
