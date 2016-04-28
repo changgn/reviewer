@@ -5,18 +5,16 @@ public class PhotoVo {
 	private String fileName;
 	private int content_num;
 	private String realPath;
-	private String fileSize;
 
 	public PhotoVo(){
 		
 	}
 	
-	public PhotoVo(String fileName, int content_num, String realPath, String fileSize){
+	public PhotoVo(String fileName, int content_num, String realPath) {
 		super();
 		this.fileName = fileName;
 		this.content_num = content_num;
 		this.realPath = realPath;
-		this.fileSize = fileSize;
 		
 		
 	}
@@ -45,12 +43,5 @@ public class PhotoVo {
 		this.realPath = realPath;
 	}
 
-	public String getFileSize() {
-		return fileSize;
-	}
-
-	public void setFileSize(String fileSize) {
-		this.fileSize = fileSize;
-	}
 	
 }

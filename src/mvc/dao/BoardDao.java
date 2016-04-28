@@ -44,6 +44,28 @@ public class BoardDao {
 		}
 		return list;
 	}
-	
+	public int insert(BoardVo vo) {
+		String res = "mybatis/config.xml";
+		int n = 0;
+		try {
+		  	InputStream is = Resources.getResourceAsStream(res);
+			
+			SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(is);
+			SqlSession session = factory.openSession();
+			
+			n = session.insert("board.add", vo);
+			
+			if(n>0) {
+				session.commit();
+			} else {
+				session.rollback();
+			}
+			
+			session.close();
+		} catch (IOException ie) {
+			System.out.println(ie.getMessage());
+		}
+		return n;
+	}
 	
 }

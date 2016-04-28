@@ -298,7 +298,7 @@ $(function(){
 			$("[class='selected']").removeAttr("class");
 			$(".category_added div").remove();
 			$(".category_added").append("<div id='add_111' class='added_category size_long'><h1 class='text_sub'>가전, 컴퓨터, 모니터</h1></div>");
-			$("#writeBoard input").remove();
+			$("[name='addCategory']").remove();
 			addtag = "<input type='hidden' name='addCategory' value='111'>"
 			$("#writeBoard").append(addtag);
 		}
@@ -311,7 +311,7 @@ $(function(){
 			$("[class='selected']").removeAttr("class");
 			$(".category_added div").remove();
 			$(".category_added").append("<div id='add_112' class='added_category size_long'><h1 class='text_sub'>가전, 컴퓨터, 노트북</h1></div>");
-			$("#writeBoard input").remove();
+			$("[name='addCategory']").remove();
 			addtag = "<input type='hidden' name='addCategory' value='112'>"
 			$("#writeBoard").append(addtag);
 		}
@@ -324,7 +324,7 @@ $(function(){
 			$("[class='selected']").removeAttr("class");
 			$(".category_added div").remove();
 			$(".category_added").append("<div id='add_113' class='added_category size_long'><h1 class='text_sub'>가전, 컴퓨터, 본체</h1></div>");
-			$("#writeBoard input").remove();
+			$("[name='addCategory']").remove();
 			addtag = "<input type='hidden' name='addCategory' value='113'>"
 			$("#writeBoard").append(addtag);
 		}
@@ -337,7 +337,7 @@ $(function(){
 			$("[class='selected']").removeAttr("class");
 			$(".category_added div").remove();
 			$(".category_added").append("<div id='add_114' class='added_category size_long'><h1 class='text_sub'>가전, 컴퓨터, 주변기기</h1></div>");
-			$("#writeBoard input").remove();
+			$("[name='addCategory']").remove();
 			addtag = "<input type='hidden' name='addCategory' value='114'>"
 			$("#writeBoard").append(addtag);
 		}
@@ -350,7 +350,7 @@ $(function(){
 			$("[class='selected']").removeAttr("class");
 			$(".category_added div").remove();
 			$(".category_added").append("<div id='add_115' class='added_category size_long'><h1 class='text_sub'>가전, 컴퓨터, 기타부품</h1></div>");
-			$("#writeBoard input").remove();
+			$("[name='addCategory']").remove();
 			addtag = "<input type='hidden' name='addCategory' value='115'>"
 			$("#writeBoard").append(addtag);
 		}
@@ -363,7 +363,7 @@ $(function(){
 			$("[class='selected']").removeAttr("class");
 			$(".category_added div").remove();
 			$(".category_added").append("<div id='add_121' class='added_category size_long'><h1 class='text_sub'>가전, 주방가전, 냉장고</h1></div>");
-			$("#writeBoard input").remove();
+			$("[name='addCategory']").remove();
 			addtag = "<input type='hidden' name='addCategory' value='121'>"
 			$("#writeBoard").append(addtag);
 		}
@@ -376,7 +376,7 @@ $(function(){
 			$("[class='selected']").removeAttr("class");
 			$(".category_added div").remove();
 			$(".category_added").append("<div id='add_122' class='added_category size_long'><h1 class='text_sub'>가전, 주방가전, 김치냉장고</h1></div>");
-			$("#writeBoard input").remove();
+			$("[name='addCategory']").remove();
 			addtag = "<input type='hidden' name='addCategory' value='122'>"
 			$("#writeBoard").append(addtag);
 		}
@@ -389,7 +389,7 @@ $(function(){
 			$("[class='selected']").removeAttr("class");
 			$(".category_added div").remove();
 			$(".category_added").append("<div id='add_123' class='added_category size_long'><h1 class='text_sub'>가전, 주방가전, 정수기</h1></div>");
-			$("#writeBoard input").remove();
+			$("[name='addCategory']").remove();
 			addtag = "<input type='hidden' name='addCategory' value='123'>"
 			$("#writeBoard").append(addtag);
 		}
@@ -402,7 +402,7 @@ $(function(){
 			$("[class='selected']").removeAttr("class");
 			$(".category_added div").remove();
 			$(".category_added").append("<div id='add_124' class='added_category size_long'><h1 class='text_sub'>가전, 주방가전, 전기밥솥</h1></div>");
-			$("#writeBoard input").remove();
+			$("[name='addCategory']").remove();
 			addtag = "<input type='hidden' name='addCategory' value='124'>"
 			$("#writeBoard").append(addtag);
 		}
@@ -415,7 +415,7 @@ $(function(){
 			$("[class='selected']").removeAttr("class");
 			$(".category_added div").remove();
 			$(".category_added").append("<div id='add_125' class='added_category size_long'><h1 class='text_sub'>가전, 주방가전, 전자레인지</h1></div>");
-			$("#writeBoard input").remove();
+			$("[name='addCategory']").remove();
 			addtag = "<input type='hidden' name='addCategory' value='125'>"
 			$("#writeBoard").append(addtag);
 		}
@@ -428,7 +428,7 @@ $(function(){
 			$("[class='selected']").removeAttr("class");
 			$(".category_added div").remove();
 			$(".category_added").append("<div id='add_131' class='added_category size_long'><h1 class='text_sub'>가전, 생활가전, TV</h1></div>");
-			$("#writeBoard input").remove();
+			$("[name='addCategory']").remove();
 			addtag = "<input type='hidden' name='addCategory' value='131'>"
 			$("#writeBoard").append(addtag);
 		}
@@ -441,7 +441,7 @@ $(function(){
 			$("[class='selected']").removeAttr("class");
 			$(".category_added div").remove();
 			$(".category_added").append("<div id='add_132' class='added_category size_long'><h1 class='text_sub'>가전, 생활가전, 세탁기</h1></div>");
-			$("#writeBoard input").remove();
+			$("[name='addCategory']").remove();
 			addtag = "<input type='hidden' name='addCategory' value='132'>"
 			$("#writeBoard").append(addtag);
 		}
@@ -454,7 +454,7 @@ $(function(){
 			$("[class='selected']").removeAttr("class");
 			$(".category_added div").remove();
 			$(".category_added").append("<div id='add_133' class='added_category size_long'><h1 class='text_sub'>가전, 생활가전, 청소기</h1></div>");
-			$("#writeBoard input").remove();
+			$("[name='addCategory']").remove();
 			addtag = "<input type='hidden' name='addCategory' value='133'>"
 			$("#writeBoard").append(addtag);
 		}
@@ -467,7 +467,7 @@ $(function(){
 			$("[class='selected']").removeAttr("class");
 			$(".category_added div").remove();
 			$(".category_added").append("<div id='add_134' class='added_category size_long'><h1 class='text_sub'>가전, 생활가전, 카메라</h1></div>");
-			$("#writeBoard input").remove();
+			$("[name='addCategory']").remove();
 			addtag = "<input type='hidden' name='addCategory' value='134'>"
 			$("#writeBoard").append(addtag);
 		}
@@ -480,7 +480,7 @@ $(function(){
 			$("[class='selected']").removeAttr("class");
 			$(".category_added div").remove();
 			$(".category_added").append("<div id='add_135' class='added_category size_long'><h1 class='text_sub'>가전, 생활가전, 기타가전</h1></div>");
-			$("#writeBoard input").remove();
+			$("[name='addCategory']").remove();
 			addtag = "<input type='hidden' name='addCategory' value='135'>"
 			$("#writeBoard").append(addtag);
 		}
@@ -493,7 +493,7 @@ $(function(){
 			$("[class='selected']").removeAttr("class");
 			$(".category_added div").remove();
 			$(".category_added").append("<div id='add_141' class='added_category size_long'><h1 class='text_sub'>가전, 계절가전, 에어컨</h1></div>");
-			$("#writeBoard input").remove();
+			$("[name='addCategory']").remove();
 			addtag = "<input type='hidden' name='addCategory' value='141'>"
 			$("#writeBoard").append(addtag);
 		}
@@ -506,7 +506,7 @@ $(function(){
 			$("[class='selected']").removeAttr("class");
 			$(".category_added div").remove();
 			$(".category_added").append("<div id='add_142' class='added_category size_long'><h1 class='text_sub'>가전, 계절가전, 선풍기</h1></div>");
-			$("#writeBoard input").remove();
+			$("[name='addCategory']").remove();
 			addtag = "<input type='hidden' name='addCategory' value='142'>"
 			$("#writeBoard").append(addtag);
 		}
@@ -519,7 +519,7 @@ $(function(){
 			$("[class='selected']").removeAttr("class");
 			$(".category_added div").remove();
 			$(".category_added").append("<div id='add_143' class='added_category size_long'><h1 class='text_sub'>가전, 계절가전, 공기청정기</h1></div>");
-			$("#writeBoard input").remove();
+			$("[name='addCategory']").remove();
 			addtag = "<input type='hidden' name='addCategory' value='143'>"
 			$("#writeBoard").append(addtag);
 		}
@@ -532,7 +532,7 @@ $(function(){
 			$("[class='selected']").removeAttr("class");
 			$(".category_added div").remove();
 			$(".category_added").append("<div id='add_144' class='added_category size_long'><h1 class='text_sub'>가전, 계절가전, 가습기</h1></div>");
-			$("#writeBoard input").remove();
+			$("[name='addCategory']").remove();
 			addtag = "<input type='hidden' name='addCategory' value='144'>"
 			$("#writeBoard").append(addtag);
 		}
@@ -545,7 +545,7 @@ $(function(){
 			$("[class='selected']").removeAttr("class");
 			$(".category_added div").remove();
 			$(".category_added").append("<div id='add_145' class='added_category size_long'><h1 class='text_sub'>가전, 계절가전, 난방기</h1></div>");
-			$("#writeBoard input").remove();
+			$("[name='addCategory']").remove();
 			addtag = "<input type='hidden' name='addCategory' value='145'>"
 			$("#writeBoard").append(addtag);
 		}
@@ -558,7 +558,7 @@ $(function(){
 			$("[class='selected']").removeAttr("class");
 			$(".category_added div").remove();
 			$(".category_added").append("<div id='add_151' class='added_category size_long'><h1 class='text_sub'>가전, 모바일, 휴대폰</h1></div>");
-			$("#writeBoard input").remove();
+			$("[name='addCategory']").remove();
 			addtag = "<input type='hidden' name='addCategory' value='151'>"
 			$("#writeBoard").append(addtag);
 		}
@@ -571,7 +571,7 @@ $(function(){
 			$("[class='selected']").removeAttr("class");
 			$(".category_added div").remove();
 			$(".category_added").append("<div id='add_152' class='added_category size_long'><h1 class='text_sub'>가전, 모바일, 태블릿</h1></div>");
-			$("#writeBoard input").remove();
+			$("[name='addCategory']").remove();
 			addtag = "<input type='hidden' name='addCategory' value='152'>"
 			$("#writeBoard").append(addtag);
 		}
@@ -584,7 +584,7 @@ $(function(){
 			$("[class='selected']").removeAttr("class");
 			$(".category_added div").remove();
 			$(".category_added").append("<div id='add_153' class='added_category size_long'><h1 class='text_sub'>가전, 모바일, 악세사리</h1></div>");
-			$("#writeBoard input").remove();
+			$("[name='addCategory']").remove();
 			addtag = "<input type='hidden' name='addCategory' value='153'>"
 			$("#writeBoard").append(addtag);
 		}
@@ -597,7 +597,7 @@ $(function(){
 			$("[class='selected']").removeAttr("class");
 			$(".category_added div").remove();
 			$(".category_added").append("<div id='add_154' class='added_category size_long'><h1 class='text_sub'>가전, 모바일, 스마트워치</h1></div>");
-			$("#writeBoard input").remove();
+			$("[name='addCategory']").remove();
 			addtag = "<input type='hidden' name='addCategory' value='154'>"
 			$("#writeBoard").append(addtag);
 		}
@@ -610,7 +610,7 @@ $(function(){
 			$("[class='selected']").removeAttr("class");
 			$(".category_added div").remove();
 			$(".category_added").append("<div id='add_155' class='added_category size_long'><h1 class='text_sub'>가전, 모바일, 기타가전</h1></div>");
-			$("#writeBoard input").remove();
+			$("[name='addCategory']").remove();
 			addtag = "<input type='hidden' name='addCategory' value='155'>"
 			$("#writeBoard").append(addtag);
 		}
@@ -623,7 +623,7 @@ $(function(){
 			$("[class='selected']").removeAttr("class");
 			$(".category_added div").remove();
 			$(".category_added").append("<div id='add_211' class='added_category size_long'><h1 class='text_sub'>가구, 침대, 침대</h1></div>");
-			$("#writeBoard input").remove();
+			$("[name='addCategory']").remove();
 			addtag = "<input type='hidden' name='addCategory' value='211'>"
 			$("#writeBoard").append(addtag);
 		}
@@ -636,7 +636,7 @@ $(function(){
 			$("[class='selected']").removeAttr("class");
 			$(".category_added div").remove();
 			$(".category_added").append("<div id='add_212' class='added_category size_long'><h1 class='text_sub'>가구, 침대, 매트리스</h1></div>");
-			$("#writeBoard input").remove();
+			$("[name='addCategory']").remove();
 			addtag = "<input type='hidden' name='addCategory' value='212'>"
 			$("#writeBoard").append(addtag);
 		}
@@ -649,7 +649,7 @@ $(function(){
 			$("[class='selected']").removeAttr("class");
 			$(".category_added div").remove();
 			$(".category_added").append("<div id='add_213' class='added_category size_long'><h1 class='text_sub'>가구, 침대, 화장대</h1></div>");
-			$("#writeBoard input").remove();
+			$("[name='addCategory']").remove();
 			addtag = "<input type='hidden' name='addCategory' value='213'>"
 			$("#writeBoard").append(addtag);
 		}
@@ -662,7 +662,7 @@ $(function(){
 			$("[class='selected']").removeAttr("class");
 			$(".category_added div").remove();
 			$(".category_added").append("<div id='add_214' class='added_category size_long'><h1 class='text_sub'>가구, 침대, 침대프레임</h1></div>");
-			$("#writeBoard input").remove();
+			$("[name='addCategory']").remove();
 			addtag = "<input type='hidden' name='addCategory' value='214'>"
 			$("#writeBoard").append(addtag);
 		}
@@ -675,7 +675,7 @@ $(function(){
 			$("[class='selected']").removeAttr("class");
 			$(".category_added div").remove();
 			$(".category_added").append("<div id='add_214' class='added_category size_long'><h1 class='text_sub'>가구, 침대, 침대프레임</h1></div>");
-			$("#writeBoard input").remove();
+			$("[name='addCategory']").remove();
 			addtag = "<input type='hidden' name='addCategory' value='214'>"
 			$("#writeBoard").append(addtag);
 		}
@@ -688,7 +688,7 @@ $(function(){
 			$("[class='selected']").removeAttr("class");
 			$(".category_added div").remove();
 			$(".category_added").append("<div id='add_215' class='added_category size_long'><h1 class='text_sub'>가구, 침대, 침구</h1></div>");
-			$("#writeBoard input").remove();
+			$("[name='addCategory']").remove();
 			addtag = "<input type='hidden' name='addCategory' value='215'>"
 			$("#writeBoard").append(addtag);
 		}
@@ -701,7 +701,7 @@ $(function(){
 			$("[class='selected']").removeAttr("class");
 			$(".category_added div").remove();
 			$(".category_added").append("<div id='add_221' class='added_category size_long'><h1 class='text_sub'>가구, 수납가구, 장롱</h1></div>");
-			$("#writeBoard input").remove();
+			$("[name='addCategory']").remove();
 			addtag = "<input type='hidden' name='addCategory' value='221'>"
 			$("#writeBoard").append(addtag);
 		}
@@ -714,7 +714,7 @@ $(function(){
 			$("[class='selected']").removeAttr("class");
 			$(".category_added div").remove();
 			$(".category_added").append("<div id='add_222' class='added_category size_long'><h1 class='text_sub'>가구, 수납가구, 행거</h1></div>");
-			$("#writeBoard input").remove();
+			$("[name='addCategory']").remove();
 			addtag = "<input type='hidden' name='addCategory' value='222'>"
 			$("#writeBoard").append(addtag);
 		}
@@ -727,7 +727,7 @@ $(function(){
 			$("[class='selected']").removeAttr("class");
 			$(".category_added div").remove();
 			$(".category_added").append("<div id='add_223' class='added_category size_long'><h1 class='text_sub'>가구, 수납가구, 수납장</h1></div>");
-			$("#writeBoard input").remove();
+			$("[name='addCategory']").remove();
 			addtag = "<input type='hidden' name='addCategory' value='223'>"
 			$("#writeBoard").append(addtag);
 		}
@@ -740,7 +740,7 @@ $(function(){
 			$("[class='selected']").removeAttr("class");
 			$(".category_added div").remove();
 			$(".category_added").append("<div id='add_224' class='added_category size_long'><h1 class='text_sub'>가구, 수납가구, 선반</h1></div>");
-			$("#writeBoard input").remove();
+			$("[name='addCategory']").remove();
 			addtag = "<input type='hidden' name='addCategory' value='224'>"
 			$("#writeBoard").append(addtag);
 		}
@@ -753,7 +753,7 @@ $(function(){
 			$("[class='selected']").removeAttr("class");
 			$(".category_added div").remove();
 			$(".category_added").append("<div id='add_225' class='added_category size_long'><h1 class='text_sub'>가구, 수납가구, 식탁</h1></div>");
-			$("#writeBoard input").remove();
+			$("[name='addCategory']").remove();
 			addtag = "<input type='hidden' name='addCategory' value='225'>"
 			$("#writeBoard").append(addtag);
 		}
@@ -766,7 +766,7 @@ $(function(){
 			$("[class='selected']").removeAttr("class");
 			$(".category_added div").remove();
 			$(".category_added").append("<div id='add_231' class='added_category size_long'><h1 class='text_sub'>가구, 사무가구, 책상</h1></div>");
-			$("#writeBoard input").remove();
+			$("[name='addCategory']").remove();
 			addtag = "<input type='hidden' name='addCategory' value='231'>"
 			$("#writeBoard").append(addtag);
 		}
@@ -779,7 +779,7 @@ $(function(){
 			$("[class='selected']").removeAttr("class");
 			$(".category_added div").remove();
 			$(".category_added").append("<div id='add_232' class='added_category size_long'><h1 class='text_sub'>가구, 사무가구, 의자</h1></div>");
-			$("#writeBoard input").remove();
+			$("[name='addCategory']").remove();
 			addtag = "<input type='hidden' name='addCategory' value='232'>"
 			$("#writeBoard").append(addtag);
 		}
@@ -792,7 +792,7 @@ $(function(){
 			$("[class='selected']").removeAttr("class");
 			$(".category_added div").remove();
 			$(".category_added").append("<div id='add_233' class='added_category size_long'><h1 class='text_sub'>가구, 사무가구, 책장</h1></div>");
-			$("#writeBoard input").remove();
+			$("[name='addCategory']").remove();
 			addtag = "<input type='hidden' name='addCategory' value='233'>"
 			$("#writeBoard").append(addtag);
 		}
@@ -805,7 +805,7 @@ $(function(){
 			$("[class='selected']").removeAttr("class");
 			$(".category_added div").remove();
 			$(".category_added").append("<div id='add_234' class='added_category size_long'><h1 class='text_sub'>가구, 사무가구, 책상소품</h1></div>");
-			$("#writeBoard input").remove();
+			$("[name='addCategory']").remove();
 			addtag = "<input type='hidden' name='addCategory' value='234'>"
 			$("#writeBoard").append(addtag);
 		}
@@ -818,7 +818,7 @@ $(function(){
 			$("[class='selected']").removeAttr("class");
 			$(".category_added div").remove();
 			$(".category_added").append("<div id='add_235' class='added_category size_long'><h1 class='text_sub'>가구, 사무가구, 기타가구</h1></div>");
-			$("#writeBoard input").remove();
+			$("[name='addCategory']").remove();
 			addtag = "<input type='hidden' name='addCategory' value='235'>"
 			$("#writeBoard").append(addtag);
 		}
@@ -831,7 +831,7 @@ $(function(){
 			$("[class='selected']").removeAttr("class");
 			$(".category_added div").remove();
 			$(".category_added").append("<div id='add_241' class='added_category size_long'><h1 class='text_sub'>가구, 거실가구, 소파</h1></div>");
-			$("#writeBoard input").remove();
+			$("[name='addCategory']").remove();
 			addtag = "<input type='hidden' name='addCategory' value='241'>"
 			$("#writeBoard").append(addtag);
 		}
@@ -844,7 +844,7 @@ $(function(){
 			$("[class='selected']").removeAttr("class");
 			$(".category_added div").remove();
 			$(".category_added").append("<div id='add_242' class='added_category size_long'><h1 class='text_sub'>가구, 거실가구, TV거실장</h1></div>");
-			$("#writeBoard input").remove();
+			$("[name='addCategory']").remove();
 			addtag = "<input type='hidden' name='addCategory' value='242'>"
 			$("#writeBoard").append(addtag);
 		}
@@ -857,7 +857,7 @@ $(function(){
 			$("[class='selected']").removeAttr("class");
 			$(".category_added div").remove();
 			$(".category_added").append("<div id='add_243' class='added_category size_long'><h1 class='text_sub'>가구, 거실가구, 거실테이블</h1></div>");
-			$("#writeBoard input").remove();
+			$("[name='addCategory']").remove();
 			addtag = "<input type='hidden' name='addCategory' value='243'>"
 			$("#writeBoard").append(addtag);
 		}
@@ -870,7 +870,7 @@ $(function(){
 			$("[class='selected']").removeAttr("class");
 			$(".category_added div").remove();
 			$(".category_added").append("<div id='add_244' class='added_category size_long'><h1 class='text_sub'>가구, 거실가구, 장식장</h1></div>");
-			$("#writeBoard input").remove();
+			$("[name='addCategory']").remove();
 			addtag = "<input type='hidden' name='addCategory' value='244'>"
 			$("#writeBoard").append(addtag);
 		}
@@ -883,7 +883,7 @@ $(function(){
 			$("[class='selected']").removeAttr("class");
 			$(".category_added div").remove();
 			$(".category_added").append("<div id='add_245' class='added_category size_long'><h1 class='text_sub'>가구, 거실가구, 커튼</h1></div>");
-			$("#writeBoard input").remove();
+			$("[name='addCategory']").remove();
 			addtag = "<input type='hidden' name='addCategory' value='245'>"
 			$("#writeBoard").append(addtag);
 		}
@@ -896,7 +896,7 @@ $(function(){
 			$("[class='selected']").removeAttr("class");
 			$(".category_added div").remove();
 			$(".category_added").append("<div id='add_246' class='added_category size_long'><h1 class='text_sub'>가구, 거실가구, 기타가구</h1></div>");
-			$("#writeBoard input").remove();
+			$("[name='addCategory']").remove();
 			addtag = "<input type='hidden' name='addCategory' value='246'>"
 			$("#writeBoard").append(addtag);
 		}
@@ -909,7 +909,7 @@ $(function(){
 			$("[class='selected']").removeAttr("class");
 			$(".category_added div").remove();
 			$(".category_added").append("<div id='add_311' class='added_category size_long'><h1 class='text_sub'>유아, 기저귀/분유/물티슈, 기저귀</h1></div>");
-			$("#writeBoard input").remove();
+			$("[name='addCategory']").remove();
 			addtag = "<input type='hidden' name='addCategory' value='311'>"
 			$("#writeBoard").append(addtag);
 		}
@@ -922,7 +922,7 @@ $(function(){
 			$("[class='selected']").removeAttr("class");
 			$(".category_added div").remove();
 			$(".category_added").append("<div id='add_312' class='added_category size_long'><h1 class='text_sub'>유아, 기저귀/분유/물티슈, 국내분유</h1></div>");
-			$("#writeBoard input").remove();
+			$("[name='addCategory']").remove();
 			addtag = "<input type='hidden' name='addCategory' value='312'>"
 			$("#writeBoard").append(addtag);
 		}
@@ -935,7 +935,7 @@ $(function(){
 			$("[class='selected']").removeAttr("class");
 			$(".category_added div").remove();
 			$(".category_added").append("<div id='add_313' class='added_category size_long'><h1 class='text_sub'>유아, 기저귀/분유/물티슈, 해외분유</h1></div>");
-			$("#writeBoard input").remove();
+			$("[name='addCategory']").remove();
 			addtag = "<input type='hidden' name='addCategory' value='313'>"
 			$("#writeBoard").append(addtag);
 		}
@@ -948,7 +948,7 @@ $(function(){
 			$("[class='selected']").removeAttr("class");
 			$(".category_added div").remove();
 			$(".category_added").append("<div id='add_314' class='added_category size_long'><h1 class='text_sub'>유아, 기저귀/분유/물티슈, 물티슈</h1></div>");
-			$("#writeBoard input").remove();
+			$("[name='addCategory']").remove();
 			addtag = "<input type='hidden' name='addCategory' value='314'>"
 			$("#writeBoard").append(addtag);
 		}
@@ -961,7 +961,7 @@ $(function(){
 			$("[class='selected']").removeAttr("class");
 			$(".category_added div").remove();
 			$(".category_added").append("<div id='add_315' class='added_category size_long'><h1 class='text_sub'>유아, 기저귀/분유/물티슈, 이유식</h1></div>");
-			$("#writeBoard input").remove();
+			$("[name='addCategory']").remove();
 			addtag = "<input type='hidden' name='addCategory' value='315'>"
 			$("#writeBoard").append(addtag);
 		}
@@ -974,7 +974,7 @@ $(function(){
 			$("[class='selected']").removeAttr("class");
 			$(".category_added div").remove();
 			$(".category_added").append("<div id='add_321' class='added_category size_long'><h1 class='text_sub'>유아, 목욕/위생/화장품, 샴푸/바디</h1></div>");
-			$("#writeBoard input").remove();
+			$("[name='addCategory']").remove();
 			addtag = "<input type='hidden' name='addCategory' value='321'>"
 			$("#writeBoard").append(addtag);
 		}
@@ -987,7 +987,7 @@ $(function(){
 			$("[class='selected']").removeAttr("class");
 			$(".category_added div").remove();
 			$(".category_added").append("<div id='add_322' class='added_category size_long'><h1 class='text_sub'>유아, 목욕/위생/화장품, 목욕용품</h1></div>");
-			$("#writeBoard input").remove();
+			$("[name='addCategory']").remove();
 			addtag = "<input type='hidden' name='addCategory' value='322'>"
 			$("#writeBoard").append(addtag);
 		}
@@ -1000,7 +1000,7 @@ $(function(){
 			$("[class='selected']").removeAttr("class");
 			$(".category_added div").remove();
 			$(".category_added").append("<div id='add_323' class='added_category size_long'><h1 class='text_sub'>유아, 목욕/위생/화장품, 유아화장품</h1></div>");
-			$("#writeBoard input").remove();
+			$("[name='addCategory']").remove();
 			addtag = "<input type='hidden' name='addCategory' value='323'>"
 			$("#writeBoard").append(addtag);
 		}
@@ -1013,7 +1013,7 @@ $(function(){
 			$("[class='selected']").removeAttr("class");
 			$(".category_added div").remove();
 			$(".category_added").append("<div id='add_324' class='added_category size_long'><h1 class='text_sub'>유아, 목욕/위생/화장품, 위생용품</h1></div>");
-			$("#writeBoard input").remove();
+			$("[name='addCategory']").remove();
 			addtag = "<input type='hidden' name='addCategory' value='324'>"
 			$("#writeBoard").append(addtag);
 		}
@@ -1026,7 +1026,7 @@ $(function(){
 			$("[class='selected']").removeAttr("class");
 			$(".category_added div").remove();
 			$(".category_added").append("<div id='add_325' class='added_category size_long'><h1 class='text_sub'>유아, 목욕/위생/화장품, 기타용품</h1></div>");
-			$("#writeBoard input").remove();
+			$("[name='addCategory']").remove();
 			addtag = "<input type='hidden' name='addCategory' value='325'>"
 			$("#writeBoard").append(addtag);
 		}
@@ -1039,7 +1039,7 @@ $(function(){
 			$("[class='selected']").removeAttr("class");
 			$(".category_added div").remove();
 			$(".category_added").append("<div id='add_331' class='added_category size_long'><h1 class='text_sub'>유아, 유모차/카시트, 유모차</h1></div>");
-			$("#writeBoard input").remove();
+			$("[name='addCategory']").remove();
 			addtag = "<input type='hidden' name='addCategory' value='331'>"
 			$("#writeBoard").append(addtag);
 		}
@@ -1052,7 +1052,7 @@ $(function(){
 			$("[class='selected']").removeAttr("class");
 			$(".category_added div").remove();
 			$(".category_added").append("<div id='add_332' class='added_category size_long'><h1 class='text_sub'>유아, 유모차/카시트, 카시트</h1></div>");
-			$("#writeBoard input").remove();
+			$("[name='addCategory']").remove();
 			addtag = "<input type='hidden' name='addCategory' value='332'>"
 			$("#writeBoard").append(addtag);
 		}
@@ -1065,7 +1065,7 @@ $(function(){
 			$("[class='selected']").removeAttr("class");
 			$(".category_added div").remove();
 			$(".category_added").append("<div id='add_333' class='added_category size_long'><h1 class='text_sub'>유아, 유모차/카시트, 아기띠</h1></div>");
-			$("#writeBoard input").remove();
+			$("[name='addCategory']").remove();
 			addtag = "<input type='hidden' name='addCategory' value='333'>"
 			$("#writeBoard").append(addtag);
 		}
@@ -1078,7 +1078,7 @@ $(function(){
 			$("[class='selected']").removeAttr("class");
 			$(".category_added div").remove();
 			$(".category_added").append("<div id='add_334' class='added_category size_long'><h1 class='text_sub'>유아, 유모차/카시트, 보행기</h1></div>");
-			$("#writeBoard input").remove();
+			$("[name='addCategory']").remove();
 			addtag = "<input type='hidden' name='addCategory' value='334'>"
 			$("#writeBoard").append(addtag);
 		}
@@ -1091,7 +1091,7 @@ $(function(){
 			$("[class='selected']").removeAttr("class");
 			$(".category_added div").remove();
 			$(".category_added").append("<div id='add_335' class='added_category size_long'><h1 class='text_sub'>유아, 유모차/카시트, 기타용품</h1></div>");
-			$("#writeBoard input").remove();
+			$("[name='addCategory']").remove();
 			addtag = "<input type='hidden' name='addCategory' value='335'>"
 			$("#writeBoard").append(addtag);
 		}
@@ -1104,7 +1104,7 @@ $(function(){
 			$("[class='selected']").removeAttr("class");
 			$(".category_added div").remove();
 			$(".category_added").append("<div id='add_341' class='added_category size_long'><h1 class='text_sub'>유아, 완구/도서, 레고</h1></div>");
-			$("#writeBoard input").remove();
+			$("[name='addCategory']").remove();
 			addtag = "<input type='hidden' name='addCategory' value='341'>"
 			$("#writeBoard").append(addtag);
 		}
@@ -1117,7 +1117,7 @@ $(function(){
 			$("[class='selected']").removeAttr("class");
 			$(".category_added div").remove();
 			$(".category_added").append("<div id='add_342' class='added_category size_long'><h1 class='text_sub'>유아, 완구/도서, 작동완구</h1></div>");
-			$("#writeBoard input").remove();
+			$("[name='addCategory']").remove();
 			addtag = "<input type='hidden' name='addCategory' value='342'>"
 			$("#writeBoard").append(addtag);
 		}
@@ -1130,7 +1130,7 @@ $(function(){
 			$("[class='selected']").removeAttr("class");
 			$(".category_added div").remove();
 			$(".category_added").append("<div id='add_343' class='added_category size_long'><h1 class='text_sub'>유아, 완구/도서, 교육/블럭완구</h1></div>");
-			$("#writeBoard input").remove();
+			$("[name='addCategory']").remove();
 			addtag = "<input type='hidden' name='addCategory' value='343'>"
 			$("#writeBoard").append(addtag);
 		}
@@ -1143,7 +1143,7 @@ $(function(){
 			$("[class='selected']").removeAttr("class");
 			$(".category_added div").remove();
 			$(".category_added").append("<div id='add_344' class='added_category size_long'><h1 class='text_sub'>유아, 완구/도서, 인형</h1></div>");
-			$("#writeBoard input").remove();
+			$("[name='addCategory']").remove();
 			addtag = "<input type='hidden' name='addCategory' value='344'>"
 			$("#writeBoard").append(addtag);
 		}
@@ -1156,7 +1156,7 @@ $(function(){
 			$("[class='selected']").removeAttr("class");
 			$(".category_added div").remove();
 			$(".category_added").append("<div id='add_345' class='added_category size_long'><h1 class='text_sub'>유아, 완구/도서, 기타완구</h1></div>");
-			$("#writeBoard input").remove();
+			$("[name='addCategory']").remove();
 			addtag = "<input type='hidden' name='addCategory' value='345'>"
 			$("#writeBoard").append(addtag);
 		}
@@ -1169,7 +1169,7 @@ $(function(){
 			$("[class='selected']").removeAttr("class");
 			$(".category_added div").remove();
 			$(".category_added").append("<div id='add_411' class='added_category size_long'><h1 class='text_sub'>생활, 주방용품, 냄비</h1></div>");
-			$("#writeBoard input").remove();
+			$("[name='addCategory']").remove();
 			addtag = "<input type='hidden' name='addCategory' value='411'>"
 			$("#writeBoard").append(addtag);
 		}
@@ -1182,7 +1182,7 @@ $(function(){
 			$("[class='selected']").removeAttr("class");
 			$(".category_added div").remove();
 			$(".category_added").append("<div id='add_412' class='added_category size_long'><h1 class='text_sub'>생활, 주방용품, 프라이팬</h1></div>");
-			$("#writeBoard input").remove();
+			$("[name='addCategory']").remove();
 			addtag = "<input type='hidden' name='addCategory' value='412'>"
 			$("#writeBoard").append(addtag);
 		}
@@ -1195,7 +1195,7 @@ $(function(){
 			$("[class='selected']").removeAttr("class");
 			$(".category_added div").remove();
 			$(".category_added").append("<div id='add_413' class='added_category size_long'><h1 class='text_sub'>생활, 주방용품, 식기</h1></div>");
-			$("#writeBoard input").remove();
+			$("[name='addCategory']").remove();
 			addtag = "<input type='hidden' name='addCategory' value='413'>"
 			$("#writeBoard").append(addtag);
 		}
@@ -1208,7 +1208,7 @@ $(function(){
 			$("[class='selected']").removeAttr("class");
 			$(".category_added div").remove();
 			$(".category_added").append("<div id='add_414' class='added_category size_long'><h1 class='text_sub'>생활, 주방용품, 용기</h1></div>");
-			$("#writeBoard input").remove();
+			$("[name='addCategory']").remove();
 			addtag = "<input type='hidden' name='addCategory' value='414'>"
 			$("#writeBoard").append(addtag);
 		}
@@ -1221,7 +1221,7 @@ $(function(){
 			$("[class='selected']").removeAttr("class");
 			$(".category_added div").remove();
 			$(".category_added").append("<div id='add_415' class='added_category size_long'><h1 class='text_sub'>생활, 주방용품, 기타</h1></div>");
-			$("#writeBoard input").remove();
+			$("[name='addCategory']").remove();
 			addtag = "<input type='hidden' name='addCategory' value='415'>"
 			$("#writeBoard").append(addtag);
 		}
@@ -1234,7 +1234,7 @@ $(function(){
 			$("[class='selected']").removeAttr("class");
 			$(".category_added div").remove();
 			$(".category_added").append("<div id='add_421' class='added_category size_long'><h1 class='text_sub'>생활, 세탁/청소용품, 세제</h1></div>");
-			$("#writeBoard input").remove();
+			$("[name='addCategory']").remove();
 			addtag = "<input type='hidden' name='addCategory' value='421'>"
 			$("#writeBoard").append(addtag);
 		}
@@ -1247,7 +1247,7 @@ $(function(){
 			$("[class='selected']").removeAttr("class");
 			$(".category_added div").remove();
 			$(".category_added").append("<div id='add_422' class='added_category size_long'><h1 class='text_sub'>생활, 세탁/청소용품, 섬유유연제</h1></div>");
-			$("#writeBoard input").remove();
+			$("[name='addCategory']").remove();
 			addtag = "<input type='hidden' name='addCategory' value='422'>"
 			$("#writeBoard").append(addtag);
 		}
@@ -1260,7 +1260,7 @@ $(function(){
 			$("[class='selected']").removeAttr("class");
 			$(".category_added div").remove();
 			$(".category_added").append("<div id='add_423' class='added_category size_long'><h1 class='text_sub'>생활, 세탁/청소용품, 주방세제</h1></div>");
-			$("#writeBoard input").remove();
+			$("[name='addCategory']").remove();
 			addtag = "<input type='hidden' name='addCategory' value='423'>"
 			$("#writeBoard").append(addtag);
 		}
@@ -1273,7 +1273,7 @@ $(function(){
 			$("[class='selected']").removeAttr("class");
 			$(".category_added div").remove();
 			$(".category_added").append("<div id='add_424' class='added_category size_long'><h1 class='text_sub'>생활, 세탁/청소용품, 청소용품</h1></div>");
-			$("#writeBoard input").remove();
+			$("[name='addCategory']").remove();
 			addtag = "<input type='hidden' name='addCategory' value='424'>"
 			$("#writeBoard").append(addtag);
 		}
@@ -1286,7 +1286,7 @@ $(function(){
 			$("[class='selected']").removeAttr("class");
 			$(".category_added div").remove();
 			$(".category_added").append("<div id='add_425' class='added_category size_long'><h1 class='text_sub'>생활, 세탁/청소용품, 기타</h1></div>");
-			$("#writeBoard input").remove();
+			$("[name='addCategory']").remove();
 			addtag = "<input type='hidden' name='addCategory' value='425'>"
 			$("#writeBoard").append(addtag);
 		}
@@ -1299,7 +1299,7 @@ $(function(){
 			$("[class='selected']").removeAttr("class");
 			$(".category_added div").remove();
 			$(".category_added").append("<div id='add_431' class='added_category size_long'><h1 class='text_sub'>생활, 욕실/위생용품, 욕실인테리어</h1></div>");
-			$("#writeBoard input").remove();
+			$("[name='addCategory']").remove();
 			addtag = "<input type='hidden' name='addCategory' value='431'>"
 			$("#writeBoard").append(addtag);
 		}
@@ -1312,7 +1312,7 @@ $(function(){
 			$("[class='selected']").removeAttr("class");
 			$(".category_added div").remove();
 			$(".category_added").append("<div id='add_432' class='added_category size_long'><h1 class='text_sub'>생활, 욕실/위생용품, 수건</h1></div>");
-			$("#writeBoard input").remove();
+			$("[name='addCategory']").remove();
 			addtag = "<input type='hidden' name='addCategory' value='432'>"
 			$("#writeBoard").append(addtag);
 		}
@@ -1325,7 +1325,7 @@ $(function(){
 			$("[class='selected']").removeAttr("class");
 			$(".category_added div").remove();
 			$(".category_added").append("<div id='add_433' class='added_category size_long'><h1 class='text_sub'>생활, 욕실/위생용품, 샤워기/욕조</h1></div>");
-			$("#writeBoard input").remove();
+			$("[name='addCategory']").remove();
 			addtag = "<input type='hidden' name='addCategory' value='433'>"
 			$("#writeBoard").append(addtag);
 		}
@@ -1338,7 +1338,7 @@ $(function(){
 			$("[class='selected']").removeAttr("class");
 			$(".category_added div").remove();
 			$(".category_added").append("<div id='add_434' class='added_category size_long'><h1 class='text_sub'>생활, 욕실/위생용품, 화장지</h1></div>");
-			$("#writeBoard input").remove();
+			$("[name='addCategory']").remove();
 			addtag = "<input type='hidden' name='addCategory' value='434'>"
 			$("#writeBoard").append(addtag);
 		}
@@ -1352,7 +1352,7 @@ $(function(){
 			$(".category_added div").remove();
 			$(".category_added div").remove();
 			$(".category_added").append("<div id='add_435' class='added_category size_long'><h1 class='text_sub'>생활, 욕실/위생용품, 기타</h1></div>");
-			$("#writeBoard input").remove();
+			$("[name='addCategory']").remove();
 			addtag = "<input type='hidden' name='addCategory' value='435'>"
 			$("#writeBoard").append(addtag);
 		}
@@ -1365,7 +1365,7 @@ $(function(){
 			$("[class='selected']").removeAttr("class");
 			$(".category_added div").remove();
 			$(".category_added").append("<div id='add_441' class='added_category size_long'><h1 class='text_sub'>생활, 애완용품, 애견사료</h1></div>");
-			$("#writeBoard input").remove();
+			$("[name='addCategory']").remove();
 			addtag = "<input type='hidden' name='addCategory' value='441'>"
 			$("#writeBoard").append(addtag);
 		}
@@ -1378,7 +1378,7 @@ $(function(){
 			$("[class='selected']").removeAttr("class");
 			$(".category_added div").remove();
 			$(".category_added").append("<div id='add_442' class='added_category size_long'><h1 class='text_sub'>생활, 애완용품, 간식/영양제</h1></div>");
-			$("#writeBoard input").remove();
+			$("[name='addCategory']").remove();
 			addtag = "<input type='hidden' name='addCategory' value='442'>"
 			$("#writeBoard").append(addtag);
 		}
@@ -1391,7 +1391,7 @@ $(function(){
 			$("[class='selected']").removeAttr("class");
 			$(".category_added div").remove();
 			$(".category_added").append("<div id='add_443' class='added_category size_long'><h1 class='text_sub'>생활, 애완용품, 집/이동장/생활</h1></div>");
-			$("#writeBoard input").remove();
+			$("[name='addCategory']").remove();
 			addtag = "<input type='hidden' name='addCategory' value='443'>"
 			$("#writeBoard").append(addtag);
 		}
@@ -1404,7 +1404,7 @@ $(function(){
 			$("[class='selected']").removeAttr("class");
 			$(".category_added div").remove();
 			$(".category_added").append("<div id='add_444' class='added_category size_long'><h1 class='text_sub'>생활, 애완용품, 위생/장난감</h1></div>");
-			$("#writeBoard input").remove();
+			$("[name='addCategory']").remove();
 			addtag = "<input type='hidden' name='addCategory' value='444'>"
 			$("#writeBoard").append(addtag);
 		}
@@ -1417,7 +1417,7 @@ $(function(){
 			$("[class='selected']").removeAttr("class");
 			$(".category_added div").remove();
 			$(".category_added").append("<div id='add_445' class='added_category size_long'><h1 class='text_sub'>생활, 애완용품, 기타</h1></div>");
-			$("#writeBoard input").remove();
+			$("[name='addCategory']").remove();
 			addtag = "<input type='hidden' name='addCategory' value='445'>"
 			$("#writeBoard").append(addtag);
 		}
@@ -1430,7 +1430,7 @@ $(function(){
 			$("[class='selected']").removeAttr("class");
 			$(".category_added div").remove();
 			$(".category_added").append("<div id='add_511' class='added_category size_long'><h1 class='text_sub'>뷰티, 가방/지갑, 여성가방</h1></div>");
-			$("#writeBoard input").remove();
+			$("[name='addCategory']").remove();
 			addtag = "<input type='hidden' name='addCategory' value='511'>"
 			$("#writeBoard").append(addtag);
 		}
@@ -1443,7 +1443,7 @@ $(function(){
 			$("[class='selected']").removeAttr("class");
 			$(".category_added div").remove();
 			$(".category_added").append("<div id='add_512' class='added_category size_long'><h1 class='text_sub'>뷰티, 가방/지갑, 남성가방</h1></div>");
-			$("#writeBoard input").remove();
+			$("[name='addCategory']").remove();
 			addtag = "<input type='hidden' name='addCategory' value='512'>"
 			$("#writeBoard").append(addtag);
 		}
@@ -1456,7 +1456,7 @@ $(function(){
 			$("[class='selected']").removeAttr("class");
 			$(".category_added div").remove();
 			$(".category_added").append("<div id='add_513' class='added_category size_long'><h1 class='text_sub'>뷰티, 가방/지갑, 캐쥬얼가방</h1></div>");
-			$("#writeBoard input").remove();
+			$("[name='addCategory']").remove();
 			addtag = "<input type='hidden' name='addCategory' value='513'>"
 			$("#writeBoard").append(addtag);
 		}
@@ -1469,7 +1469,7 @@ $(function(){
 			$("[class='selected']").removeAttr("class");
 			$(".category_added div").remove();
 			$(".category_added").append("<div id='add_514' class='added_category size_long'><h1 class='text_sub'>뷰티, 가방/지갑, 여행가방</h1></div>");
-			$("#writeBoard input").remove();
+			$("[name='addCategory']").remove();
 			addtag = "<input type='hidden' name='addCategory' value='514'>"
 			$("#writeBoard").append(addtag);
 		}
@@ -1482,7 +1482,7 @@ $(function(){
 			$("[class='selected']").removeAttr("class");
 			$(".category_added div").remove();
 			$(".category_added").append("<div id='add_515' class='added_category size_long'><h1 class='text_sub'>뷰티, 가방/지갑, 지갑</h1></div>");
-			$("#writeBoard input").remove();
+			$("[name='addCategory']").remove();
 			addtag = "<input type='hidden' name='addCategory' value='515'>"
 			$("#writeBoard").append(addtag);
 		}
@@ -1495,7 +1495,7 @@ $(function(){
 			$("[class='selected']").removeAttr("class");
 			$(".category_added div").remove();
 			$(".category_added").append("<div id='add_521' class='added_category size_long'><h1 class='text_sub'>뷰티, 시계/쥬얼리, 시계</h1></div>");
-			$("#writeBoard input").remove();
+			$("[name='addCategory']").remove();
 			addtag = "<input type='hidden' name='addCategory' value='521'>"
 			$("#writeBoard").append(addtag);
 		}
@@ -1508,7 +1508,7 @@ $(function(){
 			$("[class='selected']").removeAttr("class");
 			$(".category_added div").remove();
 			$(".category_added").append("<div id='add_522' class='added_category size_long'><h1 class='text_sub'>뷰티, 시계/쥬얼리, 스마트워치</h1></div>");
-			$("#writeBoard input").remove();
+			$("[name='addCategory']").remove();
 			addtag = "<input type='hidden' name='addCategory' value='522'>"
 			$("#writeBoard").append(addtag);
 		}
@@ -1521,7 +1521,7 @@ $(function(){
 			$("[class='selected']").removeAttr("class");
 			$(".category_added div").remove();
 			$(".category_added").append("<div id='add_523' class='added_category size_long'><h1 class='text_sub'>뷰티, 시계/쥬얼리, 헤어액서서리</h1></div>");
-			$("#writeBoard input").remove();
+			$("[name='addCategory']").remove();
 			addtag = "<input type='hidden' name='addCategory' value='523'>"
 			$("#writeBoard").append(addtag);
 		}
@@ -1534,7 +1534,7 @@ $(function(){
 			$("[class='selected']").removeAttr("class");
 			$(".category_added div").remove();
 			$(".category_added").append("<div id='add_524' class='added_category size_long'><h1 class='text_sub'>뷰티, 시계/쥬얼리, 목걸이</h1></div>");
-			$("#writeBoard input").remove();
+			$("[name='addCategory']").remove();
 			addtag = "<input type='hidden' name='addCategory' value='524'>"
 			$("#writeBoard").append(addtag);
 		}
@@ -1547,7 +1547,7 @@ $(function(){
 			$("[class='selected']").removeAttr("class");
 			$(".category_added div").remove();
 			$(".category_added").append("<div id='add_525' class='added_category size_long'><h1 class='text_sub'>뷰티, 시계/쥬얼리, 반지/귀걸이</h1></div>");
-			$("#writeBoard input").remove();
+			$("[name='addCategory']").remove();
 			addtag = "<input type='hidden' name='addCategory' value='525'>"
 			$("#writeBoard").append(addtag);
 		}
@@ -1560,7 +1560,7 @@ $(function(){
 			$("[class='selected']").removeAttr("class");
 			$(".category_added div").remove();
 			$(".category_added").append("<div id='add_531' class='added_category size_long'><h1 class='text_sub'>뷰티, 신발, 여성구두</h1></div>");
-			$("#writeBoard input").remove();
+			$("[name='addCategory']").remove();
 			addtag = "<input type='hidden' name='addCategory' value='531'>"
 			$("#writeBoard").append(addtag);
 		}
@@ -1573,7 +1573,7 @@ $(function(){
 			$("[class='selected']").removeAttr("class");
 			$(".category_added div").remove();
 			$(".category_added").append("<div id='add_532' class='added_category size_long'><h1 class='text_sub'>뷰티, 신발, 남성구두</h1></div>");
-			$("#writeBoard input").remove();
+			$("[name='addCategory']").remove();
 			addtag = "<input type='hidden' name='addCategory' value='532'>"
 			$("#writeBoard").append(addtag);
 		}
@@ -1586,7 +1586,7 @@ $(function(){
 			$("[class='selected']").removeAttr("class");
 			$(".category_added div").remove();
 			$(".category_added").append("<div id='add_533' class='added_category size_long'><h1 class='text_sub'>뷰티, 신발, 운동화</h1></div>");
-			$("#writeBoard input").remove();
+			$("[name='addCategory']").remove();
 			addtag = "<input type='hidden' name='addCategory' value='533'>"
 			$("#writeBoard").append(addtag);
 		}
@@ -1599,7 +1599,7 @@ $(function(){
 			$("[class='selected']").removeAttr("class");
 			$(".category_added div").remove();
 			$(".category_added").append("<div id='add_534' class='added_category size_long'><h1 class='text_sub'>뷰티, 신발, 샌들/슬리퍼</h1></div>");
-			$("#writeBoard input").remove();
+			$("[name='addCategory']").remove();
 			addtag = "<input type='hidden' name='addCategory' value='534'>"
 			$("#writeBoard").append(addtag);
 		}
@@ -1612,7 +1612,7 @@ $(function(){
 			$("[class='selected']").removeAttr("class");
 			$(".category_added div").remove();
 			$(".category_added").append("<div id='add_535' class='added_category size_long'><h1 class='text_sub'>뷰티, 신발, 워커/부츠</h1></div>");
-			$("#writeBoard input").remove();
+			$("[name='addCategory']").remove();
 			addtag = "<input type='hidden' name='addCategory' value='535'>"
 			$("#writeBoard").append(addtag);
 		}
@@ -1625,7 +1625,7 @@ $(function(){
 			$("[class='selected']").removeAttr("class");
 			$(".category_added div").remove();
 			$(".category_added").append("<div id='add_541' class='added_category size_long'><h1 class='text_sub'>뷰티, 잡화/소품, 선글라스/안경</h1></div>");
-			$("#writeBoard input").remove();
+			$("[name='addCategory']").remove();
 			addtag = "<input type='hidden' name='addCategory' value='541'>"
 			$("#writeBoard").append(addtag);
 		}
@@ -1638,7 +1638,7 @@ $(function(){
 			$("[class='selected']").removeAttr("class");
 			$(".category_added div").remove();
 			$(".category_added").append("<div id='add_542' class='added_category size_long'><h1 class='text_sub'>뷰티, 잡화/소품, 우산/양산</h1></div>");
-			$("#writeBoard input").remove();
+			$("[name='addCategory']").remove();
 			addtag = "<input type='hidden' name='addCategory' value='542'>"
 			$("#writeBoard").append(addtag);
 		}
@@ -1651,7 +1651,7 @@ $(function(){
 			$("[class='selected']").removeAttr("class");
 			$(".category_added div").remove();
 			$(".category_added").append("<div id='add_543' class='added_category size_long'><h1 class='text_sub'>뷰티, 잡화/소품, 스카프/머플러</h1></div>");
-			$("#writeBoard input").remove();
+			$("[name='addCategory']").remove();
 			addtag = "<input type='hidden' name='addCategory' value='543'>"
 			$("#writeBoard").append(addtag);
 		}
@@ -1664,7 +1664,7 @@ $(function(){
 			$("[class='selected']").removeAttr("class");
 			$(".category_added div").remove();
 			$(".category_added").append("<div id='add_544' class='added_category size_long'><h1 class='text_sub'>뷰티, 잡화/소품, 모자</h1></div>");
-			$("#writeBoard input").remove();
+			$("[name='addCategory']").remove();
 			addtag = "<input type='hidden' name='addCategory' value='544'>"
 			$("#writeBoard").append(addtag);
 		}
@@ -1677,7 +1677,7 @@ $(function(){
 			alert("이미 선택한 카테고리입니다.");
 		} else{
 			$(".category_added").append("<div id='add_545' class='added_category size_long'><h1 class='text_sub'>뷰티, 잡화/소품, 장갑/벨트/넥타이</h1></div>");
-			$("#writeBoard input").remove();
+			$("[name='addCategory']").remove();
 			addtag = "<input type='hidden' name='addCategory' value='545'>"
 			$("#writeBoard").append(addtag);
 		}
@@ -1690,7 +1690,7 @@ $(function(){
 			$("[class='selected']").removeAttr("class");
 			$(".category_added div").remove();
 			$(".category_added").append("<div id='add_546' class='added_category size_long'><h1 class='text_sub'>뷰티, 잡화/소품, 기타</h1></div>");
-			$("#writeBoard input").remove();
+			$("[name='addCategory']").remove();
 			addtag = "<input type='hidden' name='addCategory' value='546'>"
 			$("#writeBoard").append(addtag);
 		}
@@ -1703,7 +1703,7 @@ $(function(){
 			$("[class='selected']").removeAttr("class");
 			$(".category_added div").remove();
 			$(".category_added").append("<div id='add_551' class='added_category size_long'><h1 class='text_sub'>뷰티, 의류/언더웨어, 남성의류</h1></div>");
-			$("#writeBoard input").remove();
+			$("[name='addCategory']").remove();
 			addtag = "<input type='hidden' name='addCategory' value='551'>"
 			$("#writeBoard").append(addtag);
 		}
@@ -1716,7 +1716,7 @@ $(function(){
 			$("[class='selected']").removeAttr("class");
 			$(".category_added div").remove();
 			$(".category_added").append("<div id='add_552' class='added_category size_long'><h1 class='text_sub'>뷰티, 의류/언더웨어, 여성의류</h1></div>");
-			$("#writeBoard input").remove();
+			$("[name='addCategory']").remove();
 			addtag = "<input type='hidden' name='addCategory' value='552'>"
 			$("#writeBoard").append(addtag);
 		}
@@ -1729,7 +1729,7 @@ $(function(){
 			$("[class='selected']").removeAttr("class");
 			$(".category_added div").remove();
 			$(".category_added").append("<div id='add_553' class='added_category size_long'><h1 class='text_sub'>뷰티, 의류/언더웨어, 캐주얼의류</h1></div>");
-			$("#writeBoard input").remove();
+			$("[name='addCategory']").remove();
 			addtag = "<input type='hidden' name='addCategory' value='553'>"
 			$("#writeBoard").append(addtag);
 		}
@@ -1742,7 +1742,7 @@ $(function(){
 			$("[class='selected']").removeAttr("class");
 			$(".category_added div").remove();
 			$(".category_added").append("<div id='add_554' class='added_category size_long'><h1 class='text_sub'>뷰티, 의류/언더웨어, 아동의류</h1></div>");
-			$("#writeBoard input").remove();
+			$("[name='addCategory']").remove();
 			addtag = "<input type='hidden' name='addCategory' value='554'>"
 			$("#writeBoard").append(addtag);
 		}
@@ -1755,7 +1755,7 @@ $(function(){
 			$("[class='selected']").removeAttr("class");
 			$(".category_added div").remove();
 			$(".category_added").append("<div id='add_555' class='added_category size_long'><h1 class='text_sub'>뷰티, 의류/언더웨어, 기타</h1></div>");
-			$("#writeBoard input").remove();
+			$("[name='addCategory']").remove();
 			addtag = "<input type='hidden' name='addCategory' value='555'>"
 			$("#writeBoard").append(addtag);
 		}

@@ -4,7 +4,7 @@
 
 <mapper namespace="photo">
 	<insert id="add" parameterType="vo.PhotoVo">
-		<!-- 조건문 -->
+		insert into photo values(#{fileName},#{content_num},#{realPath})
 	</insert>
 	<update id="modify" parameterType="vo.PhotoVo">
 		<!-- 조건문 -->

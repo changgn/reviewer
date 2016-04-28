@@ -5,9 +5,10 @@
 <head>
 <script src='http://jquery-multifile-plugin.googlecode.com/svn/trunk/jquery.form.js' type="text/javascript"></script>
 <script src='http://jquery-multifile-plugin.googlecode.com/svn/trunk/jquery.MetaData.js' type="text/javascript"></script>
-<script src='http://jquery-multifile-plugin.googlecode.com/svn/trunk/jquery.MultiFile.js' type="text/javascript"></script>
+<!-- <script src='http://jquery-multifile-plugin.googlecode.com/svn/trunk/jquery.MultiFile.js' type="text/javascript"></script> -->
 <script src='http://jquery-multifile-plugin.googlecode.com/svn/trunk/jquery.blockUI.js' type="text/javascript"></script> 
 <script src="../script/categoryMenu_write.js" type="text/javascript"></script>
+<script src="../script/upload.js" type="text/javascript"></script>
 <title>글쓰기</title>
 <style>
 
@@ -18,6 +19,12 @@ $(function(){
 		if($("#text_content").val()=="") {
 			alert("내용을 입력해 주세요");
 			$("#text_content").focus();
+		} else {
+			if($("input[name='addCategory']").attr("name")=="addCategory"){
+				$("#writeBoard").submit();
+			} else {
+				alert("카테고리를 선택해 주세요");
+			}
 		}
 	});
 });
@@ -359,20 +366,17 @@ $(function(){
 		</div>
 		<div class="category_added"></div>
 	</div>
-	<div id="image_area">
-	</div>
-	<div id="content_area">
-		<textarea id="text_content" rows="20" cols="auto"></textarea>
-	</div>
-	<div id="upload_area">
-		<form name="uploadForm" method="post">
+	<form action="/Reviwer/write/writePro.do" id="writeBoard" method="post" enctype="multipart/form-data">
+		<div id="content_area">
+			<textarea id="text_content" name="boardContent" rows="20" cols="auto"></textarea>
+		</div>
+		<div id="upload_area">
 			<input type="file" id="afile" name="afile" class="multi" maxlength="5">
-		</form>
-	</div>
-	<div id="write_area">
-		<div id="btn_write" class="btn_long"><a href="#">작&nbsp; 성&nbsp; 완&nbsp; 료</a></div>
-		<form action="/Reviwer/write/writePro.do" id="writeBoard" method="post"></form>
-	</div>
+		</div>
+		<div id="write_area">
+			<div id="btn_write" class="btn_long"><a href="#">작&nbsp; 성&nbsp; 완&nbsp; 료</a></div>
+		</div>
+	</form>
 </div>
 </body>
 </html>

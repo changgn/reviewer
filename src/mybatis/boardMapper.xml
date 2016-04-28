@@ -4,7 +4,7 @@
 
 <mapper namespace="board">
 	<insert id="add" parameterType="vo.BoardVo">
-		<!-- 조건문 -->
+		insert into board values(SEQ_board_board_num.NEXTVAL,#{id},#{category_id},#{content},sysdate,0,0,0,0)
 	</insert>
 	<update id="modify" parameterType="vo.BoardVo">
 		<!-- 조건문 -->

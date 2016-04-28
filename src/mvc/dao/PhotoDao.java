@@ -12,39 +12,37 @@ import vo.PhotoVo;
 
 public class PhotoDao {
 	
-		public static void main(String[] args) {
-			
-			String res = "/mybatis/config.xml";
-			try {
-			  	InputStream is = Resources.getResourceAsStream(res);
-				
-				SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(is);
-				System.out.println("factory ok");
-				SqlSession session = factory.openSession();
-				
-				PhotoVo vo = new PhotoVo();
+	private static PhotoDao instance = new PhotoDao();
 	
-				int n = session.insert("photo.add", vo);
-	
-				if (n > 0) {
-	
-					session.commit();
-					System.out.println("insert ok");
-				} else {
-					session.rollback();
-					System.out.println("insert f");
-				}
-	
-				n = session.delete("photo.remove", "batis");
-				System.out.println("delete 처리건수:" + n);
-	
-				session.commit();
-	
-				session.close();
-	
-			} catch (IOException ie) {
-				System.out.println(ie.getMessage());
-			}
+	public static PhotoDao getInstance() {
+		return instance;
 	}
+	
+	private PhotoDao() { }
+	
+	public int insert(PhotoVo vo) {
+		String res = "mybatis/config.xml";
+		int n = 0;
+		try {
+		  	InputStream is = Resources.getResourceAsStream(res);
+			
+			SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(is);
+			SqlSession session = factory.openSession();
+			
+			n = session.insert("photo.add", vo);
+			
+			if(n>0) {
+				session.commit();
+			} else {
+				session.rollback();
+			}
+			
+			session.close();
+		} catch (IOException ie) {
+			System.out.println(ie.getMessage());
+		}
+		return n;
+	}
+	
 
 }

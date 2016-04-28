@@ -1,6 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%@ page trimDirectiveWhitespaces="true" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <html>
 <head>
 <title>검색</title>
@@ -366,7 +367,9 @@ $(function(){
 			<div id="first_search_page" class="searched_board">카테고리를 이용해 검색하세요</div>
 		</c:if>
 		<c:if test="${firstCheck==1}">
-			<div class="searched_board">검색 결과 있음</div>
+			<div class="searched_board">
+			검색 결과 있음
+			</div>
 		</c:if>
 	</div>
 </div>
