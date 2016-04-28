@@ -12,12 +12,13 @@ public class BoardVo {
 	private int recommend_num;
 	private int report_num;
 	private int screp;
+	private int coment_num;
 	
 	public BoardVo(){
 		
 	}
 	
-	public BoardVo(int board_num, String id, String category_id, String content, Date write_date, int recommend_num,int report_num, int screp){
+	public BoardVo(int board_num, String id, String category_id, String content, Date write_date, int recommend_num,int report_num, int screp, int coment_num){
 		super();
 		this.board_num = board_num;
 		this.id = id;
@@ -27,7 +28,7 @@ public class BoardVo {
 		this.recommend_num = recommend_num;
 		this.report_num = report_num;
 		this.screp = screp;
-		
+		this.coment_num = coment_num;
 	}
 
 	public int getBoard_num() {
@@ -93,5 +94,14 @@ public class BoardVo {
 	public void setScrep(int screp) {
 		this.screp = screp;
 	}
+
+	public int getComent_num() {
+		return coment_num;
+	}
+
+	public void setComent_num(int coment_num) {
+		this.coment_num = coment_num;
+	}
+	
 	
 }

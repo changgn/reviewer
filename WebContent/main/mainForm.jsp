@@ -114,7 +114,7 @@
 		<a href="#" class="item_info_wrap">
 	        <span class="item_cont" title="컨텐츠 상세페이지">
 	            <span class="item_thumb">
-	                <img class="list_photo" src="http://img.phinf.pholar.net/20160421_108/1461241086917YSnJu_JPEG/p?type=f720_720" data-width="720" data-height="720" onclick="nclk(this,'myf.thumb','','');" data-is-cropped="true">
+	                <img class="list_photo" src="#" data-width="720" data-height="720" onclick="#" data-is-cropped="true">
 	                <span class="thumb_mask_bottom"></span>
 	            </span>
 	        </span>
@@ -143,6 +143,5 @@
 			<span class="u_vc">글쓰기</span>
 		</a>
 	</div>
-	
 </body>
 </html>

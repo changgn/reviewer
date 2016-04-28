@@ -32,7 +32,6 @@ public class MainFormAction implements CommandAction {
 				
 			}
 			
-			
 			request.setAttribute("boardList", boardList);
 			
 			return "/main/mainForm.jsp";

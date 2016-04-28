@@ -46,6 +46,7 @@ CREATE TABLE board
 	write_date date NOT NULL,
 	recommend_num number DEFAULT 0,
 	report_num number DEFAULT 0,
+	coment_num number DEFAULT 0,
 	screp number DEFAULT 0,
 	PRIMARY KEY (board_num)
 );
