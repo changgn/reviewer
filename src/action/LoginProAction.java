@@ -18,7 +18,7 @@ public class LoginProAction implements CommandAction{
 		String id = request.getParameter("id");
 		String passwd = request.getParameter("passwd");
 		MemberDao memberDao = new MemberDao();
-		HashMap<String,String> hashMap = new HashMap();
+		HashMap<String,String> hashMap = new HashMap<String,String>();
 		MembersVo vo = null;
 		hashMap.put("id", id);
 		hashMap.put("passwd", passwd); 
@@ -27,6 +27,7 @@ public class LoginProAction implements CommandAction{
 		
 		if(vo == null){
 			String message="아이디와 비밀 번호가 일치 하지 않습니다.";
+			request.setAttribute("message", message);
 		}else{
 			request.getSession().setAttribute("login",id );
 		}

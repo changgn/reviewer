@@ -18,7 +18,6 @@ public class InputProAction implements CommandAction{
 		MembersVo membersvo = new MembersVo();
 		MemberDao memberDao= new MemberDao();
 		
-		
 		//회정 정보를 가져온다. 
 		String id=request.getParameter("id") ;
 		String passwd=request.getParameter("passwd");
@@ -41,6 +40,16 @@ public class InputProAction implements CommandAction{
 		
 		memberDao.inputPro(membersvo);
 		
+		MembersVo cf1= memberDao.deleteCf(id);
+		//request.setAttribute("MemberVo", cf1);
+		if(cf1 != null){
+			String smessage="회원 정보 수정에 성공하셨습니다.";
+			request.setAttribute("smessage", smessage);
+		}else{
+			String fmessage="회원 정보 수정에 실패하셨습니다.";
+			request.setAttribute("fmessage", fmessage);
+		}
+		 
 		return "/logon/inputPro.jsp";
 	}
 

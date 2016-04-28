@@ -1,5 +1,9 @@
 package action.profile;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -9,8 +13,11 @@ import mvc.dao.CategoryDao;
 import mvc.dao.ComentDao;
 import mvc.dao.FollowDao;
 import mvc.dao.MemberDao;
+import mvc.dao.MembersCategoryDao;
 import mvc.dao.PhotoDao;
 import mvc.dao.ScrepDao;
+import vo.CategoryVo;
+import vo.MembersCategoryVo;
 
 public class MyProfileAction implements CommandAction {
 
@@ -18,44 +25,41 @@ public class MyProfileAction implements CommandAction {
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) throws Throwable {
 		// TODO Auto-generated method stub
 		
-		MemberDao memberDao = new MemberDao();
+	/*	MemberDao memberDao = new MemberDao();
+		MembersCategoryDao membersCategoryDao = MembersCategoryDao.getInstance();
+		
+		List category = null;
 		
 		String id = (String) request.getSession().getAttribute("id"); // id값
-		String category_id = (String) request.getSession().getAttribute("category_id"); // 관심카테고리
-		String from_id = (String) request.getSession().getAttribute("from_id"); // 팔로워
-		String to_id = (String) request.getSession().getAttribute("to_id"); // 팔로잉
-		String board_num = (String) request.getSession().getAttribute("board_num"); // 게시글
-		String screp_num = (String) request.getSession().getAttribute("screp_num"); //스크랩
-		String writer = (String) request.getSession().getAttribute("writer"); // 작성자
-		String follow = (String) request.getSession().getAttribute("follow"); // 팔로우
-		String write_date = (String) request.getSession().getAttribute("write_date"); // 몇분전
-		String content = (String) request.getSession().getAttribute("content"); // 글메뉴
-		String coment_num = (String) request.getSession().getAttribute("coment_num"); // 댓글
-		String photo = (String) request.getSession().getAttribute("photo"); // 사진
-		
+
+		category= membersCategoryDao.getlistById(id);//id 값을 통하여 카테고리 리스트를 가져온다.
+		*/
+		String id = (String) request.getSession().getAttribute("id");
+		MembersCategoryDao membersCategoryDao = MembersCategoryDao.getInstance();
 		CategoryDao categoryDao = CategoryDao.getInstance();
-		FollowDao followDao = new FollowDao();
-		BoardDao boardDao = new BoardDao();
-		ScrepDao screptDao = new ScrepDao();
-		ComentDao comentDao = new ComentDao();
-		PhotoDao photoDao = new PhotoDao();
 		
-		int recommend_num = Integer.parseInt((String) request.getSession().getAttribute("recommend_num"));
-		// 추천 수
+		// Vo들을 담기위한 list 변수생성
+		List<MembersCategoryVo> membersCategoryList = null;
+		List<CategoryVo> CategoryList = new ArrayList<CategoryVo>();
 		
-		request.setAttribute("id", id);
-		request.setAttribute("from_id", from_id);
-		request.setAttribute("to_id", to_id);
-		request.setAttribute("board_num", board_num);
-		request.setAttribute("screp_num", screp_num);
-		request.setAttribute("writer", writer);
-		request.setAttribute("follow", follow);
-		request.setAttribute("writer", writer);
-		request.setAttribute("content", content);
-		request.setAttribute("coment_num", coment_num);
-		request.setAttribute("photo", photo);
-		
-		
+		// 해당 id의 카테고리id 가져오기
+		membersCategoryList = membersCategoryDao.getlistById(id);
+		// 카테고리id로 카테고리 가져오기
+				for(MembersCategoryVo vo : membersCategoryList) {
+					CategoryVo Category = categoryDao.getOne(vo.getCategory_id());
+					CategoryList.add(Category);
+				}
+				request.setAttribute("CategoryList", CategoryList);
+				
+				
+				/*Iterator it = null;
+				it = CategoryList.iterator();
+				while(it.hasNext()){
+					String cate= it.next().toString();
+					request.setAttribute("cate", cate);
+				}
+*/				
+				
 		return "/profile/myProfile.jsp";
 	}
 

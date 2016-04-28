@@ -24,6 +24,7 @@ public class ModifyProAction implements CommandAction{
 		
 		MemberDao dao = new MemberDao();
 		MembersVo m = new MembersVo();
+		MembersVo cf = new MembersVo();
 		
 		m.setBirth(birth);
 		m.setEmail(email);
@@ -33,6 +34,15 @@ public class ModifyProAction implements CommandAction{
 		
 		dao.modifyPro(m);
 		
+		cf= dao.deleteCf(id);
+		
+		if(cf !=null){
+			String smessage="회원 정보 수정에 성공하셨습니다.";
+			request.setAttribute("smessage", smessage);
+		}else{
+			String fmessage="회원 정보 수정에 실패하셨습니다.";
+			request.setAttribute("fmessage", fmessage);
+		}
 		
 		// 받아온 정보들을 DB에 저장
 		

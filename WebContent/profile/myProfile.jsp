@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -13,10 +14,16 @@
 <form action="" method="post" name="myform">
 <table border="1" align="center">
 	<tr align="center">
-		<td colspan="2"><div id="divid">본인 ID</div></td>
+		<td colspan="2"><div id="divid">${SessionScope.id }</div></td>
 	</tr>
 	<tr align="center">
-		<td colspan="2"><div id = "divcategory_id">관심카테고리</div></td>
+		<td colspan="2"><div id = "divcategory_id"></div></td>
+	<c:forEach var="item" items="${CategoryList}" varStatus="status">
+	<c:out value="${item.group1}"></c:out>
+	<c:out value="${item.group2}"></c:out>
+	<c:out value="${item.group3}"></c:out>
+	
+	</c:forEach>
 	</tr>
 	<tr>
 		<td width="50" align="center"><div id="divfrom_id">팔로워</div></td>

@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<style>
+<style type='text/css'>
 
 #id {display:none;}
 #passwd {display:none;}
@@ -13,6 +13,8 @@
 #birth{display:none;}
 #email {display:none;}
 #phone_num{display:none;}
+
+
 </style>
 <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
 <script>
@@ -95,6 +97,7 @@ $(document).ready(function(){
 </head>
 <body>
 	<form method="post" action="inputPro.do" name="inputForm" id="inputForm">
+		<
 		<table border="1">
 			<tr>
 				<td>

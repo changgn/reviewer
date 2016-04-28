@@ -10,11 +10,34 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
-import vo.FollowVo;
+
 import vo.MembersVo;
 
 public class MemberDao {
 
+private SqlSession sqlSession;
+
+public MembersVo deleteCf(String id){
+	
+	MembersVo vo =null;
+	String res = "/mybatis/config.xml";
+	try {
+		InputStream is = Resources.getResourceAsStream(res);
+		
+		SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(is);
+		System.out.println("factory ok");
+		SqlSession session = factory.openSession();
+		
+		vo = session.selectOne("member.deleteCf",id);
+		
+	}catch(IOException ie){
+		System.out.println(ie.getMessage());
+	}
+	return vo;
+	
+}
+	
+	
 public MembersVo idSearch(String phone_num) {
 		
 		MembersVo vo =null;
@@ -54,8 +77,8 @@ public MembersVo idSearch(String phone_num) {
 	}
 	
 	public MembersVo loginPro(HashMap<String,String> map) {
-		MembersVo vo = new MembersVo();
-		SqlSession sqlSession = null;
+		MembersVo vo = null;
+		sqlSession = null;
 		String res = "/mybatis/config.xml";
 		try {
 			InputStream is = Resources.getResourceAsStream(res);
@@ -183,8 +206,7 @@ public MembersVo idSearch(String phone_num) {
 			System.out.println(ie.getMessage());
 		}
 	}
-	
-	
+
 	// 목록
 	public MembersVo getMemberList(MembersVo vo){
 		MembersVo list = null;
@@ -233,4 +255,6 @@ public MembersVo idSearch(String phone_num) {
 		}
 		return count;
 	}
+
+
 }
