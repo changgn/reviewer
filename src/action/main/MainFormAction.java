@@ -12,6 +12,8 @@ public class MainFormAction implements CommandAction {
 			request.setCharacterEncoding("UTF-8");
 			
 			
+		
+			
 			return "/main/mainForm.jsp";
 			
 		}

@@ -16,7 +16,6 @@
 	.cont_writer{padding: 9px 100px 9px 17px; position: relative; text-align: left;}
 	.cont_writer_id{padding-right: 2px;font-size: 14px;font-weight: bold;letter-spacing: -1px;line-height: 58px;vertical-align: top;margin-left: 10px;}
 
-
 	/* 글쓰기 버튼 */
 	.btn_posting_wrap{position : fixed;z-index: 2100;bottom: 30px;right: 30px;width:82px;height: 82px;background-image: url("../image/icon_55.png");}
 	.btn_posting_wrap .btn_posting {display: block;width: 82px;height: 82px;background-position: -220px -130px;}
@@ -138,9 +137,8 @@
        	</div>
 	</div>
 	<div class="btn_posting_wrap">
-		<a href="#" class="btn_posting">
+		<a href="/Reviwer/write/writeForm.do" class="btn_posting">
 			<span class="u_vc">글쓰기</span>
-			<input type="file" name="picFile" class="btn_upload_file" data-url="/api/post/upload">
 		</a>
 	</div>
 </body>

@@ -50,7 +50,7 @@
 	<div id="header">
 	<!-- 헤더 -->
 		<h1 id="logo">
-			<a id="logo_btn" href="#" title="REVIWER">REVIWER</a>
+			<a id="logo_btn" href="/Reviwer/main/mainForm.do" title="REVIWER">REVIWER</a>
 		</h1>
 		<span id="main_btn">
 
@@ -95,7 +95,7 @@
 	<!-- 네비게이션 -->
 		<ul id="list_nav">
 			<li>
-				<a href="#" class="nav_btn">뉴스피드</a>
+				<a href="/Reviwer/main/mainForm.do" class="nav_btn">뉴스피드</a>
 			</li>
 			<li>
 				<a href="#" class="nav_btn">MY</a>
