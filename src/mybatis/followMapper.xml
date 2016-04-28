@@ -13,6 +13,9 @@
 	<select id="getlistfrom" resultType="vo.FollowVo">
 		select from_id from follow
 	</select>
+	<select id="countfrom" parameterType="vo.FollowVo">
+		select count(from_id) from follow
+	</select>
 	<insert id="addto" parameterType="vo.FollowVo">
 		insert into follow(to_id) values(#{to_id})
 	</insert>
@@ -21,5 +24,8 @@
 	</delete>
 	<select id="getlistto" resultType="vo.FollowVo">
 		select to_id from follow
+	</select>
+	<select id="countto" parameterType="vo.FollowVo">
+		select count(to_id) from follow
 	</select>
 </mapper>

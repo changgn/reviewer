@@ -1,12 +1,10 @@
 package action.admin;
 
-import java.util.List;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import action.CommandAction;
-import mvc.dao.BoardDao;
+import vo.BoardVo;
 
 public class Admin_popularityFormAction implements CommandAction{
 
@@ -14,13 +12,14 @@ public class Admin_popularityFormAction implements CommandAction{
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) throws Throwable {
 		// TODO Auto-generated method stub
 		
-		String id = (String) request.getSession().getAttribute("id");
+		BoardVo bv = new BoardVo();
 		
-		// 게시글이 추천 받은 수
 
-
-        //해당 뷰에서 사용할 속성
-		request.setAttribute("id", id); // 로그인 아이디
+		String id = bv.getId();
+		int rec_num = bv.getRecommend_num();
+		
+		request.setAttribute("id", id);
+		request.setAttribute("rec_num", rec_num); // 추천수
 
 		return "/admin_popularityForm.jsp";
 	}

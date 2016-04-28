@@ -19,7 +19,6 @@
 	<select id="modifyForm" parameterType="java.lang.String" resultType="vo.MembersVo">
 		select name birth gender email phone_num from members where id=#{id}
 	</select>
-	
 	<select id="getMF" parameterType="java.lang.String" resultType="vo.MembersVo">
 		select name birth gender email phone_num from members where id=#{id}
 	</select>
@@ -32,6 +31,9 @@
   <select id="pwSearch" parameterType="String" resultType="vo.MembersVo">
   select passwd from members where id=#{id} and phone_num=#{phone_num} and email=#{email}
   </select> 
-  </mapper>
+  <select id="count" parameterType="vo.MembersVo">
+  	select count(*) from members
+  </select>
+ </mapper>
 
 

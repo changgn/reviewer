@@ -3,43 +3,53 @@
 
 <html>
 	<head>
+		<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+		<script type="text/javascript">
+		
+		var i = 0;
+		function follow(post_id)
+		{   
+		    i = i + post_id;
+		    var obj = document.getElementById('fc');   
+		    if(!obj) return;   
+		  
+		    if(i%2!=0)
+		    {   
+		        obj.src="../image/icon_36.png"; 
+		        
+		    } 
+		    else 
+		    {   
+		        obj.src="../image/icon_35.png";
+		    }
+		}
+		
+		</script>
 	</head>
 	<body>
 		<table border="1" align="center">
-			<c:forEach var="i" begin="" end="">
 				<tr>
 					<td colspan="2" align="center">
-						팔로잉 목록
-						<%-- 
-						${id }님의 팔로잉 목록 
-						--%>
+						<c:out value="${id }님의 팔로잉 목록"/>
 					</td>
 				</tr>
+				
 				<tr>
-					<td width="150" align="center">
-						<!-- id 팔로우 한 상대 아이디 목록 -->
-						아이디
+					<c:forEach var="팔로잉 목록" items="${FollowList}" varStatus="to" >
+						<td width="150" align="left">
+							<!-- id를 팔로우 한 상대 아이디 목록 -->
+							아이디
+							<a href="../profile/tithyneprofile.do?id=${to.to_id }"><c:out value="${to.to_id }"/></a>
+						</td>
+					
+							<td width="50" align="center">
+								<!-- 팔로우 이미지 -->
+								
+									<a href="#" onmousedown="follow(1); return true;" onmouseup="window.location='/Reviewer/follow/followerPro.do?id=${id},from_id=${to.to_id }'"> <img src="../image/icon_36.png" id="fc" /></a>
 
-						<a href="상대프로필 페이지로 이동">${to_id }</a> 
-					</td>
-					<td width="50">
-						<!-- 이미지 버튼 -->
-						팔로우
-						<!-- id가 팔로우한 상대가 아닐 경우 비팔로우 이미지 표시 -->
-						
-						<c:if test="${t }">
-							<img src="비팔로우 이미지"/>
-						</c:if>
-						
-						<!-- id가 팔로우한 상대일 경우 팔로우 이미지 표시 -->
-						
-						<c:if test="${ t}">
-							<img src="팔로우 이미지"/>
-						</c:if>
-						
-					</td>
+							</td>
+					</c:forEach>
 				</tr>
-			</c:forEach>
-		</table>
+			</table>
 	</body>
 </html>

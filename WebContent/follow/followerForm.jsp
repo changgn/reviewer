@@ -6,54 +6,49 @@
 		<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
 		<script type="text/javascript">
 
-		$('.follow_image').click(function(){
-			$('.follow_image').change('no_follow_iamge');
-		})
-		$('.no_follow_image').click(function(){
-			$('.follow_image').change('no_follow_iamge');
-		})
+		var i = 0;
+		function follow(post_id)
+		{   
+		    i = i + post_id;
+		    var obj = document.getElementById('fc');   
+		    if(!obj) return;   
+		  
+		    if(i%2!=0) // 되돌아올 때
+		    {   
+		        obj.src="../image/icon_35.png";
+		    } 
+		    else // 처음 클릭했을때
+		    {   
+		        obj.src="../image/icon_36.png";
+		    }
+		}
 		
 		</script>
 	</head>
 	
 	<body>
-		<form method="post" name="follow">
-			<table border="1" align="center">
+
+			<table align="center">
 				<tr>
 					<td colspan="2" align="center">
-					
 						<c:out value="${id }님의 팔로워 목록"/>
 					</td>
 				</tr>
 				
 				<tr>
-					<c:forEach var="회원 목록 " items="${FollowList}" varStatus="from" >
+					 <c:forEach var="팔로워 목록 " items="${FollowList}" varStatus="from" > 
 						<td width="150" align="left">
-							<!-- id를 팔로우 한 상대 아이디 목록 -->
-							아이디
-							<a href="profile.do"><c:out value="${from.from_id }"/></a>
+
+							<a href="../profile/tithyneprofile.do?id=${from.from_id }"><c:out value="${from.from_id }"/></a>
 						</td>
 					
 							<td width="50" align="center">
 								<!-- 팔로우 이미지 -->
-								<!-- 본인 프로필 계정이면 내가 팔로우한 상대이면 팔로우 이미지 -->
-								<c:if test="${cn == 1 }">
-									<c:if test="${id==from.from_id}">
-										<img src="follow_image" width="10" height="10">
-									</c:if>
-									<c:if test="${id!=from.from_id }">
-										<img src="no_follow_image" width="10" height="10">
-									</c:if>
-								</c:if>
-								<!-- 내가 팔로우한 상대가 아니면 비팔로우 이미지 -->
-								<c:if test="${cn != 1 }">
-									<
-									<img src="no_follow_image" width="10" height="10">
-								</c:if>
+								<a href="#" onmousedown="follow(1); return true;" onmouseup="window.location='/Reviewer/follow/followerPro.do?id=${id},from_id=${from.from_id }'"> <img src="../image/icon_35.png" id="fc" /></a>
 							</td>
-					</c:forEach>
+				 	</c:forEach> 
 				</tr>
 			</table>
-		</form>
+		
 	</body>
 </html>

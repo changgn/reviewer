@@ -15,17 +15,18 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import vo.FollowVo;
+import vo.MembersVo;
 
 public class FollowDao {
 	private SqlSessionFactory sqlSessionFactory;
 	
-	private static FollowDao instance = new FollowDao();
+	private static FollowDao instance = new FollowDao(null);
 	
 	public static FollowDao getInstance() {
 		return instance;
 	}
 	
-	public FollowDao(){
+	public FollowDao(String myid){
 		String res = "/mybatis/config.xml";
 		try {
 		  	InputStream is = Resources.getResourceAsStream(res);
@@ -42,12 +43,12 @@ public class FollowDao {
 	}
 	
 	// 팔로워 추가
-	public void addfrom(FollowVo vo){
+	public void addfrom(String id){
 		SqlSession sqlSession = null;
 		try{
 			sqlSession = sqlSessionFactory.openSession();
-			sqlSession.insert("addfrom", vo);
-			int n = sqlSession.insert("addfrom", vo);
+			sqlSession.insert("addfrom", id);
+			int n = sqlSession.insert("addfrom", id);
 			if(n>0){
 				sqlSession.commit();
 			}
@@ -56,12 +57,12 @@ public class FollowDao {
 		}
 	}
 	// 팔로잉 추가
-	public void addto(FollowVo vo){
+	public void addto(String id){
 		SqlSession sqlSession = null;
 		try{
 			sqlSession = sqlSessionFactory.openSession();
-			sqlSession.insert("addto", vo);
-			int n = sqlSession.insert("addto", vo);
+			sqlSession.insert("addto", id);
+			int n = sqlSession.insert("addto", id);
 			if(n>0){
 				sqlSession.commit();
 			}
@@ -71,12 +72,12 @@ public class FollowDao {
 	}
 	
 	// 팔로워 삭제
-	public void removefrom(FollowVo vo){
+	public void removefrom(String id){
 		SqlSession sqlSession = null;
 		try{
 			sqlSession = sqlSessionFactory.openSession();
-			sqlSession.delete("removefrom", vo);
-			int n = sqlSession.delete("removefrom", vo);
+			sqlSession.delete("removefrom", id);
+			int n = sqlSession.delete("removefrom", id);
 			if(n>0){
 				sqlSession.commit();
 			}
@@ -86,12 +87,12 @@ public class FollowDao {
 	}
 	
 	// 팔로잉 삭제
-	public void removeto(FollowVo vo){
+	public void removeto(String id){
 		SqlSession sqlSession = null;
 		try{
 			sqlSession = sqlSessionFactory.openSession();
-			sqlSession.delete("removeto", vo);
-			int n = sqlSession.delete("removeto", vo);
+			sqlSession.delete("removeto", id);
+			int n = sqlSession.delete("removeto", id);
 			if(n>0){
 				sqlSession.commit();
 			}
@@ -99,15 +100,15 @@ public class FollowDao {
 			if(sqlSession!=null)sqlSession.close();
 		}
 	}
-	
+
 	// 팔로워 리스트
-	public FollowVo getlistfrom(FollowVo from_id){
+	public FollowVo getlistfrom(FollowVo vo){
 		FollowVo list = null;
 		SqlSession sqlSession = null;
 		try{
 			sqlSession = sqlSessionFactory.openSession();
 
-			list = (FollowVo) sqlSession.selectList("follow.getlistfrom", from_id);
+			list = (FollowVo) sqlSession.selectList("follow.getlistfrom", vo);
 
 
 			return list;
@@ -117,17 +118,75 @@ public class FollowDao {
 	}
 	
 	// 팔로잉 리스트
-	public FollowVo getlistto(String to_id){
+	public FollowVo getlistto(FollowVo vo){
 		FollowVo list = null;
 		SqlSession sqlSession=null;
 		try{
 			sqlSession = sqlSessionFactory.openSession();
 
-			list = (FollowVo) sqlSession.selectList("follow.getlistto", to_id);
+			list = (FollowVo) sqlSession.selectList("follow.getlistto", vo);
 
 			return list;
 		}finally{
 			if(sqlSession!=null)sqlSession.close();
 		}
+	}
+	// 팔로워 세기
+	public int countfrom(FollowVo vo){
+		
+		int count = 0;
+		String res="/mybatis/config.xml";
+		try{
+			InputStream is = Resources.getResourceAsStream(res);
+			SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(is);
+			System.out.println("factory ok");
+			SqlSession session = factory.openSession();
+			
+			int n = session.selectOne("follow.countfrom", vo);
+			count = n;
+			if (n > 0) {
+
+				session.commit();
+				
+			} else {
+				session.rollback();
+				
+			}
+
+			session.close();
+
+		} catch (IOException ie) {
+			System.out.println(ie.getMessage());
+		}
+		return count;
+	}
+	// 팔로잉
+	public int countto(FollowVo vo){
+		
+		int count = 0;
+		String res="/mybatis/config.xml";
+		try{
+			InputStream is = Resources.getResourceAsStream(res);
+			SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(is);
+			System.out.println("factory ok");
+			SqlSession session = factory.openSession();
+			
+			int n = session.selectOne("follow.countto", vo);
+			count = n;
+			if (n > 0) {
+
+				session.commit();
+				
+			} else {
+				session.rollback();
+			
+			}
+
+			session.close();
+
+		} catch (IOException ie) {
+			System.out.println(ie.getMessage());
+		}
+		return count;
 	}
 }

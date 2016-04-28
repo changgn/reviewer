@@ -1,4 +1,6 @@
 <%@ page contentType = "text/html; charset=UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<meta http-equiv="Refresh" content="0;url=admin_popularityPro.do" >
+<%
+    response.sendRedirect("/Reviewer/administrator/admin_popularityForm.do");
+%>

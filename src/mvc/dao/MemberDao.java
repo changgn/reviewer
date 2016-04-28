@@ -10,7 +10,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
-
+import vo.FollowVo;
 import vo.MembersVo;
 
 public class MemberDao {
@@ -183,5 +183,54 @@ public MembersVo idSearch(String phone_num) {
 			System.out.println(ie.getMessage());
 		}
 	}
+	
+	
+	// 목록
+	public MembersVo getMemberList(MembersVo vo){
+		MembersVo list = null;
+		String res = "/mybatis/config.xml";
+		try{
+			
+			InputStream is = Resources.getResourceAsStream(res);
+			SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(is);
+			System.out.println("factory ok");
+			SqlSession session = factory.openSession();
 
+			list = (MembersVo) session.selectList("member.getlist", vo);
+
+			
+		}catch (IOException ie) {
+			System.out.println(ie.getMessage());
+		}
+		return list;
+	}
+	
+	public int count(MembersVo vo){
+		
+		int count = 0;
+		String res="/mybatis/config.xml";
+		try{
+			InputStream is = Resources.getResourceAsStream(res);
+			SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(is);
+			System.out.println("factory ok");
+			SqlSession session = factory.openSession();
+			
+			int n = session.insert("member.count", vo);
+			count = n;
+			if (n > 0) {
+
+				session.commit();
+				
+			} else {
+				session.rollback();
+				
+			}
+
+			session.close();
+
+		} catch (IOException ie) {
+			System.out.println(ie.getMessage());
+		}
+		return count;
+	}
 }

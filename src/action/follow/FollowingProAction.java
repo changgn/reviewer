@@ -13,13 +13,17 @@ public class FollowingProAction implements CommandAction{
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) throws Throwable {
 		// TODO Auto-generated method stub
 		
+		String myid = (String) request.getSession().getAttribute("id");
+		String to_id = request.getParameter("to_id");
+
+		FollowDao fd = new FollowDao(myid);
 		
 		
-		FollowVo vo = new FollowVo();
-		FollowDao dao = new FollowDao();
-		dao.addto(vo);
-		dao.removeto(vo);
+		fd.addfrom(to_id);
+	
 		
+		fd.removefrom(to_id);
+
 		
 		return "followingPro.jsp";
 	}

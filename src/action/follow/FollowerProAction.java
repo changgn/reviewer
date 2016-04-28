@@ -5,7 +5,9 @@ import javax.servlet.http.HttpServletResponse;
 
 import action.CommandAction;
 import mvc.dao.FollowDao;
+import vo.BoardVo;
 import vo.FollowVo;
+import vo.MembersVo;
 
 public class FollowerProAction implements CommandAction{
 
@@ -13,10 +15,19 @@ public class FollowerProAction implements CommandAction{
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) throws Throwable {
 		// TODO Auto-generated method stub
 		
-		// 로그인 id
-		String id = (String) request.getSession().getAttribute("id");
+		String myid = (String) request.getSession().getAttribute("id");
+		String from_id = request.getParameter("from_id");
+
+
+
+		FollowDao fd = new FollowDao(myid);
 		
-		FollowDao followdao = new FollowDao();
+		
+		fd.addfrom(from_id);
+	
+		
+		fd.removefrom(from_id);
+
 		
 		return "followerPro.jsp";
 	}

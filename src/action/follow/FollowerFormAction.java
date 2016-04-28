@@ -31,17 +31,16 @@ public class FollowerFormAction implements CommandAction{
 		if(id==profileId){ // 내 페이지에서 보는 팔로워. 즉, 나를 팔로우 한 목록 요청
 			
 			// 객체 생성
-			MemberDao memberdao = MemberDao.getInstance(); // 멤버 처리클래스 객체
+			
 			FollowDao followdao = FollowDao.getInstance(); // 팔로우 처리클래스 객체
 			
 			// 팔로우 저장클래스 타입의 팔로우 리스트 객체 생성
 			List<FollowVo> FollowList = new ArrayList<FollowVo>();
 			
 			for(FollowVo vo : FollowList){
-				FollowVo from_id = followdao.getlistfrom(from_id);
+				FollowVo from_id = followdao.getlistfrom(vo);
 				FollowList.add(from_id);
 			}
-
 			
 			cn=1;
 					
@@ -52,14 +51,13 @@ public class FollowerFormAction implements CommandAction{
 			return "/follow/followerForm.jsp";
 		} else{ // 다른 사람의 팔로워. 즉, 다른사람을 팔로우한 사람들의 목록 요청
 			// 객체 생성
-			MemberDao memberdao = MemberDao.getInstance(); // 멤버 처리클래스 객체
 			FollowDao followdao = FollowDao.getInstance(); // 팔로우 처리클래스 객체
 			
 			// 팔로우 저장클래스 타입의 팔로우 리스트 객체 생성
 			List<FollowVo> FollowList = new ArrayList<FollowVo>();
 			
 			for(FollowVo vo : FollowList){
-				FollowVo from_id = followdao.getlistfrom(from_id);
+				FollowVo from_id = followdao.getlistfrom(vo);
 				FollowList.add(from_id);
 			}
 
