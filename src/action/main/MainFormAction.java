@@ -8,7 +8,6 @@ import javax.servlet.http.HttpServletResponse;
 import action.CommandAction;
 import mvc.dao.BoardDao;
 import vo.BoardVo;
-import vo.MembersCategoryVo;
 
 public class MainFormAction implements CommandAction {
 	
@@ -26,6 +25,9 @@ public class MainFormAction implements CommandAction {
 			if(login_status=="2"){
 				
 				boardList = boardDao.getList();
+				
+				for(BoardVo vo : boardList)
+				System.out.println("boardList : -------" + vo.getId());
 				
 			}else{
 				

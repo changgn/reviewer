@@ -27,6 +27,6 @@
 		where id=#{id}
 	</select>
 	<select id="getList" resultType="vo.BoardVo">
-		select * from board order by write_date desc 
+		select * from board order by write_date DESC 
 	</select>
 </mapper>
