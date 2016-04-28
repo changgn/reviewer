@@ -1,5 +1,6 @@
 package action.main;
 
+import java.sql.Timestamp;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -18,6 +19,7 @@ public class MainFormAction implements CommandAction {
 			BoardDao boardDao = BoardDao.getInstance();
 			List<BoardVo> boardList = null;
 			
+			
 			String login_status =  (String)request.getSession().getAttribute("login_status");	//로그인 세션
 			if(login_status==null){
 				login_status = "2";	// 로그인 안된 상태
@@ -25,9 +27,6 @@ public class MainFormAction implements CommandAction {
 			if(login_status=="2"){
 				
 				boardList = boardDao.getList();
-				
-				for(BoardVo vo : boardList)
-				System.out.println("boardList : -------" + vo.getId());
 				
 			}else{
 				

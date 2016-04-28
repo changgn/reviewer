@@ -1,6 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%@ page trimDirectiveWhitespaces="true" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,7 +31,7 @@
 	#cont_btn_follow {display: inline-block;overflow: hidden;line-height: 999px;vertical-align: top;background-image: url("../image/icon_18.png");}
 	
 	/* 메인페이지 작성시간 */
-	 .cont_wdate{top: 30px;right: 54px; position: absolute; z-index: 10; line-height: 999px; vertical-align: top;}
+	 .cont_wdate{top: 30px;right: 54px; position: absolute; z-index: 10; vertical-align: top;}
 	
 	/* 메인페이지 메뉴(신고, 삭제) */
 	.cont_menu{right: 25px;position: absolute;top: 24px;}
@@ -82,7 +83,7 @@
 					</a>
 				</div>
 				<div class="cont_wdate">
-					${board.write_date}
+					<fmt:formatDate value="${board.write_date}" pattern="yyyy-MM-dd HH:mm"/>
 				</div>
 				<div class="cont_menu">
 					<a href="#" class="cont_menu_option">
