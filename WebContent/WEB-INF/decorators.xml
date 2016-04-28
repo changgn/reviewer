@@ -2,7 +2,7 @@
 <decorators defaultdir="/decorator">
 	<decorator name="main" page="/decorator/main_decorator.jsp">
 		<pattern>/write/*</pattern>
-		<pattern>/main/mainForm.jsp</pattern>
+		<pattern>/main/*</pattern>
 		<pattern>/categorySet/*</pattern>
 		<pattern>/search/*</pattern>
 	</decorator>
