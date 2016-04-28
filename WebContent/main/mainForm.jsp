@@ -71,17 +71,18 @@
 </style>
 </head>
 <body>
+<c:forEach var="board" items="${boardList}">
 	<div class="content_wrap">
 		<div class="content_first">	
 			<div class="cont_writer">
-				<a href="#" class="cont_writer_id">작성자</a>
+				<a href="/Reviwer/profile/myProfile.do?id=${board.id}" class="cont_writer_id">${board.id}</a>
 				<div class="control_box">
 					<a href="#" class="btn_follow" >
 						<span id="cont_btn_follow">팔로우</span>
 					</a>
 				</div>
 				<div class="cont_wdate">
-					<span>18:03:04</span>
+					${board.write_date}
 				</div>
 				<div class="cont_menu">
 					<a href="#" class="cont_menu_option">
@@ -136,10 +137,12 @@
        		</div>
        	</div>
 	</div>
+</c:forEach>
 	<div class="btn_posting_wrap">
 		<a href="/Reviwer/write/writeForm.do" class="btn_posting">
 			<span class="u_vc">글쓰기</span>
 		</a>
 	</div>
+	
 </body>
 </html>
