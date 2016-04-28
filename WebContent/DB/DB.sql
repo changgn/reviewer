@@ -106,8 +106,7 @@ CREATE TABLE photo
 (
 	fileName varchar2(100) NOT NULL,
 	content_num number NOT NULL,
-	realPath varchar2(200) NOT NULL,
-	fileSize varchar2(200) NOT NULL
+	realPath varchar2(200) NOT NULL
 );
 
 

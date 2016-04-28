@@ -6,6 +6,13 @@
 <html>
 <head>
 <title>메인페이지</title>
+<script>
+function btnOn(){
+	
+}
+
+
+</script>
 <style type='text/css'>
 
 	div{ display: block; }
@@ -15,7 +22,7 @@
 	.cont_body{margin:0 auto;}
 	.content_first{margin-top: 22px;}
 	.cont_writer{padding: 9px 100px 9px 17px; position: relative; text-align: left;}
-	.cont_writer_id{padding-right: 2px;font-size: 14px;font-weight: bold;letter-spacing: -1px;line-height: 58px;vertical-align: top;margin-left: 10px;}
+	.cont_writer_id{padding-right: 2px;font-size: 20px;font-weight: bold;letter-spacing: -1px;line-height: 58px;vertical-align: top;margin-left: 10px;}
 
 	/* 글쓰기 버튼 */
 	.btn_posting_wrap{position : fixed;z-index: 2100;bottom: 30px;right: 30px;width:82px;height: 82px;background-image: url("../image/icon_55.png");}
@@ -77,11 +84,6 @@
 		<div class="content_first">	
 			<div class="cont_writer">
 				<a href="/Reviwer/profile/myProfile.do?id=${board.id}" class="cont_writer_id">${board.id}</a>
-				<div class="control_box">
-					<a href="#" class="btn_follow" >
-						<span id="cont_btn_follow">팔로우</span>
-					</a>
-				</div>
 				<div class="cont_wdate">
 					<fmt:formatDate value="${board.write_date}" pattern="yyyy-MM-dd HH:mm"/>
 				</div>
@@ -92,7 +94,7 @@
 					<div class="cont_btn_option" data-is-activated="false">
 						<ul class="cont_popup" data-is-activated="false">
 							<li>
-								<a href="#" class="cont_popup_close" onclick="#">이 게시글 신고</a>
+								<a href="#" class="cont_popup_close" onclick="btnOn()">이 게시글 신고</a>
 							</li>						
 							<li>
 								<a href="#" class="cont-popup_close" onclick="#">이 게시글 삭제</a>
@@ -104,7 +106,7 @@
 		</div>
 		<div class="content_second">
 			<span class="content_view">
-				<span>글내용
+				<span><pre>${board.content}</pre>
 					<span class="cont_theview">
 						<span>...</span>
 						<a href="#" class="btn_view_more">더보기</a>
