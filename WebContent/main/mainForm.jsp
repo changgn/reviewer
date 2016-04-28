@@ -10,7 +10,7 @@
 	div{ display: block; }
 	
 	/* layout */
-	.content_wrap{width:650px; lear: both; min-height: 650px;padding: 0px 0 60px; margin: 50 auto; position:relative; border: 1px solid #e6e6e6;}
+	.content_wrap{width:650px; lear: both; min-height: 650px;padding: auto; margin: 50 auto; position:relative; border: 1px solid #e6e6e6;}
 	.cont_body{margin:0 auto;}
 	.content_first{margin-top: 22px;}
 	.cont_writer{padding: 9px 100px 9px 17px; position: relative; text-align: left;}
@@ -28,7 +28,7 @@
 	/* 메인페이지 팔로우 버튼 */
 	.control_box{top: 23px;right: 54px; left: 80px; position: absolute; z-index: 10;}
 	.btn_follow {width: 30px;height: 29px;margin-right: 3px;background-position: -180px -40px;overflow: hidden;float: left;vertical-align: top;}
-	#cont_btn_follow {display: inline-block;overflow: hidden;line-height: 999px;vertical-align: top;background-image: url(../image/icon_18.png);}
+	#cont_btn_follow {display: inline-block;overflow: hidden;line-height: 999px;vertical-align: top;background-image: url("../image/icon_18.png");}
 	
 	/* 메인페이지 작성시간 */
 	 .cont_wdate{top: 30px;right: 54px; position: absolute; z-index: 10; line-height: 999px; vertical-align: top;}
@@ -43,15 +43,32 @@
   
   	/* 본문내용 */
     .content_second{padding: 6px 26px 30px; margin-top: 22px;}
-    .content_view{display: block;
-    overflow: hidden;
-    max-height: 110px;
-    line-height: 1.6em;
-    word-wrap: break-word;
-    text-align: left;
-    }
+    .content_view{display: block;overflow: hidden;max-height: 110px;line-height: 1.6em;word-wrap: break-word;text-align: left;}
+	.cont_theview{display: inline;}
+	.btn_view_more{display: inline-block;padding-left: 6px;width: 55px;color: #b9b9b9;box-sizing: border-box;}
+	.item_cont{padding-top: 28px;}
+	.item_thumb{display: block;overflow: hidden;position: relative;text-align: center;background-color:#becec5;}
+    .thumb_mask_bottom{height: 181px;background-image: url(https://ssl.pstatic.net/static/m/pholar/img/mask_thumb_bottom_v2.png);position: absolute;right: 0;bottom: 0;left: 0;background-position: 0 100%;}
+    .list_photo{width:100%;height:auto;vertical-align:top}
     
-   	
+    /* 추천 버튼 */
+    .cont_btns{border: 1px solid #e6e6e6;border-top: 0 none; margin-top: 22px;}
+    .cont_btns_wrap{height: auto;padding-left: 20px;padding-bottom: 20px;padding-top: 20px;position: relative;padding: 27px 0 0 6px; }
+   	.btns_re{float: left;}
+   	.btns_re_item{display: inline-block;overflow: hidden;vertical-align: top; position: relative; bottom: 36; left: 20px;}
+   	.u_ico{display: inline-block;overflow: hidden;line-height: 999px;vertical-align: top;width: 31px;height: 27px;background-image: url("../image/icon_13.png");}
+    .u_txt{overflow: hidden;position: absolute;top: -999px;z-index: -1;width: 1px;height: 1px;font-size: 1px;line-height: 10px;color: transparent;}
+    .u_cnt{font-size: 16px;color: #828282;line-height: 26px;}
+    
+    /* 댓글 버튼 */
+    .btns_coment{float: left; margin-left: 35px;position: relative;bottom: 36;}
+    .u_ico_coment{width: 31px;height: 29px; display: inline-block;overflow: hidden;margin-right: 3px;line-height: 999px;vertical-align: top;background-image: url("../image/icon_14.png");}
+	.text_num{font-size: 16px;color: #828282;line-height: 26px;}
+   		
+   	/* 스크랩 버튼 */	
+   	.btns_screp{float: left; margin-left: 15px;position: relative;bottom: 36;}
+   	.u_ico_screp{width: 25px;height: 26px;    display: inline-block;overflow: hidden;margin-right: 3px;line-height: 999px;vertical-align: top;background-image: url("../image/icon_15.png");}
+
 </style>
 </head>
 <body>
@@ -87,31 +104,39 @@
 		<div class="content_second">
 			<span class="content_view">
 				<span>글내용
-					<span>...</span>
+					<span class="cont_theview">
+						<span>...</span>
+						<a href="#" class="btn_view_more">더보기</a>
+					</span>
 				</span>
 			</span>
-		
 		</div>
+		<a href="#" class="item_info_wrap">
+	        <span class="item_cont" title="컨텐츠 상세페이지">
+	            <span class="item_thumb">
+	                <img class="list_photo" src="http://img.phinf.pholar.net/20160421_108/1461241086917YSnJu_JPEG/p?type=f720_720" data-width="720" data-height="720" onclick="nclk(this,'myf.thumb','','');" data-is-cropped="true">
+	                <span class="thumb_mask_bottom"></span>
+	            </span>
+	        </span>
+       	</a>
+       	<div class="cont_btns">
+       		<div class="cont_btns_wrap">
+				<div class="btns_re">
+					<a href="#" class="btns_re_item" onclick="#">
+                		<span class="u_ico"></span><em class="u_txt">좋아요</em><em class="u_cnt">128</em>
+                 	</a>
+				</div>
+				<a href="#" class="btns_coment" onclick="#">
+					<span class="u_ico_coment">댓글</span>
+					<span class="text_num">3</span>				
+				</a>
+				<a href="#" class="btns_screp" onclick="#">
+					<span class="u_ico_screp">스크렙</span>
+					<span class="text_num">19</span>
+				</a>
+       		</div>
+       	</div>
 	</div>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
 	<div class="btn_posting_wrap">
 		<a href="#" class="btn_posting">
 			<span class="u_vc">글쓰기</span>
