@@ -1,4 +1,4 @@
-<%@ page contentType="text/html; charset=utf-8"%>
+<%@ page contentType="text/html; charset=UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
@@ -42,7 +42,7 @@ $("#modifyForm").submit(function(){
 		<table border="1">
 			<tr>
 				 <td>
-				 <div id="divid">${m.id}</div>
+				 <div id="divid">${SessionScope.id}</div>
 				 </td> 
 			</tr>
 			<tr>

@@ -2,6 +2,8 @@ package action;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import mvc.dao.MemberDao;
 import vo.*;
 
 
@@ -18,9 +20,20 @@ public class ModifyProAction implements CommandAction{
 		String birth=request.getParameter("birth");
 		String phone_num=request.getParameter("phone_num");
 		String email=request.getParameter("email");
+		String passwd = request.getParameter("passwd");
 		
-		
+		MemberDao dao = new MemberDao();
 		MembersVo m = new MembersVo();
+		
+		m.setBirth(birth);
+		m.setEmail(email);
+		m.setName(name);
+		m.setPhone_num(phone_num);
+		m.setPasswd(passwd);
+		
+		dao.modifyPro(m);
+		
+		
 		// 받아온 정보들을 DB에 저장
 		
 		return "/logon/modifyPro.jsp";

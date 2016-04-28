@@ -1,7 +1,12 @@
 package action;
 
+import java.util.HashMap;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import mvc.dao.MemberDao;
+import vo.MembersVo;
 
 
 
@@ -12,13 +17,19 @@ public class LoginProAction implements CommandAction{
 		// TODO Auto-generated method stub
 		String id = request.getParameter("id");
 		String passwd = request.getParameter("passwd");
+		MemberDao memberDao = new MemberDao();
+		HashMap<String,String> hashMap = new HashMap();
+		MembersVo vo = null;
+		hashMap.put("id", id);
+		hashMap.put("passwd", passwd); 
 		
-		//데이터 베이스 로그인 처리 
+		vo =memberDao.loginPro(hashMap);
 		
-		/*if(){
-		request.getSession().setAttribute("id", id);
+		if(vo == null){
+			String message="아이디와 비밀 번호가 일치 하지 않습니다.";
+		}else{
+			request.getSession().setAttribute("login",id );
 		}
-		*/
 		
 		return "/logon/loginPro.jsp";
 	}

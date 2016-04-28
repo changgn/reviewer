@@ -1,4 +1,4 @@
-<%@ page contentType="text/html; charset=utf-8"%>
+<%@ page contentType="text/html; charset=UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <!DOCTYPE html>
@@ -146,7 +146,7 @@ $(document).ready(function(){
 			
 		</table>
 	<input type="reset" value="다시작성" >
-	<input type="button" value="취소" onclick="javascript:window.location='loginForm.do'">
+	<input type="button" value="취소" onclick="javascript:window.location='/Reviwer/logon/loginForm.do'">
 	</form>
 	
 	

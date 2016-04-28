@@ -12,7 +12,7 @@ public class MembersVo {
 	private String email;
 	private String phone_num;
 	private Date reg_date;
-	private int recommend_num;
+	private int recommend_num = 0;
 	
 	public MembersVo() {
 		

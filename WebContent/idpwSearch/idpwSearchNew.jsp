@@ -1,11 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>아이디 찾기(새창)</title>
 <style>
-/* #phone_num {display:none;} */
+ #phone_num {display:none;} 
 #id {display:none;}
 #phone_num2 {display:none;}
 #email {display:none;}
@@ -43,7 +43,7 @@ $(document).ready(function(){
 </script>
 </head>
 <body>
-<form action="" method="post" name="myform" >
+<form action="idSearch.do" method="post" name="idSearch" id="idSearch" >
 <table border="1">
 	<tr>
 		<td>
@@ -52,19 +52,19 @@ $(document).ready(function(){
 	</tr>
 	<tr>
 		<td>
-			<!-- <div id="divphone_num" >핸드폰 번호</div>-->
+			 <div id="divphone_num" >핸드폰 번호</div>
 			<input type="text" id="phone_num" name="phone_num" placeholder="핸드폰 번호">
 		</td>
 	</tr>
 	<tr>
 		<td>
-			<input type="submit" value="아이디확인" onclick="">
+			<input type="submit" value="아이디확인" >
 		</td>
 	</tr>
 </table>
 </form>
 <br><br>
-<form action="" method="post">
+<form action="pwSearch.do" method="post" name="pwSearch" id="pwSearch">
 <table>
 	<tr>
 		<td>비밀번호 찾기
@@ -90,7 +90,7 @@ $(document).ready(function(){
 	</tr>
 	<tr>
 		<td>
-			<input type="submit" value="비밀번호 확인" onclick="">
+			<input type="submit" value="비밀번호 확인" >
 		</td>
 	</tr>			
 </table>

@@ -13,10 +13,8 @@
 	<select id="getlistfrom" resultType="vo.FollowVo">
 		select from_id from follow
 	</select>
-	
 	<insert id="addto" parameterType="vo.FollowVo">
-		insert into follow(to_id)
-		values(#{to_id})
+		insert into follow(to_id) values(#{to_id})
 	</insert>
 	<delete id="removeto" parameterType="java.lang.String">
 		delete from follow where to_id=#{to_id}

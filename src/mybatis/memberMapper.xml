@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="member">
+	<insert id="add"  parameterType="vo.MembersVo">
+		insert into members
+		values(#{id},#{passwd},#{name},#{birth},#{gender},#{email},#{phone_num},#{reg_date},#{recommend_num})
+	</insert>
+	<update id="modifyPro" parameterType="vo.MembersVo">
+		update members set passwd=#{passwd},name=#{name},birth=#{birth},gender=#{gender},email=#{email},phone_num=#{phone_num} where id=#{id}
+	</update>
+	<delete id="delete" parameterType="java.util.HashMap">
+		delete from members where id=#{id} and passwd=#{passwd}
+	</delete>
+	<select id="getlist" resultType="vo.MembersVo">
+		select * from members
+	</select>
+	<select id="modifyForm" parameterType="java.lang.String" resultType="vo.MembersVo">
+		select name birth gender email phone_num from members where id=#{id}
+	</select>
+	
+	<select id="getMF" parameterType="java.lang.String" resultType="vo.MembersVo">
+		select name birth gender email phone_num from members where id=#{id}
+	</select>
+	<select id="loginPro" parameterType="java.util.HashMap" resultType="vo.MembersVo">
+		select * from members where id=#{id} and passwd=#{passwd}
+	</select>
+  <select id="idSearch" parameterType="String" resultType="vo.MembersVo">
+  select id from members where phone_num=#{phone_num}
+  </select> 
+  <select id="pwSearch" parameterType="String" resultType="vo.MembersVo">
+  select passwd from members where id=#{id} and phone_num=#{phone_num} and email=#{email}
+  </select> 
+  </mapper>
+
+
