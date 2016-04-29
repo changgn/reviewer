@@ -14,7 +14,10 @@
 	</div>
 </c:if>
 <c:if test="${message!=null}">
-	<% response.sendRedirect("/Reviwer/idpwSearch/idpwSearchNew.do?message=incorrect"); %>
+	<script>
+		alert("일치하는 정보가 없습니다");
+		history.go(-1);
+	</script>
 </c:if>
 </body>
 </html>

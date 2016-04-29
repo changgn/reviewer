@@ -6,8 +6,8 @@
 	margin: 0;
 	padding: 0;
 	text-decoration: none;
-	font-family: '나눔고딕', 'Nanum Gothic', sans-serif;;
-	font: 13px '나눔고딕', 'Nanum Gothic', sans-serif;;
+	font-family: '�굹�닎怨좊뵓', 'Nanum Gothic', sans-serif;;
+	font: 13px '�굹�닎怨좊뵓', 'Nanum Gothic', sans-serif;;
 	box-sizing: border-box;
 }
 a { outline:0; text-decoration: none; color: #4C4C4C; }
@@ -60,15 +60,14 @@ img { border: 0; }
 #list_policy .list_link { font-size: 14pt; color: white; }
 
 /* log_on */
-#logon { min-height: 600px; }
+#logon { min-height: 800px; }
 #login_logo { width : 500px; height: 50px; margin: 0 auto; margin-top: 150px; margin-bottom: 40px; }
 #login_logo img{ width: 300px; height: 100%; }
-.text_login { width: 100%; height: 100%; font-size: 20px; }
+.text_login { width: 100%; height: 100%; border: 0px; font-size: 20px; padding: 10px; color: #4C4C4C; }
 
 /* idpwSearch */
-#find { min-height: 600px; }
-.title_find { margin: 0 auto; margin: 11px; font-size: 28px; }
-.text_find { width: 100%; height: 100%; font-size: 28px; }
+#find { min-height: 800px; }
+.title_find { margin: 0 auto; margin: 11px; font-size: 28px; color: #4C4C4C; }
 #find_id_result { min-height: 600px; margin: 0 auto; margin-top: 250px;}
 
 /* mainForm */
@@ -95,6 +94,7 @@ img { border: 0; }
 #search_content { float: left; width: 383px; height: 40px; margin: 9px; border: 0; color: #4C4C4C; background-color: #EAEAEA; }
 .searched_board { min-height: 400px; margin: 10 auto; }
 #first_search_page { margin: 0 auto; margin-top:300px; font-size: 20px;}
+#search_result_0 { margin: 0 auto; margin-top:300px; font-size: 20px;}
 
 /* writeForm */
 #writeForm { min-height: 600px; }

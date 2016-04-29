@@ -356,7 +356,9 @@
 		</c:if>
 		<c:if test="${firstCheck==1}">
 			<div class="searched_board">
-			검색 결과 있음
+				<c:if test="${searchCount==0}">
+					<div id="search_result_0" class="searched_board">검색 결과 없음</div>
+				</c:if>
 			</div>
 		</c:if>
 	</div>

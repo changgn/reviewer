@@ -10,7 +10,7 @@ import action.CommandAction;
 import mvc.dao.BoardDao;
 import vo.BoardVo;
 
-public class searchFormAction implements CommandAction {
+public class SearchFormAction implements CommandAction {
 
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) throws Throwable {
@@ -35,6 +35,7 @@ public class searchFormAction implements CommandAction {
 		
 		// 검색할 내용 가져오기
 		String searchContent = request.getParameter("searchContent");
+		int searchCount = 0;
 
 		if(searchContent != null) {
 			// 처음 실행이 아닐 시
@@ -56,7 +57,10 @@ public class searchFormAction implements CommandAction {
 				boardList = boardDao.getList();
 			}
 		}
-		
+		if(boardList!=null) {
+			searchCount = boardList.size();
+		} 
+		request.setAttribute("searchCount", searchCount);
 		request.setAttribute("firstCheck", firstCheck);
 		request.setAttribute("boardList", boardList);
 		

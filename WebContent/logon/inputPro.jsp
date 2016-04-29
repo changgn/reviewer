@@ -8,12 +8,12 @@
 <body>
 
 <c:if test="${smessage!=null}">
-${smessage }
+${smessage}
 <%-- <%response.sendRedirect("/Reviewer/logon/logonForm.do"); %> --%>
 <meta http-equiv="Refresh" content="2;url=/Reviwer/logon/loginForm.do">
 </c:if>
 <c:if test="${fmesaage!=null}">
-	${fmessage }
+	${fmessage}
 <%response.sendRedirect("/Reviwer/logon/inputForm.do"); %>
 </c:if>
 </body>

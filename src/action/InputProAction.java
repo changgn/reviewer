@@ -15,6 +15,8 @@ public class InputProAction implements CommandAction{
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) throws Throwable {
 		// TODO Auto-generated method stub
+		request.setCharacterEncoding("UTF-8");
+		
 		MembersVo membersvo = new MembersVo();
 		MemberDao memberDao= new MemberDao();
 		
@@ -43,10 +45,10 @@ public class InputProAction implements CommandAction{
 		MembersVo cf1= memberDao.deleteCf(id);
 		//request.setAttribute("MemberVo", cf1);
 		if(cf1 != null){
-			String smessage="회원 정보 수정에 성공하셨습니다.";
+			String smessage="회원 가입에 성공하셨습니다.";
 			request.setAttribute("smessage", smessage);
 		}else{
-			String fmessage="회원 정보 수정에 실패하셨습니다.";
+			String fmessage="회원 가입에 실패하셨습니다.";
 			request.setAttribute("fmessage", fmessage);
 		}
 		 

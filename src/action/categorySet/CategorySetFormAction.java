@@ -12,7 +12,7 @@ import vo.MembersCategoryVo;
 import mvc.dao.CategoryDao;
 import mvc.dao.MembersCategoryDao;
 
-public class categorySetFormAction implements CommandAction {
+public class CategorySetFormAction implements CommandAction {
 
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) throws Throwable {
@@ -21,7 +21,6 @@ public class categorySetFormAction implements CommandAction {
 		
 		// 로그인한 id값 가져오기
 		String id = (String) request.getSession().getAttribute("id");
-		id = "bal";
 		int CategoryListSize = 0;
 
 		// dao 인스턴스 생성

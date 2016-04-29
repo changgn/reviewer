@@ -11,6 +11,7 @@ public class PwSearchAction implements CommandAction {
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) throws Throwable {
 		// TODO Auto-generated method stub
+		request.setCharacterEncoding("UTF-8");
 
 		MemberDao memberDao= new MemberDao();
 		
@@ -37,7 +38,7 @@ public class PwSearchAction implements CommandAction {
 		request.setAttribute("passwd", passwd);
 		request.setAttribute("message", message);
 		
-		return "/idpwSearch/pwSerach.jsp";
+		return "/idpwSearch/pwSearch.jsp";
 	}
 
 }

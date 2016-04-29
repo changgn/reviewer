@@ -1,21 +1,16 @@
-package action.write;
-
+package action;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import action.CommandAction;
-
-public class writeFormAction implements CommandAction {
+public class LogoutAction implements CommandAction{
 
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) throws Throwable {
 		// TODO Auto-generated method stub
-		request.setCharacterEncoding("UTF-8");
+		request.getSession().invalidate();
 		
-		
-		
-        return "/write/writeForm.jsp";//해당 뷰
+		return "/logon/logout.jsp";
 	}
 
 }

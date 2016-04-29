@@ -38,22 +38,23 @@ public MembersVo deleteCf(String id){
 }
 	
 	
-public MembersVo idSearch(String phone_num) {
+public String idSearch(String phone_num) {
 		
-		MembersVo vo =null;
-		String res = "/mybatis/config.xml";
+		String id = null;
+		String res = "mybatis/config.xml";
 		try {
 			InputStream is = Resources.getResourceAsStream(res);
 			
 			SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(is);
 			SqlSession session = factory.openSession();
 			
-			vo = session.selectOne("member.idSearch",phone_num);
+			id = session.selectOne("member.idSearch", phone_num);
+			session.close();
 			
 		}catch(IOException ie){
 			System.out.println(ie.getMessage());
 		}
-		return vo;
+		return id;
 	}
 	
 	public MembersVo pwSearch(MembersVo membersvo){
@@ -67,6 +68,7 @@ public MembersVo idSearch(String phone_num) {
 			SqlSession session = factory.openSession();
 		
 			vo = session.selectOne("member.pwSearch", membersvo);
+			session.close();
 			
 		}catch(IOException ie) {
 			System.out.println(ie.getMessage());

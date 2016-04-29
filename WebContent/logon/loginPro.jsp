@@ -13,7 +13,7 @@
 <c:if test="${ message != null}">
 	<c:if test="${ message == 'errID'}">
 		<script>
-			alert("아이디가 일치하지 않습니다");
+			alert("없는 아이디 입니다");
 			history.go(-1);
 		</script>
 	</c:if>

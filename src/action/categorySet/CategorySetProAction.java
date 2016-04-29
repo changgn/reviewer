@@ -7,7 +7,7 @@ import action.CommandAction;
 import mvc.dao.MembersCategoryDao;
 import vo.MembersCategoryVo;
 
-public class categorySetProAction implements CommandAction {
+public class CategorySetProAction implements CommandAction {
 
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) throws Throwable {
@@ -16,7 +16,6 @@ public class categorySetProAction implements CommandAction {
 
 		// 로그인한 id값 가져오기
 		String id = (String) request.getSession().getAttribute("id");
-		id = "bal";
 		
 		// 지울 카테고리 id값 가져오기
 		String delCategory = request.getParameter("delCategory");

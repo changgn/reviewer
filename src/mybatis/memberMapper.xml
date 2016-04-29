@@ -26,8 +26,8 @@
 	<select id="loginPro" parameterType="java.lang.String" resultType="java.lang.String">
 		select passwd from members where id=#{id}
 	</select>
-  <select id="idSearch" parameterType="String" resultType="vo.MembersVo">
-  select id from members where phone_num=#{phone_num}
+  <select id="idSearch" parameterType="java.lang.String" resultType="java.lang.String">
+  		select id from members where phone_num=#{phone_num}
   </select> 
   <select id="pwSearch" parameterType="String" resultType="vo.MembersVo">
   select passwd from members where id=#{id} and phone_num=#{phone_num} and email=#{email}

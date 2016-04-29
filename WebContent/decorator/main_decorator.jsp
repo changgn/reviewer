@@ -54,13 +54,12 @@
 		</h1>
 		<span id="main_btn">
 
-			<c:set var="id" value="1" />
-			<c:if test="${id==2}">
-				<a class="btn_gnb" href="#">
+			<c:if test="${login_status==2}">
+				<a class="btn_gnb" href="/Reviwer/logon/loginForm.do">
 					<span id="btn_login">로그인버튼</span>
 				</a>
 			</c:if>
-			<c:if test="${id!=2}">
+			<c:if test="${login_status!=2}">
 				<a class="btn_gnb btn_user_toggle" href="#">
 					<span id="btn_user">계정설정</span>
 				</a>
@@ -68,19 +67,20 @@
 			<a class="btn_gnb" href="/Reviwer/search/searchForm.do">
 				<span id="btn_search">검색버튼</span>
 			</a>
-			<a class="btn_gnb btn_alarm_toggle" href="#">
+<!-- 		<a class="btn_gnb btn_alarm_toggle" href="#">
 				<span id="btn_alarm">알림버튼</span>
-			</a>
+			</a> 
+-->
 		</span>
 		<div id="user">
 			<ul id="list_user">
 				<li><a href="/Reviwer/categorySet/categorySetForm.do">카테고리 수정</a></li>
 				<li><a href="#">관리자 페이지</a></li>
 				<li><a href="#">회원정 수정</a></li>
-				<li><a href="#">로그아웃</a></li>
+				<li><a href="/Reviwer/logon/logout.do">로그아웃</a></li>
 			</ul>
 		</div>
-		<div id="alarm">
+<!-- 	<div id="alarm">
 			<ul id="list_alarm">
 				<li>알림1<br><a href="#">알림1</a></li>
 				<li>알림2<br><a href="#">알림2</a></li>
@@ -88,7 +88,8 @@
 				<li>알림4<br><a href="#">알림4</a></li>
 				<li>알림5<br><a href="#">알림5</a></li>
 			</ul>
-		</div>
+		</div> 
+-->
 	</div>
 	
 	<div id="nav">

@@ -1,35 +1,35 @@
-<%@ page contentType="text/html; charset=euc-kr" %>
+<%@ page contentType="text/html; charset=UTF-8" %>
 <%@ page trimDirectiveWhitespaces="true" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
-<title>¾ÆÀÌµğ Ã£±â</title>
+<title>ì•„ì´ë”” ì°¾ê¸°</title>
 <script>
 $(function(){
 	$("#submit_find_id").click(function(){
 		if($("#phone_num").val()=="") {
-			alert("ÇÚµåÆù ¹øÈ£¸¦ ÀÔ·ÂÇØ ÁÖ¼¼¿ä");
+			alert("í•¸ë“œí° ë²ˆí˜¸ë¥¼ ì…ë ¥í•´ ì£¼ì„¸ìš”");
 			$("#phone_num").focus();
 		} else {
-			$(location).attr("href","/Reviwer/idpwSearch/idSearch.do");
+			$("#idSearch").submit();
 		}
 	});
 	$("#submit_find_pwd").click(function(){
 		if($("#id").val()=="" || $("#phone_num2").val()=="" || $("#email").val()=="") {
 			if($("#id").val()=="") {
-				alert("¾ÆÀÌµğ¸¦ ÀÔ·ÂÇØ ÁÖ¼¼¿ä");
+				alert("ì•„ì´ë””ë¥¼ ì…ë ¥í•´ ì£¼ì„¸ìš”");
 				$("#id").focus();
 			} else{
 				if($("#phone_num2").val()=="") {
-					alert("ÇÚµåÆù ¹øÈ£¸¦ ÀÔ·ÂÇØ ÁÖ¼¼¿ä");
+					alert("í•¸ë“œí° ë²ˆí˜¸ë¥¼ ì…ë ¥í•´ ì£¼ì„¸ìš”");
 					$("#phone_num2").focus();
 				} else {
-					alert("ÀÌ¸ŞÀÏÀ» ÀÔ·ÂÇØ ÁÖ¼¼¿ä");
+					alert("ì´ë©”ì¼ì„ ì…ë ¥í•´ ì£¼ì„¸ìš”");
 					$("#email").focus();
 				}
 			}
 		} else {
-			$(location).attr("href","/Reviwer/idpwSearch/pwSearch.do");
+			$("#pwSearch").submit();
 		}
 	});
 });
@@ -39,29 +39,29 @@ $(function(){
 
 <c:if test="${message!=null}">
 	<c:if test="${message=='errorPhoneNum'}">
-		<script>alert("ÀÏÄ¡ÇÏ´Â ÇÚµåÆù ¹øÈ£°¡ ¾ø½À´Ï´Ù"); $("#phone_num").focus();</script>
+		<script>alert("ì¼ì¹˜í•˜ëŠ” í•¸ë“œí° ë²ˆí˜¸ê°€ ì—†ìŠµë‹ˆë‹¤"); $("#phone_num").focus();</script>
 	</c:if>
 	<c:if test="${message=='incorrect'}">
-		<script>alert("ÀÏÄ¡ÇÏ´Â Á¤º¸°¡ ¾ø½À´Ï´Ù"); $("#id").focus();</script>
+		<script>alert("ì¼ì¹˜í•˜ëŠ” ì •ë³´ê°€ ì—†ìŠµë‹ˆë‹¤"); $("#id").focus();</script>
 	</c:if>
 </c:if>
 <div id="find">
 	<form action="idSearch.do" method="post" name="idSearch" id="idSearch" >
-	<div id="find_id">
-		<div class="size_long"><h1 class="title_find">¾ÆÀÌµğ Ã£±â</h1></div>
-		<div class="size_long" id="text_phone_num"><input type="text" class="text_find" id="phone_num" name="phone_num" placeholder="ÇÚµåÆù ¹øÈ£(01012345678)"></div>
-		<div id="submit_find_id" class="btn_long"><a href="#">¾Æ ÀÌ µğ È® ÀÎ</a></div>
-	</div>
+		<div id="find_id">
+			<div class="size_long"><h1 class="title_find">ì•„ì´ë”” ì°¾ê¸°</h1></div>
+			<div class="size_long" id="text_phone_num"><input type="text" class="text_login" id="phone_num" name="phone_num" placeholder="í•¸ë“œí° ë²ˆí˜¸(01012345678)"></div>
+			<div id="submit_find_id" class="btn_long"><a href="#">ì•„ ì´ ë”” í™• ì¸</a></div>
+		</div>
 	</form>
 	<br><br>
 	<form action="pwSearch.do" method="post" name="pwSearch" id="pwSearch">
-	<div id="find_pwd">
-		<div class="size_long"><h1 class="title_find">ºñ¹Ğ¹øÈ£ Ã£±â</h1></div>
-		<div class="size_long" id="divid"><input type="text" class="text_find" id="id" name="id" placeholder="¾ÆÀÌµğ"></div>
-		<div class="size_long" id="divphone_num2"><input type="text" class="text_find" id="phone_num2" name="phone_num2" placeholder="ÇÚµåÆù ¹øÈ£(01012345678)"></div>
-		<div class="size_long" id="divemail"><input type="text" class="text_find" id="email" name="email" placeholder="ÀÌ¸ŞÀÏ"></div>
-		<div id="submit_find_pwd" class="btn_long"><a href="#">ºñ ¹Ğ ¹ø È£ È® ÀÎ</a></div>
-	</div>
+		<div id="find_pwd">
+			<div class="size_long"><h1 class="title_find">ë¹„ë°€ë²ˆí˜¸ ì°¾ê¸°</h1></div>
+			<div class="size_long" id="divid"><input type="text" class="text_login" id="id" name="id" placeholder="ì•„ì´ë””"></div>
+			<div class="size_long" id="divphone_num2"><input type="text" class="text_login" id="phone_num2" name="phone_num2" placeholder="í•¸ë“œí° ë²ˆí˜¸(01012345678)"></div>
+			<div class="size_long" id="divemail"><input type="text" class="text_login" id="email" name="email" placeholder="ì´ë©”ì¼"></div>
+			<div id="submit_find_pwd" class="btn_long"><a href="#">ë¹„ ë°€ ë²ˆ í˜¸ í™• ì¸</a></div>
+		</div>
 	</form>
 </div>
 </body>

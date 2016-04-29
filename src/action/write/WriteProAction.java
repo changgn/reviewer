@@ -18,7 +18,7 @@ import mvc.dao.PhotoDao;
 import vo.BoardVo;
 import vo.PhotoVo;
 
-public class writeProAction implements CommandAction {
+public class WriteProAction implements CommandAction {
 
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) throws Throwable {

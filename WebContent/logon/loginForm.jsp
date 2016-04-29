@@ -35,6 +35,9 @@ $(function(){
 <title>로그인</title>
 </head>
 <body>
+<c:if test="${login_status!=2}">
+	<%response.sendRedirect("/Reviwer/main/mainForm.do"); %>
+</c:if>
 <c:if test="${message!=null}">
 	<script>alert("아이디 또는 패스워드가 일치하지 않습니다");</script>
 </c:if>
