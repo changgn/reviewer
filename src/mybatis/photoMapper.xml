@@ -4,7 +4,7 @@
 
 <mapper namespace="photo">
 	<insert id="add" parameterType="vo.PhotoVo">
-		insert into photo values(#{fileName},#{content_num},#{realPath})
+		insert into photo values(#{fileName},#{board_num},#{realPath})
 	</insert>
 	<update id="modify" parameterType="vo.PhotoVo">
 		<!-- 조건문 -->
@@ -13,7 +13,10 @@
 		<!-- 조건문 -->
 	</delete>
 	<select id="getlist" resultType="vo.PhotoVo">
-		<!-- 조건문 -->
+		select * from photo
+	</select>
+	<select id="getListById" parameterType="java.lang.Integer" resultType="vo.PhotoVo">
+		select * from photo where board_num=#{board_num}
 	</select>
 	<select id="find" parameterType="String" resultType="vo.PhotoVo">
 		<!-- 조건문 -->

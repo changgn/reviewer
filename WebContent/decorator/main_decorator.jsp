@@ -42,6 +42,16 @@
 					$("#user").css("display","block");
 				}
 			});
+			$("#btn_newsfeed").click(function(){
+				$(location).attr("href", "/Reviwer/main/mainForm.do");
+			});
+
+			$("#btn_my").click(function(){
+				if($("#btn_my a").attr("href")=="/Reviwer/logon/loginForm.do"){
+					alert("로그인이 필요합니다");
+				}
+				$(location).attr("href", $("#btn_my a").attr("href"));
+			});
 		});
 	</script>
 </head>
@@ -76,7 +86,7 @@
 			<ul id="list_user">
 				<li><a href="/Reviwer/categorySet/categorySetForm.do">카테고리 수정</a></li>
 				<li><a href="#">관리자 페이지</a></li>
-				<li><a href="#">회원정 수정</a></li>
+				<li><a href="#">회원정보 수정</a></li>
 				<li><a href="/Reviwer/logon/logout.do">로그아웃</a></li>
 			</ul>
 		</div>
@@ -96,10 +106,17 @@
 	<!-- 네비게이션 -->
 		<ul id="list_nav">
 			<li>
-				<a href="/Reviwer/main/mainForm.do" class="nav_btn">뉴스피드</a>
+				<div id="btn_newsfeed"><a href="/Reviwer/main/mainForm.do" class="nav_btn">뉴스피드</a></div>
 			</li>
 			<li>
-				<a href="#" class="nav_btn">MY</a>
+				<div id="btn_my">
+					<c:if test="${login_status==2}">
+						<a href="/Reviwer/logon/loginForm.do" class="nav_btn">M Y</a>
+					</c:if>
+					<c:if test="${login_status!=2}">
+						<a href="#" class="nav_btn">M Y</a>
+					</c:if>
+				</div>
 			</li>
 		</ul>
 	</div>

@@ -109,7 +109,7 @@ function btnOn(){
 				<span><pre>${board.content}</pre>
 					<span class="cont_theview">
 						<span>...</span>
-						<a href="#" class="btn_view_more">더보기</a>
+						<a href="/Reviwer/content/contentForm.do?board_num=${board.board_num}" class="btn_view_more">더보기</a>
 					</span>
 				</span>
 			</span>

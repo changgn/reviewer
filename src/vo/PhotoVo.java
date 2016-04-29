@@ -3,17 +3,17 @@ package vo;
 public class PhotoVo {
 
 	private String fileName;
-	private int content_num;
+	private int board_num;
 	private String realPath;
 
 	public PhotoVo(){
 		
 	}
 	
-	public PhotoVo(String fileName, int content_num, String realPath) {
+	public PhotoVo(String fileName, int board_num, String realPath) {
 		super();
 		this.fileName = fileName;
-		this.content_num = content_num;
+		this.board_num = board_num;
 		this.realPath = realPath;
 		
 		
@@ -27,12 +27,12 @@ public class PhotoVo {
 		this.fileName = fileName;
 	}
 
-	public int getContent_num() {
-		return content_num;
+	public int getboard_num() {
+		return board_num;
 	}
 
-	public void setContent_num(int content_num) {
-		this.content_num = content_num;
+	public void setboard_num(int board_num) {
+		this.board_num = board_num;
 	}
 
 	public String getRealPath() {

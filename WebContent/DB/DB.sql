@@ -65,7 +65,7 @@ CREATE TABLE category
 CREATE TABLE coment
 (
 	coment_num number NOT NULL,
-	content_num number NOT NULL,
+	board_num number NOT NULL,
 	id varchar2(20) NOT NULL,
 	content varchar2(4000) NOT NULL,
 	write_date date NOT NULL,
@@ -105,7 +105,7 @@ CREATE TABLE members_category
 CREATE TABLE photo
 (
 	fileName varchar2(100) NOT NULL,
-	content_num number NOT NULL,
+	board_num number NOT NULL,
 	realPath varchar2(200) NOT NULL
 );
 
@@ -113,7 +113,7 @@ CREATE TABLE photo
 CREATE TABLE screp
 (
 	id varchar2(20) NOT NULL,
-	content_num number NOT NULL
+	board_num number NOT NULL
 );
 
 
@@ -121,19 +121,19 @@ CREATE TABLE screp
 /* Create Foreign Keys */
 
 ALTER TABLE coment
-	ADD FOREIGN KEY (content_num)
+	ADD FOREIGN KEY (board_num)
 	REFERENCES board (board_num)
 ;
 
 
 ALTER TABLE photo
-	ADD FOREIGN KEY (content_num)
+	ADD FOREIGN KEY (board_num)
 	REFERENCES board (board_num)
 ;
 
 
 ALTER TABLE screp
-	ADD FOREIGN KEY (content_num)
+	ADD FOREIGN KEY (board_num)
 	REFERENCES board (board_num)
 ;
 
@@ -241,7 +241,7 @@ COMMENT ON COLUMN category.group1 IS '대분류';
 COMMENT ON COLUMN category.group2 IS '중분류';
 COMMENT ON COLUMN category.group3 IS '소분류';
 COMMENT ON COLUMN coment.coment_num IS '댓글번호';
-COMMENT ON COLUMN coment.content_num IS '본문내용 번호';
+COMMENT ON COLUMN coment.board_num IS '글번호';
 COMMENT ON COLUMN coment.id IS '아이디';
 COMMENT ON COLUMN coment.content IS '글내용';
 COMMENT ON COLUMN coment.write_date IS '작성시간';
@@ -258,11 +258,11 @@ COMMENT ON COLUMN members.recommend_num IS '추천수';
 COMMENT ON COLUMN members_category.id IS '아이디';
 COMMENT ON COLUMN members_category.category_id IS '카테고리 번호';
 COMMENT ON COLUMN photo.fileName IS '파일이름';
-COMMENT ON COLUMN photo.content_num IS '본문번호';
+COMMENT ON COLUMN photo.board_num IS '본문번호';
 COMMENT ON COLUMN photo.realPath IS '절대경로';
 COMMENT ON COLUMN photo.fileSize IS '파일크기';
 COMMENT ON COLUMN screp.id IS '스크랩 아이디';
-COMMENT ON COLUMN screp.content_num IS '글번호';
+COMMENT ON COLUMN screp.board_num IS '글번호';
 
 
 

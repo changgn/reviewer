@@ -8,17 +8,7 @@
 <script>
 $(function(){
 	$("#btn_login_submit").click(function(){
-		if($("#id").val()=="" || $("#passwd").val()=="") {
-			if($("#id").val()=="") {
-				alert("아이디를 입력해 주세요");
-				$("#id").focus();
-			} else {
-				alert("비밀번호를 입력해 주세요");
-				$("#passwd").focus();
-			}
-		} else {
-			$("#loginForm").submit();
-		}
+		check();
 	});
 	$("#btn_join").click(function(){
 		$(location).attr("href","/Reviwer/logon/inputForm.do");
@@ -26,7 +16,29 @@ $(function(){
 	$("#btn_find").click(function(){
 		$(location).attr("href","/Reviwer/idpwSearch/idpwSearchNew.do");
 	});
+    $("#passwd").keyup(function(e){
+        if(e.keyCode == 13){
+        	check();
+        }
+    });
+    $("#login_logo").click(function(){
+    	$(location).attr("href","/Reviwer/main/mainForm.do");
+    });
+    
 });
+function check() {
+	if($("#id").val()=="") {
+		alert("아이디를 입력해 주세요");
+		$("#id").focus();
+		return false;
+	}
+	if($("#passwd").val()=="") {
+		alert("비밀번호를 입력해 주세요");
+		$("#passwd").focus();
+		return false;
+	} 
+	$("#loginForm").submit();
+}
 
 </script>
 <style>
@@ -44,7 +56,7 @@ $(function(){
 <div id="logon">
 	<form method="post" action="/Reviwer/logon/loginPro.do" name="loginFrom" id="loginForm">
 		<div id="loginForm">
-			<div id="login_logo"><img src="../image/reviwer_gray.png" ></div>
+			<div id="login_logo"><a href="#"><img src="../image/reviwer_gray.png" ></a></div>
 			<div id="div_id" class="size_long"><input type="text" class="text_login" id="id" name="id" placeholder="아이디" ></div>
 			<div id="div_passwd" class="size_long"><input type="password" class="text_login" id="passwd" name="passwd" placeholder="비밀번호"></div>	
 			<div id="btn_login_submit" class="btn_long"><a href="#" >로 그 인</a></div>

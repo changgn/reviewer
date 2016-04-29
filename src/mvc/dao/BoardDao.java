@@ -2,11 +2,6 @@ package mvc.dao;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.ibatis.io.Resources;
@@ -15,7 +10,6 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import vo.BoardVo;
-import vo.MembersCategoryVo;
 
 
 public class BoardDao {
@@ -43,6 +37,41 @@ public class BoardDao {
 			System.out.println(ie.getMessage());
 		}
 		return list;
+	}
+	public Integer getRecentBoardNumById(String id) {
+		Integer recentBoardNum = null;
+		String res = "mybatis/config.xml";
+		try {
+		  	InputStream is = Resources.getResourceAsStream(res);
+			
+			SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(is);
+			SqlSession session = factory.openSession();
+			
+			recentBoardNum = session.selectOne("board.getRecentBoardNumById", id);
+	
+			session.close();
+		} catch (IOException ie) {
+			System.out.println(ie.getMessage());
+		}
+		return recentBoardNum;
+	}
+	
+	public BoardVo getByBoardNum(Integer board_num) {
+		BoardVo vo = null;
+		String res = "mybatis/config.xml";
+		try {
+		  	InputStream is = Resources.getResourceAsStream(res);
+			
+			SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(is);
+			SqlSession session = factory.openSession();
+			
+			vo = session.selectOne("board.getByBoardNum", board_num);
+	
+			session.close();
+		} catch (IOException ie) {
+			System.out.println(ie.getMessage());
+		}
+		return vo;
 	}
 	public int insert(BoardVo vo) {
 		String res = "mybatis/config.xml";

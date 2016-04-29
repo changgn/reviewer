@@ -667,19 +667,6 @@ $(function(){
 			$("#writeBoard").append(addtag);
 		}
 	});
-	$("#214").click(function(){
-		if($("[id='add_214']").attr("id")=="add_214"){
-			alert("이미 선택한 카테고리입니다.");
-		} else{
-			$("[class='selected']").css("display","none");
-			$("[class='selected']").removeAttr("class");
-			$(".category_added div").remove();
-			$(".category_added").append("<div id='add_214' class='added_category size_long'><h1 class='text_sub'>가구, 침대, 침대프레임</h1></div>");
-			$("[name='addCategory']").remove();
-			addtag = "<input type='hidden' name='addCategory' value='214'>"
-			$("#writeBoard").append(addtag);
-		}
-	});
 	$("#215").click(function(){
 		if($("[id='add_215']").attr("id")=="add_215"){
 			alert("이미 선택한 카테고리입니다.");

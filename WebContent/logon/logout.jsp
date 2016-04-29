@@ -4,7 +4,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%response.sendRedirect("/Reviwer/main/mainForm.do"); %>
+<%response.sendRedirect("/Reviwer/logon/loginForm.do"); %>
 
 </body>
 </html>

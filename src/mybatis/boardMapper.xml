@@ -4,7 +4,7 @@
 
 <mapper namespace="board">
 	<insert id="add" parameterType="vo.BoardVo">
-		insert into board values(SEQ_board_board_num.NEXTVAL,#{id},#{category_id},#{content},sysdate,0,0,0,0)
+		insert into board(id,category_id,content,WRITE_DATE) values(#{id},#{category_id},#{content},sysdate)
 	</insert>
 	<update id="modify" parameterType="vo.BoardVo">
 		<!-- 조건문 -->
@@ -12,21 +12,25 @@
 	<delete id="remove" parameterType="java.lang.String">
 		<!-- 조건문 -->
 	</delete>
-	<select id="getlist" resultType="vo.BoardVo">
-		<!-- 조건문 -->
-	</select>
 	<select id="find" parameterType="String" resultType="vo.BoardVo">
 		<!-- 조건문 -->
 	</select>
 	<select id="getInfo" parameterType="String" resultType="hashmap">
 		<!-- 조건문 -->
 	</select>
+	<select id="getByBoardNum" parameterType="java.lang.Integer" resultType="vo.BoardVo">
+		select * from board where board_num=#{board_num}
+	</select>
 	<select id="getlistrecommend_num" resultType="vo.BoardVo">
-		select id, recommend_num
-		from board
-		where id=#{id}
+		select id, recommend_num from board where id=#{id}
 	</select>
 	<select id="getList" resultType="vo.BoardVo">
 		select * from board order by write_date DESC 
+	</select>
+	<select id="getListById" parameterType="java.lang.String" resultType="vo.BoardVo">
+		select * from board where id=#{id} order by write_date DESC
+	</select>
+	<select id="getRecentBoardNumById" parameterType="java.lang.String" resultType="java.lang.Integer">
+		select MAX(board_num) from board where id=#{id}
 	</select>
 </mapper>
