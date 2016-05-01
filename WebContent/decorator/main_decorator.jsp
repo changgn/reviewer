@@ -64,12 +64,12 @@
 		</h1>
 		<span id="main_btn">
 
-			<c:if test="${login_status==2}">
+			<c:if test="${login_status!=0 && login_status!=1}">
 				<a class="btn_gnb" href="/Reviwer/logon/loginForm.do">
 					<span id="btn_login">로그인버튼</span>
 				</a>
 			</c:if>
-			<c:if test="${login_status!=2}">
+			<c:if test="${login_status==0 || login_status==1}">
 				<a class="btn_gnb btn_user_toggle" href="#">
 					<span id="btn_user">계정설정</span>
 				</a>
@@ -85,7 +85,9 @@
 		<div id="user">
 			<ul id="list_user">
 				<li><a href="/Reviwer/categorySet/categorySetForm.do">카테고리 수정</a></li>
-				<li><a href="#">관리자 페이지</a></li>
+				<c:if test="${login_status==0}">
+					<li><a href="#">관리자 페이지</a></li>
+				</c:if>
 				<li><a href="#">회원정보 수정</a></li>
 				<li><a href="/Reviwer/logon/logout.do">로그아웃</a></li>
 			</ul>
@@ -110,10 +112,10 @@
 			</li>
 			<li>
 				<div id="btn_my">
-					<c:if test="${login_status==2}">
+					<c:if test="${login_status!=0 && login_status!=1}">
 						<a href="/Reviwer/logon/loginForm.do" class="nav_btn">M Y</a>
 					</c:if>
-					<c:if test="${login_status!=2}">
+					<c:if test="${login_status==0 || login_status==1}">
 						<a href="#" class="nav_btn">M Y</a>
 					</c:if>
 				</div>

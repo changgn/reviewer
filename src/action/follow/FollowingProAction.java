@@ -16,7 +16,7 @@ public class FollowingProAction implements CommandAction{
 		String myid = (String) request.getSession().getAttribute("id");
 		String to_id = request.getParameter("to_id");
 
-		FollowDao fd = new FollowDao(myid);
+		FollowDao fd = FollowDao.getInstance();
 		
 		
 		fd.addfrom(to_id);
