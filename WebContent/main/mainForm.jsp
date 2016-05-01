@@ -7,13 +7,39 @@
 <head>
 <title>메인페이지</title>
 <script>
-$(function(){
-	$(".cont_menu_option").click(function(){
-		
-		
-	});
+
+$(document).ready(function() {
 	
-}); 
+	/*
+	var reportDisplayPanel = $("#reportDisplayPanel");
+	$("#reportDisplayPanel").onmouseleave(function() {
+		alert("aaaa");
+	});
+	*/
+	
+	$("#reportDisplayPanel").bind("mouseleave", function() {
+		$("#reportDisplayPanel").hide();
+	});
+	console.log("ready end");
+
+	
+});
+
+function showrp() {
+    //show the menu directly over the placeholder
+    
+    $("#reportDisplayPanel").css({
+    	width: "500px",
+        position: "fixed",
+        top: 50 + "px",
+        left: 50 + "px"}).show();
+    
+}
+
+function hideReportPanel() {
+	
+	$("#reportDisplayPanel").hide();
+}
 
 </script>
 <style type='text/css'>
@@ -59,9 +85,6 @@ $(function(){
     .cont_popup_close{display: inline-block;overflow: hidden;width: 100%;height: 60px;border: none;font-size: 16px;color: #414042;line-height: 60px;text-align: center;vertical-align: top;}
   
   
-  
-  
-  
   	/* 본문내용 */
     .content_second{padding: 6px 26px 30px; margin-top: 22px;}
     .content_view{display: block;overflow: hidden;max-height: 110px;line-height: 1.6em;word-wrap: break-word;text-align: left;}
@@ -93,7 +116,10 @@ $(function(){
 </style>
 </head>
 <body>
-<c:forEach var="board" items="${boardList}">
+<%-- <c:forEach var="board" items="${boardList}"> --%>
+	<div id="reportDisplayPanel" style="display:none;" onclick="hideReportPanel()">
+		이글을 신고할게요
+	</div>
 	<div class="content_wrap">
 		<div class="content_first">	
 			<div class="cont_writer">
@@ -102,14 +128,14 @@ $(function(){
 					<fmt:formatDate value="${board.write_date}" pattern="yyyy-MM-dd HH:mm"/>
 				</div>
 				<div class="cont_menu">
-					<a href="#" class="cont_menu_option">
+					<a href="#" class="cont_menu_option" onclick="showrp()">
 						<span id="cont_btn_menu">옵션</span>						
 					</a>
-					<div class="cont_btn_option">
+					 <div class="cont_btn_option">
 						<div class="ly_dimmed"></div>
 						<ul class="cont_popup">
 							<li>
-								<a href="#none" class="cont_popup_close" onclick="#">이 게시글 신고</a>
+								<a href="#" class="cont_popup_close" onclick="#">이 게시글 신고</a>
 							</li>						
 							<li>
 								<a href="#" class="cont_popup_close" onclick="#">이 게시글 삭제</a>
@@ -155,7 +181,7 @@ $(function(){
        		</div>
        	</div>
 	</div>
-</c:forEach>
+<%-- </c:forEach> --%>
 	<div class="btn_posting_wrap">
 		<a href="/Reviwer/write/writeForm.do" class="btn_posting">
 			<span class="u_vc">글쓰기</span>
