@@ -88,7 +88,7 @@ CREATE TABLE members
 	birth varchar2(9) NOT NULL,
 	gender varchar2(6) NOT NULL,
 	email varchar2(50) NOT NULL,
-	phone_num varchar2(14) NOT NULL,
+	phone_num varchar2(14) NOT NULL UNIQUE,
 	reg_date date NOT NULL,
 	recommend_num number,
 	PRIMARY KEY (id)
