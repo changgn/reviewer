@@ -1,6 +1,8 @@
 package action.search;
 
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -40,26 +42,41 @@ public class SearchFormAction implements CommandAction {
 		if(searchContent != null) {
 			// 처음 실행이 아닐 시
 			firstCheck = 1;
-			if(addcount_int != 0) {	
-				// 카테고리를 선택했을 때
+			if(addcount_int != 0) {	// 카테고리를 선택했을 때
+				
+				List<String> categoryIdList = new ArrayList<>();
+				
 				for(int i=1; i<addcount_int+1; i++) {
 					String addname = "add" + i;
 					// 검색할 카테고리 ID 가져오기
 					String category_id = request.getParameter(addname);
+					categoryIdList.add(category_id);
 					System.out.println("검색할 카테고리 id : " + category_id);
 				}
+				
+				HashMap<String, Object> categoryIdContentMap = new HashMap<>();
+				categoryIdContentMap.put("categoryIdList", categoryIdList);
+				categoryIdContentMap.put("content", searchContent);
+				
+				boardList = boardDao.getListByCategoryIdContent(categoryIdContentMap);
 				System.out.println("검색할 카테고리 수 : " + addcount_int);
 				System.out.println("검색할 내용 : " + searchContent);
-			} else {	
-				// 카테고리를 선택하지 않았을 때
+				
+			} else { // 카테고리를 선택하지 않았을 때
+
+				boardList = boardDao.getListByContent(searchContent);
 				System.out.println("검색할 카테고리 수 : " + addcount_int);
 				System.out.println("검색할 내용 : " + searchContent);
-				boardList = boardDao.getList();
 			}
+			if(boardList==null) {
+				searchCount = 0;
+			} else {
+				searchCount = boardList.size();
+			}
+			System.out.println("검색된 게시글 수 : " + searchCount);
 		}
-		if(boardList!=null) {
-			searchCount = boardList.size();
-		} 
+		
+		
 		request.setAttribute("searchCount", searchCount);
 		request.setAttribute("firstCheck", firstCheck);
 		request.setAttribute("boardList", boardList);

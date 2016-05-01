@@ -62,6 +62,24 @@ public class MembersCategoryDao {
 		return list;
 	}
 	
+	public List<String> getCategoryIdById(String id) {
+		List<String> categoryIdList = null;
+		String res = "mybatis/config.xml";
+		try {
+		  	InputStream is = Resources.getResourceAsStream(res);
+			
+			SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(is);
+			SqlSession session = factory.openSession();
+			
+			categoryIdList = session.selectList("membercategory.getCategoryIdById", id);
+	
+			session.close();
+		} catch (IOException ie) {
+			System.out.println(ie.getMessage());
+		}
+		return categoryIdList;
+	}
+	
 	public int delete(MembersCategoryVo vo) {
 		String res = "mybatis/config.xml";
 		int n = 0;

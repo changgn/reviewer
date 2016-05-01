@@ -131,3 +131,5 @@ insert into category values(552, '뷰티', '의류/언더웨어', '여성의류'
 insert into category values(553, '뷰티', '의류/언더웨어', '캐주얼의류');
 insert into category values(554, '뷰티', '의류/언더웨어', '아동의류');
 insert into category values(555, '뷰티', '의류/언더웨어', '기타');
+
+commit;

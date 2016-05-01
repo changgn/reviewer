@@ -60,11 +60,24 @@ img { border: 0; }
 #list_policy li { padding: 0 25px 0 25px; float: left; }
 #list_policy .list_link { font-size: 14pt; color: white; }
 
-/* log_on */
+/* loginFrom */
 #logon { min-height: 800px; }
 #login_logo { width : 300px; height: 50px; margin: 0 auto; margin-top: 150px; margin-bottom: 40px; }
 #login_logo img{ width: 300px; height: 100%; }
 .text_login { width: 100%; height: 100%; border: 0px; font-size: 20px; padding: 10px; color: #4C4C4C; }
+
+/* inputFrom */
+#join{ min-height: 800px; }
+#join_text_id { float: left; width: 399px; height: 100%; margin: 0 auto; border: 0; }
+#btn_idcheck { float: left; }
+.join_btn_gender { font-size: 20px; }
+.join_label_gender { font-size: 20px; }
+#divterms { padding: 10px; font-size: 28px; }
+#divterms input { width: 20px; height: 20px; }
+#divterms span { font-size: 28px; }
+.gender { float: left; width: 249px; height: 100%; padding: 13px; border: 0; }
+.gender a{ margin: 0 auto; font-size: 20px; }
+#join_btn_reset, #join_btn_cancel { background-color: #4C4C4C; }
 
 /* idpwSearch */
 #find { min-height: 800px; }
@@ -95,7 +108,7 @@ img { border: 0; }
 #search_content { float: left; width: 383px; height: 40px; margin: 9px; border: 0; color: #4C4C4C; background-color: #EAEAEA; }
 .searched_board { min-height: 400px; margin: 10 auto; }
 #first_search_page { margin: 0 auto; margin-top:300px; font-size: 20px;}
-#search_result_0 { margin: 0 auto; margin-top:300px; font-size: 20px;}
+.search_result { margin: 0 auto; margin-top:300px; font-size: 20px;}
 
 /* writeForm */
 #writeForm { min-height: 800px; padding-top: 10px;}

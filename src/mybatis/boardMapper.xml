@@ -4,7 +4,7 @@
 
 <mapper namespace="board">
 	<insert id="add" parameterType="vo.BoardVo">
-		insert into board(id,category_id,content,WRITE_DATE) values(#{id},#{category_id},#{content},sysdate)
+		insert into board(board_num,id,category_id,content,WRITE_DATE) values(SEQ_board_board_num.NEXTVAL,#{id},#{category_id},#{content},sysdate)
 	</insert>
 	<update id="modify" parameterType="vo.BoardVo">
 		<!-- 조건문 -->
@@ -29,6 +29,24 @@
 	</select>
 	<select id="getListById" parameterType="java.lang.String" resultType="vo.BoardVo">
 		select * from board where id=#{id} order by write_date DESC
+	</select>
+	<select id="getListByContent" parameterType="java.lang.String" resultType="vo.BoardVo">
+		select * from board where content LIKE '%'||#{content}||'%' order by write_date DESC
+	</select>
+	<select id="getListByCategoryId" parameterType="java.util.List" resultType="vo.BoardVo">
+		select * from board where category_id IN
+		<foreach collection="list" item="item" open="(" close=")" separator=",">
+			#{item}
+		</foreach>
+    	order by write_date DESC
+	</select>
+	<select id="getListByCategoryIdContent" parameterType="java.util.HashMap" resultType="vo.BoardVo">
+		select * from board where category_id IN
+		<foreach collection="categoryIdList" item="item" open="(" close=")" separator=",">
+			#{item}
+		</foreach>
+		AND content like '%'||#{content}||'%'
+    	order by write_date DESC
 	</select>
 	<select id="getRecentBoardNumById" parameterType="java.lang.String" resultType="java.lang.Integer">
 		select MAX(board_num) from board where id=#{id}

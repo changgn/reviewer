@@ -21,4 +21,7 @@
 	<select id="getlistById" parameterType="java.lang.String" resultType="vo.MembersCategoryVo">
 		select * from members_category where id=#{id}
 	</select>
+	<select id="getCategoryIdById" parameterType="java.lang.String" resultType="java.lang.String">
+		select category_id from members_category where id=#{id}
+	</select>
 </mapper>

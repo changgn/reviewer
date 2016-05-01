@@ -41,7 +41,7 @@ CREATE TABLE board
 (
 	board_num number NOT NULL,
 	id varchar2(20) NOT NULL,
-	category_id varchar2(20) NOT NULL UNIQUE,
+	category_id varchar2(20) NOT NULL,
 	content varchar2(4000) NOT NULL,
 	write_date date NOT NULL,
 	recommend_num number DEFAULT 0,
@@ -88,7 +88,7 @@ CREATE TABLE members
 	birth varchar2(9) NOT NULL,
 	gender varchar2(6) NOT NULL,
 	email varchar2(50) NOT NULL,
-	phone_num varchar2(14) NOT NULL UNIQUE,
+	phone_num varchar2(14) NOT NULL,
 	reg_date date NOT NULL,
 	recommend_num number,
 	PRIMARY KEY (id)
@@ -183,25 +183,6 @@ ALTER TABLE screp
 
 /* Create Triggers */
 
-CREATE OR REPLACE TRIGGER TRI_board_board_num BEFORE INSERT ON board
-FOR EACH ROW
-BEGIN
-	SELECT SEQ_board_board_num.nextval
-	INTO :new.board_num
-	FROM dual;
-END;
-
-/
-
-CREATE OR REPLACE TRIGGER TRI_coment_coment_num BEFORE INSERT ON coment
-FOR EACH ROW
-BEGIN
-	SELECT SEQ_coment_coment_num.nextval
-	INTO :new.coment_num
-	FROM dual;
-END;
-
-/
 
 CREATE OR REPLACE TRIGGER TRI_board_recommend_num AFTER UPDATE ON board
 REFERENCING OLD AS old NEW AS new
@@ -260,7 +241,6 @@ COMMENT ON COLUMN members_category.category_id IS '카테고리 번호';
 COMMENT ON COLUMN photo.fileName IS '파일이름';
 COMMENT ON COLUMN photo.board_num IS '본문번호';
 COMMENT ON COLUMN photo.realPath IS '절대경로';
-COMMENT ON COLUMN photo.fileSize IS '파일크기';
 COMMENT ON COLUMN screp.id IS '스크랩 아이디';
 COMMENT ON COLUMN screp.board_num IS '글번호';
 

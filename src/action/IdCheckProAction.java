@@ -17,7 +17,7 @@ public class IdCheckProAction implements CommandAction{
 		String ch=null;
 		MemberDao memberdao = new MemberDao();
 		
-		ch=memberdao.idCheck(id);
+		ch = memberdao.idCheck(id);
 		
 		request.setAttribute("idch", ch);
 		

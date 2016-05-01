@@ -38,9 +38,9 @@ public MembersVo deleteCf(String id){
 }
 	
 	
-public String idSearch(String phone_num) {
+	public List<String> idSearch(String phone_num) {
 		
-		String id = null;
+		List<String> id = null;
 		String res = "mybatis/config.xml";
 		try {
 			InputStream is = Resources.getResourceAsStream(res);
@@ -48,7 +48,7 @@ public String idSearch(String phone_num) {
 			SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(is);
 			SqlSession session = factory.openSession();
 			
-			id = session.selectOne("member.idSearch", phone_num);
+			id = session.selectList("member.idSearch", phone_num);
 			session.close();
 			
 		}catch(IOException ie){
@@ -179,22 +179,17 @@ public String idSearch(String phone_num) {
 			InputStream is = Resources.getResourceAsStream(res);
 
 			SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(is);
-			System.out.println("factory ok");
 			SqlSession session = factory.openSession();
 
 			int n = session.insert("member.add", membersvo);
 
 			if (n > 0) {
-
 				session.commit();
 				System.out.println("insert ok");
 			} else {
 				session.rollback();
 				System.out.println("insert fail");
 			}
-
-
-
 			session.close();
 
 		} catch (IOException ie) {
@@ -261,17 +256,13 @@ public String idSearch(String phone_num) {
 			System.out.println("factory ok");
 			SqlSession session = factory.openSession();
 			
-			ch = session.selectOne("member.idCheck",id);
+			ch = session.selectOne("member.idCheck", id);
 	
 		}catch (IOException ie) {
 			System.out.println(ie.getMessage());
 		}
-		if(ch==null){
-			String m ="a";
-			return m;
-		}else{
-			return ch;
-		}
+
+		return ch;
 	}
 
 }

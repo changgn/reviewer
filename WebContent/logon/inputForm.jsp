@@ -8,7 +8,13 @@
 <script>
 $(function(){
 	$("#btn_idcheck").click(function(){
-		window.open("/Reviwer/logon/idCheckForm.do", "", width="50" ,height="50");
+		if($("#id").val()==""){
+			alert("아이디를 입력하세요");
+			$("#id").focus();
+			return false;
+		}
+		var url = "/Reviwer/logon/idCheckForm.do?id=" + $("#id").val();
+		window.open(url, "_blank", "width=500 ,height=300");
 	}); 
 	$("#man").click(function(){
 		$("#woman").css("background-color", "white");
@@ -47,6 +53,10 @@ $(function(){
 		if($("#id").val()==""){
 			alert("아이디를 입력하세요");
 			$("#id").focus();
+			return false;
+		}
+		if($("#input_check").attr("value")=="nocheck"){
+			alert("아이디 중복을 확인해 주세요");
 			return false;
 		}
 		if($("#passwd").val()==""){
@@ -91,55 +101,9 @@ $(function(){
 			return false;
 		}
 		$("#inputForm").submit();
-		
 	});
-
 });
 </script>
-<style>
-#join{
-	min-height: 800px;
-}
-#join_text_id {
-	float: left;
-	width: 399px;
-	border: 0;
-}
-#btn_idcheck {
-	float: left;
-}
-.join_btn_gender {
-font-size: 20px;
-}
-.join_label_gender {
-font-size: 20px;
-}
-#divterms {
-	padding: 10px;
-	font-size: 28px;
-}
-#divterms input {
-width: 20px;
-height: 20px;
-}
-#divterms span {
-font-size: 28px;
-}
-.gender {
-float: left;
-width: 249px;
-height: 100%;
-padding: 13px;
-border: 0;
-}
-.gender a{
-margin: 0 auto;
-font-size: 20px;
-}
-#join_btn_reset, #join_btn_cancel {
-background-color: #4C4C4C;
-}
-</style>
 <title>회원가입</title>
 </head>
 <body>
@@ -149,6 +113,7 @@ background-color: #4C4C4C;
 		<div class="size_long" id="divid">
 			<div id="join_text_id"><input class="text_login" type="text" name="id" id="id" maxlength="12" placeholder="아이디"></div>
 			<div id="btn_idcheck" class="btn_short"><a href="#">확&nbsp;&nbsp;&nbsp;인</a></div>
+			<input type="hidden" id="input_check" value="nocheck">
 		</div>
 		<div class="size_long" id="divpasswd"><input type="password" class="text_login" id="passwd" name="passwd" maxlength="15" placeholder="비밀번호"> </div>
 		<div class="size_long" id="divpasswd2"><input type="password" class="text_login" id="passwd2" name="passwd2" maxlength="15" placeholder="비밀번호 재입력"></div>

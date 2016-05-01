@@ -2,6 +2,7 @@ package mvc.dao;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.HashMap;
 import java.util.List;
 
 import org.apache.ibatis.io.Resources;
@@ -31,6 +32,57 @@ public class BoardDao {
 			SqlSession session = factory.openSession();
 			
 			list = session.selectList("board.getList");
+	
+			session.close();
+		} catch (IOException ie) {
+			System.out.println(ie.getMessage());
+		}
+		return list;
+	}
+	public List<BoardVo> getListByContent(String content) {
+		List<BoardVo> list = null;
+		String res = "mybatis/config.xml";
+		try {
+		  	InputStream is = Resources.getResourceAsStream(res);
+			
+			SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(is);
+			SqlSession session = factory.openSession();
+			
+			list = session.selectList("board.getListByContent", content);
+	
+			session.close();
+		} catch (IOException ie) {
+			System.out.println(ie.getMessage());
+		}
+		return list;
+	}
+	public List<BoardVo> getListByCategoryId(List<String> categoryIdList) {
+		List<BoardVo> list = null;
+		String res = "mybatis/config.xml";
+		try {
+		  	InputStream is = Resources.getResourceAsStream(res);
+			
+			SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(is);
+			SqlSession session = factory.openSession();
+			
+			list = session.selectList("board.getListByCategoryId", categoryIdList);
+	
+			session.close();
+		} catch (IOException ie) {
+			System.out.println(ie.getMessage());
+		}
+		return list;
+	}
+	public List<BoardVo> getListByCategoryIdContent(HashMap<String, Object> categoryIdContentMap) {
+		List<BoardVo> list = null;
+		String res = "mybatis/config.xml";
+		try {
+		  	InputStream is = Resources.getResourceAsStream(res);
+			
+			SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(is);
+			SqlSession session = factory.openSession();
+			
+			list = session.selectList("board.getListByCategoryIdContent", categoryIdContentMap);
 	
 			session.close();
 		} catch (IOException ie) {

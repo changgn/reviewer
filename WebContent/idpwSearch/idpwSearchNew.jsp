@@ -49,7 +49,7 @@ $(function(){
 	<form action="idSearch.do" method="post" name="idSearch" id="idSearch" >
 		<div id="find_id">
 			<div class="size_long"><h1 class="title_find">아이디 찾기</h1></div>
-			<div class="size_long" id="text_phone_num"><input type="text" class="text_login" id="phone_num" name="phone_num" placeholder="핸드폰 번호(01012345678)"></div>
+			<div class="size_long" id="text_phone_num"><input type="text" class="text_login" id="phone_num" name="phone_num" maxlength="12" placeholder="핸드폰 번호(01012345678)"></div>
 			<div id="submit_find_id" class="btn_long"><a href="#">아 이 디 확 인</a></div>
 		</div>
 	</form>
@@ -58,7 +58,7 @@ $(function(){
 		<div id="find_pwd">
 			<div class="size_long"><h1 class="title_find">비밀번호 찾기</h1></div>
 			<div class="size_long" id="divid"><input type="text" class="text_login" id="id" name="id" placeholder="아이디"></div>
-			<div class="size_long" id="divphone_num2"><input type="text" class="text_login" id="phone_num2" name="phone_num2" placeholder="핸드폰 번호(01012345678)"></div>
+			<div class="size_long" id="divphone_num2"><input type="text" class="text_login" id="phone_num2" name="phone_num2" maxlength="12" placeholder="핸드폰 번호(01012345678)"></div>
 			<div class="size_long" id="divemail"><input type="text" class="text_login" id="email" name="email" placeholder="이메일"></div>
 			<div id="submit_find_pwd" class="btn_long"><a href="#">비 밀 번 호 확 인</a></div>
 		</div>
