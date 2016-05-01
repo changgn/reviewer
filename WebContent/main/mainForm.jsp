@@ -7,15 +7,24 @@
 <head>
 <title>메인페이지</title>
 <script>
-function btnOn(){
+$(function(){
+	$(".cont_menu_option").click(function(){
+		
+		
+	});
 	
-}
-
+}); 
 
 </script>
 <style type='text/css'>
 
 	div{ display: block; }
+	a{text-decoration: none;
+    background-color: transparent;}
+	element.style {
+    display: block;
+    z-index: 9999;
+	}
 	
 	/* layout */
 	.content_wrap{width:650px; lear: both; min-height: 650px;padding: auto; margin: 50 auto; position:relative; border: 1px solid #e6e6e6;}
@@ -45,8 +54,13 @@ function btnOn(){
 	.cont_menu_option{display: block;overflow: hidden;line-height: 999px;padding: 3px 12px;	}
    	#cont_btn_menu{display: block;width: 4px;height: 22px;background-position: -300px 0;overflow: hidden;line-height: 999px;vertical-align: top;background-image: url("../image/icon_08.png");}
    	.cont_btn_option{display: none;position: fixed;z-index: 9999;top: 0;right: 0;bottom: 0;left: 0;line-height: 100%;text-align: center;}
+    .ly_dimmed{position: absolute;top: 0;right: 0;bottom: 0;left: 0;z-index: 9999;background-color: #000;opacity: .4;}
     .cont_popup{display: inline-block;position: relative;z-index: 10000;width: 384px;background-color: #fff;line-height: normal;vertical-align: middle;}
     .cont_popup_close{display: inline-block;overflow: hidden;width: 100%;height: 60px;border: none;font-size: 16px;color: #414042;line-height: 60px;text-align: center;vertical-align: top;}
+  
+  
+  
+  
   
   	/* 본문내용 */
     .content_second{padding: 6px 26px 30px; margin-top: 22px;}
@@ -91,13 +105,14 @@ function btnOn(){
 					<a href="#" class="cont_menu_option">
 						<span id="cont_btn_menu">옵션</span>						
 					</a>
-					<div class="cont_btn_option" data-is-activated="false">
-						<ul class="cont_popup" data-is-activated="false">
+					<div class="cont_btn_option">
+						<div class="ly_dimmed"></div>
+						<ul class="cont_popup">
 							<li>
-								<a href="#" class="cont_popup_close" onclick="btnOn()">이 게시글 신고</a>
+								<a href="#none" class="cont_popup_close" onclick="#">이 게시글 신고</a>
 							</li>						
 							<li>
-								<a href="#" class="cont-popup_close" onclick="#">이 게시글 삭제</a>
+								<a href="#" class="cont_popup_close" onclick="#">이 게시글 삭제</a>
 							</li>
 						</ul>
 					</div>
