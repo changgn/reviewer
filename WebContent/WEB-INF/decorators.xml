@@ -9,9 +9,9 @@
 	</decorator>
 	<decorator name="logon" page="/decorator/logon_decorator.jsp">
 		<pattern>/logon/loginForm.do</pattern>
-		<pattern>/logon/loginForm.jsp</pattern>
 		<pattern>/logon/inputForm.do</pattern>
-		<pattern>/logon/inputForm.jsp</pattern>
+		<pattern>/logon/inputPro.do</pattern>
+		<pattern>/logon/inputPro.jsp</pattern>
 		<pattern>/idpwSearch/*</pattern>
 	</decorator>
 	<excludes>

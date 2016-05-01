@@ -8,7 +8,7 @@
 </head>
 <body>
 <div id="idCheck">아이디</div>
-<input type="text" id="idch" name="idch" value="${id }">
+<input type="text" id="idch" name="idch" value="${id}">
 
 </body>
 </html>

@@ -7,6 +7,9 @@
 <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
 <script>
 $(function(){
+	$("#btn_idcheck").click(function(){
+		window.open(url, windowName, windowFeatures, optionalArg4)
+	});
 	$("#man").click(function(){
 		$("#woman").css("background-color", "white");
 		$("#woman a").css("color", "#4C4C4C");

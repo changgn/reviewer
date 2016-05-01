@@ -4,17 +4,27 @@
 <html>
 <head>
 <title>회원가입 확인</title>
+<style>
+.join_message {
+	margin: 0 auto;
+	margin-top: 400px;
+	
+}
+</style>
 </head>
 <body>
 
 <c:if test="${smessage!=null}">
-${smessage}
-<%-- <%response.sendRedirect("/Reviewer/logon/logonForm.do"); %> --%>
-<meta http-equiv="Refresh" content="2;url=/Reviwer/logon/loginForm.do">
+	<div class="join_message size_long text_long">${smessage}</div><br>
+	2초 후 로그인 페이지로 이동합니다.
+	<%-- <%response.sendRedirect("/Reviewer/logon/logonForm.do"); %> --%>
+	<meta http-equiv="Refresh" content="2;url=/Reviwer/logon/loginForm.do">
 </c:if>
 <c:if test="${fmesaage!=null}">
-	${fmessage}
-<%response.sendRedirect("/Reviwer/logon/inputForm.do"); %>
+	<div class="join_message size_long text_long">
+		${fmessage}
+	</div>
+	<%response.sendRedirect("/Reviwer/logon/inputForm.do"); %>
 </c:if>
 </body>
 </html>
