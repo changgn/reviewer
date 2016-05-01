@@ -36,7 +36,7 @@
 				</tr>
 				
 				<tr>
-					 <c:forEach var="팔로워 목록 " items="${fromIdList}" varStatus="fromId" > 
+					 <c:forEach var="fromId" items="${fromIdList}"> 
 						<td width="150" align="left">
 
 							<a href="#">${fromId}</a>

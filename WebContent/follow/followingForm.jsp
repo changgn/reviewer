@@ -35,11 +35,11 @@
 				</tr>
 				
 				<tr>
-					<c:forEach var="팔로잉 목록" items="${FollowList}" varStatus="to" >
+					<c:forEach var="toId" items="${toIdList}">
 						<td width="150" align="left">
 							<!-- id를 팔로우 한 상대 아이디 목록 -->
 							아이디
-							<a href="../profile/tithyneprofile.do?id=${to.to_id }"><c:out value="${to.to_id }"/></a>
+							<a href="../profile/tithyneprofile.do?id=${toId}"><c:out value="${toId}"/></a>
 						</td>
 					
 							<td width="50" align="center">

@@ -13,6 +13,7 @@ public class FollowerFormAction implements CommandAction{
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) throws Throwable {
 		// TODO Auto-generated method stub
+		request.setCharacterEncoding("UTF-8");
 		
 		// 프로필페이지로부터 받은 id
 		String to_id = request.getParameter("id");
@@ -23,7 +24,7 @@ public class FollowerFormAction implements CommandAction{
 		List<String> fromIdList = null;
 		
 		FollowDao followdao = FollowDao.getInstance(); // 팔로우 처리클래스 객체
-			
+		
 		fromIdList = followdao.getlistfrom(to_id);
 		
 		cn=1;
