@@ -59,12 +59,12 @@ public class FollowDao {
 	}
 	
 	// 팔로워 삭제
-	public void removefrom(String id){
+	public void removefrom(FollowVo followvo){
 		SqlSession sqlSession = null;
 		try{
 			sqlSession = sqlSessionFactory.openSession();
-			sqlSession.delete("removefrom", id);
-			int n = sqlSession.delete("removefrom", id);
+			sqlSession.delete("removefrom", followvo);
+			int n = sqlSession.delete("removefrom", followvo);
 			if(n>0){
 				sqlSession.commit();
 			}
@@ -135,20 +135,13 @@ public class FollowDao {
 			SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(is);
 			System.out.println("factory ok");
 			SqlSession session = factory.openSession();
-			
-			int n = session.selectOne("follow.countfrom", vo);
-			count = n;
-			if (n > 0) {
-
+			count = session.selectOne("follow.countfrom", vo);
+			if (count > 0) {
 				session.commit();
-				
 			} else {
 				session.rollback();
-				
 			}
-
 			session.close();
-
 		} catch (IOException ie) {
 			System.out.println(ie.getMessage());
 		}
@@ -156,7 +149,6 @@ public class FollowDao {
 	}
 	// 팔로잉
 	public int countto(FollowVo vo){
-		
 		int count = 0;
 		String res="/mybatis/config.xml";
 		try{
@@ -164,24 +156,16 @@ public class FollowDao {
 			SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(is);
 			System.out.println("factory ok");
 			SqlSession session = factory.openSession();
-			
-			int n = session.selectOne("follow.countto", vo);
-			count = n;
-			if (n > 0) {
-
+			count = session.selectOne("follow.countto", vo);
+			if (count > 0) {
 				session.commit();
-				
 			} else {
 				session.rollback();
-			
 			}
-
 			session.close();
-
 		} catch (IOException ie) {
 			System.out.println(ie.getMessage());
 		}
 		return count;
 	}
-	
 }
