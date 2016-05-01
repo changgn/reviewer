@@ -250,6 +250,28 @@ public String idSearch(String phone_num) {
 		}
 		return count;
 	}
-
+	public String idCheck(String id){
+		String ch=null;
+		String res = "/mybatis/config.xml";
+		
+		try{
+			
+			InputStream is = Resources.getResourceAsStream(res);
+			SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(is);
+			System.out.println("factory ok");
+			SqlSession session = factory.openSession();
+			
+			ch = session.selectOne("member.idCheck",id);
+	
+		}catch (IOException ie) {
+			System.out.println(ie.getMessage());
+		}
+		if(ch==null){
+			String m ="a";
+			return m;
+		}else{
+			return ch;
+		}
+	}
 
 }

@@ -8,8 +8,8 @@
 <script>
 $(function(){
 	$("#btn_idcheck").click(function(){
-		window.open(url, windowName, windowFeatures, optionalArg4)
-	});
+		window.open("/Reviwer/logon/idCheckForm.do", "", width="50" ,height="50");
+	}); 
 	$("#man").click(function(){
 		$("#woman").css("background-color", "white");
 		$("#woman a").css("color", "#4C4C4C");

@@ -38,6 +38,9 @@
   <select id="count" parameterType="vo.MembersVo">
   	select count(*) from members
   </select>	
+	<select id="idCheck" parameterType="String" resultType="String">
+	select id from members where id=#[id]
+	</select>
 
   </mapper>
 

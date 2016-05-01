@@ -3,6 +3,9 @@ package action;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import mvc.dao.MemberDao;
+import vo.MembersVo;
+
 public class IdCheckProAction implements CommandAction{
 
 	@Override
@@ -11,8 +14,15 @@ public class IdCheckProAction implements CommandAction{
 		request.setCharacterEncoding("UTF-8");
 		String id = request.getParameter("id");
 		
+		String ch=null;
+		MemberDao memberdao = new MemberDao();
 		
-		return "/logon/idCheckPro.jsp";
+		ch=memberdao.idCheck(id);
+		
+		request.setAttribute("idch", ch);
+		
+		
+		return "/logon/idCheckForm.jsp";
 	}
 
 }
