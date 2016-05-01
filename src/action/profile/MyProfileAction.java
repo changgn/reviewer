@@ -16,6 +16,7 @@ import mvc.dao.MemberDao;
 import mvc.dao.MembersCategoryDao;
 import mvc.dao.PhotoDao;
 import mvc.dao.ScrepDao;
+import vo.BoardVo;
 import vo.CategoryVo;
 import vo.FollowVo;
 import vo.MembersCategoryVo;
@@ -59,27 +60,41 @@ public class MyProfileAction implements CommandAction {
 					String cate= it.next().toString();
 					request.setAttribute("cate", cate);
 				} */
-				String from_id="id";
-				String to_id="id";
-				
+				FollowDao followdao = FollowDao.getInstance();
 				FollowVo fvo= new FollowVo();
+				
+				String from_id=request.getParameter("from_id");
+				String to_id=request.getParameter("to_id");
+
+				
 				fvo.setFrom_id(from_id);
 				fvo.setTo_id(to_id);
 				
-				int followerCount = 0;
-				int folloingCount = 0;			
-				
-				FollowDao followdao = FollowDao.getInstance();
+				int followerCount = followdao.countfrom(fvo);;
+				int folloingCount = followdao.countto(fvo);;			
 				
 				//팔로워
 				followerCount =followdao.countfrom(fvo);
-				
+				request.setAttribute("followerCount", followerCount);
 				//팔로잉
 				folloingCount = followdao.countto(fvo);
+				request.setAttribute("folloingCount", folloingCount);
 				
+				//스크랩
 				
+				//게시글
+				BoardDao boarddao = BoardDao.getInstance();
+				BoardVo vo = new BoardVo();
 				
+				int board_num = 0;
+				String contents ="";
+				board_num = boarddao.getRecentBoardNumById(id);
 				
+				request.setAttribute("board_num", board_num);
+				
+			
+				contents =boarddao.getContents(board_num);
+				request.setAttribute("contents", contents);
 		return "/profile/myProfile.jsp";
 	}
 

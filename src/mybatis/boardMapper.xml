@@ -33,4 +33,8 @@
 	<select id="getRecentBoardNumById" parameterType="java.lang.String" resultType="java.lang.Integer">
 		select MAX(board_num) from board where id=#{id}
 	</select>
+	<select id="getContents" parameterType="java.lang.Integer" resultType="String">
+		select content from board where board_num=#{board_num}
+	</select>
+	
 </mapper>

@@ -28,4 +28,6 @@
 	<delete id="removeto" parameterType="java.lang.String">
 		delete from follow where to_id=#{to_id}
 	</delete>
+
+	
 </mapper>

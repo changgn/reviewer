@@ -27,7 +27,7 @@ public class FollowDao {
 		return instance;
 	}
 	
-	private FollowDao(){}
+	public FollowDao(){}
 	
 	// 팔로워 추가
 	public void addfrom(String id){
@@ -183,4 +183,5 @@ public class FollowDao {
 		}
 		return count;
 	}
+	
 }

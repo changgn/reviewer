@@ -96,5 +96,24 @@ public class BoardDao {
 		}
 		return n;
 	}
+	public String getContents(int board_num){
+		String res = "mybatis/config.xml";
+		String content = "";
+		try {
+		  	InputStream is = Resources.getResourceAsStream(res);
+			
+			SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(is);
+			SqlSession session = factory.openSession();
+			
+			content = session.selectOne("board.getContents", board_num);
+			
+			session.close();
+		} catch (IOException ie) {
+			System.out.println(ie.getMessage());
+		}
+		return content;
+	}
+		
+	
 	
 }
