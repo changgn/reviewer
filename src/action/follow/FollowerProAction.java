@@ -20,7 +20,7 @@ public class FollowerProAction implements CommandAction{
 
 
 
-		FollowDao fd = new FollowDao(myid);
+		FollowDao fd = FollowDao.getInstance();
 		
 		
 		fd.addfrom(from_id);

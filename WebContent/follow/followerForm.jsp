@@ -31,15 +31,15 @@
 			<table align="center">
 				<tr>
 					<td colspan="2" align="center">
-						<c:out value="${id }님의 팔로워 목록"/>
+						${id}님의 팔로워 목록
 					</td>
 				</tr>
 				
 				<tr>
-					 <c:forEach var="팔로워 목록 " items="${FollowList}" varStatus="from" > 
+					 <c:forEach var="팔로워 목록 " items="${fromIdList}" varStatus="fromId" > 
 						<td width="150" align="left">
 
-							<a href="../profile/tithyneprofile.do?id=${from.from_id }"><c:out value="${from.from_id }"/></a>
+							<a href="#">${fromId}</a>
 						</td>
 					
 							<td width="50" align="center">

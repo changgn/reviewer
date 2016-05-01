@@ -10,8 +10,11 @@
 	<delete id="removefrom" parameterType="java.lang.String">
 		delete from follow where from_id=#{from_id}
 	</delete>
-	<select id="getlistfrom" resultType="vo.FollowVo">
-		select from_id from follow
+	<select id="getlistfrom" parameterType="java.lang.String" resultType="java.lang.String">
+		select from_id from follow where to_id=#{to_id}
+	</select>
+	<select id="getlistto" parameterType="java.lang.String" resultType="java.lang.String">
+		select to_id from follow where from_id=#{from_id}
 	</select>
 	<select id="countfrom" parameterType="vo.FollowVo">
 		select count(from_id) from follow
@@ -22,9 +25,6 @@
 	<delete id="removeto" parameterType="java.lang.String">
 		delete from follow where to_id=#{to_id}
 	</delete>
-	<select id="getlistto" resultType="vo.FollowVo">
-		select to_id from follow
-	</select>
 	<select id="countto" parameterType="vo.FollowVo">
 		select count(to_id) from follow
 	</select>

@@ -14,33 +14,20 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
+import vo.CategoryVo;
 import vo.FollowVo;
 import vo.MembersVo;
 
 public class FollowDao {
 	private SqlSessionFactory sqlSessionFactory;
 	
-	private static FollowDao instance = new FollowDao(null);
+	private static FollowDao instance = new FollowDao();
 	
 	public static FollowDao getInstance() {
 		return instance;
 	}
 	
-	public FollowDao(String myid){
-		String res = "/mybatis/config.xml";
-		try {
-		  	InputStream is = Resources.getResourceAsStream(res);
-			SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(is);
-			System.out.println("factory ok");
-			SqlSession session = factory.openSession();
-			session.commit();
-
-			session.close();
-
-		} catch (IOException ie) {
-			System.out.println(ie.getMessage());
-		}
-	}
+	private FollowDao(){}
 	
 	// 팔로워 추가
 	public void addfrom(String id){
@@ -102,34 +89,41 @@ public class FollowDao {
 	}
 
 	// 팔로워 리스트
-	public FollowVo getlistfrom(FollowVo vo){
-		FollowVo list = null;
-		SqlSession sqlSession = null;
-		try{
-			sqlSession = sqlSessionFactory.openSession();
+	public List<String> getlistfrom(String to_id){
+		List<String> fromIdList = null;
+		String res = "mybatis/config.xml";
+		try {
+		  	InputStream is = Resources.getResourceAsStream(res);
+			
+			SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(is);
+			SqlSession session = factory.openSession();
 
-			list = (FollowVo) sqlSession.selectList("follow.getlistfrom", vo);
-
-
-			return list;
-		}finally{
-			if(sqlSession!=null)sqlSession.close();
+			fromIdList = session.selectList("follow.getlistfrom", to_id);
+			
+			session.close();
+		}catch (IOException ie){
+			System.out.println(ie.getMessage());
 		}
+		return fromIdList;
 	}
 	
 	// 팔로잉 리스트
-	public FollowVo getlistto(FollowVo vo){
-		FollowVo list = null;
-		SqlSession sqlSession=null;
-		try{
-			sqlSession = sqlSessionFactory.openSession();
+	public List<String> getlistto(String from_id){
+		List<String> list = null;
+		String res = "mybatis/config.xml";
+		try {
+		  	InputStream is = Resources.getResourceAsStream(res);
+			
+			SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(is);
+			SqlSession session = factory.openSession();
 
-			list = (FollowVo) sqlSession.selectList("follow.getlistto", vo);
+			list = session.selectList("follow.getlistto", from_id);
 
-			return list;
-		}finally{
-			if(sqlSession!=null)sqlSession.close();
+			session.close();
+		} catch (IOException ie) {
+			System.out.println(ie.getMessage());
 		}
+		return list;
 	}
 	// 팔로워 세기
 	public int countfrom(FollowVo vo){
