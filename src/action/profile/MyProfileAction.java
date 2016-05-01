@@ -17,6 +17,7 @@ import mvc.dao.MembersCategoryDao;
 import mvc.dao.PhotoDao;
 import mvc.dao.ScrepDao;
 import vo.CategoryVo;
+import vo.FollowVo;
 import vo.MembersCategoryVo;
 
 public class MyProfileAction implements CommandAction {
@@ -57,8 +58,27 @@ public class MyProfileAction implements CommandAction {
 				while(it.hasNext()){
 					String cate= it.next().toString();
 					request.setAttribute("cate", cate);
-				}
-*/				
+				} */
+				String from_id="id";
+				String to_id="id";
+				
+				FollowVo fvo= new FollowVo();
+				fvo.setFrom_id(from_id);
+				fvo.setTo_id(to_id);
+				
+				int followerCount = 0;
+				int folloingCount = 0;			
+				
+				FollowDao followdao = FollowDao.getInstance();
+				
+				//팔로워
+				followerCount =followdao.countfrom(fvo);
+				
+				//팔로잉
+				folloingCount = followdao.countto(fvo);
+				
+				
+				
 				
 		return "/profile/myProfile.jsp";
 	}
