@@ -114,6 +114,12 @@ CREATE TABLE screp
 	board_num number NOT NULL
 );
 
+CREATE TABLE recommend
+(
+	id varchar2(20) NOT NULL,
+	recommend_num number
+);
+
 
 
 /* Create Foreign Keys */
@@ -177,6 +183,17 @@ ALTER TABLE screp
 	REFERENCES members (id)
 ;
 
+
+ALTER TABLE recommend
+	ADD FOREIGN KEY (id)
+	REFERENCES members (id)
+;
+
+
+ALTER TABLE recommend
+	ADD FOREIGN KEY (recommend_num)
+	REFERENCES board (board_num)
+;
 
 
 /* Create Triggers */
