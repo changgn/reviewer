@@ -60,7 +60,7 @@ function hideReportPanel() {
 	.cont_menu_option{display: block;overflow: hidden;line-height: 999px;padding: 3px 12px;	}
    	#cont_btn_menu{display: block;width: 4px;height: 22px;background-position: -300px 0;overflow: hidden;line-height: 999px;vertical-align: top;background-image: url("../image/icon_08.png");}
    	.cont_btn_option{display: none;position: fixed;z-index: 9999;top: 0;right: 0;bottom: 0;left: 0;line-height: 100%;text-align: center;}
-    .ly_dimmed{position: absolute;top: 0;right: 0;bottom: 0;left: 0;z-index: 9999;background-color: #000;opacity: .3;}
+    .ly_dimmed{position: absolute;top: 0;right: 0;bottom: 0;left: 0;z-index: 9999;background-color: #000;opacity: .5;}
     .cont_popup{display: inline-block;position: relative;z-index: 10000;width: 384px;background-color: #fff;line-height: normal;vertical-align: middle; top:300px;}
     .cont_popup_close{display: inline-block;overflow: hidden;width: 100%;height: 60px;border: none;font-size: 16px;color: #414042;line-height: 60px;text-align: center;vertical-align: top;}
   
@@ -72,7 +72,7 @@ function hideReportPanel() {
 	.item_cont{padding-top: 28px;}
 	.item_thumb{display: block;overflow: hidden;position: relative;text-align: center;}
     .thumb_mask_bottom{height: 181px;background-image: url(https://ssl.pstatic.net/static/m/pholar/img/mask_thumb_bottom_v2.png);position: absolute;right: 0;bottom: 0;left: 0;background-position: 0 100%;}
-    .list_photo{width:100%;height:auto;vertical-align:top}
+    .list_photo{width:100%;height:100%;vertical-align:top}
     
     /* 추천 버튼 */
     .cont_btns{border: 1px solid #e6e6e6;border-top: 0 none; margin-top: 22px;}
@@ -100,9 +100,6 @@ function hideReportPanel() {
 </head>
 <body>
 <c:forEach var="board" items="${allBoardList}">
-	<!-- <div id="reportDisplayPanel" style="display:none;" onclick="hideReportPanel()">
-		이글을 신고할게요
-	</div> -->
 	<div class="content_wrap">
 		<div class="content_first">	
 			<div class="cont_writer">
@@ -140,21 +137,23 @@ function hideReportPanel() {
 				</span>
 			</span>
 		</div>
-   		<a href="/Reviwer/content/contentForm.do?board_num=${board.board.board_num}" class="item_info_wrap">
-	        <span class="item_cont" title="컨텐츠 상세페이지">
-	            <span class="item_thumb">
-	                <img class="list_photo" src="${board.photo.realPath}">
-	                <span class="thumb_mask_bottom"></span>
-	            </span>
-	      	</span>
-       	</a>
+		<c:if test="${board.photo.realPath != null}">
+	   		<a href="/Reviwer/content/contentForm.do?board_num=${board.board.board_num}" class="item_info_wrap">
+		        <span class="item_cont" title="컨텐츠 상세페이지">
+		            <span class="item_thumb">
+		                <img class="list_photo" src="${board.photo.realPath}">
+		                <span class="thumb_mask_bottom"></span>
+		            </span>
+		      	</span>
+	       	</a>
+       	</c:if>
        	<div class="cont_category_info">
        		<p id="cont_category_info_f">${board.category.group1}> ${board.category.group2}> ${board.category.group3}</p>
        	</div>
        	<div class="cont_btns">
        		<div class="cont_btns_wrap">
 				<div class="btns_re">
-					<a href="#" class="btns_re_item">
+					<a href="/Reviwer/recommend/recommendPro.do" class="btns_re_item">
                 		<span class="u_ico"></span><em class="u_txt">좋아요</em><em class="u_cnt">128</em>
                  	</a>
 				</div>
