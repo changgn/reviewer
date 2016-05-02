@@ -2,6 +2,7 @@ package mvc.dao;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.List;
 
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -41,5 +42,23 @@ public class ComentDao {
 			System.out.println(ie.getMessage());
 		}
 		return n;
+	}
+	
+	public List<ComentVo> getListByBoardNum(Integer board_num) {
+		List<ComentVo> list = null;
+		String res = "mybatis/config.xml";
+		try {
+		  	InputStream is = Resources.getResourceAsStream(res);
+			
+			SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(is);
+			SqlSession session = factory.openSession();
+			
+			list = session.selectList("coment.getListByBoardNum", board_num);
+	
+			session.close();
+		} catch (IOException ie) {
+			System.out.println(ie.getMessage());
+		}
+		return list;
 	}
 }

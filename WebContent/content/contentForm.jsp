@@ -1,6 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%@ page trimDirectiveWhitespaces="true" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
     
 <html>
 <head>
@@ -81,17 +82,19 @@ float: left; width: 399px; margin: 0 auto;
 			<div id="content_btn_comment_write" class="btn_short"><a href="#">작&nbsp;&nbsp;&nbsp;성</a></div>
 		</div>
 	</c:if>
-	<div id="writed_comment" class="size_long">
-		<div id="content_comment_wirted_area" >
-			<div id="content_comment_info">
-				<a href="#">작성자</a> :  작성시간 :
+	<c:forEach var="comment" items="${commentList}">
+		<div id="writed_comment" class="size_long">
+			<div id="content_comment_wirted_area" >
+				<div id="content_comment_info">
+					<a href="#">작성자</a> : ${comment.id} 작성시간 : <fmt:formatDate value="${comment.write_date}" pattern="yyyy-MM-dd HH:mm"/>
+				</div>
+				<div id="content_comment_wirted_area">
+					<textarea id="content_comment_writed" readonly>${comment.content}</textarea>
+				</div>
 			</div>
-			<div id="content_comment_wirted_area">
-				<textarea id="content_comment_writed" readonly>가나다라</textarea>
-			</div>
+			<div id="comment_btn_delete" class="btn_short"><a href="#">삭&nbsp;&nbsp;&nbsp;제</a></div>
 		</div>
-		<div id="comment_btn_delete" class="btn_short"><a href="#">삭&nbsp;&nbsp;&nbsp;제</a></div>
-	</div>
+	</c:forEach>
 </div>
 </body>
 </html>
