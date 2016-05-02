@@ -25,5 +25,6 @@
 		<mapper resource="mybatis/photoMapper.xml" />
 		<mapper resource="mybatis/followMapper.xml" />
 		<mapper resource="mybatis/comentMapper.xml" />
+		<mapper resource="mybatis/recommendMapper.xml" />
 	</mappers>
 </configuration>

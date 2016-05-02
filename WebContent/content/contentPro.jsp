@@ -4,9 +4,9 @@
     
 <html>
 <head>
-<title>아이디 찾기</title>
+<title>댓글 작성중</title>
 </head>
 <body>
-<img src="">
+<% response.sendRedirect("/Reviwer/content/contentForm.do?board_num=" + request.getAttribute("board_num")); %>
 </body>
 </html>

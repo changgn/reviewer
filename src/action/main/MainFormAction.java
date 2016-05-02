@@ -56,7 +56,6 @@ public class MainFormAction implements CommandAction {
 				}
 				
 			}
-			
 			for(BoardVo vo : boardList) {
 				HashMap<String, Object> boardMap = new HashMap<String, Object>();
 				PhotoVo photo = photoDao.getOneByBoardNum(vo.getBoard_num());
@@ -68,7 +67,6 @@ public class MainFormAction implements CommandAction {
 			}
 			
 			request.setAttribute("allBoardList", allBoardList);
-			
 			return "/main/mainForm.jsp";
 			
 		}

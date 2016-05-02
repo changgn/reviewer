@@ -20,6 +20,7 @@ public class ContentFormAction implements CommandAction {
 		
 		// 게시글 번호값 받아오기
 		Integer board_num = Integer.parseInt(request.getParameter("board_num"));
+		String comment = request.getParameter("comment");
 		
 		// 변수 생성
 		List<PhotoVo> photoList = null;
@@ -40,7 +41,8 @@ public class ContentFormAction implements CommandAction {
 			request.setAttribute("photoList", photoList);
 		}
 		
-		
+		request.setAttribute("comment", comment);
+		request.setAttribute("board_num", board_num);
         return "/content/contentForm.jsp";//해당 뷰
 	}
 

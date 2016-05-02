@@ -2,20 +2,20 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="coment">
-	<insert id="add" parameterType="vo.ComentVo">
-		insert into coment values(SEQ_coment_coment_num.NEXTVAL,#{board_num},#{id},#{content},sysdate)
+<mapper namespace="recommend">
+	<insert id="add" parameterType="vo.RecommendVo">
+		<!-- 조건문 -->
 	</insert>
-	<update id="modify" parameterType="vo.ComentVo">
+	<update id="modify" parameterType="vo.RecommendVo">
 		<!-- 조건문 -->
 	</update>
 	<delete id="remove" parameterType="java.lang.String">
 		<!-- 조건문 -->
 	</delete>
-	<select id="getlist" resultType="vo.ComentVo">
+	<select id="getlist" resultType="vo.RecommendVo">
 		<!-- 조건문 -->
 	</select>
-	<select id="find" parameterType="String" resultType="vo.ComentVo">
+	<select id="find" parameterType="String" resultType="vo.RecommendVo">
 		<!-- 조건문 -->
 	</select>
 	<select id="getInfo" parameterType="String" resultType="hashmap">

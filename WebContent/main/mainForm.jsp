@@ -10,42 +10,30 @@
 
 $(document).ready(function() {
 	
-	/*
-	var reportDisplayPanel = $("#reportDisplayPanel");
-	$("#reportDisplayPanel").onmouseleave(function() {
-		alert("aaaa");
-	});
-	*/
-	
 	$("#reportDisplayPanel").bind("mouseleave", function() {
 		$("#reportDisplayPanel").hide();
 	});
 	console.log("ready end");
-
 	
 });
 
 function showrp() {
-    //show the menu directly over the placeholder
-    
-    $("#reportDisplayPanel").css({
-    	width: "500px",
-        position: "fixed",
-        top: 50 + "px",
-        left: 50 + "px"}).show();
-    
+	
+    $(".cont_btn_option").css({
+    }).show();
 }
 
 function hideReportPanel() {
 	
-	$("#reportDisplayPanel").hide();
+	$(".cont_btn_option").hide();
 }
 
 </script>
 <style type='text/css'>
+	
 
 	/* layout */
-	.content_wrap{width:650px; lear: both; min-height: 650px;padding: auto; margin: 50 auto; position:relative; border: 1px solid #e6e6e6;}
+	.content_wrap{width:650px; lear: both; padding: auto; margin: 50 auto; position:relative; border: 1px solid #e6e6e6;}
 	.cont_body{margin:0 auto;}
 	.content_first{margin-top: 22px;}
 	.cont_writer{padding: 9px 100px 9px 17px; position: relative; text-align: left;}
@@ -72,8 +60,8 @@ function hideReportPanel() {
 	.cont_menu_option{display: block;overflow: hidden;line-height: 999px;padding: 3px 12px;	}
    	#cont_btn_menu{display: block;width: 4px;height: 22px;background-position: -300px 0;overflow: hidden;line-height: 999px;vertical-align: top;background-image: url("../image/icon_08.png");}
    	.cont_btn_option{display: none;position: fixed;z-index: 9999;top: 0;right: 0;bottom: 0;left: 0;line-height: 100%;text-align: center;}
-    .ly_dimmed{position: absolute;top: 0;right: 0;bottom: 0;left: 0;z-index: 9999;background-color: #000;opacity: .4;}
-    .cont_popup{display: inline-block;position: relative;z-index: 10000;width: 384px;background-color: #fff;line-height: normal;vertical-align: middle;}
+    .ly_dimmed{position: absolute;top: 0;right: 0;bottom: 0;left: 0;z-index: 9999;background-color: #000;opacity: .3;}
+    .cont_popup{display: inline-block;position: relative;z-index: 10000;width: 384px;background-color: #fff;line-height: normal;vertical-align: middle; top:300px;}
     .cont_popup_close{display: inline-block;overflow: hidden;width: 100%;height: 60px;border: none;font-size: 16px;color: #414042;line-height: 60px;text-align: center;vertical-align: top;}
   
   	/* 본문내용 */
@@ -82,7 +70,7 @@ function hideReportPanel() {
 	.cont_theview{display: inline;}
 	.btn_view_more{display: inline-block;padding-left: 6px;width: 55px;color: #b9b9b9;box-sizing: border-box;}
 	.item_cont{padding-top: 28px;}
-	.item_thumb{display: block;overflow: hidden;position: relative;text-align: center;background-color:#becec5;}
+	.item_thumb{display: block;overflow: hidden;position: relative;text-align: center;}
     .thumb_mask_bottom{height: 181px;background-image: url(https://ssl.pstatic.net/static/m/pholar/img/mask_thumb_bottom_v2.png);position: absolute;right: 0;bottom: 0;left: 0;background-position: 0 100%;}
     .list_photo{width:100%;height:auto;vertical-align:top}
     
@@ -106,14 +94,15 @@ function hideReportPanel() {
 
 	/* 카테고리 정보 */
 	.cont_category_info{padding: 6px 26px 30px; margin-top: 22px; text-align: left;}
+	#cont_category_info_f{font-size: 14px;}
 	
 </style>
 </head>
 <body>
 <c:forEach var="board" items="${allBoardList}">
-	<div id="reportDisplayPanel" style="display:none;" onclick="hideReportPanel()">
+	<!-- <div id="reportDisplayPanel" style="display:none;" onclick="hideReportPanel()">
 		이글을 신고할게요
-	</div>
+	</div> -->
 	<div class="content_wrap">
 		<div class="content_first">	
 			<div class="cont_writer">
@@ -125,15 +114,17 @@ function hideReportPanel() {
 					<a href="#" class="cont_menu_option" onclick="showrp()">
 						<span id="cont_btn_menu">옵션</span>						
 					</a>
-					 <div class="cont_btn_option">
+					 <div class="cont_btn_option" onclick="hideReportPanel()">
 						<div class="ly_dimmed"></div>
 						<ul class="cont_popup">
 							<li>
 								<a href="#" class="cont_popup_close" >이 게시글 신고</a>
-							</li>						
+							</li>
+						<c:if test="${board.board.id == id}">						
 							<li>
 								<a href="#" class="cont_popup_close" >이 게시글 삭제</a>
 							</li>
+						</c:if>
 						</ul>
 					</div>
 				</div>
@@ -149,16 +140,16 @@ function hideReportPanel() {
 				</span>
 			</span>
 		</div>
-		<a href="/Reviwer/content/contentForm.do?board_num=${board.board.board_num}" class="item_info_wrap">
+   		<a href="/Reviwer/content/contentForm.do?board_num=${board.board.board_num}" class="item_info_wrap">
 	        <span class="item_cont" title="컨텐츠 상세페이지">
 	            <span class="item_thumb">
-	                <img class="list_photo" src="${board.photo.realPath}" data-width="720" data-height="720"  data-is-cropped="true">
+	                <img class="list_photo" src="${board.photo.realPath}">
 	                <span class="thumb_mask_bottom"></span>
 	            </span>
 	      	</span>
        	</a>
        	<div class="cont_category_info">
-       		<p>${board.category.group1},${board.category.group2},${board.category.group3}</p>
+       		<p id="cont_category_info_f">${board.category.group1}> ${board.category.group2}> ${board.category.group3}</p>
        	</div>
        	<div class="cont_btns">
        		<div class="cont_btns_wrap">
@@ -167,7 +158,7 @@ function hideReportPanel() {
                 		<span class="u_ico"></span><em class="u_txt">좋아요</em><em class="u_cnt">128</em>
                  	</a>
 				</div>
-				<a href="/Reviwer/content/contentForm.do?board_num=${board.board.board_num}&comment=true" class="btns_coment" >
+				<a href="/Reviwer/content/contentForm.do?board_num=${board.board.board_num}" class="btns_coment" >
 					<span class="u_ico_coment">댓글</span>
 					<span class="text_num">3</span>				
 				</a>
