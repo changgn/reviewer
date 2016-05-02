@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import action.CommandAction;
 import mvc.dao.BoardDao;
 import mvc.dao.CategoryDao;
+import mvc.dao.ComentDao;
 import mvc.dao.MembersCategoryDao;
 import mvc.dao.PhotoDao;
 import vo.BoardVo;
@@ -26,8 +27,10 @@ public class MainFormAction implements CommandAction {
 			
 			BoardDao boardDao = BoardDao.getInstance();
 			PhotoDao photoDao = PhotoDao.getInstance();
+			ComentDao comentDao = ComentDao.getInstance();
 			CategoryDao categoryDao = CategoryDao.getInstance();
 			MembersCategoryDao membersCategoryDao = MembersCategoryDao.getInstance();
+			
 			List<BoardVo> boardList = null;
 			List<HashMap> allBoardList = new ArrayList<>();
 			List<String> categoryIdList = null;
@@ -60,9 +63,12 @@ public class MainFormAction implements CommandAction {
 				HashMap<String, Object> boardMap = new HashMap<String, Object>();
 				PhotoVo photo = photoDao.getOneByBoardNum(vo.getBoard_num());
 				CategoryVo category = categoryDao.getOne(vo.getCategory_id());
+				String commentCount = comentDao.getCountByBoardNum(vo.getBoard_num());
+				if(commentCount==null)	commentCount="0";
 				boardMap.put("board", vo);
 				boardMap.put("photo", photo);
 				boardMap.put("category", category);
+				boardMap.put("commentCount", commentCount);
 				allBoardList.add(boardMap);
 			}
 			

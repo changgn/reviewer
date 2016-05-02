@@ -21,6 +21,9 @@
 	<select id="getListByBoardNum" parameterType="java.lang.Integer" resultType="vo.ComentVo">
 		select * from coment where board_num=#{board_num} order by write_date DESC
 	</select>
+	<select id="getCountByBoardNum" parameterType="java.lang.Integer" resultType="java.lang.String">
+		select count(coment_num) from coment where board_num=#{board_num}
+	</select>
 	<select id="find" parameterType="String" resultType="vo.ComentVo">
 		<!-- 조건문 -->
 	</select>

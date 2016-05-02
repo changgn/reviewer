@@ -10,6 +10,7 @@ public class LoginFormAction implements CommandAction{
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) throws Throwable {
 		// TODO Auto-generated method stub
+		request.setCharacterEncoding("UTF-8");
 		String login_status =  (String)request.getSession().getAttribute("login_status");	//로그인 상태값 가져오기
 		
 		if(login_status==null){

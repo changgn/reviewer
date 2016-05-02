@@ -62,6 +62,23 @@ public class ComentDao {
 		}
 		return list;
 	}
+	public String getCountByBoardNum(Integer board_num) {
+		String count = null;
+		String res = "mybatis/config.xml";
+		try {
+		  	InputStream is = Resources.getResourceAsStream(res);
+			
+			SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(is);
+			SqlSession session = factory.openSession();
+			
+			count = session.selectOne("coment.getCountByBoardNum", board_num);
+	
+			session.close();
+		} catch (IOException ie) {
+			System.out.println(ie.getMessage());
+		}
+		return count;
+	}
 	public int removeByCommentNum(Integer coment_num) {
 		String res = "mybatis/config.xml";
 		int n = 0;
