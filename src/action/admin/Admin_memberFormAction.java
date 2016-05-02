@@ -24,10 +24,12 @@ public class Admin_memberFormAction implements CommandAction {
 		
 		MemberDao memberdao = MemberDao.getInstance();
 		
-		// 회원 아이디 목록
+		// 회원 아이디 리스트
 		List<String> memberList = null;
 		memberList = memberdao.getMemberList();
+		// 추천수 리스트
 		List<Integer> getRecommedNum = null;
+		// 가입일 리스트
 		List<Date> getRegDate = null;
 		getRecommedNum = memberdao.getRecommedNum(memberList);
 		getRegDate = memberdao.getRegDate(memberList);
@@ -36,7 +38,7 @@ public class Admin_memberFormAction implements CommandAction {
 		Iterator<String> memberIdRegList = memberList.iterator();
 		Iterator<Integer> getRecommedNumList = getRecommedNum.iterator();
 		Iterator<Date> getRegDateList = getRegDate.iterator();
-		
+		// 아이디를 키로 추천수와 가입일을 매핑 
 		Map<Iterator<String>, Iterator<Date>> reg = new HashMap<Iterator<String>, Iterator<Date>>();
 		Map<Iterator<String>, Iterator<Integer>> rec = new HashMap<Iterator<String>, Iterator<Integer>>();
 		while(memberIdRecList.hasNext()){
@@ -45,12 +47,15 @@ public class Admin_memberFormAction implements CommandAction {
 			}else{
 				while(getRecommedNumList.hasNext()){
 					if(getRecommedNumList.next()==null){
-						break;
+						continue;
 					}else{
 						rec.put(memberIdRecList, getRecommedNumList);
 					}
+					continue;
 				}
+				System.out.println("getRecommedNumList check");
 			}
+			System.out.println("memberIdRecList check");
 		}
 		System.out.println(reg.get(memberIdRecList));
 		
@@ -60,12 +65,15 @@ public class Admin_memberFormAction implements CommandAction {
 			}else{
 				while(getRegDateList.hasNext()){
 					if(getRegDateList.next()==null){
-						break;
+						continue;
 					}else{
 						reg.put(memberIdRegList, getRegDateList);
 					}
+					continue;
 				}
+				System.out.println("getRegDateList check");
 			}
+			System.out.println("memberIdRegList check");
 		}
 		System.out.println(rec.get(getRegDateList));
 		

@@ -44,7 +44,7 @@ public class FollowerFormAction implements CommandAction{
 			}else{
 				while(myToList.hasNext()){
 					if(myToList.next()==null){
-						break;
+						continue;
 					}else{
 						if(fromList.equals(myToList)){
 							check.put(fromList, "1");
