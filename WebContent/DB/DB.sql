@@ -1,8 +1,6 @@
 
 /* Drop Triggers */
 
-DROP TRIGGER TRI_board_board_num;
-DROP TRIGGER TRI_coment_coment_num;
 DROP TRIGGER TRI_board_recommend_num;
 
 

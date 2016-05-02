@@ -44,14 +44,6 @@ function hideReportPanel() {
 </script>
 <style type='text/css'>
 
-	div{ display: block; }
-	a{text-decoration: none;
-    background-color: transparent;}
-	element.style {
-    display: block;
-    z-index: 9999;
-	}
-	
 	/* layout */
 	.content_wrap{width:650px; lear: both; min-height: 650px;padding: auto; margin: 50 auto; position:relative; border: 1px solid #e6e6e6;}
 	.cont_body{margin:0 auto;}
@@ -112,19 +104,22 @@ function hideReportPanel() {
    	.btns_screp{float: left; margin-left: 15px;position: relative;bottom: 36;}
    	.u_ico_screp{width: 25px;height: 26px;    display: inline-block;overflow: hidden;margin-right: 3px;line-height: 999px;vertical-align: top;background-image: url("../image/icon_15.png");}
 
+	/* 카테고리 정보 */
+	.cont_category_info{padding: 6px 26px 30px; margin-top: 22px; text-align: left;}
+	
 </style>
 </head>
 <body>
-<c:forEach var="board" items="${boardList}">
+<c:forEach var="board" items="${allBoardList}">
 	<div id="reportDisplayPanel" style="display:none;" onclick="hideReportPanel()">
 		이글을 신고할게요
 	</div>
 	<div class="content_wrap">
 		<div class="content_first">	
 			<div class="cont_writer">
-				<a href="/Reviwer/profile/myProfile.do?id=${board.id}" class="cont_writer_id">${board.id}</a>
+				<a href="/Reviwer/profile/myProfile.do?id=${board.board.id}" class="cont_writer_id">${board.board.id}</a>
 				<div class="cont_wdate">
-					<fmt:formatDate value="${board.write_date}" pattern="yyyy-MM-dd HH:mm"/>
+					<fmt:formatDate value="${board.board.write_date}" pattern="yyyy-MM-dd HH:mm"/>
 				</div>
 				<div class="cont_menu">
 					<a href="#" class="cont_menu_option" onclick="showrp()">
@@ -134,10 +129,10 @@ function hideReportPanel() {
 						<div class="ly_dimmed"></div>
 						<ul class="cont_popup">
 							<li>
-								<a href="#" class="cont_popup_close" onclick="#">이 게시글 신고</a>
+								<a href="#" class="cont_popup_close" >이 게시글 신고</a>
 							</li>						
 							<li>
-								<a href="#" class="cont_popup_close" onclick="#">이 게시글 삭제</a>
+								<a href="#" class="cont_popup_close" >이 게시글 삭제</a>
 							</li>
 						</ul>
 					</div>
@@ -146,10 +141,10 @@ function hideReportPanel() {
 		</div>
 		<div class="content_second">
 			<span class="content_view">
-				<span><pre>${board.content}</pre>
+				<span><pre>${board.board.content}</pre>
 					<span class="cont_theview">
 						<span>...</span>
-						<a href="/Reviwer/content/contentForm.do?board_num=${board.board_num}" class="btn_view_more">더보기</a>
+						<a href="/Reviwer/content/contentForm.do?board_num=${board.board.board_num}" class="btn_view_more">더보기</a>
 					</span>
 				</span>
 			</span>
@@ -157,23 +152,26 @@ function hideReportPanel() {
 		<a href="#" class="item_info_wrap">
 	        <span class="item_cont" title="컨텐츠 상세페이지">
 	            <span class="item_thumb">
-	                <img class="list_photo" src="#" data-width="720" data-height="720" onclick="#" data-is-cropped="true">
+	                <img class="list_photo" src="${board.photo.realPath}" data-width="720" data-height="720"  data-is-cropped="true">
 	                <span class="thumb_mask_bottom"></span>
 	            </span>
-	        </span>
+	      	</span>
        	</a>
+       	<div class="cont_category_info">
+       		<p>${board.category.group1},${board.category.group2},${board.category.group3}</p>
+       	</div>
        	<div class="cont_btns">
        		<div class="cont_btns_wrap">
 				<div class="btns_re">
-					<a href="#" class="btns_re_item" onclick="#">
+					<a href="#" class="btns_re_item">
                 		<span class="u_ico"></span><em class="u_txt">좋아요</em><em class="u_cnt">128</em>
                  	</a>
 				</div>
-				<a href="#" class="btns_coment" onclick="#">
+				<a href="#" class="btns_coment" >
 					<span class="u_ico_coment">댓글</span>
 					<span class="text_num">3</span>				
 				</a>
-				<a href="#" class="btns_screp" onclick="#">
+				<a href="#" class="btns_screp" >
 					<span class="u_ico_screp">스크렙</span>
 					<span class="text_num">19</span>
 				</a>
