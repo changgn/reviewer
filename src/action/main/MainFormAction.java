@@ -1,5 +1,6 @@
 package action.main;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -21,28 +22,26 @@ public class MainFormAction implements CommandAction {
 		public String requestPro(HttpServletRequest request, HttpServletResponse response)throws Throwable{
 			request.setCharacterEncoding("UTF-8");
 			String id = (String)request.getSession().getAttribute("id"); // 로그인 한 id
-			String login_status =  (String)request.getSession().getAttribute("login_status");	//로그인 상태
+			String login_status = (String)request.getSession().getAttribute("login_status");	//로그인 상태
 			
 			BoardDao boardDao = BoardDao.getInstance();
 			PhotoDao photoDao = PhotoDao.getInstance();
 			CategoryDao categoryDao = CategoryDao.getInstance();
 			MembersCategoryDao membersCategoryDao = MembersCategoryDao.getInstance();
 			List<BoardVo> boardList = null;
-			List<HashMap> allBoardList = null;
+			List<HashMap> allBoardList = new ArrayList<>();
 			List<String> categoryIdList = null;
 			
 			if(login_status==null){
 				login_status = "2";	// 로그인 안된 상태
 				request.getSession().setAttribute("login_status", login_status);
 			}
-			
-			if(login_status=="2"){ // 로그인 안된 경우
+			if(login_status.equals("2")){ // 로그인 안된 경우
 				
 				//모든 게시글을 가져온다
 				boardList = boardDao.getList();
 				
-			}else{ // 로그인 된 경우
-				
+			} else { // 로그인 된 경우
 				// 로그인 한 아이디의 카테고리 정보를 가져온다
 				categoryIdList = membersCategoryDao.getCategoryIdById(id);
 				
