@@ -5,7 +5,7 @@ import java.util.Date;
 public class ComentVo {
 	
 	private int coment_num;
-	private int content_num;
+	private int board_num;
 	private String id;
 	private String content;
 	private Date write_date;
@@ -14,10 +14,10 @@ public class ComentVo {
 		
 	}
 	
-	public ComentVo(int coment_num, int content_num, String id, String content, Date write_date) {
+	public ComentVo(int coment_num, int board_num, String id, String content, Date write_date) {
 		super();
 		this.coment_num = coment_num;
-		this.content_num = content_num;
+		this.board_num = board_num;
 		this.id = id;
 		this.content = content;
 		this.write_date = write_date;
@@ -33,12 +33,12 @@ public class ComentVo {
 		this.coment_num = coment_num;
 	}
 
-	public int getContent_num() {
-		return content_num;
+	public int getBoard_num() {
+		return board_num;
 	}
 
-	public void setContent_num(int content_num) {
-		this.content_num = content_num;
+	public void setBoard_num(int board_num) {
+		this.board_num = board_num;
 	}
 
 	public String getId() {

@@ -46,9 +46,9 @@ img { border: 0; }
     background-image: url(../image/search.png); }
 #btn_alarm { display: inline-block; overflow: hidden; width: 30px; height: 31px; background-position: 0px 0; line-height: 999px; vertical-align: top; color: transparent;
     background-image: url(../image/alarm.png); }
-#user { position: absolute; top: 79px; right: 0px; width: 150px; height: auto; }
+#user { position: absolute; top: 79px; right: 0px; width: 150px; height: auto; background-color: white; z-index: 9999;}
 #list_user { border-right: 1px solid #4C4C4C; border-left: 1px solid #4C4C4C; border-bottom: 1px solid #4C4C4C; background-color: white; }
-#list_user li { padding: 10px; border-top: 1px solid #4C4C4C; text-align: center }
+#list_user li { padding: 10px; border-top: 1px solid #4C4C4C; text-align: center; background-color: white; }
 #list_user li a { font-size: 20px; }
 #alarm { position: absolute; top: 60px; right: 30px; width: 300px; height: auto; }
 #list_alarm { border-right: 1px solid #4C4C4C; border-left: 1px solid #4C4C4C; border-bottom: 1px solid #4C4C4C; background-color: white; }

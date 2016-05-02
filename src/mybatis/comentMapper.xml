@@ -4,7 +4,7 @@
 
 <mapper namespace="coment">
 	<insert id="add" parameterType="vo.ComentVo">
-		<!-- 조건문 -->
+		insert into coment values(SEQ_coment_coment_num.NEXTVAL,#{board_num},#{id},#{content},sysdate)
 	</insert>
 	<update id="modify" parameterType="vo.ComentVo">
 		<!-- 조건문 -->
