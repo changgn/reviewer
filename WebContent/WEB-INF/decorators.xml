@@ -8,6 +8,7 @@
 		<pattern>/content/*</pattern>
 		<pattern>/administrator/*</pattern>
 		<pattern>/follow/*</pattern>
+		<pattern>/recommend/*</pattern>
 	</decorator>
 	<decorator name="logon" page="/decorator/logon_decorator.jsp">
 		<pattern>/logon/loginForm.do</pattern>
