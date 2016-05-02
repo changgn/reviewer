@@ -35,7 +35,7 @@ public class Admin_memberFormAction implements CommandAction {
         request.setAttribute("recommend_num", recommend_num); // 추천수
         request.setAttribute("reg_date", reg_date); // 회원가입일
        
-        return "/admin_memberForm.jsp";//해당 뷰
+        return "/administrator/admin_memberForm.jsp";//해당 뷰
 	}
 
 

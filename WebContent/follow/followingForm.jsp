@@ -45,7 +45,7 @@
 							<td width="50" align="center">
 								<!-- 팔로우 이미지 -->
 								
-									<a href="#" onmousedown="follow(1); return true;" onmouseup="window.location='/Reviewer/follow/followerPro.do?id=${id},from_id=${to.to_id }'"> <img src="../image/icon_36.png" id="fc" /></a>
+								<a href="#" onmousedown="follow(1); return true;" onmouseup="window.location='/Reviewer/follow/followerPro.do?id=${id},from_id=${toId }'"> <img src="../image/icon_36.png" id="fc" /></a>
 
 							</td>
 					</c:forEach>
