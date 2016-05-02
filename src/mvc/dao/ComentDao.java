@@ -10,6 +10,7 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import vo.ComentVo;
+import vo.MembersCategoryVo;
 
 public class ComentDao {
 	private static ComentDao instance = new ComentDao();
@@ -61,4 +62,28 @@ public class ComentDao {
 		}
 		return list;
 	}
+	public int removeByCommentNum(Integer coment_num) {
+		String res = "mybatis/config.xml";
+		int n = 0;
+		try {
+		  	InputStream is = Resources.getResourceAsStream(res);
+			
+			SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(is);
+			SqlSession session = factory.openSession();
+			
+			n = session.insert("coment.removeByCommentNum", coment_num);
+			
+			if(n>0) {
+				session.commit();
+			} else {
+				session.rollback();
+			}
+			
+			session.close();
+		} catch (IOException ie) {
+			System.out.println(ie.getMessage());
+		}
+		return n;
+	}
+	
 }

@@ -9,12 +9,12 @@
 		<pattern>/administrator/*</pattern>
 		<pattern>/follow/*</pattern>
 		<pattern>/recommend/*</pattern>
+		<pattern>/logon/modifyForm.do</pattern>
 	</decorator>
 	<decorator name="logon" page="/decorator/logon_decorator.jsp">
 		<pattern>/logon/loginForm.do</pattern>
 		<pattern>/logon/inputForm.do</pattern>
 		<pattern>/logon/inputPro.do</pattern>
-		<pattern>/logon/inputPro.jsp</pattern>
 		<pattern>/idpwSearch/*</pattern>
 	</decorator>
 	<excludes>

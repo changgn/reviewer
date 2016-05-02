@@ -12,6 +12,9 @@
 	<delete id="remove" parameterType="java.lang.String">
 		<!-- 조건문 -->
 	</delete>
+	<delete id="removeByCommentNum" parameterType="java.lang.Integer">
+		delete from coment where coment_num=#{coment_num}
+	</delete>
 	<select id="getlist" resultType="vo.ComentVo">
 		<!-- 조건문 -->
 	</select>

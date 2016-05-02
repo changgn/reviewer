@@ -12,39 +12,34 @@ public class ModifyProAction implements CommandAction{
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) throws Throwable {
 		// TODO Auto-generated method stub
+		request.setCharacterEncoding("UTF-8");
 	
-		String id = (String)request.getSession().getAttribute("id");
-		
 		//회원 수정 입력폼에서 정보들을 가져옵니다 .
+		String id = request.getParameter("id");
+		String passwd = request.getParameter("passwd");
 		String name=request.getParameter("name");
 		String birth=request.getParameter("birth");
-		String phone_num=request.getParameter("phone_num");
+		String gender=request.getParameter("gender");
 		String email=request.getParameter("email");
-		String passwd = request.getParameter("passwd");
+		String phone_num=request.getParameter("phone_num");
 		
 		MemberDao dao = new MemberDao();
 		MembersVo m = new MembersVo();
-		MembersVo cf = new MembersVo();
 		
-		m.setBirth(birth);
-		m.setEmail(email);
-		m.setName(name);
-		m.setPhone_num(phone_num);
+		m.setId(id);
 		m.setPasswd(passwd);
+		m.setName(name);
+		m.setBirth(birth);
+		m.setGender(gender);
+		m.setEmail(email);
+		m.setPhone_num(phone_num);
 		
-		dao.modifyPro(m);
-		
-		cf= dao.deleteCf(id);
-		
-		if(cf !=null){
-			String smessage="회원 정보 수정에 성공하셨습니다.";
-			request.setAttribute("smessage", smessage);
-		}else{
-			String fmessage="회원 정보 수정에 실패하셨습니다.";
-			request.setAttribute("fmessage", fmessage);
+		int n = dao.modifyPro(m);
+		if(n>0) {
+			System.out.println("회원 정보 수정 성공");
+		} else {
+			System.out.println("회원 정보 수정 실패");
 		}
-		
-		// 받아온 정보들을 DB에 저장
 		
 		return "/logon/modifyPro.jsp";
 	

@@ -21,6 +21,9 @@ $(function(){
 			$("#content_comment_write_form").submit();
 		}
 	});
+	$(".noDelete").click(function(){
+		alert("본인만 삭제할 수 있습니다");
+	});
 });
 </script>
 <style>
@@ -74,7 +77,7 @@ float: left; width: 399px; margin: 0 auto;
 	댓글
 	<c:if test="${login_status==0 || login_status==1}">
 		<div class="size_long">
-			<form id="content_comment_write_form" action="/Reviwer/content/contentPro.do?board_num=${board_num}">
+			<form id="content_comment_write_form" method="post" action="/Reviwer/content/contentPro.do?board_num=${board_num}">
 				<div id="content_comment_wirte_area">
 					<textarea id="content_comment_write" name="comment_textarea"></textarea>
 				</div>
@@ -86,13 +89,20 @@ float: left; width: 399px; margin: 0 auto;
 		<div id="writed_comment" class="size_long">
 			<div id="content_comment_wirted_area" >
 				<div id="content_comment_info">
-					<a href="#">작성자</a> : ${comment.id} 작성시간 : <fmt:formatDate value="${comment.write_date}" pattern="yyyy-MM-dd HH:mm"/>
+					작성자 : <a href="#">${comment.id}</a>&nbsp;&nbsp;&nbsp; 작성시간 : <fmt:formatDate value="${comment.write_date}" pattern="yyyy-MM-dd HH:mm"/>
 				</div>
 				<div id="content_comment_wirted_area">
 					<textarea id="content_comment_writed" readonly>${comment.content}</textarea>
 				</div>
 			</div>
-			<div id="comment_btn_delete" class="btn_short"><a href="#">삭&nbsp;&nbsp;&nbsp;제</a></div>
+			<div id="comment_btn_delete" class="btn_short">
+				<c:if test="${comment.id==id}">
+					<a href="/Reviwer/content/contentPro.do?board_num=${board_num}&comment_num=${comment.coment_num}">삭&nbsp;&nbsp;&nbsp;제</a>
+				</c:if>
+				<c:if test="${comment.id!=id}">
+					<a href="#" class="noDelete">삭&nbsp;&nbsp;&nbsp;제</a>
+				</c:if>
+			</div>
 		</div>
 	</c:forEach>
 </div>

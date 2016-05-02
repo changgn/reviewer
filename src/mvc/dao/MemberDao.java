@@ -24,7 +24,6 @@ public MembersVo deleteCf(String id){
 		InputStream is = Resources.getResourceAsStream(res);
 		
 		SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(is);
-		System.out.println("factory ok");
 		SqlSession session = factory.openSession();
 		
 		vo = session.selectOne("member.deleteCf",id);
@@ -100,7 +99,6 @@ public MembersVo deleteCf(String id){
 			InputStream is = Resources.getResourceAsStream(res);
 
 			SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(is);
-			System.out.println("factory ok");
 			SqlSession session = factory.openSession();
 			
 			 vo = session.selectOne("member.modifyForm",id);
@@ -122,7 +120,6 @@ public MembersVo deleteCf(String id){
 			InputStream is = Resources.getResourceAsStream(res);
 
 			SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(is);
-			System.out.println("factory ok");
 			SqlSession session = factory.openSession();
 			
 			session.delete("member.delete", map);
@@ -134,41 +131,27 @@ public MembersVo deleteCf(String id){
 	}
 	
 	
-	public void modifyPro(MembersVo membersvo) {
-		
+	public int modifyPro(MembersVo membersvo) {
+		int n = 0;
 		String res = "/mybatis/config.xml";
 		try {
-			int x =0;
 			InputStream is = Resources.getResourceAsStream(res);
 
 			SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(is);
-			System.out.println("factory ok");
 			SqlSession session = factory.openSession();
 			
-			int n= session.update("member.modifyPro", membersvo);
-			
-			
-
+			n = session.update("member.modifyPro", membersvo);
 			if (n > 0) {
-
 				session.commit();
-				System.out.println("update ok");
-				x=1;
-			
 			} else {
 				session.rollback();
-				System.out.println("update fail");
-			
-				x=0;
 			}
-			
-		
-
 			session.close();
 
 		} catch (IOException ie) {
 			System.out.println(ie.getMessage());
 		}
+		return n;
 	}
 
 	public void inputPro(MembersVo membersvo) {
@@ -203,7 +186,6 @@ public MembersVo deleteCf(String id){
 		try{
 			InputStream is = Resources.getResourceAsStream(res);
 			SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(is);
-			System.out.println("factory ok");
 			SqlSession session = factory.openSession();
 			memberList = session.selectList("member.getIdList");
 			session.close();
@@ -248,7 +230,6 @@ public MembersVo deleteCf(String id){
 		try{
 			InputStream is = Resources.getResourceAsStream(res);
 			SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(is);
-			System.out.println("factory ok");
 			SqlSession session = factory.openSession();
 			
 			count = session.selectOne("member.count", vo);
@@ -271,7 +252,6 @@ public MembersVo deleteCf(String id){
 			
 			InputStream is = Resources.getResourceAsStream(res);
 			SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(is);
-			System.out.println("factory ok");
 			SqlSession session = factory.openSession();
 			
 			ch = session.selectOne("member.idCheck", id);

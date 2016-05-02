@@ -3,16 +3,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>수정성공</title>
+<title>수정중</title>
 </head>
 <body>
-<c:if test="smessage!=null">
-${smessage }
 <% response.sendRedirect("/Reviwer/main/mainForm.do"); %>
-</c:if>
-<c:if test="fmessage!=null">
-${fmessage }
-<% response.sendRedirect("/Reviwer/logon/modifyForm.do"); %>
-</c:if>
 </body>
 </html>
