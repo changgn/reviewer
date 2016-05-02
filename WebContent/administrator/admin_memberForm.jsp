@@ -12,26 +12,30 @@
 			</tr>
 			
 			<!-- 전체 회원수 count해서 보여주는 것 추가 -->
-			<c:forEach var="회원 목록 " items="${MembersVo}" varStatus="mem">  
 				<tr align="center">
 					<td width="150">
 						<!-- 아이디 표시 -->
-						아이디 : <c:out value="${mem.id }"/> <!-- 아이디 출력-->
+						<c:forEach var="memberList" items="${memberList }">
+							아이디 : <c:out value="${memberList }"/> <!-- 아이디 출력-->
+						</c:forEach>
 					</td>
 					<td width="80">
 						<!-- 해당 회원이 받은 추천수 표시 -->
-						추천  <c:out value="${mem.recommend_num }"/> <!-- 추천수 -->
+						<c:forEach var="memberIdRecList" items="${memberIdRecList }">
+						추천  <c:out value="${memberIdRecList }"/> <!-- 추천수 -->
+						</c:forEach>
 					</td>
 					<td width="100">
 						<!-- 해당 회원 회원가입 일자 표시 -->
-						가입일자 <c:out value="${mem.reg_date }"/> <!-- 가입일 -->
+						<c:forEach var="memberIdRegList" items="${memberIdRegList }">
+						가입일자 <c:out value="${memberIdRegList }"/> <!-- 가입일 -->
+						</c:forEach>
 					</td>
 					<td width="60">
 						<!-- 해당 회원 페이지 이동 버튼 -->
-						<input type="button" onclick="../profile/tithyneprofile?id=${mem.id}">
+						<input type="button" onclick="../profile/tithyneprofile?id=${memberlist.id}">
 					</td>
 				</tr>
-			 </c:forEach>
 		</table>
 	</body>
 </html>

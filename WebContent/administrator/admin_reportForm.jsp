@@ -10,20 +10,20 @@
 					신고 게시글 관리
 				</td>
 			</tr>
-			<c:forEach var="신고 게시글 " items="${rep_boa}" varStatus="boa"> 
+			<c:forEach var="reporboard " items="${rep_boa}" > 
 			
 				<tr align="center">
 					<td width="150">
 						<!-- 작성자 -->
-						<c:out value="${boa.id }"/>
+						<c:out value="${reporboard.id }"/>
 					</td>
 					<td width="80">
 						<!-- 해당 게시글 -->
-						<input type="button" value="상세보기" onclick="해당게시글?board_num=${rep.board_num},id=${id}">
+						<input type="button" value="상세보기" onclick="해당게시글?board_num=${reporboard.board_num},id=${id}">
 					</td>
 					<td width="70">
 						<!-- 신고수 -->
-						신고 <c:out value="${boa.report_num }"/>
+						신고 <c:out value="${reporboard.report_num }"/>
 					</td>
 					<td width="50">
 						<!-- 삭제 Text -->

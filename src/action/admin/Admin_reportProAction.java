@@ -12,7 +12,7 @@ public class Admin_reportProAction implements CommandAction{
 		// TODO Auto-generated method stub
 		
 	
-		return "/admin_reportPro.jsp";
+		return "/administrator/admin_reportPro.jsp";
 	}
 
 }

@@ -1,40 +1,78 @@
 package action.admin;
 
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import action.CommandAction;
 import mvc.dao.MemberDao;
-import vo.MembersVo;
 
 public class Admin_memberFormAction implements CommandAction {
 
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) throws Throwable {
 		// TODO Auto-generated method stub
+		request.setCharacterEncoding("UTF-8");
 		
-		String myid = (String) request.getSession().getAttribute("id");
-		/** Member 객체 생성 */
-		MembersVo member = new MembersVo();
+		// 아이디 목록을 구한다
+		// 아이디를 조건으로 reg_date와 recommend_num를 구한다.
 		
-		MemberDao md = new MemberDao();
+		MemberDao memberdao = MemberDao.getInstance();
 		
-		// 객체 생성 ""의 이름으로 정보를 가져와 변수 안에 저장하여 사용하기 위해 설정
-		String id = member.getId();
-		Date reg_date = member.getReg_date();
-		int recommend_num = member.getRecommend_num();
+		// 회원 아이디 목록
+		List<String> memberList = null;
+		memberList = memberdao.getMemberList();
+		List<Integer> getRecommedNum = null;
+		List<Date> getRegDate = null;
+		getRecommedNum = memberdao.getRecommedNum(memberList);
+		getRegDate = memberdao.getRegDate(memberList);
 		
-		int count = md.count(member);
+		Iterator<String> memberIdRecList = memberList.iterator();
+		Iterator<String> memberIdRegList = memberList.iterator();
+		Iterator<Integer> getRecommedNumList = getRecommedNum.iterator();
+		Iterator<Date> getRegDateList = getRegDate.iterator();
 		
-        //해당 뷰에서 사용할 속성
-		request.setAttribute("count",count); // 회원수
-		request.setAttribute("myid", myid); //내 아이디
-        request.setAttribute("id", id); // 회원아이디
-        request.setAttribute("recommend_num", recommend_num); // 추천수
-        request.setAttribute("reg_date", reg_date); // 회원가입일
-       
+		Map<Iterator<String>, Iterator<Date>> reg = new HashMap<Iterator<String>, Iterator<Date>>();
+		Map<Iterator<String>, Iterator<Integer>> rec = new HashMap<Iterator<String>, Iterator<Integer>>();
+		while(memberIdRecList.hasNext()){
+			if(memberIdRecList.next()==null){
+				break;
+			}else{
+				while(getRecommedNumList.hasNext()){
+					if(getRecommedNumList.next()==null){
+						break;
+					}else{
+						rec.put(memberIdRecList, getRecommedNumList);
+					}
+				}
+			}
+		}
+		System.out.println(reg.get(memberIdRecList));
+		
+		while(memberIdRegList.hasNext()){
+			if(memberIdRegList.next()==null){
+				break;
+			}else{
+				while(getRegDateList.hasNext()){
+					if(getRegDateList.next()==null){
+						break;
+					}else{
+						reg.put(memberIdRegList, getRegDateList);
+					}
+				}
+			}
+		}
+		System.out.println(rec.get(getRegDateList));
+		
+		request.setAttribute("memberList", memberList);
+		request.setAttribute("memberIdRecList", reg.get(memberIdRecList));
+		request.setAttribute("memberIdRegList", rec.get(memberIdRegList));
+		
         return "/administrator/admin_memberForm.jsp";//해당 뷰
 	}
 

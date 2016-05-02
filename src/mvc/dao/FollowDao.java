@@ -119,8 +119,7 @@ public class FollowDao {
 		return list;
 	}
 	// 팔로워 세기
-	public int countfrom(FollowVo vo){
-		
+	public Integer countfrom(FollowVo vo){
 		int count = 0;
 		String res="/mybatis/config.xml";
 		try{
@@ -128,7 +127,7 @@ public class FollowDao {
 			SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(is);
 			System.out.println("factory ok");
 			SqlSession session = factory.openSession();
-			count = Integer.valueOf(session.selectOne("follow.countfrom", vo));
+			count = session.selectOne("follow.countfrom", vo);
 			if (count > 0) {
 				session.commit();
 			} else {
@@ -141,7 +140,7 @@ public class FollowDao {
 		return count;
 	}
 	// 팔로잉
-	public int countto(FollowVo vo){
+	public Integer countto(FollowVo vo){
 		int count = 0;
 		String res="/mybatis/config.xml";
 		try{
@@ -149,7 +148,7 @@ public class FollowDao {
 			SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(is);
 			System.out.println("factory ok");
 			SqlSession session = factory.openSession();
-			count = Integer.valueOf(session.selectOne("follow.countto", vo));
+			count = session.selectOne("follow.countto", vo);
 			if (count > 0) {
 				session.commit();
 			} else {

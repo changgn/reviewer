@@ -21,7 +21,7 @@ public class Admin_reportFormAction implements CommandAction{
 		request.setAttribute("id", id);
 		request.setAttribute("rep_num", rep_num); // 신고수
         
-		return "/adminstrator/admin_reportForm.jsp";
+		return "/administrator/admin_reportForm.jsp";
 	}
 
 }

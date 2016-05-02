@@ -16,7 +16,7 @@ public class FollowerProAction implements CommandAction{
 		String fId = request.getParameter("id"); // 팔로워 수정을 할 id,
 		String check = request.getParameter("check"); // 체크값
 
-		if(check=="1"){
+		if(check=="0"){
 			followdao.addto(fId);
 		}else{
 			followdao.removeto(fId);

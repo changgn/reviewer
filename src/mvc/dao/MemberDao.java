@@ -2,6 +2,7 @@ package mvc.dao;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
@@ -14,8 +15,6 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import vo.MembersVo;
 
 public class MemberDao {
-
-private SqlSession sqlSession;
 
 public MembersVo deleteCf(String id){
 	
@@ -197,28 +196,53 @@ public MembersVo deleteCf(String id){
 		}
 	}
 
-	// 목록
-	public MembersVo getMemberList(MembersVo vo){
-		MembersVo list = null;
+	// 멤버 회원 목록
+	public List<String> getMemberList(){
+		List<String> memberList = null;
 		String res = "/mybatis/config.xml";
 		try{
-			
 			InputStream is = Resources.getResourceAsStream(res);
 			SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(is);
 			System.out.println("factory ok");
 			SqlSession session = factory.openSession();
-
-			list = (MembersVo) session.selectList("member.getlist", vo);
-
-			
+			memberList = session.selectList("member.getIdList");
+			session.close();
 		}catch (IOException ie) {
 			System.out.println(ie.getMessage());
 		}
-		return list;
+		return memberList;
 	}
-	
-	public int count(MembersVo vo){
-		
+	// 회원가입일 리스트 뽑기
+	public List<Date> getRegDate(List<String> id){
+		List<Date> RegDateList = null;
+		String res = "mybatis/config.xml";
+		try{
+			InputStream is = Resources.getResourceAsStream(res);
+			SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(is);
+			SqlSession session = factory.openSession();
+			RegDateList = session.selectList("member.getRegList", id);
+			session.close();
+		}catch(IOException ie){
+			System.out.println(ie.getMessage());
+		}
+		return RegDateList;
+	}
+	// 추천수 리스트 뽑기
+	public List<Integer> getRecommedNum(List<String> id){
+		List<Integer> RecommendNumList = null;
+		String res = "mybatis/config.xml";
+		try{
+			InputStream is = Resources.getResourceAsStream(res);
+			SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(is);
+			SqlSession session = factory.openSession();
+			RecommendNumList = session.selectList("member.getRecList", id);
+			session.close();
+		}catch(IOException ie){
+			System.out.println(ie.getMessage());
+		}
+		return RecommendNumList;
+	}
+	public Integer count(MembersVo vo){
 		int count = 0;
 		String res="/mybatis/config.xml";
 		try{
@@ -227,19 +251,13 @@ public MembersVo deleteCf(String id){
 			System.out.println("factory ok");
 			SqlSession session = factory.openSession();
 			
-			int n = session.insert("member.count", vo);
-			count = n;
-			if (n > 0) {
-
+			count = session.selectOne("member.count", vo);
+			if (count > 0) {
 				session.commit();
-				
 			} else {
 				session.rollback();
-				
 			}
-
 			session.close();
-
 		} catch (IOException ie) {
 			System.out.println(ie.getMessage());
 		}
@@ -264,5 +282,12 @@ public MembersVo deleteCf(String id){
 
 		return ch;
 	}
+
+	private static MemberDao instance = new MemberDao();
+	
+	public static MemberDao getInstance() {
+		return instance;
+	}
+	
 
 }

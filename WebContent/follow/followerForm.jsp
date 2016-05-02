@@ -22,7 +22,11 @@
 		        obj.src="../image/icon_35.png";
 		    }
 		}
+
 		</script>
+<!-- 		<style>
+			.btn_follow_img{width:35px; height:35px; background-image: url("../image/icon_35.png");}
+		</style> -->
 	</head>
 	
 	<body>
@@ -40,16 +44,18 @@
 						</td>
 						<td width="50" align="center">
 							<!-- 팔로우 이미지 -->
-							<c:if test=${check==1 }>
+							<c:if test="${check==0}">
 								<a href="#" onclick="follow(1); return true; window.location='/Reviewer/follow/followerPro.do?id=${id},chekc=${check }'"> <img src="../image/icon_35.png" id="fc" /></a>
 							</c:if>
-							<c:if test=${check==0 }>
+							<c:if test="${check!=0}">
 								<a href="#" onclick="follow(1); return true; window.location='/Reviewer/follow/followerPro.do?id=${id},chekc=${check }'"> <img src="../image/icon_36.png" id="fc" /></a>
 							</c:if>
 							<!-- <a href="#"> <img id="fc" src="../image/icon_35.png" /></a> -->
 						</td>
 				 	</c:forEach> 
 				</tr>
+	
 			</table>
 	</body>
+	
 </html>

@@ -11,20 +11,20 @@
 				</td>
 			</tr>
 			
-			 <c:forEach var="인기 게시글 " items="${rec_boa}" varStatus="boa"> 
+			 <c:forEach var="populboard " items="${rec_boa}"> 
 			
 				<tr align="center">
 					<td width="150">
 						<!-- 작성자 -->
-						<c:out value="${boa.id }"/>
+						<c:out value="${populboard.id }"/>
 					</td>
 					<td width="80">
 						<!-- 해당 게시글 -->
-						<input type="button" value="상세보기" onclick="해당게시글?board_num=${boa.board_num},id=${id}">
+						<input type="button" value="상세보기" onclick="해당게시글?board_num=${populboard.board_num},id=${id}">
 					</td>
 					<td width="70">
 						<!-- 신고수 -->
-						신고 <c:out value="${boa.recommend_num }"/>
+						신고 <c:out value="${populboard.recommend_num }"/>
 					</td>
 					<td width="50">
 						<!-- 삭제 Text -->

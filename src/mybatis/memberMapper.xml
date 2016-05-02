@@ -13,8 +13,16 @@
 	<delete id="delete" parameterType="java.util.HashMap">
 		delete from members where id=#{id} and passwd=#{passwd}
 	</delete>
-	<select id="getlist" resultType="vo.MembersVo">
-		select * from members
+	<select id="getIdList" parameterType="java.lang.String" resultType="java.lang.String">
+		select (id) from members
+	</select>
+	<select id="getRegList" parameterType="java.lang.String" resultType="java.util.Date">
+		select reg_date
+		from members where id=#{memberList};
+	</select>
+	<select id="getRecList" parameterType="java.lang.String" resultType="java.lang.Integer">
+		select recommend_num
+		from members where id=#{memberList};
 	</select>
 	<select id="modifyForm" parameterType="java.lang.String" resultType="vo.MembersVo">
 		select * from members where id=#{id}

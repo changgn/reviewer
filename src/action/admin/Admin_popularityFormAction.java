@@ -21,7 +21,7 @@ public class Admin_popularityFormAction implements CommandAction{
 		request.setAttribute("id", id);
 		request.setAttribute("rec_num", rec_num); // 추천수
 
-		return "/admin_popularityForm.jsp";
+		return "/administrator/admin_popularityForm.jsp";
 	}
 
 }
