@@ -149,7 +149,7 @@ function hideReportPanel() {
 				</span>
 			</span>
 		</div>
-		<a href="#" class="item_info_wrap">
+		<a href="/Reviwer/content/contentForm.do?board_num=${board.board.board_num}" class="item_info_wrap">
 	        <span class="item_cont" title="컨텐츠 상세페이지">
 	            <span class="item_thumb">
 	                <img class="list_photo" src="${board.photo.realPath}" data-width="720" data-height="720"  data-is-cropped="true">
@@ -167,7 +167,7 @@ function hideReportPanel() {
                 		<span class="u_ico"></span><em class="u_txt">좋아요</em><em class="u_cnt">128</em>
                  	</a>
 				</div>
-				<a href="#" class="btns_coment" >
+				<a href="/Reviwer/content/contentForm.do?board_num=${board.board.board_num}&comment=true" class="btns_coment" >
 					<span class="u_ico_coment">댓글</span>
 					<span class="text_num">3</span>				
 				</a>
