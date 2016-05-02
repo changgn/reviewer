@@ -95,7 +95,7 @@ img { border: 0; }
 /* category_setForm */
 .category_all { heigh: auto; }
 .category_save { min-height: 600px; }
-.category_text{ height: 90px; padding-top: 15px ; border: 0px; }
+.category_text{ height: 90px; margin-top: 250px; padding-top: 15px ; border: 0px; }
 .category_setting { height: 52px; margin-bottom: 0px; border: 0; border-top: 1px solid #4C4C4C; border-right: 1px solid #4C4C4C; border-bottom: 1px solid #4C4C4C;}
 .btn_group1 { float:left; width: 99.8px; height: 50px; padding: 7px; border-left: 1px solid #4C4C4C; }
 .btn_group1 a { font-size: 30px; }

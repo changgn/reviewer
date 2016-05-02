@@ -89,7 +89,7 @@ public class MembersCategoryDao {
 			SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(is);
 			SqlSession session = factory.openSession();
 			
-			n = session.insert("membercategory.remove", vo);
+			n = session.delete("membercategory.remove", vo);
 			
 			if(n>0) {
 				session.commit();

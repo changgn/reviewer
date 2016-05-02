@@ -12,6 +12,9 @@
 	<delete id="remove" parameterType="java.lang.String">
 		<!-- 조건문 -->
 	</delete>
+	<delete id="removeByBoardNum" parameterType="java.lang.String">
+		delete from board where board_num=#{board_num}
+	</delete>
 	<select id="find" parameterType="String" resultType="vo.BoardVo">
 		<!-- 조건문 -->
 	</select>

@@ -71,7 +71,7 @@ public class ComentDao {
 			SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(is);
 			SqlSession session = factory.openSession();
 			
-			n = session.insert("coment.removeByCommentNum", coment_num);
+			n = session.delete("coment.removeByCommentNum", coment_num);
 			
 			if(n>0) {
 				session.commit();

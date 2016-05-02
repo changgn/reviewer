@@ -8,7 +8,7 @@
 </head>
 <body>
 	<div class="category_add">
-		<div class="size_long category_text"><h1 class="text_main">카테고리 설정</h1></div>
+		<div class="size_long"><h1 class="title_find">카 테 고 리 설 정</h1></div>
 		<div id="group">
 			<div id="group1" class="size_long category_setting">
 				<div class="btn_group1"><a id="group1_1" href="#">가&nbsp;&nbsp;전</a></div>

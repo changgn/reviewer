@@ -7,9 +7,11 @@ import javax.servlet.http.HttpServletResponse;
 
 import action.CommandAction;
 import mvc.dao.BoardDao;
+import mvc.dao.CategoryDao;
 import mvc.dao.ComentDao;
 import mvc.dao.PhotoDao;
 import vo.BoardVo;
+import vo.CategoryVo;
 import vo.ComentVo;
 import vo.PhotoVo;
 
@@ -40,13 +42,17 @@ public class ContentFormAction implements CommandAction {
 		commentList = comentDao.getListByBoardNum(board_num);
 		
 		if(board != null) { // 가져온 게시글 정보가 있다면
+			CategoryDao categoryDao = CategoryDao.getInstance();
+			CategoryVo category = categoryDao.getOne(board.getCategory_id());
 			request.setAttribute("board", board);
+			request.setAttribute("category", category);
 		}
 		if(photoList != null) { // 가져온 사진 정보가 있다면
 			request.setAttribute("photoList", photoList);
 		}
-		if(commentList != null) {
+		if(commentList != null) { // 가져온 댓글 정보가 있다면
 			request.setAttribute("commentList", commentList);
+			request.setAttribute("commentCount", commentList.size());
 		}
 		
 		request.setAttribute("comment", comment);
