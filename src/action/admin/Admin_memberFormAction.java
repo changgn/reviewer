@@ -47,15 +47,12 @@ public class Admin_memberFormAction implements CommandAction {
 			}else{
 				while(getRecommedNumList.hasNext()){
 					if(getRecommedNumList.next()==null){
-						continue;
+						break;
 					}else{
 						rec.put(memberIdRecList, getRecommedNumList);
 					}
-					continue;
 				}
-				System.out.println("getRecommedNumList check");
 			}
-			System.out.println("memberIdRecList check");
 		}
 		System.out.println(reg.get(memberIdRecList));
 		
@@ -65,21 +62,20 @@ public class Admin_memberFormAction implements CommandAction {
 			}else{
 				while(getRegDateList.hasNext()){
 					if(getRegDateList.next()==null){
-						continue;
+						break;
 					}else{
 						reg.put(memberIdRegList, getRegDateList);
 					}
-					continue;
 				}
-				System.out.println("getRegDateList check");
 			}
-			System.out.println("memberIdRegList check");
 		}
 		System.out.println(rec.get(getRegDateList));
 		
 		request.setAttribute("memberList", memberList);
-		request.setAttribute("memberIdRecList", reg.get(memberIdRecList));
-		request.setAttribute("memberIdRegList", rec.get(memberIdRegList));
+		request.setAttribute("memberIdRecList", memberIdRecList);
+		request.setAttribute("memberIdRegList", memberIdRegList);
+		request.setAttribute("memberIdRecListMap", reg);
+		request.setAttribute("memberIdRegListMap", rec);
 		
         return "/administrator/admin_memberForm.jsp";//해당 뷰
 	}

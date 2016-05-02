@@ -4,11 +4,18 @@
 
 <mapper namespace="follow">
 	<insert id="addfrom" parameterType="vo.FollowVo">
-		insert into follow(from_id)
-		values(#{from_id})
+		insert into follow
+		values(#{from_id}, #{to_id})
+	</insert>
+		<insert id="addto" parameterType="vo.FollowVo">
+		insert into follow
+		values(#{to_id}, #{from_id})
 	</insert>
 	<delete id="removefrom" parameterType="java.lang.String">
 		delete from follow where from_id=#{from_id}
+	</delete>
+	<delete id="removeto" parameterType="java.lang.String">
+		delete from follow where to_id=#{to_id}
 	</delete>
 	<select id="getlistfrom" parameterType="java.lang.String" resultType="java.lang.String">
 		select from_id from follow where to_id=#{to_id}
@@ -22,12 +29,5 @@
 	<select id="countto" parameterType="vo.FollowVo" resultType="java.lang.String">
 		select count(to_id) from follow where from_id=#{from_id}
 	</select>
-	<insert id="addto" parameterType="vo.FollowVo">
-		insert into follow(to_id) values(#{to_id})
-	</insert>
-	<delete id="removeto" parameterType="java.lang.String">
-		delete from follow where to_id=#{to_id}
-	</delete>
 
-	
 </mapper>

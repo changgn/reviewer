@@ -69,17 +69,16 @@ public class MyProfileAction implements CommandAction {
 				String to_id=request.getParameter("id");
 
 				
-				fvo.setFrom_id(from_id);
-				fvo.setTo_id(to_id);
+
 				
-				int followerCount = followdao.countfrom(fvo);
-				int folloingCount = followdao.countto(fvo);			
+				int followerCount = followdao.countfrom(from_id);
+				int folloingCount = followdao.countto(to_id);			
 				
 				//팔로워
-				followerCount =followdao.countfrom(fvo);
+				followerCount =followdao.countfrom(from_id);
 				request.setAttribute("followerCount", followerCount);
 				//팔로잉
-				folloingCount = followdao.countto(fvo);
+				folloingCount = followdao.countto(to_id);
 				request.setAttribute("folloingCount", folloingCount);
 				
 				

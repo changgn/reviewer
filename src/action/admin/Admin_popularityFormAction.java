@@ -1,10 +1,14 @@
 package action.admin;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import action.CommandAction;
-import vo.BoardVo;
+import mvc.dao.BoardDao;
 
 public class Admin_popularityFormAction implements CommandAction{
 
@@ -12,15 +16,12 @@ public class Admin_popularityFormAction implements CommandAction{
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) throws Throwable {
 		// TODO Auto-generated method stub
 		
-		BoardVo bv = new BoardVo();
+		BoardDao boarddao = BoardDao.getInstance();
+		List<String> boardList = null;
+		boardList = boarddao.getPopularityList();
+		System.out.println(boardList);
 		
-
-		String id = bv.getId();
-		int rec_num = bv.getRecommend_num();
-		
-		request.setAttribute("id", id);
-		request.setAttribute("rec_num", rec_num); // 추천수
-
+		request.setAttribute("boardList", boardList);
 		return "/administrator/admin_popularityForm.jsp";
 	}
 

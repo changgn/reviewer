@@ -14,7 +14,7 @@
 		delete from members where id=#{id} and passwd=#{passwd}
 	</delete>
 	<select id="getIdList" parameterType="java.lang.String" resultType="java.lang.String">
-		select (id) from members
+		select id from members
 	</select>
 	<select id="getRegList" parameterType="java.lang.String" resultType="java.util.Date">
 		select reg_date

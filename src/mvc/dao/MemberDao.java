@@ -1,7 +1,11 @@
 package mvc.dao;
 
+import java.beans.Statement;
 import java.io.IOException;
 import java.io.InputStream;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -208,7 +212,9 @@ public MembersVo deleteCf(String id){
 			InputStream is = Resources.getResourceAsStream(res);
 			SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(is);
 			SqlSession session = factory.openSession();
+			
 			memberList = session.selectList("member.getIdList");
+			
 			session.close();
 		}catch (IOException ie) {
 			System.out.println(ie.getMessage());

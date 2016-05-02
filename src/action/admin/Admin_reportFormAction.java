@@ -13,14 +13,7 @@ public class Admin_reportFormAction implements CommandAction{
 		// TODO Auto-generated method stub
 		
 		
-		BoardVo bv = new BoardVo();
 		
-		String id = bv.getId();
-		int rep_num = bv.getReport_num();
-		
-		request.setAttribute("id", id);
-		request.setAttribute("rep_num", rep_num); // 신고수
-        
 		return "/administrator/admin_reportForm.jsp";
 	}
 

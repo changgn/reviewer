@@ -5,57 +5,67 @@
 	<head>
 		<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
 		<script type="text/javascript">
-		var i = 0;
-		function follow(post_id)
-		{   
-		    i = i + post_id;
-		    var obj = document.getElementById('fc');   
-		    if(!obj) return;   
-		  
-		    if(i%2!=0)
-		    {   
-		        obj.src="../image/icon_36.png"; 
-		        
-		    } 
-		    else 
-		    {   
-		        obj.src="../image/icon_35.png";
-		    }
-		}
-
+		$(function(){
+			while(fromId!=null){
+				var from = ${fromId};
+				while(mytoIdList!=null){
+					var myTo = ${fromId}
+					if(from==myTo){
+						$('followImageSpace').data("${fromId}", "1");
+					}else{
+						$('followImageSpace').data("${fromId}", "0");
+					}
+				}
+			}
+			var va = $('followImageSpace').data("${fromId}");
+		})
+		
+		
+		$('#image2').hidden();
+		$(document).ready(function(){
+			
+			// toggle 누르면 선택되고 다시 누르면 해제
+			$('#followImage').toggle(function(){
+				
+			}); 
+		})
+		
+		
+		
 		</script>
-<!-- 		<style>
-			.btn_follow_img{width:35px; height:35px; background-image: url("../image/icon_35.png");}
-		</style> -->
+		<style>
+			#followerTable{ margin: auto; }
+			#followerList{ height:50px;  background-color: aqua;}
+			#followerListName{font-size: 30px;}
+			#followerId{font-size: 15px; width:100px; height:35px; }
+			#followImageSpace{width:35px; height:35px;} 
+		</style>
 	</head>
 	
 	<body>
-			<table align="center">
-				<tr>
-					<td colspan="2" align="center">
-						${id}님의 팔로워 목록
+		<table id="followerTable" >
+			<tr id="followerList" align="center">
+				<td id="follwerListName"> ${id}님의 팔로워 목록 </td>
+			</tr>
+			<tr>
+				<c:forEach var="fromId" items="${fromIdList}"> 
+					<td id="followerId" align="left">
+						${fromId}
 					</td>
-				</tr>
-				
-				<tr>
-					<c:forEach var="fromId" items="${fromIdList}"> 
-						<td width="150" align="left">
-							<a href="#">${fromId}</a>
+					<c:forEach var="myTo" items="${mytoIdList }">
+						<td id= "followImageSpace"width="50">
+							<a href="#">
+								<c:if test="${fromId==myTo}">
+									<img id="image1" src="../image/icon_35.png" />
+								</c:if>
+								<c:if test="${fromId!=myTo}">
+									<img id="image2" src="../image/icon_36.png" />
+								</c:if>
+							</a>
 						</td>
-						<td width="50" align="center">
-							<!-- 팔로우 이미지 -->
-							<c:if test="${check==0}">
-								<a href="#" onclick="follow(1); return true; window.location='/Reviewer/follow/followerPro.do?id=${id},chekc=${check }'"> <img src="../image/icon_35.png" id="fc" /></a>
-							</c:if>
-							<c:if test="${check!=0}">
-								<a href="#" onclick="follow(1); return true; window.location='/Reviewer/follow/followerPro.do?id=${id},chekc=${check }'"> <img src="../image/icon_36.png" id="fc" /></a>
-							</c:if>
-							<!-- <a href="#"> <img id="fc" src="../image/icon_35.png" /></a> -->
-						</td>
-				 	</c:forEach> 
-				</tr>
-	
-			</table>
+					</c:forEach>
+				 </c:forEach> 
+			</tr>
+		</table> 
 	</body>
-	
 </html>

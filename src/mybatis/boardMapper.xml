@@ -21,11 +21,14 @@
 	<select id="getInfo" parameterType="String" resultType="hashmap">
 		<!-- 조건문 -->
 	</select>
+	<select id="getPopularityBoardList" parameterType="java.lang.String" resultType="java.lang.String">
+		select id, recommend_num from board ORDER BY recommend_num DESC
+	</select>
+	<select id="getReportBoardList" parameterType="java.lang.String" resultType="java.lang.String">
+		select id, report_num from board ORDER BY rereport_num DESC
+	</select>
 	<select id="getByBoardNum" parameterType="java.lang.Integer" resultType="vo.BoardVo">
 		select * from board where board_num=#{board_num}
-	</select>
-	<select id="getlistrecommend_num" resultType="vo.BoardVo">
-		select id, recommend_num from board where id=#{id}
 	</select>
 	<select id="getList" resultType="vo.BoardVo">
 		select * from board order by write_date DESC 

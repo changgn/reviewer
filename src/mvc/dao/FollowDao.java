@@ -52,12 +52,12 @@ public class FollowDao {
 	}
 	
 	// 팔로워 삭제
-	public void removefrom(FollowVo followvo){
+	public void removefrom(String id){
 		SqlSession sqlSession = null;
 		try{
 			sqlSession = sqlSessionFactory.openSession();
-			sqlSession.delete("removefrom", followvo);
-			int n = sqlSession.delete("removefrom", followvo);
+			sqlSession.delete("removefrom", id);
+			int n = sqlSession.delete("removefrom", id);
 			if(n>0){
 				sqlSession.commit();
 			}
@@ -87,12 +87,9 @@ public class FollowDao {
 		String res = "mybatis/config.xml";
 		try {
 		  	InputStream is = Resources.getResourceAsStream(res);
-			
 			SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(is);
 			SqlSession session = factory.openSession();
-
 			fromIdList = session.selectList("follow.getlistfrom", to_id);
-			
 			session.close();
 		}catch (IOException ie){
 			System.out.println(ie.getMessage());
@@ -119,7 +116,7 @@ public class FollowDao {
 		return list;
 	}
 	// 팔로워 세기
-	public Integer countfrom(FollowVo vo){
+	public Integer countfrom(String id){
 		int count = 0;
 		String res="/mybatis/config.xml";
 		try{
@@ -127,7 +124,7 @@ public class FollowDao {
 			SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(is);
 			System.out.println("factory ok");
 			SqlSession session = factory.openSession();
-			count = session.selectOne("follow.countfrom", vo);
+			count = session.selectOne("follow.countfrom", id);
 			if (count > 0) {
 				session.commit();
 			} else {
@@ -140,7 +137,7 @@ public class FollowDao {
 		return count;
 	}
 	// 팔로잉
-	public Integer countto(FollowVo vo){
+	public Integer countto(String id){
 		int count = 0;
 		String res="/mybatis/config.xml";
 		try{
@@ -148,7 +145,7 @@ public class FollowDao {
 			SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(is);
 			System.out.println("factory ok");
 			SqlSession session = factory.openSession();
-			count = session.selectOne("follow.countto", vo);
+			count = session.selectOne(id);
 			if (count > 0) {
 				session.commit();
 			} else {

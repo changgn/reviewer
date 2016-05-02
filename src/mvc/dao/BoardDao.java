@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -190,4 +191,36 @@ public class BoardDao {
 		return n;
 	}
 	
+	public List<String> getPopularityList(){
+		List<String> popullist= null;
+		String res = "mybatis/config.xml";
+		try {
+		  	InputStream is = Resources.getResourceAsStream(res);
+			SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(is);
+			SqlSession session = factory.openSession();
+			
+			popullist = session.selectList("board.getPopularityBoardList");
+			
+			session.close();
+		} catch (IOException ie) {
+			System.out.println(ie.getMessage());
+		}
+		return popullist;
+	}
+	public List<String> getReportList(){
+		List<String> reporlist= null;
+		String res = "mybatis/config.xml";
+		try {
+		  	InputStream is = Resources.getResourceAsStream(res);
+			SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(is);
+			SqlSession session = factory.openSession();
+			
+			reporlist = session.selectList("board.getReportBoardList");
+			
+			session.close();
+		} catch (IOException ie) {
+			System.out.println(ie.getMessage());
+		}
+		return reporlist;
+	}
 }

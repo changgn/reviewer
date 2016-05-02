@@ -11,8 +11,7 @@
 				</td>
 			</tr>
 			
-			 <c:forEach var="populboard " items="${rec_boa}"> 
-			
+			 <c:forEach var="populboard " items="${boardList}"> 
 				<tr align="center">
 					<td width="150">
 						<!-- 작성자 -->
