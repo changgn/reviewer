@@ -88,7 +88,7 @@
 				<c:if test="${login_status==0}">
 					<li><a href="#">관리자 페이지</a></li>
 				</c:if>
-				<li><a href="#">회원정보 수정</a></li>
+				<li><a href="/Reviwer/logon/modifyForm.do">회원정보 수정</a></li>
 				<li><a href="/Reviwer/logon/logout.do">로그아웃</a></li>
 			</ul>
 		</div>
@@ -116,7 +116,7 @@
 						<a href="/Reviwer/logon/loginForm.do" class="nav_btn">M Y</a>
 					</c:if>
 					<c:if test="${login_status==0 || login_status==1}">
-						<a href="#" class="nav_btn">M Y</a>
+						<a href="/Reviwer/profile/myProfile.do?id=${sessionScope.id }" class="nav_btn">M Y</a>
 					</c:if>
 				</div>
 			</li>

@@ -17,7 +17,7 @@
 		select * from members
 	</select>
 	<select id="modifyForm" parameterType="java.lang.String" resultType="vo.MembersVo">
-		select name birth gender email phone_num from members where id=#{id}
+		select * from members where id=#{id}
 	</select>
 	
 	<select id="getMF" parameterType="java.lang.String" resultType="vo.MembersVo">

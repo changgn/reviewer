@@ -42,7 +42,7 @@ $("#modifyForm").submit(function(){
 		<table border="1">
 			<tr>
 				 <td>
-				 <div id="divid">${SessionScope.id}</div>
+				 <div id="divid">${sessionScope.id}</div>
 				 </td> 
 			</tr>
 			<tr>

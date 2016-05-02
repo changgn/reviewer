@@ -128,7 +128,7 @@ public class FollowDao {
 			SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(is);
 			System.out.println("factory ok");
 			SqlSession session = factory.openSession();
-			count = session.selectOne("follow.countfrom", vo);
+			count = Integer.valueOf(session.selectOne("follow.countfrom", vo));
 			if (count > 0) {
 				session.commit();
 			} else {
@@ -149,7 +149,7 @@ public class FollowDao {
 			SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(is);
 			System.out.println("factory ok");
 			SqlSession session = factory.openSession();
-			count = session.selectOne("follow.countto", vo);
+			count = Integer.valueOf(session.selectOne("follow.countto", vo));
 			if (count > 0) {
 				session.commit();
 			} else {

@@ -20,6 +20,8 @@ import vo.BoardVo;
 import vo.CategoryVo;
 import vo.FollowVo;
 import vo.MembersCategoryVo;
+import vo.PhotoVo;
+import vo.ScrepVo;
 
 public class MyProfileAction implements CommandAction {
 
@@ -63,15 +65,15 @@ public class MyProfileAction implements CommandAction {
 				FollowDao followdao = FollowDao.getInstance();
 				FollowVo fvo= new FollowVo();
 				
-				String from_id=request.getParameter("from_id");
-				String to_id=request.getParameter("to_id");
+				String from_id=request.getParameter("id");
+				String to_id=request.getParameter("id");
 
 				
 				fvo.setFrom_id(from_id);
 				fvo.setTo_id(to_id);
 				
-				int followerCount = followdao.countfrom(fvo);;
-				int folloingCount = followdao.countto(fvo);;			
+				int followerCount = followdao.countfrom(fvo);
+				int folloingCount = followdao.countto(fvo);			
 				
 				//팔로워
 				followerCount =followdao.countfrom(fvo);
@@ -80,22 +82,46 @@ public class MyProfileAction implements CommandAction {
 				folloingCount = followdao.countto(fvo);
 				request.setAttribute("folloingCount", folloingCount);
 				
-				//스크랩
+				
 				
 				//게시글
-				BoardDao boarddao = BoardDao.getInstance();
+				BoardDao boardDao = BoardDao.getInstance();
 				BoardVo vo = new BoardVo();
 				
 				int board_num = 0;
-				String contents ="";
-				board_num = boarddao.getRecentBoardNumById(id);
-				
+				System.out.println(id);
+				board_num = boardDao.getRecentBoardNumById(id);
+			
 				request.setAttribute("board_num", board_num);
 				
+				/*// 변수 생성
+				List<PhotoVo> photoList = null;
+				BoardVo board = new BoardVo();
+				
+				// 인스턴스 생성
+				PhotoDao photoDao = PhotoDao.getInstance();
+		
+				
+				// 게시물 번호로 정보 가져오기
+				board = boardDao.getByBoardNum(board_num);
+				photoList = photoDao.getListByBoardNum(board_num);
+				
+				if(board != null) { // 가져온 게시글 정보가 있다면
+					request.setAttribute("board", board);
+				}
+				if(photoList != null) { // 가져온 사진 정보가 있다면
+					request.setAttribute("photoList", photoList);
+				}
+				
+				//스크랩
+				ScrepDao screpDao = new ScrepDao();
+				ScrepVo screpVo = new ScrepVo();
+				
+				screpVo.setId(id);
+				*/
 			
-				contents =boarddao.getContents(board_num);
-				request.setAttribute("contents", contents);
-		return "/profile/myProfile.jsp";
+				
+				return "/profile/myProfile.jsp";
 	}
 
 }
