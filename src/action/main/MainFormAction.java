@@ -1,5 +1,6 @@
 package action.main;
 
+import java.util.HashMap;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -7,8 +8,12 @@ import javax.servlet.http.HttpServletResponse;
 
 import action.CommandAction;
 import mvc.dao.BoardDao;
+import mvc.dao.CategoryDao;
 import mvc.dao.MembersCategoryDao;
+import mvc.dao.PhotoDao;
 import vo.BoardVo;
+import vo.CategoryVo;
+import vo.PhotoVo;
 
 public class MainFormAction implements CommandAction {
 	
@@ -19,8 +24,11 @@ public class MainFormAction implements CommandAction {
 			String login_status =  (String)request.getSession().getAttribute("login_status");	//로그인 상태
 			
 			BoardDao boardDao = BoardDao.getInstance();
+			PhotoDao photoDao = PhotoDao.getInstance();
+			CategoryDao categoryDao = CategoryDao.getInstance();
 			MembersCategoryDao membersCategoryDao = MembersCategoryDao.getInstance();
 			List<BoardVo> boardList = null;
+			List<HashMap> allBoardList = null;
 			List<String> categoryIdList = null;
 			
 			if(login_status==null){
@@ -50,7 +58,17 @@ public class MainFormAction implements CommandAction {
 				
 			}
 			
-			request.setAttribute("boardList", boardList);
+			for(BoardVo vo : boardList) {
+				HashMap<String, Object> boardMap = new HashMap<String, Object>();
+				PhotoVo photo = photoDao.getOneByBoardNum(vo.getBoard_num());
+				CategoryVo category = categoryDao.getOne(vo.getCategory_id());
+				boardMap.put("board", vo);
+				boardMap.put("photo", photo);
+				boardMap.put("category", category);
+				allBoardList.add(boardMap);
+			}
+			
+			request.setAttribute("allBoardList", allBoardList);
 			
 			return "/main/mainForm.jsp";
 			

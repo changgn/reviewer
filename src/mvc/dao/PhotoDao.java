@@ -45,7 +45,7 @@ public class PhotoDao {
 		return n;
 	}
 	
-	public List<PhotoVo> getListById(Integer board_num) {
+	public List<PhotoVo> getListByBoardNum(Integer board_num) {
 		List<PhotoVo> list = null;
 		String res = "mybatis/config.xml";
 		try {
@@ -54,13 +54,30 @@ public class PhotoDao {
 			SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(is);
 			SqlSession session = factory.openSession();
 			
-			list = session.selectList("photo.getListById", board_num);
+			list = session.selectList("photo.getListByBoardNum", board_num);
 			
 			session.close();
 		} catch (IOException ie) {
 			System.out.println(ie.getMessage());
 		}
 		return list;
+	}
+	public PhotoVo getOneByBoardNum(Integer board_num) {
+		PhotoVo Photo = null;
+		String res = "mybatis/config.xml";
+		try {
+		  	InputStream is = Resources.getResourceAsStream(res);
+			
+			SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(is);
+			SqlSession session = factory.openSession();
+			
+			Photo = session.selectOne("photo.getOneByBoardNum", board_num);
+			
+			session.close();
+		} catch (IOException ie) {
+			System.out.println(ie.getMessage());
+		}
+		return Photo;
 	}
 
 }

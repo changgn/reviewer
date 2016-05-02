@@ -15,7 +15,12 @@
 	<select id="getlist" resultType="vo.PhotoVo">
 		select * from photo
 	</select>
-	<select id="getListById" parameterType="java.lang.Integer" resultType="vo.PhotoVo">
+	<select id="getOneByBoardNum" parameterType="java.lang.Integer" resultType="vo.PhotoVo">
+		select fileName, board_num, realPath from 
+		(select rownum rn, fileName, board_num, realPath from photo where board_num=#{board_num}) 
+		where rn=1
+	</select>
+	<select id="getListByBoardNum" parameterType="java.lang.Integer" resultType="vo.PhotoVo">
 		select * from photo where board_num=#{board_num}
 	</select>
 	<select id="find" parameterType="String" resultType="vo.PhotoVo">
