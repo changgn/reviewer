@@ -50,42 +50,7 @@ $(function(){
 </script>
 
 <style>
-.size_content {
-	width: 650px; height: 60px; margin: 15px auto; border: 1px solid #4C4C4C;
-}
-.content_photo {
-margin: 10 auto;
-width: 650px;
-}
-.content_photo img {
-width: 100%;
-}
-#content_comment_area {
-margin: 0 auto;
-}
-#content_comment_wirte_area {
-float: left; width: 549px; height: 58px; margin: 0 auto; font-size: 23px; 
-}
-#content_comment_wirted_area {
-float: left; width: 549px; margin: 0 auto;
-}
-#content_comment_write {
-	width: 100%; height: 100%; border: 0; padding: 10px; text-align:left; resize: none;  wrap:hard;
-}
-#content_comment_writed {
-	width: 100%; height: 58px; border: 0; padding: 10px; text-align:left; resize: none;  wrap:hard;
-}
-#content_comment_info {
-	padding: 10px 0 0 10px;
-	text-align: left;
-}
-#writed_comment {
-	height: 85px;
-}
-#comment_btn_delete {
-	height: 83px;
-	padding-top: 25px;
-}
+
 </style>
 </head>
 <body>
