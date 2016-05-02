@@ -5,7 +5,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import action.CommandAction;
 
-public class RecommendPro implements CommandAction {
+public class RecommendProAction implements CommandAction {
 	 public String requestPro(HttpServletRequest request, HttpServletResponse response)throws Throwable{
 		 
 		 
