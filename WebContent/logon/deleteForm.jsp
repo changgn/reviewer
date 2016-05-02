@@ -7,44 +7,32 @@
 <head>
 <title>회원탈퇴</title>
 <style>
-#passwd {
-	display: none;
+#remove {
+	margin: 0 auto;
+	margin-top: 300px;
 }
 </style>
-
-<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
-
-
 <script>
-	$(document).ready(function(){
-		$("#divpasswd").click(function(){
-			$("#divpasswd").hide();
-			$("#passwd").show();
-			$("#passwd").focus();
-		});
+$(function(){
+	$("#remove_btn_remove").click(function(){
+		if($("#passwd").val()=="") {
+			alert("비밀번호를 입력하세요");
+			return false;
+		} else {
+			$("#deleteForm").submit();
+		}
 	});
+});
 </script>
 </head>
 <body>
-	<form action="deletePro.do" method="post" name="deleteForm">
-		<table>
-			<tr>
-				<td>회원탈퇴</td>
-			</tr>
-			<tr>
-			${id }
-			</tr>
-			<tr>
-				<td>
-					<div id="divpasswd">비밀번호 입력</div> 
-					<input type="password" id="passwd" name="passwd" placeholer="비밀번호">
-				</td>
-			</tr>
-			<tr>
-				<td><input type="submit" value="회원탈퇴"></td>
-			</tr>
-		</table>
+<div id="remove">
+	<form action="deletePro.do" method="post" name="deleteForm" id="deleteForm">
+		<div class="size_long text_long">회 원 탈 퇴</div>
+		<div class="size_long" id="divpasswd"><input type="password" class="text_login" id="passwd" name="passwd" maxlength="15" placeholder="비밀번호"> </div>
+		<div id="remove_btn_remove" class="btn_long"><a href="#" >회 원 탈 퇴</a></div>
 	</form>
+</div>
 </body>
 
 </html>

@@ -120,81 +120,77 @@ CREATE TABLE recommend
 	recommend_num number
 );
 
-
-
 /* Create Foreign Keys */
 
 ALTER TABLE coment
 	ADD FOREIGN KEY (board_num)
 	REFERENCES board (board_num)
-;
+	ON DELETE CASCADE;
 
 
 ALTER TABLE photo
 	ADD FOREIGN KEY (board_num)
 	REFERENCES board (board_num)
-;
-
+	ON DELETE CASCADE;
 
 ALTER TABLE screp
 	ADD FOREIGN KEY (board_num)
 	REFERENCES board (board_num)
-;
+	ON DELETE CASCADE;
 
 
 ALTER TABLE board
 	ADD FOREIGN KEY (category_id)
 	REFERENCES category (category_id)
-;
+	ON DELETE CASCADE;
 
 
 ALTER TABLE members_category
 	ADD FOREIGN KEY (category_id)
 	REFERENCES category (category_id)
-;
+	ON DELETE CASCADE;
 
 
 ALTER TABLE board
 	ADD FOREIGN KEY (id)
 	REFERENCES members (id)
-;
+	ON DELETE CASCADE;
 
 
 ALTER TABLE follow
 	ADD FOREIGN KEY (to_id)
 	REFERENCES members (id)
-;
+	ON DELETE CASCADE;
 
 
 ALTER TABLE follow
 	ADD FOREIGN KEY (from_id)
 	REFERENCES members (id)
-;
+	ON DELETE CASCADE;
 
 
 ALTER TABLE members_category
 	ADD FOREIGN KEY (id)
 	REFERENCES members (id)
-;
+	ON DELETE CASCADE;
 
 
 ALTER TABLE screp
 	ADD FOREIGN KEY (id)
 	REFERENCES members (id)
-;
+	ON DELETE CASCADE;
 
 
 ALTER TABLE recommend
 	ADD FOREIGN KEY (id)
 	REFERENCES members (id)
-;
+	ON DELETE CASCADE;
 
 
 ALTER TABLE recommend
 	ADD FOREIGN KEY (recommend_num)
 	REFERENCES board (board_num)
-;
-
+	ON DELETE CASCADE;
 
 /* Create Triggers */
 

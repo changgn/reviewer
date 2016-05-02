@@ -83,6 +83,9 @@ $(function(){
 		}
 		$("#modifyForm").submit();
 	});
+	$("#modify_btn_remove").click(function(){
+		$(location).attr("href","/Reviwer/logon/deleteForm.do");
+	});
 });
 </script>
 </head>
@@ -107,6 +110,7 @@ $(function(){
 		<div id="modify_btn_modify" class="btn_long"><a href="#" >회 원 정 보 수 정</a></div>
 		<div id="modify_btn_reset" class="btn_long"><a href="#" >다 시 작 성</a></div>
 		<div id="modify_btn_cancel" class="btn_long"><a href="#" >취 소</a></div>
+		<div id="modify_btn_remove" class="btn_long"><a href="#" >회 원 탈 퇴</a></div>
 	</form>
 </div>
 

@@ -81,7 +81,7 @@ img { border: 0; }
 
 /* modifyFrom */
 #modify{ min-height: 800px; }
-#modify_btn_reset, #modify_btn_cancel { background-color: #4C4C4C; }
+#modify_btn_reset, #modify_btn_cancel, #modify_btn_remove { background-color: #4C4C4C; }
 
 /* idpwSearch */
 #find { min-height: 800px; }

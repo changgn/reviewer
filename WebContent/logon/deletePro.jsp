@@ -8,15 +8,14 @@
 <title>Insert title here</title>
 </head>
 <body>
-//삭제 성공
-<c:if test="smessage!=null">
-${smessage }
+<c:if test="${errorPasswd==null}">
 <% response.sendRedirect("/Reviwer/logon/loginForm.do"); %>
 </c:if>
-//삭제 실패
-<c:if test="">
-${fmessage}
-<%response.sendRedirect("/Reviwer/logon/deleteForm.do"); %>
+<c:if test="${errorPasswd!=null}">
+	<script>
+		alert("비밀번호가 일치하지 않습니다");
+		history.go(-1);
+	</script>
 </c:if>
 </body>
 </html>

@@ -14,27 +14,28 @@ public class DeleteProAction implements CommandAction{
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) throws Throwable {
 		// TODO Auto-generated method stub
-		MembersVo vo = new MembersVo();
-		MemberDao dao = new MemberDao();
-		HashMap map = new HashMap();
+		request.setCharacterEncoding("UTF-8");
 		
 		String id = (String)request.getSession().getAttribute("id");
 		String passwd = request.getParameter("passwd");
 		
-		map.put("id", id);
-		map.put("passwd", passwd);
-		dao.deletePro(map);
+		MemberDao dao = new MemberDao();
 		
-		vo = dao.deleteCf(id);
+		String savedPasswd = dao.getPasswdById(id);
 		
-		if(vo==null){
-			String smessage = "삭제 성공 하셨습니다.";
-			request.setAttribute("smessage", smessage);
-		}else{
-			String fmessage ="삭제 실패했습니다.";
-			request.setAttribute("fmessage", fmessage);
+		if(passwd.equals(savedPasswd)){	// 입력한 비밀번호와 저장된 비밀번호가 같을 경우
+			
+			HashMap<String, String> map = new HashMap<String, String>();
+			map.put("id", id);
+			map.put("passwd", passwd);
+			dao.deletePro(map);
+			
+			request.getSession().invalidate();
+			
+		} else {	// 입력한 비밀번호와 저장된 비밀번호가 다를 경우
+			request.setAttribute("errorPasswd", "errorPasswd");
 		}
-		
+
 		return "/logon/deletePro.jsp";
 	}
 

@@ -73,6 +73,24 @@ public MembersVo deleteCf(String id){
 		}
 		return vo;
 	}
+	public String getPasswdById(String id){
+		
+		String passwd = null;
+		String res = "/mybatis/config.xml";
+		try {
+			InputStream is = Resources.getResourceAsStream(res);
+			
+			SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(is);
+			SqlSession session = factory.openSession();
+		
+			passwd = session.selectOne("member.getPasswdById", id);
+			session.close();
+			
+		}catch(IOException ie) {
+			System.out.println(ie.getMessage());
+		}
+		return passwd;
+	}
 	
 	public String loginPro(String id) {
 		String passwd = null;
@@ -116,14 +134,17 @@ public MembersVo deleteCf(String id){
 	public void deletePro(HashMap<String, String> map){
 		String res = "/mybatis/config.xml";
 		try {
-			int x =0;
 			InputStream is = Resources.getResourceAsStream(res);
 
 			SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(is);
 			SqlSession session = factory.openSession();
 			
-			session.delete("member.delete", map);
-		
+			int n = session.delete("member.delete", map);
+			if (n > 0) {
+				session.commit();
+			} else {
+				session.rollback();
+			}
 		
 			} catch (IOException ie) {
 			System.out.println(ie.getMessage());

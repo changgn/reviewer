@@ -10,6 +10,7 @@
 		<pattern>/follow/*</pattern>
 		<pattern>/recommend/*</pattern>
 		<pattern>/logon/modifyForm.do</pattern>
+		<pattern>/logon/deleteForm.do</pattern>
 	</decorator>
 	<decorator name="logon" page="/decorator/logon_decorator.jsp">
 		<pattern>/logon/loginForm.do</pattern>

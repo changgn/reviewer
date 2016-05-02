@@ -11,7 +11,7 @@ public class DeleteFormAction implements CommandAction{
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) throws Throwable {
 		// TODO Auto-generated method stub
 		
-		String id= (String)request.getSession().getAttribute("id");
+		String id = (String)request.getSession().getAttribute("id");
 		
 		request.setAttribute("id", id);
 		
