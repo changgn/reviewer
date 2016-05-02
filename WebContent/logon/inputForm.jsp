@@ -14,7 +14,7 @@ $(function(){
 			return false;
 		}
 		var url = "/Reviwer/logon/idCheckForm.do?id=" + $("#id").val();
-		window.open(url, "_blank", "width=500 ,height=300");
+		window.open(url, "_blank", "width=500,height=100");
 	}); 
 	$("#man").click(function(){
 		$("#woman").css("background-color", "white");

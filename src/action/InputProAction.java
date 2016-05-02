@@ -20,7 +20,7 @@ public class InputProAction implements CommandAction{
 		MembersVo membersvo = new MembersVo();
 		MemberDao memberDao= new MemberDao();
 		
-		//회정 정보를 가져온다. 
+		//회원 정보를 가져온다. 
 		String id=request.getParameter("id") ;
 		String passwd=request.getParameter("passwd");
 		String name= request.getParameter("name");
