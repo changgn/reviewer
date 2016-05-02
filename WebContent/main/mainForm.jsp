@@ -84,7 +84,6 @@ function hideReportPanel() {
     .cont_popup{display: inline-block;position: relative;z-index: 10000;width: 384px;background-color: #fff;line-height: normal;vertical-align: middle;}
     .cont_popup_close{display: inline-block;overflow: hidden;width: 100%;height: 60px;border: none;font-size: 16px;color: #414042;line-height: 60px;text-align: center;vertical-align: top;}
   
-  
   	/* 본문내용 */
     .content_second{padding: 6px 26px 30px; margin-top: 22px;}
     .content_view{display: block;overflow: hidden;max-height: 110px;line-height: 1.6em;word-wrap: break-word;text-align: left;}
@@ -116,7 +115,7 @@ function hideReportPanel() {
 </style>
 </head>
 <body>
-<%-- <c:forEach var="board" items="${boardList}"> --%>
+<c:forEach var="board" items="${boardList}">
 	<div id="reportDisplayPanel" style="display:none;" onclick="hideReportPanel()">
 		이글을 신고할게요
 	</div>
@@ -181,7 +180,7 @@ function hideReportPanel() {
        		</div>
        	</div>
 	</div>
-<%-- </c:forEach> --%>
+</c:forEach>
 	<div class="btn_posting_wrap">
 		<a href="/Reviwer/write/writeForm.do" class="btn_posting">
 			<span class="u_vc">글쓰기</span>
