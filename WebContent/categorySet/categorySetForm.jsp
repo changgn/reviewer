@@ -341,7 +341,7 @@
 			</div>
 		</div>
 		<div class="category_added"></div>
-		<form action="/Reviwer/categorySet/categorySetPro.do" id="addCategory" method="post"></form>
+		<form action="/Reviewer/categorySet/categorySetPro.do" id="addCategory" method="post"></form>
 		<div id="btn_add" class="btn_long"><a href="#">카 테 고 리&nbsp;&nbsp;&nbsp;추 가</a></div>
 	</div>
 	<div class="category_save">
@@ -355,7 +355,7 @@
 						<div id="del_${Category.category_id}" class="del_category btn_short"><a href="#">삭&nbsp;&nbsp;&nbsp;제</a></div>
 					</div>
 				</c:forEach>
-				<form action="/Reviwer/categorySet/categorySetPro.do" id="delCategory" method="post"></form>
+				<form action="/Reviewer/categorySet/categorySetPro.do" id="delCategory" method="post"></form>
 			</c:if>
 			<c:if test="${CategoryListSize==0 || CategoryListSize==null}">
 			<div class="size_long category_text"><h1 class="text_sub">카테고리를 추가해 주세요</h1></div>

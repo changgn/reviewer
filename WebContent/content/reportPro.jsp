@@ -13,7 +13,7 @@
 		</script>
 	</c:if>
 	<c:if test="${reportok == 'reportfalse'}">
-		<% response.sendRedirect("/Reviwer/main/mainForm.do"); %>
+		<% response.sendRedirect("/Reviewer/main/mainForm.do"); %>
 	</c:if>
 </body>
 </html>

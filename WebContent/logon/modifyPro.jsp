@@ -6,6 +6,6 @@
 <title>수정중</title>
 </head>
 <body>
-<% response.sendRedirect("/Reviwer/main/mainForm.do"); %>
+<% response.sendRedirect("/Reviewer/main/mainForm.do"); %>
 </body>
 </html>

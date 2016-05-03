@@ -8,7 +8,7 @@
 </head>
 <body>
 <c:if test="${ message == null}">
-	<%response.sendRedirect("/Reviwer/main/mainForm.do"); %>
+	<%response.sendRedirect("/Reviewer/main/mainForm.do"); %>
 </c:if>
 <c:if test="${ message != null}">
 	<c:if test="${ message == 'errID'}">

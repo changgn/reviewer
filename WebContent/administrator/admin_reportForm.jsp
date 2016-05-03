@@ -27,7 +27,7 @@
 					</td>
 					<td width="100">
 						<!-- 삭제  -->
-						<a href="/Reviwer/content/deleteContent.do?id=${reporboard.board.id}&board_num=${reporboard.board.board_num}" class="cont_popup_close" >게시글 삭제</a>
+						<a href="/Reviewer/content/deleteContent.do?id=${reporboard.board.id}&board_num=${reporboard.board.board_num}" class="cont_popup_close" >게시글 삭제</a>
 					</td>
 				</tr>
 			

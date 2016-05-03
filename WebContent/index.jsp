@@ -4,6 +4,6 @@
 <head>
 </head>
 <body>
-	<% response.sendRedirect("/Reviwer/main/mainForm.do"); %>
+	<% response.sendRedirect("/Reviewer/main/mainForm.do"); %>
 </body>
 </html>

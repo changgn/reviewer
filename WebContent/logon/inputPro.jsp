@@ -18,13 +18,13 @@
 	<div class="join_message size_long text_long">${smessage}</div><br>
 	2초 후 로그인 페이지로 이동합니다.
 	<%-- <%response.sendRedirect("/Reviewer/logon/logonForm.do"); %> --%>
-	<meta http-equiv="Refresh" content="2;url=/Reviwer/logon/loginForm.do">
+	<meta http-equiv="Refresh" content="2;url=/Reviewer/logon/loginForm.do">
 </c:if>
 <c:if test="${fmesaage!=null}">
 	<div class="join_message size_long text_long">
 		${fmessage}
 	</div>
-	<%response.sendRedirect("/Reviwer/logon/inputForm.do"); %>
+	<%response.sendRedirect("/Reviewer/logon/inputForm.do"); %>
 </c:if>
 </body>
 </html>

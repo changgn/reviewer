@@ -58,7 +58,7 @@ $(function(){
 	<div class="content_wrap">
 		<div class="content_first">	
 			<div class="cont_writer">
-				<a href="/Reviwer/profile/myProfile.do?id=${board.id}" class="cont_writer_id">${board.id}</a>
+				<a href="/Reviewer/profile/myProfile.do?id=${board.id}" class="cont_writer_id">${board.id}</a>
 				<div class="cont_wdate">
 					<fmt:formatDate value="${board.write_date}" pattern="yyyy-MM-dd HH:mm"/>
 				</div>
@@ -70,11 +70,11 @@ $(function(){
 						<div class="ly_dimmed"></div>
 						<ul class="cont_popup">
 							<li>
-								<a href="/Reviwer/content/reportPro.do?board_num=${board.board_num}" class="cont_popup_close" >이 게시글 신고</a>
+								<a href="/Reviewer/content/reportPro.do?board_num=${board.board_num}" class="cont_popup_close" >이 게시글 신고</a>
 							</li>
 						<c:if test="${board.id == id}">						
 							<li>
-								<a href="/Reviwer/content/deleteContent.do?id=${board.id}&board_num=${board.board_num}" class="cont_popup_close" >이 게시글 삭제</a>
+								<a href="/Reviewer/content/deleteContent.do?id=${board.id}&board_num=${board.board_num}" class="cont_popup_close" >이 게시글 삭제</a>
 							</li>
 						</c:if>
 						</ul>
@@ -107,7 +107,7 @@ $(function(){
                 		<span class="u_ico"></span><em class="u_txt">좋아요</em><em class="u_cnt">128</em>
                  	</a>
 				</div> -->
-				<a href="/Reviwer/content/contentForm.do?board_num=${board.board_num}&comment=true" class="btns_coment" >
+				<a href="/Reviewer/content/contentForm.do?board_num=${board.board_num}&comment=true" class="btns_coment" >
 					<span class="u_ico_coment">댓글</span>
 					<span class="text_num">${commentCount}</span>				
 				</a>
@@ -123,7 +123,7 @@ $(function(){
 	댓글(${commentCount})
 	<c:if test="${login_status==0 || login_status==1}">
 		<div class="size_content">
-			<form id="content_comment_write_form" method="post" action="/Reviwer/content/contentPro.do?board_num=${board_num}">
+			<form id="content_comment_write_form" method="post" action="/Reviewer/content/contentPro.do?board_num=${board_num}">
 				<div id="content_comment_wirte_area">
 					<textarea id="content_comment_write" name="comment_textarea"></textarea>
 				</div>
@@ -143,7 +143,7 @@ $(function(){
 			</div>
 			<div id="comment_btn_delete" class="btn_short">
 				<c:if test="${comment.id==id}">
-					<a href="/Reviwer/content/contentPro.do?board_num=${board_num}&comment_num=${comment.coment_num}">삭&nbsp;&nbsp;&nbsp;제</a>
+					<a href="/Reviewer/content/contentPro.do?board_num=${board_num}&comment_num=${comment.coment_num}">삭&nbsp;&nbsp;&nbsp;제</a>
 				</c:if>
 				<c:if test="${comment.id!=id}">
 					<a href="#" class="noDelete">삭&nbsp;&nbsp;&nbsp;제</a>

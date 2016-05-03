@@ -5,6 +5,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<% response.sendRedirect("/Reviwer/content/contentForm.do?board_num=" + request.getAttribute("board_num")); %>
+<% response.sendRedirect("/Reviewer/content/contentForm.do?board_num=" + request.getAttribute("board_num")); %>
 </body>
 </html>

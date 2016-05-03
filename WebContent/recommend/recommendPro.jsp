@@ -6,6 +6,6 @@
 <title>게시글 신고중</title>
 </head>
 <body>
-	<% response.sendRedirect("/Reviwer/main/mainForm.do"); %>
+	<% response.sendRedirect("/Reviewer/main/mainForm.do"); %>
 </body>
 </html>
