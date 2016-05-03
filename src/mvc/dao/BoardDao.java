@@ -247,4 +247,30 @@ public class BoardDao {
 		}
 		return n;
 	}
+	
+	
+	public int updateRecommendByBoardNum(Integer board_num){
+		String res = "mybatis/config.xml";
+		int n = 0;
+		try {
+		  	InputStream is = Resources.getResourceAsStream(res);
+			
+			SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(is);
+			SqlSession session = factory.openSession();
+			
+			n = session.update("board.updateRecommendByBoardNum" ,board_num);
+			
+			if(n>0) {
+				session.commit();
+			} else {
+				session.rollback();
+			}
+			
+			session.close();
+		} catch (IOException ie) {
+			System.out.println(ie.getMessage());
+		}
+		return n;
+	}
+	
 }
