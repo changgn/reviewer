@@ -3,12 +3,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>수정중</title>
+<title>진행중</title>
 </head>
 <body>
-	<script>
-		alert("회원 정보를 수정 하였습니다");
-		location.href="/reviewer/main/mainForm.do";
-	</script>
+<% response.sendRedirect("/reviewer/profile/myProfile.do?id=" + request.getAttribute("id")); %>
 </body>
 </html>

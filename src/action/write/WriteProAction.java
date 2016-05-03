@@ -88,11 +88,11 @@ public class WriteProAction implements CommandAction {
 					realPath = request.getContextPath() + "/" + savePath + "/" + URLEncoder.encode(fileName, "UTF-8");
 
 					photoVo = new PhotoVo(fileName, board_num, realPath);
-					photoInsertCount = photoDao.insert(photoVo);
-					if(photoInsertCount==0){
-						System.out.println("사진 insert 실패");
-					} else {
+					int insertOk = photoDao.insert(photoVo);
+					if(insertOk>0){
 						photoInsertCount += 1;
+					} else {
+						System.out.println("사진 insert 실패");
 					}
 				}
 				System.out.println("---사진 " + photoInsertCount + "개 추가---");

@@ -46,21 +46,23 @@
 
 		</script>
 		<style>
-			*{font-size: 20px; font-family: 나눔고딕;}
+			#followerNameList { margin: 0 auto; margin-top: 15px; padding-top: 10px;}
+			#followerList { width: 500px; margin: 0 auto; }
+			#followerIdList a { font-size: 30px;}
 		</style>
 	</head>
 	
 	<body>
 		<div id="followerTable" >
-			<div id="followerNameList">
+			<div id="followerNameList" class="size_long title_find">
 				 ${id}님의 팔로워 목록 
 			</div>
 			<div id="followerList">
 				<c:forEach var="fromId" items="${fromIdList}"> 
-					<div id="followerIdList">
-						${fromId}
+					<div id="followerIdList" class="title_find">
+						<a href="/reviewer/profile/myProfile.do?id=${fromId}">${fromId}</a>
 					</div>
-						<div id= "followImageSpace">
+<%-- 						<div id= "followImageSpace">
 							<a href="#" class="fis">
 								<c:if test="${check==0}">
 									<img id="image1" src="../image/icon_35.png" />
@@ -69,7 +71,7 @@
 									<img id="image1" src="../image/icon_36.png" />
 								</c:if>
 							</a>
-						</div>
+						</div> --%>
 				 </c:forEach> 
 			</div>
 		</div> 

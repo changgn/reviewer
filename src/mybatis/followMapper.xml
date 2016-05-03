@@ -3,14 +3,12 @@
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="follow">
-	<insert id="addfrom" parameterType="vo.FollowVo">
-		insert into follow
-		values(#{from_id}, #{to_id})
+	<insert id="add" parameterType="vo.FollowVo">
+		insert into follow values(#{from_id}, #{to_id})
 	</insert>
-		<insert id="addto" parameterType="vo.FollowVo">
-		insert into follow
-		values(#{to_id}, #{from_id})
-	</insert>
+	<delete id="remove" parameterType="vo.FollowVo">
+		delete from follow where from_id=#{from_id} AND to_id=#{to_id}
+	</delete>
 	<delete id="removefrom" parameterType="java.lang.String">
 		delete from follow where from_id=#{from_id}
 	</delete>

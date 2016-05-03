@@ -6,14 +6,10 @@
 <head>
 <title>검색</title>
 <script src="../script/categoryMenu.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script>
 $(document).ready(function() {
-	
-	$("#reportDisplayPanel").bind("mouseleave", function() {
-		$("#reportDisplayPanel").hide();
-	});
-	console.log("ready end");
-	
+	$("#search_content").focus();
 });
 $(function(){
 	var top = 0;
@@ -31,10 +27,10 @@ $(function(){
 	});
 	$(".cont_btn_option").click(function(){
 		$("body").removeAttr("style");
-		 $('html, body').stop().animate({ scrollTop : top }, "fast");
+		$('html, body').scrollTop(top);
 		$(this).hide();
-	});
-	
+	});	
+
 });
 </script>
 </head>
@@ -421,10 +417,13 @@ $(function(){
 								<div class="content_second">
 									<span class="content_view">
 										<span><pre>${board.board.content}</pre>
-											<span class="cont_theview">
-												<span>...</span>
-												<a href="/reviewer/content/contentForm.do?board_num=${board.board.board_num}" class="btn_view_more">더보기</a>
-											</span>
+											<c:if test="${board.contentFlag == true}">
+												<span class="cont_theview">
+														<span>...</span>
+														<a href="/reviewer/content/contentForm.do?board_num=${board.board.board_num}" class="btn_view_more">더보기</a>
+													
+												</span>
+											</c:if>
 										</span>
 									</span>
 								</div>

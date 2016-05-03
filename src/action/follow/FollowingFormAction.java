@@ -26,12 +26,10 @@ public class FollowingFormAction implements CommandAction{
 		FollowDao followdao = FollowDao.getInstance(); // 팔로우 처리클래스 객체
 		
 		// 내가 팔로우한 팔로잉 목록
-		List<String> mytoIdList = null;
-		mytoIdList = followdao.getlistto(my_id);
+		List<String> mytoIdList = followdao.getlistfrom(my_id);
 		
 		// 프로필 페이지 id의 팔로잉 목록
-		List<String> toIdList = null;
-		toIdList = followdao.getlistfrom(from_id);
+		List<String> toIdList = followdao.getlistto(from_id);
 		
 /*		List<HashMap> list = new ArrayList<>();*/
 
@@ -55,7 +53,7 @@ public class FollowingFormAction implements CommandAction{
 		List<String> mytoIdList = null;
 		mytoIdList = followdao.getlistto(my_id);*/
 		// followcheck
-		Map<Iterator<String>, String> check = new HashMap<Iterator<String>, String>();
+/*		Map<Iterator<String>, String> check = new HashMap<Iterator<String>, String>();
 		Iterator<String> myToList = mytoIdList.iterator();
 		Iterator<String> toList = toIdList.iterator();
 		while(toList.hasNext()){
@@ -78,7 +76,7 @@ public class FollowingFormAction implements CommandAction{
 		System.out.println(check);
 		
 		request.setAttribute("cehck", check); // 1이면 팔로우 상대, 0이면 팔로우 안한상대
-		request.setAttribute("id", from_id);
+*/		request.setAttribute("id", from_id);
 		request.setAttribute("toIdList", toIdList);
 		
 		return "/follow/followingForm.jsp";

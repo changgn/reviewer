@@ -11,42 +11,34 @@
 
 $(document).ready(function() {
 	
+	if("${followCheck}"=="true") {
+		var tag = "<a href='/reviewer/follow/followPro.do?follow=unfollow&to_id=" + "${paramId}'" + "><img src='../image/icon_36.png'></a>";
+		$("#btn_follow_add").append(tag);
+	} else {
+		var tag = "<a href='/reviewer/follow/followPro.do?follow=follow&to_id=" + "${paramId}'" + "><img src='../image/icon_35.png'></a>";
+		$("#btn_follow_add").append(tag);
+	}
 	
 });
 $(function(){
+	var top = 0;
 	$(".cont_menu_option").click(function(){
 		var a = $("#menu_" + $(this).attr("id"));
-		var top = a.offset().top;
+		top = a.offset().top;
 		$("body").css({
 			top: -top,
 			position: "fixed",
-			width: "100%"
+			width: "100%",
+			height: "auto"
 		});
 		a.css({
 	    }).show();
 	});
 	$(".cont_btn_option").click(function(){
-		$("body").css({
-			position: "static",
-			width: "100%",
-			height: "auto",
-		
-		});
-	
+		$("body").removeAttr("style");
+		$('html, body').scrollTop(top);
 		$(this).hide();
 	});
-	
-});
-</script>
-<script>
-
-$(function(){
-	$("#board_profile").click(function(){
-		var url = "/reviwer/content/contentForm.do?id=" +${SessionScope.id};
-		window.location.href(url);
-
-	});
-	
 	
 });
 </script>
@@ -56,10 +48,15 @@ $(function(){
 <body>
 
 	<div id="my_profile_info_area">
-		<div class="my_profile" id="id_profile">${paramId}</div>
+		<div id="my_profile_name">
+			<c:if test="${id!=paramId && (login_status==0 || login_status==1)}">
+				<div id="btn_follow_add"></div>
+			</c:if>
+			<div class="my_profile" id="id_profile">${paramId}</div>
+		</div>
 		<div id="my_profile_follow">
-			<div class="follow_profile" id="follower_profile"><a href="/reviewer/follow/followerForm.do">팔로우  ${followerCount } ></a></div>
-			<div class="follow_profile" id="following_profile"><a href="/reviewer/follow/folloingForm.do">팔로잉  ${folloingCount } ></a></div>
+			<div class="follow_profile" id="follower_profile"><a href="/reviewer/follow/followerForm.do?id=${paramId}">팔로워  ${followerCount } ></a></div>
+			<div class="follow_profile" id="following_profile"><a href="/reviewer/follow/followingForm.do?id=${paramId}">팔로잉  ${followingCount } ></a></div>
  		</div>
  		<div class="my_profile" id="category_my_profile">	
 			<c:forEach var="item" items="${CategoryList}" varStatus="status">
@@ -100,10 +97,12 @@ $(function(){
 				<div class="content_second">
 					<span class="content_view">
 						<span><pre>${board.board.content}</pre>
-							<span class="cont_theview">
-								<span>...</span>
-								<a href="/reviewer/content/contentForm.do?board_num=${board.board.board_num}" class="btn_view_more">더보기</a>
-							</span>
+							<c:if test="${board.contentFlag == true}">
+								<span class="cont_theview">
+									<span>...</span>
+									<a href="/reviewer/content/contentForm.do?board_num=${board.board.board_num}" class="btn_view_more">더보기</a>
+								</span>
+							</c:if>
 						</span>
 					</span>
 				</div>
@@ -140,7 +139,13 @@ $(function(){
 			</div>
 		</c:forEach>
 	</div>		
-
+	<c:if test="${login_status==0 || login_status==1}">
+		<div class="btn_posting_wrap">
+			<a href="/reviewer/write/writeForm.do" class="btn_posting">
+				<span class="u_vc">글쓰기</span>
+			</a>
+		</div>
+	</c:if>
 
 
 <%-- <div id="content_area">

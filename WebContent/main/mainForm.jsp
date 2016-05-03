@@ -5,40 +5,32 @@
 <!DOCTYPE html>
 <html>
 <head>
+<script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
 <title>메인페이지</title>
 <script>
 
 $(document).ready(function() {
-	
-	$("#reportDisplayPanel").bind("mouseleave", function() {
-		$("#reportDisplayPanel").hide();   
-	});
-	console.log("ready end");
-	
+
 });
 $(function(){
+	var top = 0;
 	$(".cont_menu_option").click(function(){
 		var a = $("#menu_" + $(this).attr("id"));
-		var top = a.offset().top;
+		top = a.offset().top;
 		$("body").css({
 			top: -top,
 			position: "fixed",
-			width: "100%"
+			width: "100%",
+			height: "auto"
 		});
 		a.css({
 	    }).show();
 	});
 	$(".cont_btn_option").click(function(){
-		$("body").css({
-			position: "static",
-			width: "100%",
-			height: "auto",
-		
-		});
-	
+		$("body").removeAttr("style");
+		$('html, body').scrollTop(top);
 		$(this).hide();
-	});
-	
+	});	
 });
 </script>
 </head>
@@ -74,10 +66,12 @@ $(function(){
 		<div class="content_second">
 			<span class="content_view">
 				<span><pre id="pre_${board.board.board_num}">${board.board.content}</pre>
-					<span class="cont_theview">
-						<span>...</span>
-						<a href="/reviewer/content/contentForm.do?board_num=${board.board.board_num}" class="btn_view_more">더보기</a>
-					</span>
+					<c:if test="${board.contentFlag == true}">
+						<span class="cont_theview">
+							<span>...</span>
+							<a href="/reviewer/content/contentForm.do?board_num=${board.board.board_num}" class="btn_view_more">더보기</a>
+						</span>
+					</c:if>
 				</span>
 			</span>
 		</div>

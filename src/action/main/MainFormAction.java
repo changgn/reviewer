@@ -66,10 +66,17 @@ public class MainFormAction implements CommandAction {
 					CategoryVo category = categoryDao.getOne(vo.getCategory_id());
 					String commentCount = comentDao.getCountByBoardNum(vo.getBoard_num());
 					if(commentCount==null)	commentCount="0";
+					boolean contentFlag = false;
+					String[] contentSub = vo.getContent().split("\n");
+					if(contentSub.length > 3) {
+						contentFlag = true;
+						vo.setContent(contentSub[0] + contentSub[1] + contentSub[2]);
+					}
 					boardMap.put("board", vo);
 					boardMap.put("photo", photo);
 					boardMap.put("category", category);
 					boardMap.put("commentCount", commentCount);
+					boardMap.put("contentFlag", contentFlag);
 					allBoardList.add(boardMap);
 				}
 			}

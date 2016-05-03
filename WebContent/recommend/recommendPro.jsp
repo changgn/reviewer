@@ -8,7 +8,7 @@
 <body>
 	<script>
 		alert("게시글을 추천 하였습니다");
-		history.go(-1);
+		location.href=document.referrer;
 	</script>
 </body>
 </html>

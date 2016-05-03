@@ -26,6 +26,8 @@ $(document).ready(function(){
 	}
 	if("${comment}"=="true") {
 		$("#content_comment_write").focus();
+		var top = $("#content_comment_write").offset().top;
+		$('html, body').stop().animate({ scrollTop : top });
 	}
 });
 $(function(){
@@ -77,7 +79,7 @@ $(function(){
 			</div>
 		</div>
 		<div class="content_second">
-			<span class="content_view">
+			<span class="content_view_sp">
 				<span><pre>${board.content}</pre>
 				</span>
 			</span>

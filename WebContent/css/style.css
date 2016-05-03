@@ -165,7 +165,7 @@ img { border: 0; }
 /* searchForm */
 #search { min-height: 600px; }
 #search_area { width: 500px; height: 58px; margin: 20 auto; background-color: #EAEAEA; }
-#search_content { float: left; width: 383px; height: 40px; margin: 9px; border: 0; color: #4C4C4C; background-color: #EAEAEA; }
+#search_content { float: left; width: 401px; height: 58px; padding: 10px; border: 0; font-size: 17px; color: #4C4C4C; background-color: #EAEAEA; }
 .searched_board { min-height: 400px; margin: 10 auto; }
 #first_search_page { margin: 0 auto; margin-top:300px; font-size: 20px;}
 .search_result { margin: 0 auto; margin-top:300px; font-size: 20px;}
@@ -184,6 +184,7 @@ img { border: 0; }
 
 /* contentForm */
 .size_content { width: 650px; height: 60px; margin: 15px auto; border: 1px solid #4C4C4C; }
+.content_view_sp { display: block; height: auto;line-height: 1.6em;word-wrap: break-word;text-align: left; }
 .content_photo { margin: 0 auto; padding-top: 10px; width: 650px; border-left: 1px solid #e6e6e6; border-right: 1px solid #e6e6e6; }
 .content_photo img { width: 100%; }
 #content_comment_area { margin: 0 auto; margin-bottom: 50px; }
@@ -197,8 +198,9 @@ img { border: 0; }
 
 /*my_profile*/
 #my_profile_info_area { min-height: 200px; padding: 20px; font-size: 20px; margin: 0 auto; background-color: #F6F6F6; }
-#id_profile { margin-top:50px; font-size: 50px; color: #4C4C4C; }
-#category_my_profile { padding: 20px; }
+#my_profile_name { margin-top:50px; }
+#id_profile { margin-top:10px; font-size: 50px; color: #4C4C4C; }
+#category_my_profile { padding: 20px; padding-bottom: 40px; }
 #my_profile_follow{ width: 200px; height:30px; margin: 0 auto; margin-top: 10px; }
 .follow_profile { width: 100px; float: left; margin: 0 auto; }
 .follow_profile a{ font-size: 15px; }

@@ -15,7 +15,7 @@
 <c:if test="${errorId==null}">
 	<script>
 		alert("게시글을 삭제 하였습니다");
-		history.go(-1);
+		location.href=document.referrer;
 	</script>
 </c:if>
 </body>

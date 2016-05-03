@@ -29,6 +29,7 @@ public class MyProfileAction implements CommandAction {
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) throws Throwable {
 		// TODO Auto-generated method stub
+		request.setCharacterEncoding("UTF-8");
 		
 	/*	MemberDao memberDao = new MemberDao();
 		MembersCategoryDao membersCategoryDao = MembersCategoryDao.getInstance();
@@ -64,25 +65,30 @@ public class MyProfileAction implements CommandAction {
 			String cate= it.next().toString();
 			request.setAttribute("cate", cate);
 		} */
-		FollowDao followdao = FollowDao.getInstance();
-		
-		String from_id=id;
-		String to_id=request.getParameter("id");
+		FollowDao followdao = FollowDao.getInstance();		
 
-
-
-		
-		int followerCount = Integer.valueOf(followdao.countfrom(from_id));
-		int folloingCount = Integer.valueOf(followdao.countto(to_id));			
-
-		//팔로워
-		followerCount =followdao.countfrom(from_id);
+		//팔로워 숫자 저장
+		int followerCount =followdao.countfrom(paramId);
 		request.setAttribute("followerCount", followerCount);
-		//팔로잉
-		folloingCount = followdao.countto(to_id);
-		request.setAttribute("folloingCount", folloingCount);
+		//팔로잉 숫자 저장
+		int followingCount = followdao.countto(paramId);
+		request.setAttribute("followingCount", followingCount);
 		
-
+		// 팔로우 상태 저장
+		if(id!=null) {
+			List<String> folloingList = followdao.getlistto(id);
+			boolean followCheck = false;
+			if(folloingList!=null) {
+				for(String following : folloingList) {
+					if(following.equals(paramId)) {
+						followCheck = true;
+						break;
+					}
+				}
+			}
+			request.setAttribute("followCheck", followCheck);
+		}
+		
 		//게시글 가져오기
 		if(paramId != null) {
 			List<BoardVo> boardList = null;
@@ -100,10 +106,17 @@ public class MyProfileAction implements CommandAction {
 					CategoryVo category = categoryDao.getOne(vo.getCategory_id());
 					String commentCount = comentDao.getCountByBoardNum(vo.getBoard_num());
 					if(commentCount==null)	commentCount="0";
+					boolean contentFlag = false;
+					String[] contentSub = vo.getContent().split("\n");
+					if(contentSub.length > 3) {
+						contentFlag = true;
+						vo.setContent(contentSub[0] + contentSub[1] + contentSub[2]);
+					}
 					boardMap.put("board", vo);
 					boardMap.put("photo", photo);
 					boardMap.put("category", category);
 					boardMap.put("commentCount", commentCount);
+					boardMap.put("contentFlag", contentFlag);
 					allBoardList.add(boardMap);
 				}
 			}

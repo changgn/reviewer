@@ -22,35 +22,50 @@ public class FollowDao {
 	
 	public FollowDao(){}
 	
-	// 팔로워 추가
-	public void addfrom(String id){
-		SqlSession sqlSession = null;
+	public int insert(FollowVo vo){
+		String res = "mybatis/config.xml";
+		int n = 0;
 		try{
-			sqlSession = sqlSessionFactory.openSession();
-			sqlSession.insert("addfrom", id);
-			int n = sqlSession.insert("addfrom", id);
+			InputStream is = Resources.getResourceAsStream(res);
+			
+			SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(is);
+			SqlSession session = factory.openSession();
+
+			n = session.insert("follow.add", vo);
+
 			if(n>0){
-				sqlSession.commit();
+				session.commit();
+			} else {
+				session.rollback();
 			}
-		} finally{
-			if(sqlSession!=null)sqlSession.close();
+			session.close();
+		} catch (IOException ie) {
+			System.out.println(ie.getMessage());
 		}
+		return n;
 	}
-	// 팔로잉 추가
-	public void addto(String id){
-		SqlSession sqlSession = null;
+	public int delete(FollowVo vo){
+		String res = "mybatis/config.xml";
+		int n = 0;
 		try{
-			sqlSession = sqlSessionFactory.openSession();
-			sqlSession.insert("addto", id);
-			int n = sqlSession.insert("addto", id);
+			InputStream is = Resources.getResourceAsStream(res);
+			
+			SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(is);
+			SqlSession session = factory.openSession();
+
+			n = session.delete("follow.remove", vo);
+
 			if(n>0){
-				sqlSession.commit();
+				session.commit();
+			} else {
+				session.rollback();
 			}
-		} finally{
-			if(sqlSession!=null)sqlSession.close();
+			session.close();
+		} catch (IOException ie) {
+			System.out.println(ie.getMessage());
 		}
+		return n;
 	}
-	
 	// 팔로워 삭제
 	public void removefrom(String id){
 		SqlSession sqlSession = null;
@@ -122,7 +137,6 @@ public class FollowDao {
 		try{
 			InputStream is = Resources.getResourceAsStream(res);
 			SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(is);
-			System.out.println("factory ok");
 			SqlSession session = factory.openSession();
 
 			count = Integer.valueOf(session.selectOne("follow.countfrom", id));
@@ -145,7 +159,6 @@ public class FollowDao {
 		try{
 			InputStream is = Resources.getResourceAsStream(res);
 			SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(is);
-			System.out.println("factory ok");
 			SqlSession session = factory.openSession();
 
 
