@@ -217,8 +217,8 @@ public MembersVo deleteCf(String id){
 		}
 		return memberList;
 	}
-	public List<FollowVo> getMemberListVo(){
-		List<FollowVo> memberList = null;
+/*	public List<MembersVo> getMemberListVo(){
+		List<MembersVo> memberList = null;
 		String res = "/mybatis/config.xml";
 		try{
 			InputStream is = Resources.getResourceAsStream(res);
@@ -232,9 +232,9 @@ public MembersVo deleteCf(String id){
 			System.out.println(ie.getMessage());
 		}
 		return memberList;
-	}
+	}*/
 	
-/*	// 회원가입일 리스트 뽑기
+	// 회원가입일 리스트 뽑기
 	public List<Date> getRegDate(List<String> id){
 		List<Date> RegDateList = null;
 		String res = "mybatis/config.xml";
@@ -263,21 +263,17 @@ public MembersVo deleteCf(String id){
 			System.out.println(ie.getMessage());
 		}
 		return RecommendNumList;
-	}*/
-	public Integer count(MembersVo vo){
-		int count = 0;
+	}
+	public Integer count(){
+		Integer count = null;
 		String res="/mybatis/config.xml";
 		try{
 			InputStream is = Resources.getResourceAsStream(res);
 			SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(is);
 			SqlSession session = factory.openSession();
 			
-			count = session.selectOne("member.count", vo);
-			if (count > 0) {
-				session.commit();
-			} else {
-				session.rollback();
-			}
+			count = session.selectOne("member.count");
+
 			session.close();
 		} catch (IOException ie) {
 			System.out.println(ie.getMessage());

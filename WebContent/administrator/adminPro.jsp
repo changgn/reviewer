@@ -1,3 +1,3 @@
 <%
-    response.sendRedirect("/Reviewer/administrator/adminForm.do");
+    response.sendRedirect("/reviewer/administrator/adminForm.do");
 %>>

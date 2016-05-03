@@ -1,16 +1,16 @@
 package action.admin;
 
-import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import action.CommandAction;
 import mvc.dao.MemberDao;
-import vo.FollowVo;
-import vo.MembersVo;
 
 public class Admin_memberFormAction implements CommandAction {
 
@@ -23,20 +23,32 @@ public class Admin_memberFormAction implements CommandAction {
 		// 아이디를 조건으로 reg_date와 recommend_num를 구한다.
 		
 		MemberDao memberdao = MemberDao.getInstance();
+		List<String> memberlist = null;
+		memberlist = memberdao.getMemberList();
 		
-		List<HashMap> everyMemberList = new ArrayList<>();
-		List<FollowVo> ml =null;
+		List<Integer> getRecommedNum = memberdao.getRecommedNum(memberlist);
+		List<Date> getRegDate = memberdao.getRegDate(memberlist);
+		
+/*		List<HashMap> everyMemberList = new ArrayList<>();
+		List<MembersVo> ml =null;
 		ml = memberdao.getMemberListVo();
-		for(FollowVo vo : ml){
+		for(MembersVo vo : ml){
 			HashMap<String, Object> memberMap = new HashMap<String, Object>();
 			memberMap.put("member", vo);
 			everyMemberList.add(memberMap);
 		}
-
-		request.setAttribute("member", everyMemberList);
+		System.out.println(everyMemberList);
 		
-/*		Iterator<String> memberIdRecList = memberList.iterator();
-		Iterator<String> memberIdRegList = memberList.iterator();
+		int count = memberdao.count();
+
+		System.out.println(count);
+		
+		
+		request.setAttribute("count", count);
+		request.setAttribute("everyMemberList", everyMemberList);
+		*/
+		Iterator<String> memberIdRecList = memberlist.iterator();
+		Iterator<String> memberIdRegList = memberlist.iterator();
 		Iterator<Integer> getRecommedNumList = getRecommedNum.iterator();
 		Iterator<Date> getRegDateList = getRegDate.iterator();
 		// 아이디를 키로 추천수와 가입일을 매핑 
@@ -50,7 +62,9 @@ public class Admin_memberFormAction implements CommandAction {
 					if(getRecommedNumList.next()==null){
 						break;
 					}else{
-						rec.put(memberIdRecList, getRecommedNumList);
+						if(memberIdRecList.next().equals(getRecommedNumList)){
+							rec.put(memberIdRecList, getRecommedNumList);
+						}
 					}
 				}
 			}
@@ -65,19 +79,24 @@ public class Admin_memberFormAction implements CommandAction {
 					if(getRegDateList.next()==null){
 						break;
 					}else{
-						reg.put(memberIdRegList, getRegDateList);
+						if(memberIdRegList.next().equals(getRegDateList)){
+							reg.put(memberIdRegList, getRegDateList);
+						}
 					}
 				}
 			}
-		}*/
-/*		System.out.println(rec.get(getRegDateList));
+		}
+		System.out.println(rec);
+		System.out.println(reg);
+		System.out.println(memberlist);
 		
-		request.setAttribute("memberList", memberList);
+
+		request.setAttribute("memberList", memberlist);
 		request.setAttribute("memberIdRecList", memberIdRecList);
 		request.setAttribute("memberIdRegList", memberIdRegList);
 		request.setAttribute("memberIdRecListMap", reg);
 		request.setAttribute("memberIdRegListMap", rec);
-		*/
+		
 		
         return "/administrator/admin_memberForm.jsp";//해당 뷰
 	}

@@ -2,5 +2,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <%
-    response.sendRedirect("/Reviewer/administrator/admin_reportForm.do");
+    response.sendRedirect("/reviewer/administrator/admin_reportForm.do");
 %>

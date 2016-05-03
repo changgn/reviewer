@@ -19,7 +19,7 @@
 					</td>
 					<td width="80">
 						<!-- 해당 게시글 -->
-						<input type="button" value="상세보기" onclick="해당게시글?board_num=${populboard.board.board_num},id=${id}">
+						<input type="button" value="상세보기" onclick="../content/contentForm.do?board_num=${populboard.board.board_num},id=${id}">
 					</td>
 					<td width="70">
 						<!-- 신고수 -->
@@ -27,7 +27,7 @@
 					</td>
 					<td width="50">
 						<!-- 삭제 Text -->
-						<a href="/Reviewer/content/deleteContent.do?id=${populboard.board.id}&board_num=${populboard.board.board_num}">게시글 삭제</a>
+						<a href="/reviewer/content/deleteContent.do?id=${populboard.board.id}&board_num=${populboard.board.board_num}">게시글 삭제</a>
 					</td>
 				</tr>
 			

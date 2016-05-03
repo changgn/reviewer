@@ -21,7 +21,7 @@ public class FollowerProAction implements CommandAction{
 		}else{
 			followdao.removeto(fId);
 		}
-		
+		System.out.println(check);
 		return "/follow/followerPro.jsp";
 	}
 

@@ -125,8 +125,6 @@ public class FollowDao {
 			System.out.println("factory ok");
 			SqlSession session = factory.openSession();
 
-		
-
 			count = Integer.valueOf(session.selectOne("follow.countfrom", id));
 
 			if (count > 0) {

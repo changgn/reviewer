@@ -4,5 +4,5 @@
 <!-- 관리자가 회원을 탈퇴시키는 기능추가 시 사용 -->
 
 <%
-    response.sendRedirect("/Reviewer/administrator/admin_memberForm.do");
+    response.sendRedirect("/reviewer/administrator/admin_memberForm.do");
 %>
