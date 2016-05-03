@@ -1,5 +1,6 @@
 package action.follow;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -10,8 +11,10 @@ import javax.servlet.http.HttpServletResponse;
 
 import action.CommandAction;
 import mvc.dao.FollowDao;
+import vo.FollowVo;
 
 public class FollowerFormAction implements CommandAction{
+	@SuppressWarnings("unchecked")
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) throws Throwable {
 		// TODO Auto-generated method stub
@@ -32,10 +35,47 @@ public class FollowerFormAction implements CommandAction{
 		// 프로필 페이지 id의 팔로워 목록
 		List<String> fromIdList = null;
 		fromIdList = followdao.getlistfrom(to_id);
-		// check값을 넣을 map객체 생성
-
-		// 해당 뷰에서 사용할 속성
 		
+		List<HashMap> list = new ArrayList<>();
+/*		// 
+		Iterator<String> MyToList = mytoIdList.iterator();
+		Iterator<String> IdFromList = fromIdList.iterator();
+*/
+		// 팔로워 아이디를 키로 check값 저장 
+		Map<String, String> check = new HashMap<String, String>();
+		for(String FollowVoFrom : fromIdList){
+			for(String FollowVoMy : mytoIdList){
+				if(FollowVoFrom.equals(FollowVoMy))
+					check.put("check", FollowVoFrom);
+					list.add((HashMap) check);
+			}
+		}
+		System.out.println();
+		/*while(IdFromList.hasNext()){
+			if(IdFromList.next()==null){
+				break;
+			}else{
+				System.out.println(IdFromList.next());
+				while(MyToList.hasNext()){
+					if(MyToList.next()==null){
+						break;
+					}else{
+						System.out.println(IdFromList.next());
+						if(IdFromList.next().equals(MyToList.next())){
+							check.put(IdFromList.next(), "1");
+						}else{
+							check.put(IdFromList.next(), "0");
+						}
+					}
+				}
+			}
+		}*/
+
+		
+		
+		System.out.println(fromIdList);
+		// 해당 뷰에서 사용할 속성
+		request.setAttribute("checklist", check);
 		request.setAttribute("mytoIdList", mytoIdList); // 로그인 Id의 팔로잉 목록
 		request.setAttribute("id", to_id); // 페이지 Id
 		request.setAttribute("fromIdList", fromIdList); // 페이지 Id를 팔로우 한 팔로워 목록

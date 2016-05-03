@@ -1,14 +1,15 @@
 package action.admin;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import action.CommandAction;
 import mvc.dao.BoardDao;
+import vo.BoardVo;
 
 public class Admin_popularityFormAction implements CommandAction{
 
@@ -17,11 +18,18 @@ public class Admin_popularityFormAction implements CommandAction{
 		// TODO Auto-generated method stub
 		
 		BoardDao boarddao = BoardDao.getInstance();
-		List<String> boardList = null;
+		List<BoardVo> boardList = null;
 		boardList = boarddao.getPopularityList();
+		List<HashMap> allBoardList = new ArrayList<>();
 		System.out.println(boardList);
 		
-		request.setAttribute("boardList", boardList);
+		for(BoardVo vo : boardList) {
+			HashMap<String, Object> boardMap = new HashMap<String, Object>();
+			boardMap.put("board", vo);
+			allBoardList.add(boardMap);
+		}
+		
+		request.setAttribute("boardList", allBoardList);
 		return "/administrator/admin_popularityForm.jsp";
 	}
 

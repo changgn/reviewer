@@ -5,67 +5,70 @@
 	<head>
 		<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
 		<script type="text/javascript">
-		$(function(){
-			while(fromId!=null){
-				var from = ${fromId};
-				while(mytoIdList!=null){
-					var myTo = ${fromId}
-					if(from==myTo){
-						$('followImageSpace').data("${fromId}", "1");
-					}else{
-						$('followImageSpace').data("${fromId}", "0");
-					}
-				}
-			}
-			var va = $('followImageSpace').data("${fromId}");
-		})
 		
-		
-		$('#image2').hidden();
 		$(document).ready(function(){
-			
-			// toggle 누르면 선택되고 다시 누르면 해제
-			$('#followImage').toggle(function(){
+			$("#image1").$(this).attr("src").toggle(function(){
+				// icon35에서 icon36으로 
+				$("#image1").attr("src", "../image/icon_36.png");
+				$("#image1").click(function(){
+					$("#image1").bind("click",function(){
+						$("#image1").attr("src","../image/icon_36.png");
+					})
+				});
+				$("img").bind("click", function(){
+					var src = ($(this).attr("src")==="../image/icon_35.png")
+					? "../image/icon_36.png" : "../image/icon_35.png";
+					$(this).attr("src",src);
+				})
 				
-			}); 
+				// icon36에서 icon35으로 
+				$("#image1").attr("src", "../image/icon_35.png");
+				$("#image1").click(function(){
+					$("#image1").bind("click",function(){
+						$("#image1").attr("src","../image/icon_35.png");
+					})
+				});
+				$("img").bind("click", function(){
+					var src = ($(this).attr("src")==="../image/icon_36.png")
+					? "../image/icon_36.png" : "../image/icon_36.png";
+					$(this).attr("src",src);
+				})
+			})
 		})
-		
-		
-		
+
 		</script>
 		<style>
-			#followerTable{ margin: auto; }
-			#followerList{ height:50px;  background-color: aqua;}
-			#followerListName{font-size: 30px;}
-			#followerId{font-size: 15px; width:100px; height:35px; }
-			#followImageSpace{width:35px; height:35px;} 
+			*{font-size: 20px; font-family: 나눔고딕;}
+			div#followerTable{margin: 10px; margin-left:150px; margin-right: 150px; margin-top: 50px; }
+			div#followerNameList{witdh:300px; height:40px; background-color: aqua;}
+			div#followwerList{width:350px; height:50px; background-color: maroon;} 
 		</style>
 	</head>
 	
 	<body>
-		<table id="followerTable" >
-			<tr id="followerList" align="center">
-				<td id="follwerListName"> ${id}님의 팔로워 목록 </td>
-			</tr>
-			<tr>
+		<div id="followerTable" >
+			<div id="followerNameList">
+				 ${id}님의 팔로워 목록 
+			</div>
+			<div id="followerList">
 				<c:forEach var="fromId" items="${fromIdList}"> 
-					<td id="followerId" align="left">
+					<div id="followerIdList">
 						${fromId}
-					</td>
+					</div>
 					<c:forEach var="myTo" items="${mytoIdList }">
-						<td id= "followImageSpace"width="50">
-							<a href="#">
-								<c:if test="${fromId==myTo}">
+						<div id= "followImageSpace">
+							<a href="#" class="fis">
+								<c:if test="${check!=0}">
 									<img id="image1" src="../image/icon_35.png" />
 								</c:if>
-								<c:if test="${fromId!=myTo}">
-									<img id="image2" src="../image/icon_36.png" />
+								<c:if test="${check==1}">
+									<img id="image1" src="../image/icon_36.png" />
 								</c:if>
 							</a>
-						</td>
+						</div>
 					</c:forEach>
 				 </c:forEach> 
-			</tr>
-		</table> 
+			</div>
+		</div> 
 	</body>
 </html>

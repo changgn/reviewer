@@ -190,8 +190,8 @@ public class BoardDao {
 		return n;
 	}
 	
-	public List<String> getPopularityList(){
-		List<String> popullist= null;
+	public List<BoardVo> getPopularityList(){
+		List<BoardVo> popullist= null;
 		String res = "mybatis/config.xml";
 		try {
 		  	InputStream is = Resources.getResourceAsStream(res);
@@ -206,8 +206,9 @@ public class BoardDao {
 		}
 		return popullist;
 	}
-	public List<String> getReportList(){
-		List<String> reporlist= null;
+	// 신고글
+	public List<BoardVo> getReportList(){
+		List<BoardVo> reporlist= null;
 		String res = "mybatis/config.xml";
 		try {
 		  	InputStream is = Resources.getResourceAsStream(res);
