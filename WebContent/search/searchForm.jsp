@@ -377,7 +377,7 @@ $(function(){
 			</div>
 		</div>
 		<div class="category_added"></div>
-		<form action="/Reviewer/search/searchForm.do" id="addCategory" method="post"></form>
+		<form action="/reviewer/search/searchForm.do" id="addCategory" method="post"></form>
 	</div>
 	<div id="search_content_area">
 		<c:if test="${firstCheck==0}">
@@ -394,7 +394,7 @@ $(function(){
 							<div class="content_wrap">
 								<div class="content_first">	
 									<div class="cont_writer">
-										<a href="/Reviewer/profile/myProfile.do?id=${board.board.id}" class="cont_writer_id">${board.board.id}</a>
+										<a href="/reviewer/profile/myProfile.do?id=${board.board.id}" class="cont_writer_id">${board.board.id}</a>
 										<div class="cont_wdate">
 											<fmt:formatDate value="${board.board.write_date}" pattern="yyyy-MM-dd HH:mm"/>
 										</div>
@@ -406,11 +406,11 @@ $(function(){
 												<div class="ly_dimmed"></div>
 												<ul class="cont_popup">
 													<li>
-														<a href="/Reviewer/content/reportPro.do?board_num=${board.board.board_num}" class="cont_popup_close" >이 게시글 신고</a>
+														<a href="/reviewer/content/reportPro.do?board_num=${board.board.board_num}" class="cont_popup_close" >이 게시글 신고</a>
 													</li>
 												<c:if test="${board.board.id == id}">						
 													<li>
-														<a href="/Reviewer/content/deleteContent.do?id=${board.board.id}&board_num=${board.board.board_num}" class="cont_popup_close" >이 게시글 삭제</a>
+														<a href="/reviewer/content/deleteContent.do?id=${board.board.id}&board_num=${board.board.board_num}" class="cont_popup_close" >이 게시글 삭제</a>
 													</li>
 												</c:if>
 												</ul>
@@ -423,13 +423,13 @@ $(function(){
 										<span><pre>${board.board.content}</pre>
 											<span class="cont_theview">
 												<span>...</span>
-												<a href="/Reviewer/content/contentForm.do?board_num=${board.board.board_num}" class="btn_view_more">더보기</a>
+												<a href="/reviewer/content/contentForm.do?board_num=${board.board.board_num}" class="btn_view_more">더보기</a>
 											</span>
 										</span>
 									</span>
 								</div>
 								<c:if test="${board.photo.realPath != null}">
-							   		<a href="/Reviewer/content/contentForm.do?board_num=${board.board.board_num}" class="item_info_wrap">
+							   		<a href="/reviewer/content/contentForm.do?board_num=${board.board.board_num}" class="item_info_wrap">
 								        <span class="item_cont" title="컨텐츠 상세페이지">
 								            <span class="item_thumb">
 								                <img class="list_photo" src="${board.photo.realPath}">
@@ -444,7 +444,7 @@ $(function(){
 						       	<div class="cont_btns">
 						       		<div class="cont_btns_wrap">
 						<!-- 				<div class="btns_re">
-											<a href="/Reviewer/recommend/recommendPro.do" class="btns_re_item">
+											<a href="/reviewer/recommend/recommendPro.do" class="btns_re_item">
 						                		<span class="u_ico"></span><em class="u_txt">좋아요</em><em class="u_cnt">128</em>
 						                 	</a>
 										</div> -->

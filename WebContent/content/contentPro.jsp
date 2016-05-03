@@ -7,6 +7,6 @@
 <title>댓글 작성중</title>
 </head>
 <body>
-<% response.sendRedirect("/Reviewer/content/contentForm.do?board_num=" + request.getAttribute("board_num") + "&comment=true");%>
+<% response.sendRedirect("/reviewer/content/contentForm.do?board_num=" + request.getAttribute("board_num") + "&comment=true");%>
 </body>
 </html>

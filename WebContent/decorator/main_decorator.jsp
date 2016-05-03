@@ -43,11 +43,11 @@
 				}
 			});
 			$("#btn_newsfeed").click(function(){
-				$(location).attr("href", "/Reviewer/main/mainForm.do");
+				$(location).attr("href", "/reviewer/main/mainForm.do");
 			});
 
 			$("#btn_my").click(function(){
-				if($("#btn_my a").attr("href")=="/Reviewer/logon/loginForm.do"){
+				if($("#btn_my a").attr("href")=="/reviewer/logon/loginForm.do"){
 					alert("로그인이 필요합니다");
 				}
 				$(location).attr("href", $("#btn_my a").attr("href"));
@@ -60,12 +60,12 @@
 	<div id="header">
 	<!-- 헤더 -->
 		<h1 id="logo">
-			<a id="logo_btn" href="/Reviewer/main/mainForm.do" title="Reviewer">Reviewer</a>
+			<a id="logo_btn" href="/reviewer/main/mainForm.do" title="Reviewer">Reviewer</a>
 		</h1>
 		<span id="main_btn">
 
 			<c:if test="${login_status!=0 && login_status!=1}">
-				<a class="btn_gnb" href="/Reviewer/logon/loginForm.do">
+				<a class="btn_gnb" href="/reviewer/logon/loginForm.do">
 					<span id="btn_login">로그인버튼</span>
 				</a>
 			</c:if>
@@ -74,7 +74,7 @@
 					<span id="btn_user">계정설정</span>
 				</a>
 			</c:if>
-			<a class="btn_gnb" href="/Reviewer/search/searchForm.do">
+			<a class="btn_gnb" href="/reviewer/search/searchForm.do">
 				<span id="btn_search">검색버튼</span>
 			</a>
 <!-- 		<a class="btn_gnb btn_alarm_toggle" href="#">
@@ -84,12 +84,12 @@
 		</span>
 		<div id="user">
 			<ul id="list_user">
-				<li><a href="/Reviewer/categorySet/categorySetForm.do">카테고리 수정</a></li>
+				<li><a href="/reviewer/categorySet/categorySetForm.do">카테고리 수정</a></li>
 				<c:if test="${login_status==0}">
 					<li><a href="#">관리자 페이지</a></li>
 				</c:if>
-				<li><a href="/Reviewer/logon/modifyForm.do">회원정보 수정</a></li>
-				<li><a href="/Reviewer/logon/logout.do">로그아웃</a></li>
+				<li><a href="/reviewer/logon/modifyForm.do">회원정보 수정</a></li>
+				<li><a href="/reviewer/logon/logout.do">로그아웃</a></li>
 			</ul>
 		</div>
 <!-- 	<div id="alarm">
@@ -108,15 +108,15 @@
 	<!-- 네비게이션 -->
 		<ul id="list_nav">
 			<li>
-				<div id="btn_newsfeed"><a href="/Reviewer/main/mainForm.do" class="nav_btn">뉴스피드</a></div>
+				<div id="btn_newsfeed"><a href="/reviewer/main/mainForm.do" class="nav_btn">뉴스피드</a></div>
 			</li>
 			<li>
 				<div id="btn_my">
 					<c:if test="${login_status!=0 && login_status!=1}">
-						<a href="/Reviewer/logon/loginForm.do" class="nav_btn">M Y</a>
+						<a href="/reviewer/logon/loginForm.do" class="nav_btn">M Y</a>
 					</c:if>
 					<c:if test="${login_status==0 || login_status==1}">
-						<a href="/Reviewer/profile/myProfile.do?id=${sessionScope.id }" class="nav_btn">M Y</a>
+						<a href="/reviewer/profile/myProfile.do?id=${sessionScope.id }" class="nav_btn">M Y</a>
 					</c:if>
 				</div>
 			</li>

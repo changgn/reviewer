@@ -42,7 +42,7 @@ $(function(){
 		$("form")[0].reset();
 	});
 	$("#modify_btn_cancel").click(function(){
-		$(location).attr("href","/Reviewer/logon/loginForm.do");
+		$(location).attr("href","/reviewer/logon/loginForm.do");
 	});
 	$("#modify_btn_modify").click(function(){
 		if($("#id").val()==""){
@@ -84,7 +84,7 @@ $(function(){
 		$("#modifyForm").submit();
 	});
 	$("#modify_btn_remove").click(function(){
-		$(location).attr("href","/Reviewer/logon/deleteForm.do");
+		$(location).attr("href","/reviewer/logon/deleteForm.do");
 	});
 });
 </script>

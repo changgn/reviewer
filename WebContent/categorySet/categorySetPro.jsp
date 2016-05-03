@@ -6,6 +6,6 @@
 <title>저 장 중</title>
 </head>
 <body>
-<% response.sendRedirect("/Reviewer/categorySet/categorySetForm.do"); %>
+<% response.sendRedirect("/reviewer/categorySet/categorySetForm.do"); %>
 </body>
 </html>

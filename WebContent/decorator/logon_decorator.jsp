@@ -14,10 +14,10 @@
 	<div id="header">
 	<!-- 헤더 -->
 		<h1 id="logo">
-			<a id="logo_btn" href="/Reviewer/logon/loginForm.do" title="Reviewer">Reviewer</a>
+			<a id="logo_btn" href="/reviewer/logon/loginForm.do" title="Reviewer">Reviewer</a>
 		</h1>
 		<span id="main_btn">
-			<a class="btn_gnb" href="/Reviewer/search/searchForm.do">
+			<a class="btn_gnb" href="/reviewer/search/searchForm.do">
 				<span id="btn_search">검색버튼</span>
 			</a>
 		</span>

@@ -366,7 +366,7 @@ $(function(){
 		</div>
 		<div class="category_added"></div>
 	</div>
-	<form action="/Reviewer/write/writePro.do" id="writeBoard" method="post" enctype="multipart/form-data">
+	<form action="/reviewer/write/writePro.do" id="writeBoard" method="post" enctype="multipart/form-data">
 		<div id="content_area">
 			<textarea id="text_content" name="boardContent" rows="20" cols="auto"></textarea>
 		</div>

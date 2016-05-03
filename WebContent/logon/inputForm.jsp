@@ -13,7 +13,7 @@ $(function(){
 			$("#id").focus();
 			return false;
 		}
-		var url = "/Reviewer/logon/idCheckForm.do?id=" + $("#id").val();
+		var url = "/reviewer/logon/idCheckForm.do?id=" + $("#id").val();
 		window.open(url, "_blank", "width=500,height=100");
 	}); 
 	$("#man").click(function(){
@@ -47,7 +47,7 @@ $(function(){
 		$("form")[0].reset();
 	});
 	$("#join_btn_cancel").click(function(){
-		$(location).attr("href","/Reviewer/logon/loginForm.do");
+		$(location).attr("href","/reviewer/logon/loginForm.do");
 	});
 	$("#join_btn_join").click(function(){
 		if($("#id").val()==""){

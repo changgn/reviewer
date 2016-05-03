@@ -13,7 +13,7 @@
 	</script>
 </c:if>
 <c:if test="${errorId==null}">
-	<% response.sendRedirect("/Reviewer/main/mainForm.do"); %>
+	<% response.sendRedirect("/reviewer/main/mainForm.do"); %>
 </c:if>
 </body>
 </html>

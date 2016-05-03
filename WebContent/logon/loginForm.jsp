@@ -11,10 +11,10 @@ $(function(){
 		check();
 	});
 	$("#btn_join").click(function(){
-		$(location).attr("href","/Reviewer/logon/inputForm.do");
+		$(location).attr("href","/reviewer/logon/inputForm.do");
 	});
 	$("#btn_find").click(function(){
-		$(location).attr("href","/Reviewer/idpwSearch/idpwSearchNew.do");
+		$(location).attr("href","/reviewer/idpwSearch/idpwSearchNew.do");
 	});
     $("#passwd").keyup(function(e){
         if(e.keyCode == 13){
@@ -22,7 +22,7 @@ $(function(){
         }
     });
     $("#login_logo").click(function(){
-    	$(location).attr("href","/Reviewer/main/mainForm.do");
+    	$(location).attr("href","/reviewer/main/mainForm.do");
     });
     
 });
@@ -48,15 +48,15 @@ function check() {
 </head>
 <body>
 <c:if test="${login_status!=2}">
-	<%response.sendRedirect("/Reviewer/main/mainForm.do"); %>
+	<%response.sendRedirect("/reviewer/main/mainForm.do"); %>
 </c:if>
 <c:if test="${message!=null}">
 	<script>alert("아이디 또는 패스워드가 일치하지 않습니다");</script>
 </c:if>
 <div id="logon">
-	<form method="post" action="/Reviewer/logon/loginPro.do" name="loginFrom" id="loginForm">
+	<form method="post" action="/reviewer/logon/loginPro.do" name="loginFrom" id="loginForm">
 		<div id="loginForm">
-			<div id="login_logo"><a href="#"><img src="../image/Reviewer_gray.png" ></a></div>
+			<div id="login_logo"><a href="#"><img src="../image/reviewer_gray.png" ></a></div>
 			<div id="div_id" class="size_long"><input type="text" class="text_login" id="id" name="id" placeholder="아이디" ></div>
 			<div id="div_passwd" class="size_long"><input type="password" class="text_login" id="passwd" name="passwd" placeholder="비밀번호"></div>	
 			<div id="btn_login_submit" class="btn_long"><a href="#" >로 그 인</a></div>
