@@ -19,10 +19,22 @@ $(document).ready(function() {
 $(function(){
 	$(".cont_menu_option").click(function(){
 		var a = $("#menu_" + $(this).attr("id"));
+		var top = a.offset().top;
+		$("body").css({
+			top: -top,
+			position: "fixed",
+			width: "100%"
+		});
 		a.css({
 	    }).show();
 	});
 	$(".cont_btn_option").click(function(){
+		$("body").css({
+			position: "static",
+			width: "100%",
+			height: "auto"
+		});
+		$(window).scrollTop(300);
 		$(this).hide();
 	});
 	
@@ -40,14 +52,14 @@ $(function(){
 					<fmt:formatDate value="${board.board.write_date}" pattern="yyyy-MM-dd HH:mm"/>
 				</div>
 				<div class="cont_menu">
-					<a href="#" id="menu_${board.board.board_num}" class="cont_menu_option">
+					<a href="#" id="${board.board.board_num}" class="cont_menu_option">
 						<span id="cont_btn_menu">옵션</span>						
 					</a>
 					 <div id="menu_${board.board.board_num}" class="cont_btn_option">
 						<div class="ly_dimmed"></div>
 						<ul class="cont_popup">
 							<li>
-								<a href="#" class="cont_popup_close" >이 게시글 신고</a>
+								<a href="/Reviwer/content/reportPro.do?board_num=${board.board.board_num}" class="cont_popup_close" >이 게시글 신고</a>
 							</li>
 						<c:if test="${board.board.id == id}">						
 							<li>

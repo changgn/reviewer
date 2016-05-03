@@ -14,7 +14,7 @@ a { outline:0; text-decoration: none; color: #4C4C4C; }
 a:visited { text-decoration: none; color: #4C4C4C; }
 html { height: 100%; }
 ul, li { list-style: none; }
-body { margin: 0px; padding: 0px; height: 100%; }
+body { margin: 0px; padding: 0px; height: 100%;}
 img { border: 0; }
 
 /* global */

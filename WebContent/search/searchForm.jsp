@@ -396,7 +396,7 @@ $(function(){
 												<div class="ly_dimmed"></div>
 												<ul class="cont_popup">
 													<li>
-														<a href="#" class="cont_popup_close" >이 게시글 신고</a>
+														<a href="/Reviwer/content/reportPro.do?board_num=${board.board.board_num}" class="cont_popup_close" >이 게시글 신고</a>
 													</li>
 												<c:if test="${board.board.id == id}">						
 													<li>

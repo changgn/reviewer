@@ -9,6 +9,9 @@
 	<update id="modify" parameterType="vo.BoardVo">
 		<!-- 조건문 -->
 	</update>
+	<update id="updateReportByBoardNum" parameterType="java.lang.Integer" >
+		update board set report_num=report_num+1 where board_num=#{board_num}
+	</update>
 	<delete id="remove" parameterType="java.lang.String">
 		<!-- 조건문 -->
 	</delete>

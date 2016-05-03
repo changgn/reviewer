@@ -120,6 +120,12 @@ CREATE TABLE recommend
 	recommend_num number
 );
 
+CREATE TABLE report
+(
+	id varchar2(20) NOT NULL,
+	report_num number
+);
+
 /* Create Foreign Keys */
 
 ALTER TABLE coment

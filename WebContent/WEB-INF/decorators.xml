@@ -5,7 +5,9 @@
 		<pattern>/main/*</pattern>
 		<pattern>/categorySet/*</pattern>
 		<pattern>/search/*</pattern>
-		<pattern>/content/*</pattern>
+		<pattern>/content/contentForm.do</pattern>
+		<pattern>/content/contentPro.do</pattern>
+		<pattern>/content/deleteContent.do</pattern>
 		<pattern>/administrator/*</pattern>
 		<pattern>/follow/*</pattern>
 		<pattern>/recommend/*</pattern>
@@ -20,5 +22,6 @@
 	</decorator>
 	<excludes>
 		<pattern>/administrator/*</pattern>
+		<pattern>/content/reportPro.do</pattern>
 	</excludes>
 </decorators>
