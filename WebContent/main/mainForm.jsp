@@ -32,9 +32,10 @@ $(function(){
 		$("body").css({
 			position: "static",
 			width: "100%",
-			height: "auto"
+			height: "auto",
+		
 		});
-		$(window).scrollTop(300);
+	
 		$(this).hide();
 	});
 	

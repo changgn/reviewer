@@ -1,11 +1,7 @@
 package mvc.dao;
 
-import java.beans.Statement;
 import java.io.IOException;
 import java.io.InputStream;
-import java.sql.ResultSet;
-import java.sql.ResultSetMetaData;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -15,7 +11,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
-
+import vo.FollowVo;
 import vo.MembersVo;
 
 public class MemberDao {
@@ -213,7 +209,7 @@ public MembersVo deleteCf(String id){
 			SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(is);
 			SqlSession session = factory.openSession();
 			
-			memberList = session.selectList("member.getIdList");
+			memberList = session.selectList("member.getList");
 			
 			session.close();
 		}catch (IOException ie) {
@@ -221,7 +217,24 @@ public MembersVo deleteCf(String id){
 		}
 		return memberList;
 	}
-	// 회원가입일 리스트 뽑기
+	public List<FollowVo> getMemberListVo(){
+		List<FollowVo> memberList = null;
+		String res = "/mybatis/config.xml";
+		try{
+			InputStream is = Resources.getResourceAsStream(res);
+			SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(is);
+			SqlSession session = factory.openSession();
+			
+			memberList = session.selectList("member.getList");
+			
+			session.close();
+		}catch (IOException ie) {
+			System.out.println(ie.getMessage());
+		}
+		return memberList;
+	}
+	
+/*	// 회원가입일 리스트 뽑기
 	public List<Date> getRegDate(List<String> id){
 		List<Date> RegDateList = null;
 		String res = "mybatis/config.xml";
@@ -250,7 +263,7 @@ public MembersVo deleteCf(String id){
 			System.out.println(ie.getMessage());
 		}
 		return RecommendNumList;
-	}
+	}*/
 	public Integer count(MembersVo vo){
 		int count = 0;
 		String res="/mybatis/config.xml";

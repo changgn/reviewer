@@ -10,24 +10,24 @@
 					신고 게시글 관리
 				</td>
 			</tr>
-			<c:forEach var="reporboard " items="${rep_boa}" > 
+			<c:forEach var="reporboard " items="${boardList}" > 
 			
 				<tr align="center">
 					<td width="150">
 						<!-- 작성자 -->
-						<c:out value="${reporboard.id }"/>
+						<c:out value="${reporboard.board.id }"/>
 					</td>
-					<td width="80">
+					<td >
 						<!-- 해당 게시글 -->
-						<input type="button" value="상세보기" onclick="해당게시글?board_num=${reporboard.board_num},id=${id}">
+						<input type="button" value="상세보기" onclick="../content/contentForm.do/?board_num=${reporboard.board.board_num},id=${reporboard.board.id}">
 					</td>
-					<td width="70">
+					<td width="100" align="left">
 						<!-- 신고수 -->
-						신고 <c:out value="${reporboard.report_num }"/>
+						신고 <c:out value="${reporboard.board.report_num }"/>
 					</td>
-					<td width="50">
-						<!-- 삭제 Text -->
-						<a href="글삭제.do">삭제</a>
+					<td width="100">
+						<!-- 삭제  -->
+						<a href="/Reviwer/content/deleteContent.do?id=${reporboard.board.id}&board_num=${reporboard.board.board_num}" class="cont_popup_close" >게시글 삭제</a>
 					</td>
 				</tr>
 			

@@ -16,12 +16,22 @@ $(document).ready(function() {
 	
 });
 $(function(){
+	var top = 0;
 	$(".cont_menu_option").click(function(){
 		var a = $("#menu_" + $(this).attr("id"));
+		top = a.offset().top;
+		$("body").css({
+			top: -top,
+			position: "fixed",
+			width: "100%",
+			height: "auto"
+		});
 		a.css({
 	    }).show();
 	});
 	$(".cont_btn_option").click(function(){
+		$("body").removeAttr("style");
+		 $('html, body').stop().animate({ scrollTop : top }, "fast");
 		$(this).hide();
 	});
 	

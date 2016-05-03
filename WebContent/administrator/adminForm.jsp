@@ -2,6 +2,9 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 	<head>
+		<style>
+			
+		</style>
 	</head>
 	<body>
 		<table width="250" border="1" align="center">

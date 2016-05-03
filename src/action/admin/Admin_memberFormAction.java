@@ -1,16 +1,16 @@
 package action.admin;
 
-import java.util.Date;
+import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
-import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import action.CommandAction;
 import mvc.dao.MemberDao;
+import vo.FollowVo;
+import vo.MembersVo;
 
 public class Admin_memberFormAction implements CommandAction {
 
@@ -24,17 +24,18 @@ public class Admin_memberFormAction implements CommandAction {
 		
 		MemberDao memberdao = MemberDao.getInstance();
 		
-		// 회원 아이디 리스트
-		List<String> memberList = null;
-		memberList = memberdao.getMemberList();
-		// 추천수 리스트
-		List<Integer> getRecommedNum = null;
-		// 가입일 리스트
-		List<Date> getRegDate = null;
-		getRecommedNum = memberdao.getRecommedNum(memberList);
-		getRegDate = memberdao.getRegDate(memberList);
+		List<HashMap> everyMemberList = new ArrayList<>();
+		List<FollowVo> ml =null;
+		ml = memberdao.getMemberListVo();
+		for(FollowVo vo : ml){
+			HashMap<String, Object> memberMap = new HashMap<String, Object>();
+			memberMap.put("member", vo);
+			everyMemberList.add(memberMap);
+		}
+
+		request.setAttribute("member", everyMemberList);
 		
-		Iterator<String> memberIdRecList = memberList.iterator();
+/*		Iterator<String> memberIdRecList = memberList.iterator();
 		Iterator<String> memberIdRegList = memberList.iterator();
 		Iterator<Integer> getRecommedNumList = getRecommedNum.iterator();
 		Iterator<Date> getRegDateList = getRegDate.iterator();
@@ -68,14 +69,15 @@ public class Admin_memberFormAction implements CommandAction {
 					}
 				}
 			}
-		}
-		System.out.println(rec.get(getRegDateList));
+		}*/
+/*		System.out.println(rec.get(getRegDateList));
 		
 		request.setAttribute("memberList", memberList);
 		request.setAttribute("memberIdRecList", memberIdRecList);
 		request.setAttribute("memberIdRegList", memberIdRegList);
 		request.setAttribute("memberIdRecListMap", reg);
 		request.setAttribute("memberIdRegListMap", rec);
+		*/
 		
         return "/administrator/admin_memberForm.jsp";//해당 뷰
 	}
