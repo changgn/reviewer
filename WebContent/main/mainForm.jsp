@@ -28,11 +28,10 @@ $(function(){
 	
 });
 
-
 </script>
 </head>
 <body>
-<%-- <c:forEach var="board" items="${allBoardList}"> --%>
+<c:forEach var="board" items="${allBoardList}">
 	<div class="content_wrap">
 		<div class="content_first">	
 			<div class="cont_writer">
@@ -41,7 +40,7 @@ $(function(){
 					<fmt:formatDate value="${board.board.write_date}" pattern="yyyy-MM-dd HH:mm"/>
 				</div>
 				<div class="cont_menu">
-					<a href="#none" id="${board.board.board_num}" class="cont_menu_option">
+					<a href="#" id="menu_${board.board.board_num}" class="cont_menu_option">
 						<span id="cont_btn_menu">옵션</span>						
 					</a>
 					 <div id="menu_${board.board.board_num}" class="cont_btn_option">
@@ -97,11 +96,11 @@ $(function(){
 <!-- 				<a href="#" class="btns_screp" >
 					<span class="u_ico_screp">스크렙</span>
 					<span class="text_num">19</span>
-				</a> -->
+					</a> -->
        		</div>
        	</div>
 	</div>
-<%-- </c:forEach> --%>
+</c:forEach>
 	<div class="btn_posting_wrap">
 		<a href="/Reviwer/write/writeForm.do" class="btn_posting">
 			<span class="u_vc">글쓰기</span>
