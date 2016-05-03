@@ -27,10 +27,6 @@ public class FollowerProAction implements CommandAction{
 		List<String> myToList = null;
 		myToList = followdao.getlistto(from_id);
 		
-		// 프로필 페이지 id의 팔로워 목록
-		List<String> youToList = null;
-		youToList = followdao.getlistto(to_id);
-		
 		FollowVo follow = null;
 		follow.setFrom_id(from_id);
 		follow.setTo_id(to_id);

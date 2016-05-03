@@ -161,7 +161,7 @@ public class FollowDao {
 			SqlSession session = factory.openSession();
 
 
-		count = Integer.valueOf(session.selectOne("follow.countto",id));
+			count = Integer.valueOf(session.selectOne("follow.countto",id));
 
 			if (count > 0) {
 				session.commit();

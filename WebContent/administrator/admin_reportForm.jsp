@@ -2,36 +2,25 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 	<head>
+		<style>
+			#repBoardList{margin:auto; max-width: 600px; border: thin;}
+		</style>
 	</head>
 	<body>
-		<table border="1" align="center">
-			<tr align="center">
-				<td colspan="4">
-					신고 게시글 관리
-				</td>
-			</tr>
-			<c:forEach var="reporboard " items="${boardList}" > 
-			
-				<tr align="center">
-					<td width="150">
+		<div id="repTitle" class="size_long title_find">
+			신고 게시글 관리
+		</div>
+		<c:forEach var="boardList " items="${boardList}" > 
+			<div id="repBoardList">
 						<!-- 작성자 -->
-						<c:out value="${reporboard.board.id }"/>
-					</td>
-					<td >
+				작성자 : ${boardList.id}
 						<!-- 해당 게시글 -->
-						<input type="button" value="상세보기" onclick="../content/contentForm.do?board_num=${reporboard.board.board_num},id=${reporboard.board.id}">
-					</td>
-					<td width="100" align="left">
+				<input type="button" value="상세보기" onclick="../content/contentForm.do?board_num=${boardList.board_num},id=${boardList.board.id}">
 						<!-- 신고수 -->
-						신고 <c:out value="${reporboard.board.report_num }"/>
-					</td>
-					<td width="100">
+				신고 ${boardList.report_num}
 						<!-- 삭제  -->
-						<a href="/reviewer/content/deleteContent.do?id=${reporboard.board.id}&board_num=${reporboard.board.board_num}" class="cont_popup_close" >게시글 삭제</a>
-					</td>
-				</tr>
-			
-			 </c:forEach>
-		</table>
+				<a href="/reviewer/content/deleteContent.do?id=${boardList.id}&board_num=${boardList.board_num}" class="cont_popup_close" >게시글 삭제</a>
+			</div>
+		</c:forEach>
 	</body>
 </html>

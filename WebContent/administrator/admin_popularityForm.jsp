@@ -2,36 +2,25 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 	<head>
+		<style>
+			
+		</style>
 	</head>
 	<body>
-		<table border="1" align="center">
-			<tr align="center">
-				<td colspan="4">
-					인기 게시글 관리
-				</td>
-			</tr>
-			
-			 <c:forEach var="populboard " items="${boardList}"> 
-				<tr align="center">
-					<td width="150">
+		<div id="populTitle" class="size_long title_find">
+			인기 게시글 관리
+		</div>
+		<c:forEach var="boardList " items="${boardList}"> 
+			<div id="popBoardList">
 						<!-- 작성자 -->
-						<c:out value="${populboard.board.id }"/>
-					</td>
-					<td width="80">
+				작성자 : ${boardList.id}
 						<!-- 해당 게시글 -->
-						<input type="button" value="상세보기" onclick="../content/contentForm.do?board_num=${populboard.board.board_num},id=${id}">
-					</td>
-					<td width="70">
+				<input type="button" value="상세보기" onclick="../content/contentForm.do?board_num=${boardList.id}&id=${boardList.id}">
 						<!-- 신고수 -->
-						신고 <c:out value="${populboard.board.recommend_num }"/>
-					</td>
-					<td width="50">
+				신고 ${boardList.recommend_num}
 						<!-- 삭제 Text -->
-						<a href="/reviewer/content/deleteContent.do?id=${populboard.board.id}&board_num=${populboard.board.board_num}">게시글 삭제</a>
-					</td>
-				</tr>
-			
-			 </c:forEach>
-		</table>
+				<a href="/reviewer/content/deleteContent.do?id=${boardList.id}&board_num=${boardList.id}">게시글 삭제</a>
+			</div>
+		</c:forEach>
 	</body>
 </html>

@@ -13,7 +13,9 @@
 					? '../image/icon_36.png'
 							: '../image/icon_35.png';
 					$(this).attr('src', src);
-					
+					var submit = new submit();
+					submit.setUrl("<c:url value='reviewer/follow/followerPro.do'/>");
+					submit.subit();
 				}
 			})
 		});
@@ -37,7 +39,6 @@
 					</div>
 					<div id="followerImage">
 						<img id="follow" src="../image/icon_35.png"/>
-						<form name="followPro" id="followPro" method="post">${fromId}</form>
 					</div>
 				 </c:forEach> 
 			</div>
