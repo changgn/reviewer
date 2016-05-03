@@ -7,7 +7,9 @@
 		<script type="text/javascript">
 		
 		$(document).ready(function(){
-			
+			for(var check = 0; ){
+				
+			}
 			$("#image1").$(this).attr("src").toggle(function(){
 				// icon35에서 icon36으로 
 				$("#image1").attr("src", "../image/icon_36.png");
