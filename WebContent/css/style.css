@@ -35,7 +35,7 @@ img { border: 0; }
 /* main_decorator */
 #logo { height: 80px; }
 #logo_btn {overflow: hidden; position: absolute; top: 23px; left: 20px; width: 235px; height: 30px; line-height: 999px;
-    background-image: url(../image/reviwer.png); }
+    background-image: url(../image/reviewer.png); }
 #main_btn { position: absolute; top: 0; right: 21px; height: 50px; padding: 11px 9px 0 9px; line-height: 47px; }
 .btn_gnb { display: inline-block; height: 39px; padding: 11px 9px 0 9px; vertical-align: top; }
 #btn_login { display: inline-block; overflow: hidden; width: 30px; height: 31px; line-height: 999px; vertical-align: top; color: transparent; 
