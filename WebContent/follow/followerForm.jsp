@@ -14,13 +14,15 @@
 							: '../image/icon_35.png';
 					$(this).attr('src', src);
 					var submit = new submit();
-					submit.setUrl("<c:url value='reviewer/follow/followerPro.do'/>");
+					submit.setUrl("<c:url value='reviewer/follow/followerPro.do?${fromIdList}'/>");
 					submit.subit();
 				}
 			})
 		});
 		</script>
 		<style>
+			*{padding:0; margin:0;}
+			div{ border-collapse: collapse; border-spacing: 0; border:1px solid #ccc; padding3px;}
 			#followerNameList { margin: 0 auto; margin-top: 15px; padding-top: 10px;}
 			#followerList { width: 500px; margin: 0 auto; }
 			#followerIdList a { font-size: 30px;}
