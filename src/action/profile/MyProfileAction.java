@@ -68,9 +68,6 @@ public class MyProfileAction implements CommandAction {
 				String from_id=request.getParameter("id");
 				String to_id=request.getParameter("id");
 
-				
-
-				
 				int followerCount = followdao.countfrom(from_id);
 				int folloingCount = followdao.countto(to_id);			
 				
@@ -80,8 +77,6 @@ public class MyProfileAction implements CommandAction {
 				//팔로잉
 				folloingCount = followdao.countto(to_id);
 				request.setAttribute("folloingCount", folloingCount);
-				
-				
 				
 				//게시글
 				BoardDao boardDao = BoardDao.getInstance();
