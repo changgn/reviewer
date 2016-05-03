@@ -59,17 +59,19 @@ public class MainFormAction implements CommandAction {
 				}
 				
 			}
-			for(BoardVo vo : boardList) {
-				HashMap<String, Object> boardMap = new HashMap<String, Object>();
-				PhotoVo photo = photoDao.getOneByBoardNum(vo.getBoard_num());
-				CategoryVo category = categoryDao.getOne(vo.getCategory_id());
-				String commentCount = comentDao.getCountByBoardNum(vo.getBoard_num());
-				if(commentCount==null)	commentCount="0";
-				boardMap.put("board", vo);
-				boardMap.put("photo", photo);
-				boardMap.put("category", category);
-				boardMap.put("commentCount", commentCount);
-				allBoardList.add(boardMap);
+			if(boardList!=null)	{
+				for(BoardVo vo : boardList) {
+					HashMap<String, Object> boardMap = new HashMap<String, Object>();
+					PhotoVo photo = photoDao.getOneByBoardNum(vo.getBoard_num());
+					CategoryVo category = categoryDao.getOne(vo.getCategory_id());
+					String commentCount = comentDao.getCountByBoardNum(vo.getBoard_num());
+					if(commentCount==null)	commentCount="0";
+					boardMap.put("board", vo);
+					boardMap.put("photo", photo);
+					boardMap.put("category", category);
+					boardMap.put("commentCount", commentCount);
+					allBoardList.add(boardMap);
+				}
 			}
 			
 			request.setAttribute("allBoardList", allBoardList);
