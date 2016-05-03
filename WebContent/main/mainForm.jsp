@@ -114,10 +114,12 @@ $(function(){
        	</div>
 	</div>
 </c:forEach>
-	<div class="btn_posting_wrap">
-		<a href="/reviewer/write/writeForm.do" class="btn_posting">
-			<span class="u_vc">글쓰기</span>
-		</a>
-	</div>
+	<c:if test="${login_status==0 || login_status==1}">
+		<div class="btn_posting_wrap">
+			<a href="/reviewer/write/writeForm.do" class="btn_posting">
+				<span class="u_vc">글쓰기</span>
+			</a>
+		</div>
+	</c:if>
 </body>
 </html>
