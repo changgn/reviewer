@@ -4,7 +4,23 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<style>
+/*my_profile*/
 
+.my_profile { float: left; width: 249px; height: 100%; padding: 13px; border: 20px; }
+.my_profile { margin: 0 auto; font-size: 20px; }
+#id_profile { float: left; width: 399px; height: 100%; margin: 0 auto; border: 32px; }
+#category_profile { float: left; width: 399px; height: 100%; margin: 0 auto; border: 32px; }
+#follower_profile { float: left; width: 399px; height: 100%; margin: 0 auto; border: 32px; }
+#folloing_profile { float: left; width: 399px; height: 100%; margin: 0 auto; border: 32px; }
+#board_profile { float: left; width: 399px; height: 100%; margin: 0 auto; border: 32px; }
+#paramId_pofile { float: left; width: 399px; height: 100%; margin: 0 auto; border: 32px; }
+#paramId_category_profile { float: left; width: 399px; height: 100%; margin: 0 auto; border: 32px; }
+#paramId_follower_profile { float: left; width: 399px; height: 100%; margin: 0 auto; border: 32px; }
+#paramId_folloing_profile { float: left; width: 399px; height: 100%; margin: 0 auto; border: 32; }
+#recommend_num { float: left; width: 399px; height: 100%; margin: 0 auto; border: 0; }
+
+</style>
 
 <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
 <script>
