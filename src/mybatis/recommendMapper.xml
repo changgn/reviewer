@@ -6,8 +6,8 @@
 	<insert id="add" parameterType="vo.RecommendVo">
 		<!-- 조건문 -->
 	</insert>
-	<update id="modify" parameterType="vo.RecommendVo">
-		<!-- 조건문 -->
+	<update id="updateByRecommendNum" parameterType="java.lang.String">
+		update board set recommend_num=recommend_num+1 where board_num=#{board_num}
 	</update>
 	<delete id="remove" parameterType="java.lang.String">
 		<!-- 조건문 -->

@@ -32,7 +32,7 @@ $(function(){
 </script>
 </head>
 <body>
-<c:forEach var="board" items="${allBoardList}">
+<%-- <c:forEach var="board" items="${allBoardList}"> --%>
 	<div class="content_wrap">
 		<div class="content_first">	
 			<div class="cont_writer">
@@ -41,7 +41,7 @@ $(function(){
 					<fmt:formatDate value="${board.board.write_date}" pattern="yyyy-MM-dd HH:mm"/>
 				</div>
 				<div class="cont_menu">
-					<a href="#" id="${board.board.board_num}" class="cont_menu_option">
+					<a href="#none" id="${board.board.board_num}" class="cont_menu_option">
 						<span id="cont_btn_menu">옵션</span>						
 					</a>
 					 <div id="menu_${board.board.board_num}" class="cont_btn_option">
@@ -85,11 +85,11 @@ $(function(){
        	</div>
        	<div class="cont_btns">
        		<div class="cont_btns_wrap">
-<!-- 				<div class="btns_re">
-					<a href="/Reviwer/recommend/recommendPro.do" class="btns_re_item">
+				<div class="btns_re">
+					<a href="/Reviwer/recommend/recommendPro.do?board_num=${board.board.board_num}" class="btns_re_item">
                 		<span class="u_ico"></span><em class="u_txt">좋아요</em><em class="u_cnt">128</em>
                  	</a>
-				</div> -->
+				</div>
 				<a href="/Reviwer/content/contentForm.do?board_num=${board.board.board_num}&comment=true" class="btns_coment" >
 					<span class="u_ico_coment">댓글</span>
 					<span class="text_num">${board.commentCount}</span>				
@@ -101,7 +101,7 @@ $(function(){
        		</div>
        	</div>
 	</div>
-</c:forEach>
+<%-- </c:forEach> --%>
 	<div class="btn_posting_wrap">
 		<a href="/Reviwer/write/writeForm.do" class="btn_posting">
 			<span class="u_vc">글쓰기</span>
