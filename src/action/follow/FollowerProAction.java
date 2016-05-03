@@ -17,7 +17,6 @@ public class FollowerProAction implements CommandAction{
 		String check = request.getParameter("check"); // 체크값
 
 		if(check=="0"){
-			followdao.addto(fId);
 		}else{
 			followdao.removeto(fId);
 		}
