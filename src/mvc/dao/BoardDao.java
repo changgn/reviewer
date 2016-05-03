@@ -39,6 +39,23 @@ public class BoardDao {
 		}
 		return list;
 	}
+	public List<BoardVo> getListById(String id) {
+		List<BoardVo> list = null;
+		String res = "mybatis/config.xml";
+		try {
+		  	InputStream is = Resources.getResourceAsStream(res);
+			
+			SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(is);
+			SqlSession session = factory.openSession();
+			
+			list = session.selectList("board.getListById", id);
+	
+			session.close();
+		} catch (IOException ie) {
+			System.out.println(ie.getMessage());
+		}
+		return list;
+	}
 	public List<BoardVo> getListByContent(String content) {
 		List<BoardVo> list = null;
 		String res = "mybatis/config.xml";

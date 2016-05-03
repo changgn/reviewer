@@ -1,6 +1,7 @@
 package action.profile;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 
@@ -39,6 +40,7 @@ public class MyProfileAction implements CommandAction {
 		category= membersCategoryDao.getlistById(id);//id 값을 통하여 카테고리 리스트를 가져온다.
 		*/
 		String id = (String) request.getSession().getAttribute("id");
+		String paramId = request.getParameter("id");
 		MembersCategoryDao membersCategoryDao = MembersCategoryDao.getInstance();
 		CategoryDao categoryDao = CategoryDao.getInstance();
 		
@@ -47,47 +49,68 @@ public class MyProfileAction implements CommandAction {
 		List<CategoryVo> CategoryList = new ArrayList<CategoryVo>();
 		
 		// 해당 id의 카테고리id 가져오기
-		membersCategoryList = membersCategoryDao.getlistById(id);
+		membersCategoryList = membersCategoryDao.getlistById(paramId);
 		// 카테고리id로 카테고리 가져오기
-				for(MembersCategoryVo vo : membersCategoryList) {
-					CategoryVo Category = categoryDao.getOne(vo.getCategory_id());
-					CategoryList.add(Category);
+		for(MembersCategoryVo vo : membersCategoryList) {
+			CategoryVo Category = categoryDao.getOne(vo.getCategory_id());
+			CategoryList.add(Category);
+		}
+		request.setAttribute("CategoryList", CategoryList);
+		
+		
+		/*Iterator it = null;
+		it = CategoryList.iterator();
+		while(it.hasNext()){
+			String cate= it.next().toString();
+			request.setAttribute("cate", cate);
+		} */
+		FollowDao followdao = FollowDao.getInstance();
+		
+		String from_id=id;
+		String to_id=request.getParameter("id");
+
+
+
+		
+		int followerCount = Integer.valueOf(followdao.countfrom(from_id));
+		int folloingCount = Integer.valueOf(followdao.countto(to_id));			
+
+		//팔로워
+		followerCount =followdao.countfrom(from_id);
+		request.setAttribute("followerCount", followerCount);
+		//팔로잉
+		folloingCount = followdao.countto(to_id);
+		request.setAttribute("folloingCount", folloingCount);
+		
+
+		//게시글 가져오기
+		if(paramId != null) {
+			List<BoardVo> boardList = null;
+			List<HashMap> allBoardList = new ArrayList<>();
+			
+			BoardDao boardDao = BoardDao.getInstance();
+			PhotoDao photoDao = PhotoDao.getInstance();
+			ComentDao comentDao = ComentDao.getInstance();
+			boardList = boardDao.getListById(paramId);
+			
+			if(boardList!=null){
+				for(BoardVo vo : boardList) {
+					HashMap<String, Object> boardMap = new HashMap<String, Object>();
+					PhotoVo photo = photoDao.getOneByBoardNum(vo.getBoard_num());
+					CategoryVo category = categoryDao.getOne(vo.getCategory_id());
+					String commentCount = comentDao.getCountByBoardNum(vo.getBoard_num());
+					if(commentCount==null)	commentCount="0";
+					boardMap.put("board", vo);
+					boardMap.put("photo", photo);
+					boardMap.put("category", category);
+					boardMap.put("commentCount", commentCount);
+					allBoardList.add(boardMap);
 				}
-				request.setAttribute("CategoryList", CategoryList);
-				
-				
-				/*Iterator it = null;
-				it = CategoryList.iterator();
-				while(it.hasNext()){
-					String cate= it.next().toString();
-					request.setAttribute("cate", cate);
-				} */
-				FollowDao followdao = FollowDao.getInstance();
-				FollowVo fvo= new FollowVo();
-				
-				String from_id=id;
-				String to_id=request.getParameter("id");
-
-
-
-				
-				int followerCount = Integer.valueOf(followdao.countfrom(from_id));
-				int folloingCount = Integer.valueOf(followdao.countto(to_id));			
-
-				//팔로워
-				followerCount =followdao.countfrom(from_id);
-				request.setAttribute("followerCount", followerCount);
-				//팔로잉
-				folloingCount = followdao.countto(to_id);
-				request.setAttribute("folloingCount", folloingCount);
-				
-
-				//게시글
-
-				String paramId= request.getParameter("id");
-				
-				request.setAttribute("paramId", paramId);
-				
+			}
+			request.setAttribute("allBoardList", allBoardList);
+		}
+		request.setAttribute("paramId", paramId);
+		
 				
 				
 				

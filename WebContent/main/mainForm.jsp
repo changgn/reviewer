@@ -40,14 +40,6 @@ $(function(){
 	});
 	
 });
-function fn_TextAreaLineLimit() {
-    var tempText = $("").val();
-    var lineSplit = tempText.split("\n");
-    
-    if(lineSplit.length > 3) {
-        alert("8줄까지만 입력해 주십시오.");
-    }
-}
 </script>
 </head>
 <body>
