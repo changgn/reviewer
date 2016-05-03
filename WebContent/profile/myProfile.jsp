@@ -5,37 +5,12 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<style>
-/*my_profile*/
-#my_profile_info_area {
-	min-height: 200px; padding: 20px; font-size: 20px; margin: 0 auto; background-color: #F6F6F6;
-}
-#id_profile {
-	margin-top:50px; font-size: 50px; color: #4C4C4C;
-}
-#category_my_profile {
-	padding: 20px;
-}
-#my_profile_follow{
-width: 200px; height:30px; margin: 0 auto; margin-top: 10px;
-}
-.follow_profile {
-	width: 100px; float: left; margin: 0 auto;
-}
-.follow_profile a{
-	font-size: 15px;
-}
-</style>
 
 <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
 <script>
 
 $(document).ready(function() {
 	
-	$("#reportDisplayPanel").bind("mouseleave", function() {
-		$("#reportDisplayPanel").hide();   
-	});
-	console.log("ready end");
 	
 });
 $(function(){

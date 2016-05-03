@@ -46,6 +46,8 @@ public class ContentFormAction implements CommandAction {
 			CategoryVo category = categoryDao.getOne(board.getCategory_id());
 			request.setAttribute("board", board);
 			request.setAttribute("category", category);
+		} else {
+			request.setAttribute("error", "error");
 		}
 		if(photoList != null) { // 가져온 사진 정보가 있다면
 			request.setAttribute("photoList", photoList);

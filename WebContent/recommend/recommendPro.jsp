@@ -6,6 +6,9 @@
 <title>게시글 신고중</title>
 </head>
 <body>
-	<% response.sendRedirect("/reviewer/main/mainForm.do"); %>
+	<script>
+		alert("게시글을 추천 하였습니다");
+		history.go(-1);
+	</script>
 </body>
 </html>

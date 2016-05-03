@@ -8,15 +8,6 @@
 <title>게시글</title>
 <script>
 
-$(document).ready(function() {
-	
-	$("#reportDisplayPanel").bind("mouseleave", function() {
-		$("#reportDisplayPanel").hide();
-	});
-	console.log("ready end");
-	
-});
-
 $(function(){
 	$(".cont_menu_option").click(function(){
 		$(".cont_btn_option").css({
@@ -30,6 +21,9 @@ $(function(){
 </script>
 <script>
 $(document).ready(function(){
+	if("${error}"=="error") {
+		$(location).attr("href", "/reviewer/main/mainForm.do");
+	}
 	if("${comment}"=="true") {
 		$("#content_comment_write").focus();
 	}
@@ -102,11 +96,11 @@ $(function(){
        	</div>
        	<div class="cont_btns">
        		<div class="cont_btns_wrap">
-				<!-- <div class="btns_re">
-					<a href="#" class="btns_re_item">
-                		<span class="u_ico"></span><em class="u_txt">좋아요</em><em class="u_cnt">128</em>
+				<div class="btns_re">
+					<a href="/reviewer/recommend/recommendPro.do?board_num=${board.board_num}" class="btns_re_item">
+                		<span class="u_ico"></span><em class="u_txt">좋아요</em><em class="u_cnt"> ${board.recommend_num}</em>
                  	</a>
-				</div> -->
+				</div>
 				<a href="/reviewer/content/contentForm.do?board_num=${board.board_num}&comment=true" class="btns_coment" >
 					<span class="u_ico_coment">댓글</span>
 					<span class="text_num">${commentCount}</span>				

@@ -194,3 +194,11 @@ img { border: 0; }
 #content_comment_info { padding: 10px 0 0 10px; text-align: left; }
 #writed_comment { height: 85px; }
 #comment_btn_delete { height: 83px; padding-top: 25px; }
+
+/*my_profile*/
+#my_profile_info_area { min-height: 200px; padding: 20px; font-size: 20px; margin: 0 auto; background-color: #F6F6F6; }
+#id_profile { margin-top:50px; font-size: 50px; color: #4C4C4C; }
+#category_my_profile { padding: 20px; }
+#my_profile_follow{ width: 200px; height:30px; margin: 0 auto; margin-top: 10px; }
+.follow_profile { width: 100px; float: left; margin: 0 auto; }
+.follow_profile a{ font-size: 15px; }

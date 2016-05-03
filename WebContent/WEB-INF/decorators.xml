@@ -7,10 +7,8 @@
 		<pattern>/search/*</pattern>
 		<pattern>/content/contentForm.do</pattern>
 		<pattern>/content/contentPro.do</pattern>
-		<pattern>/content/deleteContent.do</pattern>
 		<pattern>/administrator/*</pattern>
 		<pattern>/follow/*</pattern>
-		<pattern>/recommend/*</pattern>
 		<pattern>/logon/modifyForm.do</pattern>
 		<pattern>/logon/deleteForm.do</pattern>
 		<pattern>/profile/*</pattern>

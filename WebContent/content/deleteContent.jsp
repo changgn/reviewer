@@ -13,7 +13,10 @@
 	</script>
 </c:if>
 <c:if test="${errorId==null}">
-	<% response.sendRedirect("/reviewer/main/mainForm.do"); %>
+	<script>
+		alert("게시글을 삭제 하였습니다");
+		history.go(-1);
+	</script>
 </c:if>
 </body>
 </html>
