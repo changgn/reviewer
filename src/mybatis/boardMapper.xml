@@ -28,7 +28,7 @@
 		<!-- 조건문 -->
 	</select>
 	<select id="getPopularityBoardList" resultType="vo.BoardVo">
-		select board_num, id, recommend_num, from board ORDER BY recommend_num DESC
+		select board_num, id, recommend_num from board ORDER BY recommend_num DESC
 	</select>
 	<select id="getReportBoardList" resultType="vo.BoardVo">
 		select board_num, id, report_num from board ORDER BY report_num DESC
@@ -37,13 +37,13 @@
 		select * from board where board_num=#{board_num}
 	</select>
 	<select id="getList" resultType="vo.BoardVo">
-		select * from board order by write_date DESC 
+		select * from board ORDER BY write_date DESC 
 	</select>
 	<select id="getListById" parameterType="java.lang.String" resultType="vo.BoardVo">
-		select * from board where id=#{id} order by write_date DESC
+		select * from board where id=#{id} ORDER BY write_date DESC
 	</select>
 	<select id="getListByContent" parameterType="java.lang.String" resultType="vo.BoardVo">
-		select * from board where content LIKE '%'||#{content}||'%' order by write_date DESC
+		select * from board where content LIKE '%'||#{content}||'%' ORDER BY write_date DESC
 	</select>
 	<select id="getListByCategoryId" parameterType="java.util.List" resultType="vo.BoardVo">
 		select * from board where category_id IN
@@ -58,7 +58,7 @@
 			#{item}
 		</foreach>
 		AND content like '%'||#{content}||'%'
-    	order by write_date DESC
+    	ORDER BY write_date DESC
 	</select>
 	<select id="getRecentBoardNumById" parameterType="java.lang.String" resultType="java.lang.Integer">
 		select MAX(board_num) from board where id=#{id}
