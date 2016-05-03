@@ -11,66 +11,23 @@ div {border : 3px;}
 <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
 <script>
 $(function(){
-<<<<<<< HEAD
- $("#board_profile").click(function(){
-  var url = "/Reviwer/content/.contentForm.do?id=" +${SessionScope.id};
-  window.location.href(url);
-=======
 	$("#board_profile").click(function(){
 		var url = "/Reviwer/content/.contentForm.do?id=" +${SessionScope.id};
 		window.location.href(url);
->>>>>>> 81be8312e316f4753f4c8671ffbee1e026317a85
 
- });
+	});
 });
 
 
 </script>
-
 <title>본인 프로필(MY)</title>
 </head>
 <body>
 <div id="profile">
-<<<<<<< HEAD
- <c:if test="${sessionScope.id }==${paramId }">
-  <div class="my_pofile">
-   <div id="id_profile">${sessionScope.id }</div>
-    <div id="category_profile"> 
-     <c:forEach var="item" items="${CategoryList}" varStatus="status">
-     <c:out value="${item.group1}"></c:out>
-     <c:out value="${item.group2}"></c:out>
-     <c:out value="${item.group3}"></c:out>
-   </c:forEach>
-   </div>
-   <div id="follower_profile">${followerCount }</div>
-   <div id="folloing_profile">${folloingCount }</div>
-   <div id="board_profile">게시글</div>  
-  </div>
- </c:if>
- 
- <c:if test="${sessionScope.id}!=${paramId }"> //
-  <div class="my_pofile">
-   <div id="id_profile">${paramId }</div>
-    <div id="category_profile"> 
-     <c:forEach var="item" items="${CategoryList}" varStatus="status">
-     <c:out value="${item.group1}"></c:out>
-     <c:out value="${item.group2}"></c:out>
-     <c:out value="${item.group3}"></c:out>
-   </c:forEach>
-   </div>
-   <div id="follower_profile">${followerCount }</div>
-   <div id="folloing_profile">${folloingCount }</div>
-   <div id="recommend_num">추천수 </div>
-  </div>
- </c:if>
- 
- <br><br><br>
- 
-=======
 	<c:choose>
 	<c:when test="${sessionScope.id }==${paramId }"> 
 		<div class="my_pofile">
-			<div id="id_profile">${sessionScope.id }</div>
+			<div id="id_profile"> ${sessionScope.id }</div>
 		 		<div id="category_profile">	
 					<c:forEach var="item" items="${CategoryList}" varStatus="status">
 					<c:out value="${item.group1}>"></c:out>
@@ -101,18 +58,19 @@ $(function(){
 	</c:otherwise>
 	</c:choose>
 	<br><br><br>
->>>>>>> 81be8312e316f4753f4c8671ffbee1e026317a85
-<div id="content_area">
- ${board.id}, ${board.content}
+
+<jsp:include page = "contentForm.do">
+<%-- <div id="content_area">
+	${board.id}, ${board.content}
 </div>
 <div id="content_photo_area">
- <c:forEach var="photo" items="${photoList}">
-  <div class="content_photo"><img src="${photo.realPath}"></div>
- </c:forEach>
+	<c:forEach var="photo" items="${photoList}">
+		<div class="content_photo"><img src="${photo.realPath}"></div>
+	</c:forEach>
 </div>
 <div id="content_comment_area">
 </div>
-</div>
+</div> --%>
 
 </body>
 </html>
