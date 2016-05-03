@@ -111,7 +111,6 @@ public class FollowDao {
 		}
 		return fromIdList;
 	}
-	
 	// 팔로잉 리스트
 	public List<String> getlistto(String from_id){
 		List<String> list = null;
