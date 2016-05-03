@@ -99,7 +99,7 @@ $(function(){
        		<div class="cont_btns_wrap">
 				<div class="btns_re">
 					<a href="/reviewer/recommend/recommendPro.do?board_num=${board.board.board_num}" class="btns_re_item">
-                		<span class="u_ico"></span><em class="u_txt">좋아요</em><em class="u_cnt">128</em>
+                		<span class="u_ico"></span><em class="u_txt">좋아요</em><em class="u_cnt"> ${board.board.recommend_num}</em>
                  	</a>
 				</div>
 				<a href="/reviewer/content/contentForm.do?board_num=${board.board.board_num}&comment=true" class="btns_coment" >
