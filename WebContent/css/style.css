@@ -95,8 +95,7 @@ img { border: 0; }
 .btn_view_more{display: inline-block;padding-left: 6px;width: 55px;color: #b9b9b9;box-sizing: border-box;}
 .item_cont{padding-top: 28px;}
 .item_thumb{display: block;overflow: hidden;position: relative;text-align: center;}
-.thumb_mask_bottom{height: 181px;background-image: url(https://ssl.pstatic.net/static/m/pholar/img/mask_thumb_bottom_v2.png);position: absolute;right: 0;bottom: 0;left: 0;background-position: 0 100%;}
-.list_photo{width:100%;height:auto;vertical-align:top}
+.list_photo{width:100%;height:auto;vertical-align:top; border-left: 1px solid #e6e6e6; border-right: 1px solid #e6e6e6;}
 /* 추천 버튼 */
 .cont_btns{border: 1px solid #e6e6e6;border-top: 0 none;}
 .cont_btns_wrap{height: auto;padding-left: 20px;padding-bottom: 20px;padding-top: 20px;position: relative;padding: 27px 0 0 6px; margin-bottom: 22px; }
@@ -184,7 +183,7 @@ img { border: 0; }
 
 /* contentForm */
 .size_content { width: 650px; height: 60px; margin: 15px auto; border: 1px solid #4C4C4C; }
-.content_photo { margin: 10 auto; width: 650px; }
+.content_photo { margin: 0 auto; padding-top: 10px; width: 650px; border-left: 1px solid #e6e6e6; border-right: 1px solid #e6e6e6; }
 .content_photo img { width: 100%; }
 #content_comment_area { margin: 0 auto; margin-bottom: 50px; }
 #content_comment_wirte_area { float: left; width: 549px; height: 58px; margin: 0 auto; font-size: 23px;  }

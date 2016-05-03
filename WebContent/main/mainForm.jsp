@@ -40,7 +40,14 @@ $(function(){
 	});
 	
 });
-
+function fn_TextAreaLineLimit() {
+    var tempText = $("").val();
+    var lineSplit = tempText.split("\n");
+    
+    if(lineSplit.length > 3) {
+        alert("8줄까지만 입력해 주십시오.");
+    }
+}
 </script>
 </head>
 <body>
@@ -74,7 +81,7 @@ $(function(){
 		</div>
 		<div class="content_second">
 			<span class="content_view">
-				<span><pre>${board.board.content}</pre>
+				<span><pre id="pre_${board.board.board_num}">${board.board.content}</pre>
 					<span class="cont_theview">
 						<span>...</span>
 						<a href="/reviewer/content/contentForm.do?board_num=${board.board.board_num}" class="btn_view_more">더보기</a>
