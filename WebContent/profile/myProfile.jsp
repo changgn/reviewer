@@ -4,22 +4,34 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<style type="text/css">
+div {border : 3px;}
 
+</style>
 <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
 <script>
 $(function(){
+<<<<<<< HEAD
  $("#board_profile").click(function(){
   var url = "/Reviwer/content/.contentForm.do?id=" +${SessionScope.id};
   window.location.href(url);
+=======
+	$("#board_profile").click(function(){
+		var url = "/Reviwer/content/.contentForm.do?id=" +${SessionScope.id};
+		window.location.href(url);
+>>>>>>> 81be8312e316f4753f4c8671ffbee1e026317a85
 
  });
 });
+
+
 </script>
 
 <title>본인 프로필(MY)</title>
 </head>
 <body>
 <div id="profile">
+<<<<<<< HEAD
  <c:if test="${sessionScope.id }==${paramId }">
   <div class="my_pofile">
    <div id="id_profile">${sessionScope.id }</div>
@@ -54,6 +66,42 @@ $(function(){
  
  <br><br><br>
  
+=======
+	<c:choose>
+	<c:when test="${sessionScope.id }==${paramId }"> 
+		<div class="my_pofile">
+			<div id="id_profile">${sessionScope.id }</div>
+		 		<div id="category_profile">	
+					<c:forEach var="item" items="${CategoryList}" varStatus="status">
+					<c:out value="${item.group1}>"></c:out>
+					<c:out value="${item.group2}"></c:out><br>
+					<c:out value="${item.group3}>"></c:out>
+			</c:forEach> 
+			</div>
+			<div id="follower_profile">팔로워 : ${followerCount }</div>
+			<div id="folloing_profile">팔로잉 : ${folloingCount }</div>
+			<div id="board_profile">게시글</div>		
+		</div>
+	 </c:when> 
+	
+	 <c:otherwise>
+		<div class="paramId_pofile">
+			<div id="paramId_profile">${paramId }</div>
+				 <div id="paramId_category_profile">	
+					<c:forEach var="item" items="${CategoryList}" varStatus="status">
+					<c:out value="${item.group1}>"></c:out>
+					<c:out value="${item.group2}>"></c:out>
+					<c:out value="${item.group3}>"></c:out>
+			</c:forEach> 
+			</div>
+			<div id="paramId_follower_profile">${followerCount }</div>
+			<div id="paramId_folloing_profile">${folloingCount }</div>
+			<div id="recommend_num">  추천수 </div>
+		</div>
+	</c:otherwise>
+	</c:choose>
+	<br><br><br>
+>>>>>>> 81be8312e316f4753f4c8671ffbee1e026317a85
 <div id="content_area">
  ${board.id}, ${board.content}
 </div>

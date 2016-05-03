@@ -11,7 +11,7 @@
 $(document).ready(function() {
 	
 	$("#reportDisplayPanel").bind("mouseleave", function() {
-		$("#reportDisplayPanel").hide();
+		$("#reportDisplayPanel").hide();   
 	});
 	console.log("ready end");
 	
