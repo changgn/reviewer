@@ -19,7 +19,6 @@
 #paramId_follower_profile { float: left; width: 399px; height: 100%; margin: 0 auto; border: 32px; }
 #paramId_folloing_profile { float: left; width: 399px; height: 100%; margin: 0 auto; border: 32; }
 #recommend_num { float: left; width: 399px; height: 100%; margin: 0 auto; border: 0; }
-
 </style>
 
 <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
@@ -30,6 +29,8 @@ $(function(){
 		window.location.href(url);
 
 	});
+	
+	
 });
 
 
@@ -49,9 +50,8 @@ $(function(){
 					<c:out value="${item.group3}"></c:out><br>
 			</c:forEach> 
 			</div>
-			<div class="my_profile" id="folloing_profile1"><a href="#">팔로잉 </a></div>
-			<div class="my_profile" id="follower_profile"><a href="#">  ${followerCount }</a></div>
-			<div class="my_profile" id="folloing_profile"><a href="#">팔로잉  ${folloingCount }</a></div>
+			<div class="my_profile" id="follower_profile"><a href="/reviewer/follow/followerForm.do">팔로우  ${followerCount }</a></div>
+			<div class="my_profile" id="folloing_profile"><a href="/reviewer/follow/folloingForm.do">팔로잉  ${folloingCount }</a></div>
 			<div class="my_profile" id="board_profile">게시글 </div>		
 		</div>
 		
@@ -67,8 +67,8 @@ $(function(){
 					<c:out value="${item.group3}"></c:out>
 			</c:forEach> 
 			</div>
-			<div class="user_profile" id="paramId_follower_profile">${followerCount }</div>
-			<div class="user_profile" id="paramId_folloing_profile">${folloingCount }</div>
+			<div class="user_profile" id="paramId_follower_profile"><a href="/reviewer/follow/followerForm.do">${followerCount }</a></div>
+			<div class="user_profile" id="paramId_folloing_profile"><a href="/reviewer/follow/folloingForm.do">${folloingCount }</a></div>
 		</div>
 	</c:otherwise>
 	</c:choose>

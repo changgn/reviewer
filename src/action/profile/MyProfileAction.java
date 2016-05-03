@@ -65,7 +65,7 @@ public class MyProfileAction implements CommandAction {
 				FollowDao followdao = FollowDao.getInstance();
 				FollowVo fvo= new FollowVo();
 				
-				String from_id=request.getParameter("id");
+				String from_id=id;
 				String to_id=request.getParameter("id");
 
 
