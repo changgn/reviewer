@@ -71,8 +71,8 @@ public class MyProfileAction implements CommandAction {
 				
 
 				
-				int followerCount = followdao.countfrom(from_id);
-				int folloingCount = followdao.countto(to_id);			
+				int followerCount = Integer.valueOf(followdao.countfrom(from_id));
+				int folloingCount = Integer.valueOf(followdao.countto(to_id));			
 				
 				//팔로워
 				followerCount =followdao.countfrom(from_id);
@@ -81,9 +81,14 @@ public class MyProfileAction implements CommandAction {
 				folloingCount = followdao.countto(to_id);
 				request.setAttribute("folloingCount", folloingCount);
 				
+				String paramId= request.getParameter("id");
+				
+				request.setAttribute("paramId", paramId);
 				
 				
-				//게시글
+				
+				
+	/*			//게시글
 				BoardDao boardDao = BoardDao.getInstance();
 				BoardVo vo = new BoardVo();
 				
@@ -92,7 +97,8 @@ public class MyProfileAction implements CommandAction {
 				board_num = boardDao.getRecentBoardNumById(id);
 			
 				request.setAttribute("board_num", board_num);
-				
+				*/
+			
 				/*// 변수 생성
 				List<PhotoVo> photoList = null;
 				BoardVo board = new BoardVo();
