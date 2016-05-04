@@ -21,7 +21,7 @@
 
 						가입일자  <fmt:formatDate value="${memberList.reg_date}" pattern="yyyy-MM-dd HH:mm"/>
 
-						<input type="button" value="이동" onclick="../profile/myProfile?id=${memberlist.id}"/>
+						<input type="button" value="이동" onclick="../profile/myProfile?id=${memberlist.id}">
 					</div>
 				</c:forEach>
 	</body>

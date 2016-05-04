@@ -10,16 +10,12 @@
 		<div id="populTitle" class="size_long title_find">
 			인기 게시글 관리
 		</div>
-		<c:forEach var="boardList " items="${boardList}"> 
+		<c:forEach var="board" items="${allBoardList}"> 
 			<div id="popBoardList">
-						<!-- 작성자 -->
-				작성자 : ${boardList.id}
-						<!-- 해당 게시글 -->
-				<input type="button" value="상세보기" onclick="../content/contentForm.do?board_num=${boardList.id}&id=${boardList.id}">
-						<!-- 신고수 -->
-				신고 ${boardList.recommend_num}
-						<!-- 삭제 Text -->
-				<a href="/reviewer/content/deleteContent.do?id=${boardList.id}&board_num=${boardList.id}">게시글 삭제</a>
+				작성자 ${board.board.id}
+				<a href="../content/contentForm.do?board_num=${board.board.board_num}"><input type="button" value="상세보기"></a>
+				추천 ${board.board.recommend_num}
+					<a href="/reviewer/content/deleteContent.do?id=${board.board.id},board_num=${board.board.board_num}" class="cont_popup_close" >게시글 삭제</a>
 			</div>
 		</c:forEach>
 	</body>
