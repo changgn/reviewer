@@ -43,7 +43,9 @@ $(function(){
 		}
 	});
 	$("#noDelete").click(function(){
-		alert("댓글 작성자만 삭제할 수 있습니다")
+		alert("댓글 작성자만 삭제할 수 있습니다");
+		var top = $("#content_comment_area").offset().top;
+		$('html, body').animate({ scrollTop : top });
 	});
 });
 </script>
@@ -134,7 +136,7 @@ $(function(){
 		<div id="writed_comment" class="size_content">
 			<div id="content_comment_wirted_area" >
 				<div id="content_comment_info">
-					작성자 : <a href="#">${comment.id}</a>&nbsp;&nbsp;&nbsp; 작성시간 : <fmt:formatDate value="${comment.write_date}" pattern="yyyy-MM-dd HH:mm"/>
+					작성자 : <a href="/reviewer/profile/myProfile.do?id=${comment.id}">${comment.id}</a>&nbsp;&nbsp;&nbsp; 작성시간 : <fmt:formatDate value="${comment.write_date}" pattern="yyyy-MM-dd HH:mm"/>
 				</div>
 				<div id="content_comment_wirted_area">
 					<textarea id="content_comment_writed" readonly>${comment.content}</textarea>
@@ -145,7 +147,7 @@ $(function(){
 					<a href="/reviewer/content/contentPro.do?board_num=${board_num}&comment_num=${comment.coment_num}">삭&nbsp;&nbsp;&nbsp;제</a>
 				</c:if>
 				<c:if test="${comment.id!=id}">
-					<a href="#" class="noDelete">삭&nbsp;&nbsp;&nbsp;제</a>
+					<a href="#" id="noDelete">삭&nbsp;&nbsp;&nbsp;제</a>
 				</c:if>
 			</div>
 		</div>
