@@ -35,7 +35,6 @@
 		});
 		</script>
 		<style>
-			*{padding:0; margin:0;}
 			div{ border-collapse: collapse; border-spacing: }
 			#followerNameList { margin: 0 auto; margin-top: 15px; padding-top: 10px;}
 			#followerList { width: 500px; margin: 0 auto; }

@@ -36,6 +36,12 @@
 	<select id="getByBoardNum" parameterType="java.lang.Integer" resultType="vo.BoardVo">
 		select * from board where board_num=#{board_num}
 	</select>
+	<select id="getRecoBoarList" resultType="vo.BoardVo">
+		select * from board ORDER BY recommend_num DESC 
+	</select>
+	<select id="getRepoBoarList" resultType="vo.BoardVo">
+		select * from board ORDER BY report_num DESC 
+	</select>
 	<select id="getList" resultType="vo.BoardVo">
 		select * from board ORDER BY write_date DESC 
 	</select>

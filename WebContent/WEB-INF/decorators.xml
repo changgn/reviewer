@@ -12,6 +12,7 @@
 		<pattern>/logon/modifyForm.do</pattern>
 		<pattern>/logon/deleteForm.do</pattern>
 		<pattern>/profile/*</pattern>
+		<pattern>/administrator/*</pattern>
 	</decorator>
 	<decorator name="logon" page="/decorator/logon_decorator.jsp">
 		<pattern>/logon/loginForm.do</pattern>
@@ -20,7 +21,6 @@
 		<pattern>/idpwSearch/*</pattern>
 	</decorator>
 	<excludes>
-		<pattern>/administrator/*</pattern>
 		<pattern>/content/reportPro.do</pattern>
 	</excludes>
 </decorators>

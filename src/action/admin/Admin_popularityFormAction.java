@@ -37,7 +37,7 @@ public class Admin_popularityFormAction implements CommandAction{
 		PhotoDao photoDao = PhotoDao.getInstance();
 		ComentDao comentDao = ComentDao.getInstance();
 		CategoryDao categoryDao = CategoryDao.getInstance();
-		boardList = boardDao.getList();
+		boardList = boardDao.getRecoBoarList();
 		
 		if(boardList!=null){
 			for(BoardVo vo : boardList) {

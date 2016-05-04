@@ -3,7 +3,10 @@
 <html>
 	<head>
 		<style>
-			
+			.recmanage{width : 300px; height: 50px; margin: 0 auto; margin-top: 50px; margin-bottom: 40px; font-size: 40px;}
+			#rpid{padding:inherit; margin-top: 50px; font-size: 20px;}
+			#recommendNum{font-size: 20px; border: medium;}
+			#recButton{font-size: 20px;}
 		</style>
 	</head>
 	<body>
@@ -12,10 +15,12 @@
 		</div>
 		<c:forEach var="board" items="${allBoardList}"> 
 			<div id="popBoardList">
-				작성자 ${board.board.id}
-				<a href="../content/contentForm.do?board_num=${board.board.board_num}"><input type="button" value="상세보기"></a>
-				추천 ${board.board.recommend_num}
-					<a href="/reviewer/content/deleteContent.do?id=${board.board.id},board_num=${board.board.board_num}" class="cont_popup_close" >게시글 삭제</a>
+				<div id="rpid">작성자 : ${board.board.id}</div>
+				<div id="recommendNum">추천 ${board.board.recommend_num}</div>
+				<div id="recButton">
+					<a href="/reviewer/content/contentForm.do?board_num=${board.board.board_num}"><input type="button" value="상세보기"></a>
+					<a href="/reviewer/administrator/admin_Delete.do?board_num=${board.board.board_num}"><input type="button" value="삭제"></a>
+				</div>
 			</div>
 		</c:forEach>
 	</body>

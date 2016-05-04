@@ -12,6 +12,7 @@ public class AdminFromAction implements CommandAction{
 		// TODO Auto-generated method stub
 		
 		
+		
 		return "/administrator/adminForm.jsp";
 	}
 

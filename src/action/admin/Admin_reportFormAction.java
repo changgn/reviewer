@@ -37,7 +37,7 @@ public class Admin_reportFormAction implements CommandAction{
 			PhotoDao photoDao = PhotoDao.getInstance();
 			ComentDao comentDao = ComentDao.getInstance();
 			CategoryDao categoryDao = CategoryDao.getInstance();
-			boardList = boardDao.getList();
+			boardList = boardDao.getRepoBoarList();
 			
 			if(boardList!=null){
 				for(BoardVo vo : boardList) {

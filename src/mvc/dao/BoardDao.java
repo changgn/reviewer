@@ -207,7 +207,7 @@ public class BoardDao {
 		return n;
 	}
 	
-	public List<BoardVo> getPopularityList(){
+	public List<BoardVo> getRecoBoarList(){
 		List<BoardVo> popullist= null;
 		String res = "mybatis/config.xml";
 		try {
@@ -215,7 +215,7 @@ public class BoardDao {
 			SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(is);
 			SqlSession session = factory.openSession();
 			
-			popullist = session.selectList("board.getPopularityBoardList");
+			popullist = session.selectList("board.getRecoBoarList");
 			
 			session.close();
 		} catch (IOException ie) {
@@ -224,7 +224,7 @@ public class BoardDao {
 		return popullist;
 	}
 	// 신고글
-	public List<BoardVo> getReportList(){
+	public List<BoardVo> getRepoBoarList(){
 		List<BoardVo> reporlist= null;
 		String res = "mybatis/config.xml";
 		try {
@@ -232,7 +232,7 @@ public class BoardDao {
 			SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(is);
 			SqlSession session = factory.openSession();
 			
-			reporlist = session.selectList("board.getReportBoardList");
+			reporlist = session.selectList("board.getRepoBoarList");
 			
 			session.close();
 		} catch (IOException ie) {

@@ -87,7 +87,7 @@
 				<ul id="list_user">
 					<li><a href="/reviewer/categorySet/categorySetForm.do">카테고리 수정</a></li>
 					<c:if test="${login_status==0}">
-						<li><a href="#">관리자 페이지</a></li>
+						<li><a href="/reviewer/administrator/adminForm.do">관리자 페이지</a></li>
 					</c:if>
 					<li><a href="/reviewer/logon/modifyForm.do">회원정보 수정</a></li>
 					<li><a href="/reviewer/logon/logout.do">로그아웃</a></li>
