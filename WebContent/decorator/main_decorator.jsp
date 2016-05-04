@@ -82,16 +82,18 @@
 			</a> 
 -->
 		</span>
-		<div id="user">
-			<ul id="list_user">
-				<li><a href="/reviewer/categorySet/categorySetForm.do">카테고리 수정</a></li>
-				<c:if test="${login_status==0}">
-					<li><a href="#">관리자 페이지</a></li>
-				</c:if>
-				<li><a href="/reviewer/logon/modifyForm.do">회원정보 수정</a></li>
-				<li><a href="/reviewer/logon/logout.do">로그아웃</a></li>
-			</ul>
-		</div>
+		<c:if test="${login_status==0 || login_status==1}">
+			<div id="user">
+				<ul id="list_user">
+					<li><a href="/reviewer/categorySet/categorySetForm.do">카테고리 수정</a></li>
+					<c:if test="${login_status==0}">
+						<li><a href="#">관리자 페이지</a></li>
+					</c:if>
+					<li><a href="/reviewer/logon/modifyForm.do">회원정보 수정</a></li>
+					<li><a href="/reviewer/logon/logout.do">로그아웃</a></li>
+				</ul>
+			</div>
+		</c:if>
 <!-- 	<div id="alarm">
 			<ul id="list_alarm">
 				<li>알림1<br><a href="#">알림1</a></li>

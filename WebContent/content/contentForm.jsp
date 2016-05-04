@@ -24,10 +24,13 @@ $(document).ready(function(){
 	if("${error}"=="error") {
 		$(location).attr("href", "/reviewer/main/mainForm.do");
 	}
+
+});
+$(window).load(function(){
 	if("${comment}"=="true") {
 		$("#content_comment_write").focus();
-		var top = $("#content_comment_write").offset().top;
-		$('html, body').stop().animate({ scrollTop : top });
+		var top = $("#content_comment_area").offset().top;
+		$('html, body').animate({ scrollTop : top });
 	}
 });
 $(function(){
