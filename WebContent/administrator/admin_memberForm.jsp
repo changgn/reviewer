@@ -5,7 +5,11 @@
 	<head>
 		<style>
 			#adminMemberList{margin: auto;}
-			#Member{margin: auto;}
+			#Member{margin-top: 25px;}
+			#allid{font-size: 18px;}
+			#memrec{font-size: 18px;}
+			#mdate{font-size: 18px;}
+			#button{font-size: 18px;}
 		</style>
 	</head>
 	<body>
@@ -14,14 +18,11 @@
 			</div>
 			
 				<c:forEach var="memberList" items="${memberList }">
-					<div id="Member" class="title_find">
-						아이디 : ${memberList.id }	
-
-						추천  ${memberList.recommend_num}
-
-						가입일자  <fmt:formatDate value="${memberList.reg_date}" pattern="yyyy-MM-dd HH:mm"/>
-
-						<input type="button" value="이동" onclick="../profile/myProfile?id=${memberlist.id}">
+					<div id="Member">
+						<div id="allid">아이디 : ${memberList.id }</div>
+						<div id="memrec">추천  ${memberList.recommend_num}</div>
+						<div id="mdate">가입일자 : <fmt:formatDate value="${memberList.reg_date}" pattern="yyyy-MM-dd HH:mm"/></div>
+						<div id="button"><a href="/reviewer/profile/myProfile.do?id=${memberList.id}"><input type="button" value="이동"></a></div>
 					</div>
 				</c:forEach>
 	</body>

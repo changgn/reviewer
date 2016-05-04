@@ -4,7 +4,7 @@
 	<head>
 		<style>
 			.recmanage{width : 300px; height: 50px; margin: 0 auto; margin-top: 50px; margin-bottom: 40px; font-size: 40px;}
-			#rpid{padding:inherit; margin-top: 50px; font-size: 20px;}
+			#rpid{padding:inherit; margin-top: 50px; font-size: 20px; border: }
 			#recommendNum{font-size: 20px; border: medium;}
 			#recButton{font-size: 20px;}
 		</style>

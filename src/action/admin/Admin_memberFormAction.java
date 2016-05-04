@@ -1,5 +1,7 @@
 package action.admin;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -24,11 +26,10 @@ public class Admin_memberFormAction implements CommandAction {
 		memberlist = memberdao.getMemberListVo();
 		
 		System.out.println(memberlist);
-		
-		
-		
+
 		int count = 0;
 		count = memberdao.count();
+
 		System.out.println(count);
 		request.setAttribute("count", count);
 		request.setAttribute("memberList", memberlist);
