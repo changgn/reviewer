@@ -15,7 +15,7 @@ public class Admin_memberFormAction implements CommandAction {
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) throws Throwable {
 		// TODO Auto-generated method stub
 		request.setCharacterEncoding("UTF-8");
-		
+
 		// 아이디 목록을 구한다
 		// 아이디를 조건으로 reg_date와 recommend_num를 구한다.
 		
@@ -23,8 +23,9 @@ public class Admin_memberFormAction implements CommandAction {
 		List<MembersVo> memberlist = null;
 		memberlist = memberdao.getMemberListVo();
 		
-		
 		System.out.println(memberlist);
+		
+		
 		
 		int count = 0;
 		count = memberdao.count();

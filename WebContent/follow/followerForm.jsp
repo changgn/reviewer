@@ -5,24 +5,38 @@
 	<head>
 		<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
 		<script type="text/javascript">
-		
+		$(document).ready(function() {
+			
+			if("${followCheck}"=="true") {
+				var tag = "<a href='/reviewer/follow/followPro.do?follow=unfollow&id=" + "${id}'" + "><img src='../image/icon_36.png'></a>";
+				$("#follow_button").append(tag);
+			} else {
+				var tag = "<a href='/reviewer/follow/followPro.do?follow=follow&id=" + "${id}'" + "><img src='../image/icon_35.png'></a>";
+				$("#follow_button").append(tag);
+			}
+			
+		});
 		$(function(){
-			$('img').on({
+			$('#follow_button').on({
 				'click' : function(){
+					if("${followCheck}"=="true") {
+						var tag = "<a href='/reviewer/follow/followerPro.do?follow=unfollow&id=" + "${id}'" + "><img src='../image/icon_36.png'></a>";
+						$("#follow_button").append(tag);
+					} else {
+						var tag = "<a href='/reviewer/follow/followerPro.do?follow=follow&id=" + "${id}'" + "><img src='../image/icon_35.png'></a>";
+						$("#follow_button").append(tag);
+					}
 					var src = ($(this).attr('src')==='../image/icon_35.png')
 					? '../image/icon_36.png'
 							: '../image/icon_35.png';
 					$(this).attr('src', src);
-					var submit = new submit();
-					submit.setUrl("<c:url value='reviewer/follow/followerPro.do?${fromIdList}'/>");
-					submit.subit();
 				}
 			})
 		});
 		</script>
 		<style>
 			*{padding:0; margin:0;}
-			div{ border-collapse: collapse; border-spacing: 0; border:1px solid #ccc; padding3px;}
+			div{ border-collapse: collapse; border-spacing: }
 			#followerNameList { margin: 0 auto; margin-top: 15px; padding-top: 10px;}
 			#followerList { width: 500px; margin: 0 auto; }
 			#followerIdList a { font-size: 30px;}
@@ -39,9 +53,7 @@
 					<div id="followerIdList" class="title_find">
 						<a href="/reviewer/profile/myProfile.do?id=${fromId}">${fromId}</a>
 					</div>
-					<div id="followerImage">
-						<img id="follow" src="../image/icon_35.png"/>
-					</div>
+					<div id="follow_button"></div>
 				 </c:forEach> 
 			</div>
 		</div> 

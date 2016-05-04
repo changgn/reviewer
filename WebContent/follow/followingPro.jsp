@@ -1,4 +1,4 @@
 <%@ page contentType = "text/html; charset=UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<% response.sendRedirect("/reviewer/follow/followingForm.do"); %>
+<meta http-equiv="Refresh" content="0;url=/reviewer/follow/followingFrom.do?id=${id}" >
