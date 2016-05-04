@@ -53,7 +53,7 @@
 					<div id="followerIdList" class="title_find">
 						<a href="/reviewer/profile/myProfile.do?id=${fromId}">${fromId}</a>
 					</div>
-					<div id="follow_button"></div>
+<!-- 					<div id="follow_button"></div> -->
 				 </c:forEach> 
 			</div>
 		</div> 

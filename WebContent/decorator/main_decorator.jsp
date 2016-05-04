@@ -108,15 +108,15 @@
 	<!-- 네비게이션 -->
 		<ul id="list_nav">
 			<li>
-				<div id="btn_newsfeed"><a href="/reviewer/main/mainForm.do" class="nav_btn">뉴스피드</a></div>
+				<div id="btn_newsfeed"><a href="/reviewer/main/mainForm.do" class="nav_btn">뉴&nbsp;&nbsp;스&nbsp;&nbsp;피&nbsp;&nbsp;드</a></div>
 			</li>
 			<li>
 				<div id="btn_my">
 					<c:if test="${login_status!=0 && login_status!=1}">
-						<a href="/reviewer/logon/loginForm.do" class="nav_btn">M Y</a>
+						<a href="/reviewer/logon/loginForm.do" class="nav_btn">M&nbsp;&nbsp;&nbsp;Y</a>
 					</c:if>
 					<c:if test="${login_status==0 || login_status==1}">
-						<a href="/reviewer/profile/myProfile.do?id=${sessionScope.id }" class="nav_btn">M Y</a>
+						<a href="/reviewer/profile/myProfile.do?id=${sessionScope.id }" class="nav_btn">M&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Y</a>
 					</c:if>
 				</div>
 			</li>

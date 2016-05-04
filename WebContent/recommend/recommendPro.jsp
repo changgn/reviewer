@@ -3,7 +3,7 @@
 <!DOCTYPE>
 <html>
 <head>
-<title>게시글 신고중</title>
+<title>게시글 추천중</title>
 </head>
 <body>
 	<script>

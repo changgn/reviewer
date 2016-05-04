@@ -38,8 +38,8 @@
 					<div id="followingIdList" class="title_find">
 						<a href="/reviewer/profile/myProfile.do?id=${toId}">${toId}</a>
 					</div>
-						<img id="follow" src="../image/icon_35.png"/>
-						<form name="followPro" id="followPro" method="post">${fromId}</form>
+<%-- 						<img id="follow" src="../image/icon_35.png"/>
+						<form name="followPro" id="followPro" method="post">${fromId}</form> --%>
 				 </c:forEach> 
 			</div>
 		</div> 

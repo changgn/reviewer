@@ -21,7 +21,9 @@ public class FollowingFormAction implements CommandAction{
 		FollowDao followdao = FollowDao.getInstance(); // 팔로우 처리클래스 객체
 		
 		// 내가 팔로우한 팔로잉 목록
-		List<String> mytoIdList = followdao.getlistfrom(my_id);
+		if(my_id != null) {
+			List<String> mytoIdList = followdao.getlistfrom(my_id);
+		}
 		
 		// 프로필 페이지 id의 팔로잉 목록
 		List<String> toIdList = followdao.getlistto(from_id);
